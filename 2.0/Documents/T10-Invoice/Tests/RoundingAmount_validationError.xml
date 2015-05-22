@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--
+                Content:
+                This file contains a norwegian invoice, profile invoice only
+                
+                Errors:
+                BII2-T10-R053
+                
+                Warnings:
+                None
+-->
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol4a:ver2.0:extended:urn:www.difi.no:ehf:faktura:ver2.0</cbc:CustomizationID>
+	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver2.0</cbc:ProfileID>
+	<cbc:ID>1445845</cbc:ID>
+	<cbc:IssueDate>2014-10-31</cbc:IssueDate>
+	<cbc:InvoiceTypeCode listID="UNCL1001">380</cbc:InvoiceTypeCode>
+	<cbc:Note>Reisekonto 361487XXXX0014</cbc:Note>
+	<cbc:DocumentCurrencyCode listID="ISO4217">NOK</cbc:DocumentCurrencyCode>
+	<cac:OrderReference>
+		<cbc:ID>315</cbc:ID>
+	</cac:OrderReference>
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>1</cbc:ID>
+		<cbc:DocumentType>html</cbc:DocumentType>
+		<cac:Attachment>
+			<cac:ExternalReference>
+				<cbc:URI>12956_15408-217621877-IMAGE-D.html</cbc:URI>
+			</cac:ExternalReference>
+		</cac:Attachment>
+	</cac:AdditionalDocumentReference>
+	<cac:AccountingSupplierParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="NO:ORGNR">995432765</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="GLN">995432765</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Diners Club Norge, filial av Diners Club Nordic AB</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Filipstad Brygge</cbc:StreetName>
+				<cbc:CityName>Oslo</cbc:CityName>
+				<cbc:PostalZone>0114</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID>NO995432765MVA</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Diners Club Norge, filial av Diners Club Nordic AB</cbc:RegistrationName>
+				<cbc:CompanyID>995432765</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:ID>Diners Club Norge - Corporate Support</cbc:ID>
+				<cbc:Telephone>+47 21 01 53 10</cbc:Telephone>
+				<cbc:ElectronicMail>reisekonto@sebkort.no</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="NO:ORGNR">948243113</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="GLN">948243113</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>SOLA KOMMUNE</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:CityName>SOLA</cbc:CityName>
+				<cbc:PostalZone>4097</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID>NO948243113MVA</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>SOLA KOMMUNE</cbc:RegistrationName>
+				<cbc:CompanyID>948243113</cbc:CompanyID>
+				<cac:RegistrationAddress>
+					<cbc:CityName>SOLA</cbc:CityName>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:ID>Reisebestiller ikke oppgitt</cbc:ID>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:Delivery>
+		<cac:DeliveryLocation>
+			<cac:Address>
+				<cbc:CityName>NA</cbc:CityName>
+				<cbc:PostalZone>4097 SOLA</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:DeliveryLocation>
+	</cac:Delivery>
+	<cac:PaymentMeans>
+		<cbc:PaymentMeansCode listID="UNCL4461">31</cbc:PaymentMeansCode>
+		<cbc:PaymentDueDate>2014-11-25</cbc:PaymentDueDate>
+		<cbc:PaymentID>70014458450141</cbc:PaymentID>
+		<cac:PayeeFinancialAccount>
+			<cbc:ID schemeID="LOCAL">97500606340</cbc:ID>
+			<cac:FinancialInstitutionBranch>
+				<cac:FinancialInstitution>
+					<cbc:ID schemeID="BIC">ESSENOKX</cbc:ID>
+				</cac:FinancialInstitution>
+			</cac:FinancialInstitutionBranch>
+		</cac:PayeeFinancialAccount>
+	</cac:PaymentMeans>
+	<cac:PaymentMeans>
+		<cbc:PaymentMeansCode listID="UNCL4461">31</cbc:PaymentMeansCode>
+		<cbc:PaymentDueDate>2014-11-25</cbc:PaymentDueDate>
+		<cbc:PaymentID>70014458450141</cbc:PaymentID>
+		<cac:PayeeFinancialAccount>
+			<cbc:ID schemeID="IBAN">NO3497500606340</cbc:ID>
+			<cac:FinancialInstitutionBranch>
+				<cac:FinancialInstitution>
+					<cbc:ID schemeID="BIC">ESSENOKX</cbc:ID>
+				</cac:FinancialInstitution>
+			</cac:FinancialInstitutionBranch>
+		</cac:PayeeFinancialAccount>
+	</cac:PaymentMeans>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="NOK">244.80</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="NOK">3060.00</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="NOK">244.80</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UNCL5305">AA</cbc:ID>
+				<cbc:Percent>8</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="NOK">0.00</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UNCL5305">H</cbc:ID>
+				<cbc:Percent>15</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="NOK">0.00</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+				<cbc:Percent>25</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="NOK">0.00</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UNCL5305">E</cbc:ID>
+				<cbc:Percent>0</cbc:Percent>
+				<cbc:TaxExemptionReason>A VAT exemption reason MUST be provided if the VAT category code is exempt or reverse charge.</cbc:TaxExemptionReason>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="NOK">3060.00</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="NOK">3060.00</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="NOK">3304.80</cbc:TaxInclusiveAmount>
+		<cbc:PayableRoundingAmount currencyID="NOK">1.20</cbc:PayableRoundingAmount>
+		<cbc:PayableAmount currencyID="NOK">3304.80</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:InvoiceLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:Note>Point of sale: VIA EGENCIA OSLO, Purchase: Flybillett - Norge*, Ticket number: 1175872251486</cbc:Note>
+		<cbc:InvoicedQuantity unitCodeListID="UNECERec20" unitCode="EA">1</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="NOK">1532.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>//HEGE VIDGDEL//315</cbc:AccountingCost>
+		<cac:OrderLineReference>
+			<cbc:LineID>59052980</cbc:LineID>
+		</cac:OrderLineReference>
+		<cac:Delivery>
+			<cbc:ActualDeliveryDate>2014-10-14</cbc:ActualDeliveryDate>
+		</cac:Delivery>
+		<cac:Item>
+			<cbc:Description>CardNo=36148787400014; Name=ROEDNE/ANNCHRISTIN SAELAND MS; Amount=1655.00; CurrencyCode=NOK; ExchangeRate=1000000.0000; Transaction Reference=59052980; EmployeeNumber=NA;Departure date=2014-11-03;Return date=2014-11-03;Routing in Text=SVGOSLSVG;Routing Codes=SVG;OSL;SVG;;Ticket number=1175872251486;Project number=315;Ordered By=HEGE VIDGDEL;</cbc:Description>
+			<cbc:Name>VIA EGENCIA OSLO-Flybillett - Norge*</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>20141014331528047</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">600</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>8</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Passenger name</cbc:Name>
+				<cbc:Value>ROEDNE/ANNCHRISTIN SAELAND MS</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="NOK">1532.00</cbc:PriceAmount>
+			<cbc:BaseQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<cbc:ID>2</cbc:ID>
+		<cbc:Note>Point of sale: VIA EGENCIA OSLO, Purchase: Transaction Fee, Ticket number:</cbc:Note>
+		<cbc:InvoicedQuantity unitCodeListID="UNECERec20" unitCode="EA">1</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="NOK">82.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>//HEGE VIDGDEL//315</cbc:AccountingCost>
+		<cac:OrderLineReference>
+			<cbc:LineID>59052980</cbc:LineID>
+		</cac:OrderLineReference>
+		<cac:Delivery>
+			<cbc:ActualDeliveryDate>2014-10-14</cbc:ActualDeliveryDate>
+		</cac:Delivery>
+		<cac:Item>
+			<cbc:Description>CardNo=36148787400014; Name=ROEDNE/ANNCHRISTIN SAELAND MS; Amount=88.56; CurrencyCode=NOK; ExchangeRate=1000000.0000; Transaction Reference=59052980; EmployeeNumber=NA;Departure date=2014-11-03;Return date=2014-11-03;Project number=315;Ordered By=HEGE VIDGDEL;</cbc:Description>
+			<cbc:Name>VIA EGENCIA OSLO-Transaction Fee</cbc:Name>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">600</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>8</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Passenger name</cbc:Name>
+				<cbc:Value>ROEDNE/ANNCHRISTIN SAELAND MS</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="NOK">82.00</cbc:PriceAmount>
+			<cbc:BaseQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<cbc:ID>3</cbc:ID>
+		<cbc:Note>Point of sale: VIA EGENCIA OSLO, Purchase: Flybillett - Norge*, Ticket number: 1175872251487</cbc:Note>
+		<cbc:InvoicedQuantity unitCodeListID="UNECERec20" unitCode="EA">1</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="NOK">1364.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>//HEGE VIGDEL//315</cbc:AccountingCost>
+		<cac:OrderLineReference>
+			<cbc:LineID>59052981</cbc:LineID>
+		</cac:OrderLineReference>
+		<cac:Delivery>
+			<cbc:ActualDeliveryDate>2014-10-14</cbc:ActualDeliveryDate>
+		</cac:Delivery>
+		<cac:Item>
+			<cbc:Description>CardNo=36148787400014; Name=VIGDEL/HEGE MS; Amount=1473.00; CurrencyCode=NOK; ExchangeRate=1000000.0000; Transaction Reference=59052981; EmployeeNumber=NA;Departure date=2014-11-01;Return date=2014-11-03;Routing in Text=SVGOSLSVG;Routing Codes=SVG;OSL;SVG;;Ticket number=1175872251487;Project number=315;Ordered By=HEGE VIGDEL;</cbc:Description>
+			<cbc:Name>VIA EGENCIA OSLO-Flybillett - Norge*</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>20141014331528049</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">600</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>8</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Passenger name</cbc:Name>
+				<cbc:Value>VIGDEL/HEGE MS</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="NOK">1364.00</cbc:PriceAmount>
+			<cbc:BaseQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<cbc:ID>4</cbc:ID>
+		<cbc:Note>Point of sale: VIA EGENCIA OSLO, Purchase: Transaction Fee, Ticket number:</cbc:Note>
+		<cbc:InvoicedQuantity unitCodeListID="UNECERec20" unitCode="EA">1</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="NOK">82.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>//HEGE VIGDEL//315</cbc:AccountingCost>
+		<cac:OrderLineReference>
+			<cbc:LineID>59052981</cbc:LineID>
+		</cac:OrderLineReference>
+		<cac:Delivery>
+			<cbc:ActualDeliveryDate>2014-10-14</cbc:ActualDeliveryDate>
+		</cac:Delivery>
+		<cac:Item>
+			<cbc:Description>CardNo=36148787400014; Name=VIGDEL/HEGE MS; Amount=88.56; CurrencyCode=NOK; ExchangeRate=1000000.0000; Transaction Reference=59052981; EmployeeNumber=NA;Departure date=2014-11-01;Return date=2014-11-03;Project number=315;Ordered By=HEGE VIGDEL;</cbc:Description>
+			<cbc:Name>VIA EGENCIA OSLO-Transaction Fee</cbc:Name>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">600</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>8</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Passenger name</cbc:Name>
+				<cbc:Value>VIGDEL/HEGE MS</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="NOK">82.00</cbc:PriceAmount>
+			<cbc:BaseQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+</Invoice>
