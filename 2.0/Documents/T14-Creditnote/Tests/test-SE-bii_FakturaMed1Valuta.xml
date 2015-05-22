@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice xmlns:cnt="urn:oasis:names:specification:ubl:schema:xsd:CountryIdentificationCode-2"
+         xmlns:cur="urn:oasis:names:specification:ubl:schema:xsd:CurrencyCode-2"
+         xmlns:pty="urn:oasis:names:specification:ubl:schema:xsd:PaymentMeansCode-2"
+         xmlns:clm54217="urn:un:unece:uncefact:codelist:specification:54217:2001"
+         xmlns:clm66411="urn:un:unece:uncefact:codelist:specification:66411:2001"
+         xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+         xmlns:clmIANAMIMEMediaType="urn:un:unece:uncefact:codelist:specification:IANAMIMEMediaType:2003"
+         xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2"
+         xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+         xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 C:/Users/MARTIN~1/Documents/Projects/Peppol/Svefaktura-BIICoreInvoice/BIICoreInvoiceXSD/ProfileSchema/UBL-Invoice-2.0.xsd">
+   <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
+   <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdm010:ver1.0</cbc:CustomizationID>
+   <cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver1.0</cbc:ProfileID>
+   <cbc:ID>07/0019</cbc:ID>
+   <cbc:IssueDate>2007-01-29</cbc:IssueDate>
+   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+   <cbc:DocumentCurrencyCode>SEK</cbc:DocumentCurrencyCode>
+   <cbc:AccountingCost>HaGre</cbc:AccountingCost>
+   <cac:AccountingSupplierParty>
+      <cac:Party>
+         <cac:PartyName>
+            <cbc:Name>Komponentlagret AB</cbc:Name>
+         </cac:PartyName>
+         <cac:PostalAddress>
+            <cbc:Postbox>Box 54321</cbc:Postbox>
+            <cbc:CityName>Göteborg</cbc:CityName>
+            <cbc:PostalZone>40123</cbc:PostalZone>
+            <cac:Country>
+               <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:PostalAddress>
+         <cac:PartyTaxScheme>
+            <cbc:CompanyID>SE556677889901</cbc:CompanyID>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:PartyTaxScheme>
+         <cac:PartyLegalEntity>
+            <cbc:CompanyID schemeID="SE:ORGNR">5566778899</cbc:CompanyID>
+            <cac:RegistrationAddress>
+               <cbc:CityName>Göteborg</cbc:CityName>
+               <cac:Country>
+                  <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:RegistrationAddress>
+         </cac:PartyLegalEntity>
+         <cac:Contact/>
+      </cac:Party>
+   </cac:AccountingSupplierParty>
+   <cac:AccountingCustomerParty>
+      <cac:Party>
+         <cac:PartyName>
+            <cbc:Name>QVK Catering</cbc:Name>
+         </cac:PartyName>
+         <cac:PostalAddress>
+            <cbc:StreetName>Stora gatan 5</cbc:StreetName>
+            <cbc:CityName>Hägersten</cbc:CityName>
+            <cbc:PostalZone>12652</cbc:PostalZone>
+         </cac:PostalAddress>
+      </cac:Party>
+   </cac:AccountingCustomerParty>
+   <cac:Delivery>
+      <cbc:ActualDeliveryDate>2007-01-26</cbc:ActualDeliveryDate>
+      <cac:DeliveryLocation/>
+   </cac:Delivery>
+   <cac:PaymentMeans>
+      <cbc:PaymentMeansCode>1</cbc:PaymentMeansCode>
+      <cbc:PaymentDueDate>2007-03-07</cbc:PaymentDueDate>
+      <cbc:PaymentChannelCode>SE:BANKGIRO</cbc:PaymentChannelCode>
+      <cbc:PaymentID>101063</cbc:PaymentID>
+      <cac:PayeeFinancialAccount>
+         <cbc:ID>876540</cbc:ID>
+      </cac:PayeeFinancialAccount>
+   </cac:PaymentMeans>
+   <cac:PaymentMeans>
+      <cbc:PaymentMeansCode>1</cbc:PaymentMeansCode>
+      <cbc:PaymentDueDate>2007-02-28</cbc:PaymentDueDate>
+      <cbc:PaymentChannelCode>SE:PLUSGIRO</cbc:PaymentChannelCode>
+      <cbc:PaymentID>101063</cbc:PaymentID>
+      <cac:PayeeFinancialAccount>
+         <cbc:ID>49494949</cbc:ID>
+      </cac:PayeeFinancialAccount>
+   </cac:PaymentMeans>
+   <cac:PaymentTerms>
+      <cbc:Note>30 dagar netto&#xD;Penalty surcharge percent:16</cbc:Note>
+   </cac:PaymentTerms>
+   <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+      <cbc:Amount currencyID="SEK">15</cbc:Amount>
+   </cac:AllowanceCharge>
+   <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="SEK">5.8</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+         <cbc:TaxableAmount currencyID="SEK">10</cbc:TaxableAmount>
+         <cbc:TaxAmount currencyID="SEK">2.5</cbc:TaxAmount>
+         <cac:TaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>25</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:TaxCategory>
+      </cac:TaxSubtotal>
+      <cac:TaxSubtotal>
+         <cbc:TaxableAmount currencyID="SEK">55</cbc:TaxableAmount>
+         <cbc:TaxAmount currencyID="SEK">3.3</cbc:TaxAmount>
+         <cac:TaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>6</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:TaxCategory>
+      </cac:TaxSubtotal>
+   </cac:TaxTotal>
+   <cac:LegalMonetaryTotal>
+      <cbc:LineExtensionAmount currencyID="SEK">50</cbc:LineExtensionAmount>
+      <cbc:TaxExclusiveAmount currencyID="SEK">65</cbc:TaxExclusiveAmount>
+      <cbc:TaxInclusiveAmount currencyID="SEK">70.8</cbc:TaxInclusiveAmount>
+      <cbc:PayableAmount currencyID="SEK">70.8</cbc:PayableAmount>
+   </cac:LegalMonetaryTotal>
+   <cac:InvoiceLine>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Note>Invoiced Quantity Code:st&#xD;</cbc:Note>
+      <cbc:InvoicedQuantity unitCode="ZZ">100</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="SEK">10</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Description>Räfflad trådspik 5 tum, galvaniserad</cbc:Description>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>25</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="SEK">0.1</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Note>Invoiced Quantity Code:Kg&#xD;</cbc:Note>
+      <cbc:InvoicedQuantity unitCode="ZZ">0.5</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="SEK">4</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Description>Färgämne E120</cbc:Description>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>6</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="SEK">8</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>3</cbc:ID>
+      <cbc:Note>Invoiced Quantity Code:Kg&#xD;</cbc:Note>
+      <cbc:InvoicedQuantity unitCode="ZZ">0.2</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="SEK">8</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Description>Aromämne - fri "prova på"-förpackning</cbc:Description>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>6</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="SEK">40</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>4</cbc:ID>
+      <cbc:Note>Invoiced Quantity Code:&#xD;</cbc:Note>
+      <cbc:InvoicedQuantity unitCode="ZZ">1</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="SEK">28</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Description>Årets kokbok: Våra vanligaste soppor</cbc:Description>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>6</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="SEK">28</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+</Invoice>

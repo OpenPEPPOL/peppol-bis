@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://www.invinet.org/recursos/resources/xslt/reikningurEN.xsl"?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 C:\Users\Notandi\Documents\Uppl�singar\Standards\UBL\cs-UBL-2.0\xsd\maindoc\UBL-Invoice-2.0.xsd">
+	<cbc:UBLVersionID>2.0</cbc:UBLVersionID>
+	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdm010:ver1.0</cbc:CustomizationID>
+	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver1.0</cbc:ProfileID>
+  <cbc:ID>91681</cbc:ID>
+  <cbc:IssueDate>2007-11-17</cbc:IssueDate>
+  <cbc:InvoiceTypeCode listID="UN/ECE 1001 Subset" listAgencyID="NES">380</cbc:InvoiceTypeCode>
+  <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha" listAgencyID="6" languageID="en">NOK</cbc:DocumentCurrencyCode>
+  <cac:AdditionalDocumentReference> 
+<!--This is a very specific use (misuse) of the additional document reference and not in line with any specifications. The chemaID is used to define the variable. This would not be supported by anyone exept those following exactly this implementation. Should instead either select appropriate element from UBL and specify as an CENBII extension or create own elements and use as UBL extension. -->
+    <cbc:ID schemeID="SS">1445989</cbc:ID>
+    <cbc:IssueDate>2007-11-17</cbc:IssueDate>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID schemeID="ARK">7263</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID schemeID="BY">10055</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID schemeID="FRT">H -0205-B</cbc:ID>
+    <cbc:DocumentType>Ganthi</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID schemeID="SUMQTY">120.432</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID schemeID="AVGPRICE">8,15</cbc:ID> <!-- UBL uses dots for decimals but since this is a text element the comma is not rejected -->
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID schemeID="PRINTDATE">2007-11-22</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID schemeID="VAT%">11,11 %</cbc:ID> <!-- UBL uses dots for decimals but since this is a text element the comma is not rejected. Question about the % sign-->
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID schemeID="PORT">Egersund Seafood AS</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID schemeID="ZEROINTDATE">2007-12-1</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID schemeID="DISPLAYTYPE">Seddel_3.xslt</cbc:ID>
+  </cac:AdditionalDocumentReference>
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>Norges Sildesalgslag</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:AddressFormatCode listID="Address Format" listAgencyID="NES">StructuredLax</cbc:AddressFormatCode> <!-- This is a NES method of defining address format which was not adopted to CENBII. The customization of this messages instance is CENBII-->
+        <cbc:StreetName>Postboks 7065</cbc:StreetName> <!--Why not use the Address.Postbox.text element? -->
+        <cbc:CityName>Bergen</cbc:CityName>
+        <cbc:PostalZone>5020</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO3166-1">NO</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID schemeID="NO:VAT" schemeAgencyID="82">951206091 MVA</cbc:CompanyID> <!-- Is MVA part of the ID or a defintion of the variable?-->
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:CompanyID schemeID="NO:ORGNR" schemeAgencyID="82">951206091</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:ID>1</cbc:ID> <!-- The element is not required in the core-->
+        <cbc:Name>Faktura - /Avregningsavdeling</cbc:Name> <!--The name should be in the person class-->
+        <cbc:Telephone>+47-55 54 95 20</cbc:Telephone>
+        <cbc:ElectronicMail>fa@sildelaget.no</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>Egersund Seafood AS</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:AddressFormatCode listID="Address Format" listAgencyID="NES">StructuredLax</cbc:AddressFormatCode> <!--See comment on same element for AccountingSupplierParty -->
+        <cbc:StreetName>Postboks 310</cbc:StreetName>
+        <cbc:CityName>EGERSUND</cbc:CityName>
+        <cbc:PostalZone>4379</cbc:PostalZone>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO3166-1">NO</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:CompanyID schemeID="NO:ORGNR" schemeAgencyID="82">963840667</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:ID>1234567</cbc:ID> <!--Not a core element -->
+      </cac:Contact>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:Delivery>
+	  <cbc:ActualDeliveryDate>2007-11-27</cbc:ActualDeliveryDate>
+	  <cac:DeliveryLocation>
+		  <cac:Address>
+			  <cbc:CityName>EGERSUND</cbc:CityName>
+			  <cbc:PostalZone>4380</cbc:PostalZone>
+		  </cac:Address>
+	  </cac:DeliveryLocation>
+  </cac:Delivery>
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode listID="UN/ECE 4461 Subset">31</cbc:PaymentMeansCode>
+    <cbc:PaymentDueDate>2007-12-01</cbc:PaymentDueDate>
+    <cbc:PaymentChannelCode listID="Payment Channel" listAgencyID="NES">NO:BANK</cbc:PaymentChannelCode> 
+    <cbc:PaymentID schemeID="KID">100550916819</cbc:PaymentID>
+    <cac:PayeeFinancialAccount>
+      <cbc:ID>65010540725</cbc:ID>
+      <cbc:CurrencyCode>NOK</cbc:CurrencyCode> <!--Not a core element-->
+    </cac:PayeeFinancialAccount>
+  </cac:PaymentMeans>
+  <cac:PaymentTerms>
+    <cbc:Note>Innen 14d: renter godskrives. Mellom 14d - 30d: renter belastes. Etter forfall: forsinkelsesrente belastes.</cbc:Note>
+    <cbc:Amount currencyID="NOK">1092671</cbc:Amount> <!-- What is this amount? Element is not part of core -->
+    <cac:SettlementPeriod> <!--Not part of core -->
+      <cbc:StartDate>2007-12-01</cbc:StartDate>
+    </cac:SettlementPeriod> <!--Not part of core -->
+    <cac:PenaltyPeriod>
+      <cbc:StartDate>2007-12-01</cbc:StartDate>
+    </cac:PenaltyPeriod>
+  </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+    <cbc:AllowanceChargeReasonCode>A2</cbc:AllowanceChargeReasonCode> <!--This code should have attributes that define it -->
+    <cbc:AllowanceChargeReason>Matproduksjonsavgift</cbc:AllowanceChargeReason>
+    <cbc:MultiplierFactorNumeric>115517</cbc:MultiplierFactorNumeric> <!-- The BaseAmount and the MultiplierFactor have been switched. Not a core element -->
+    <cbc:Amount currencyID="NOK">1687.00</cbc:Amount>
+    <cbc:BaseAmount currencyID="NOK">0.0146</cbc:BaseAmount> <!-- see comment on MultiplierFactorNumberic. Not a core element-->
+    <cac:TaxCategory>
+      <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
+      <cbc:Percent>0.0000</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="NOK">109088.53</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="NOK">1687.47</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
+        <cbc:Percent>0.0000</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="NOK">981894.5</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="NOK">109088.53</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">A</cbc:ID>
+        <cbc:Percent>11.11</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="NOK">981894.97</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="NOK">983581.97</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="NOK">1092670.50</cbc:TaxInclusiveAmount>
+    <cbc:ChargeTotalAmount currencyID="NOK">1687.00</cbc:ChargeTotalAmount> <!-- Compared with the tax infor there is a rounding issue in here. Should be 1687,47 -->	
+    <cbc:PayableAmount currencyID="NOK">1092670.50</cbc:PayableAmount> <!-- check on rounding issue -->
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID schemeID="ADD">1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="C62">115517</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="NOK">981894.5</cbc:LineExtensionAmount>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="NOK">109088.53</cbc:TaxAmount>
+      <cac:TaxSubtotal> <!-- This information is redundant on the line level. VAT categorization is given on the item -->
+        <cbc:TaxableAmount currencyID="NOK">981894.5</cbc:TaxableAmount>
+        <cbc:TaxAmount currencyID="NOK">109088.53</cbc:TaxAmount>
+        <cac:TaxCategory>
+          <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">A</cbc:ID>
+          <cbc:Percent>11.11</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:TaxCategory>
+      </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item>
+      <cbc:Name>Avtalt Pris</cbc:Name> <!-- Is this the product name? It sounds like a Price...AllownaceChargeReasonText -->
+      <cac:SellersItemIdentification>
+        <cbc:ID>AVTALT PRIS</cbc:ID> <!-- Is this the product name? It sounds like a ..AllownaceChargeReasonText -->
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">A</cbc:ID>
+        <cbc:Percent>11.11</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>MVA</cbc:Name>
+        <cbc:Value> </cbc:Value> <!-- value missing -->
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Fiskeslag</cbc:Name>
+        <cbc:Value>Makrell</cbc:Value> <!-- Is this the item name maybe? -->
+        <cac:ItemPropertyGroup>
+          <cbc:ID schemeID="NS9400">2013</cbc:ID> <!-- non core element but seems to have special relevance here -->
+        </cac:ItemPropertyGroup>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>MSC Sertifikatnr.</cbc:Name>
+        <cbc:Value>Certificate NO. DNV-NOR-MSC-F-61407-2009</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Sortiment</cbc:Name>
+        <cbc:Value>Gr.7: 450-474 gr</cbc:Value>
+        <cac:ItemPropertyGroup>
+          <cbc:ID schemeID="NS9400">7450474</cbc:ID> <!-- non core element but seems to have special relevance here -->
+        </cac:ItemPropertyGroup>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Anvendelse</cbc:Name>
+        <cbc:Value>Frysing</cbc:Value>
+        <cac:ItemPropertyGroup>
+          <cbc:ID schemeID="NS9400">211</cbc:ID>
+        </cac:ItemPropertyGroup>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Snitt kv.</cbc:Name>
+        <cbc:Value>460</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Tillegg/Fradrag</cbc:Name>
+        <cbc:Value>www </cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="NOK">8.50</cbc:PriceAmount>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID schemeID="ORD">2</cbc:ID> <!-- See comment on line 1. DONT MISS comments on line 5 -->
+    <cbc:InvoicedQuantity unitCode="C62">980</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="NOK">0.00</cbc:LineExtensionAmount>
+    <cac:TaxTotal> 
+      <cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
+      <cac:TaxSubtotal> 
+        <cbc:TaxableAmount currencyID="NOK">0.00</cbc:TaxableAmount>
+        <cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
+        <cac:TaxCategory>
+          <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">A</cbc:ID>
+          <cbc:Percent>11.11</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:TaxCategory>
+      </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item>
+      <cbc:Name>Avtalt Pris</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>AVTALT PRIS</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">A</cbc:ID>
+        <cbc:Percent>11.11</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>MVA</cbc:Name>
+        <cbc:Value> </cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Fiskeslag</cbc:Name>
+        <cbc:Value>Sei</cbc:Value>
+        <cac:ItemPropertyGroup>
+          <cbc:ID schemeID="NS9400">1032</cbc:ID>
+        </cac:ItemPropertyGroup>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>MSC Sertifikatnr.</cbc:Name>
+        <cbc:Value> </cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Sortiment</cbc:Name>
+        <cbc:Value>Uspesifisert</cbc:Value>
+        <cac:ItemPropertyGroup>
+          <cbc:ID schemeID="NS9400">3000000</cbc:ID>
+        </cac:ItemPropertyGroup>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Anvendelse</cbc:Name>
+        <cbc:Value>Utkast v/kons.lev.</cbc:Value>
+        <cac:ItemPropertyGroup>
+          <cbc:ID schemeID="NS9400">110</cbc:ID>
+        </cac:ItemPropertyGroup>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Snitt kv.</cbc:Name>
+        <cbc:Value>2.000</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Tillegg/Fradrag</cbc:Name>
+        <cbc:Value> </cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="NOK">0.00</cbc:PriceAmount>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID schemeID="ORD">3</cbc:ID> <!-- See comment on line 1. DONT MISS comments on line 5 -->
+    <cbc:InvoicedQuantity unitCode="C62">1718</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="NOK">0.00</cbc:LineExtensionAmount>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+        <cbc:TaxableAmount currencyID="NOK">0.00</cbc:TaxableAmount>
+        <cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
+        <cac:TaxCategory>
+          <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">A</cbc:ID>
+          <cbc:Percent>11.11</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:TaxCategory>
+      </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item>
+      <cbc:Name>Avtalt Pris</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>AVTALT PRIS</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">A</cbc:ID>
+        <cbc:Percent>11.11</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>MVA</cbc:Name>
+        <cbc:Value> </cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Fiskeslag</cbc:Name>
+        <cbc:Value>Nordsjøsild</cbc:Value>
+        <cac:ItemPropertyGroup>
+          <cbc:ID schemeID="NS9400">061104</cbc:ID>
+        </cac:ItemPropertyGroup>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>MSC Sertifikatnr.</cbc:Name>
+        <cbc:Value>Certificate NO. DNV-NOR-MSC-F-61406-2009</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Sortiment</cbc:Name>
+        <cbc:Value>Uspesifisert</cbc:Value>
+        <cac:ItemPropertyGroup>
+          <cbc:ID schemeID="NS9400">3000000</cbc:ID>
+        </cac:ItemPropertyGroup>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Anvendelse</cbc:Name>
+        <cbc:Value>Utkast v/kons.lev.</cbc:Value>
+        <cac:ItemPropertyGroup>
+          <cbc:ID schemeID="NS9400">110</cbc:ID>
+        </cac:ItemPropertyGroup>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Snitt kv.</cbc:Name>
+        <cbc:Value>100</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Tillegg/Fradrag</cbc:Name>
+        <cbc:Value> </cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="NOK">0.00</cbc:PriceAmount>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID schemeID="ADD">4</cbc:ID> <!-- See comment on line 1. DONT MISS comments on line 5 -->
+    <cbc:InvoicedQuantity unitCode="C62">2217</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="NOK">0.00</cbc:LineExtensionAmount>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+        <cbc:TaxableAmount currencyID="NOK">0.00</cbc:TaxableAmount>
+        <cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
+        <cac:TaxCategory>
+          <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">A</cbc:ID>
+          <cbc:Percent>11.11</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:TaxCategory>
+      </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item>
+      <cbc:Name>Avtalt Pris</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>AVTALT PRIS</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">A</cbc:ID>
+        <cbc:Percent>11.11</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>MVA</cbc:Name>
+        <cbc:Value> </cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Fiskeslag</cbc:Name>
+        <cbc:Value>Nordsjøsild</cbc:Value>
+        <cac:ItemPropertyGroup>
+          <cbc:ID schemeID="NS9400">061104</cbc:ID>
+        </cac:ItemPropertyGroup>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>MSC Sertifikatnr.</cbc:Name>
+        <cbc:Value>Certificate NO. DNV-NOR-MSC-F-61406-2009</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Sortiment</cbc:Name>
+        <cbc:Value>Uspesifisert</cbc:Value>
+        <cac:ItemPropertyGroup>
+          <cbc:ID schemeID="NS9400">3000000</cbc:ID>
+        </cac:ItemPropertyGroup>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Anvendelse</cbc:Name>
+        <cbc:Value>Utkast v/kons.lev.</cbc:Value>
+        <cac:ItemPropertyGroup>
+          <cbc:ID schemeID="NS9400">110</cbc:ID>
+        </cac:ItemPropertyGroup>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Snitt kv.</cbc:Name>
+        <cbc:Value>0</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Tillegg/Fradrag</cbc:Name>
+        <cbc:Value> </cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="NOK">0.00</cbc:PriceAmount>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID schemeID="ORD">5</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="C62">1</cbc:InvoicedQuantity> <!-- This is not the right place for the rounding. The PaymentRoundingAmount element should be used. Additionally there is a problem with the fact that this is a rounding on the document level AllowanceCharge amount and added to that amount but not accounted for in the Sum LineExtentionAmoun -->
+    <cbc:LineExtensionAmount currencyID="NOK">0.47</cbc:LineExtensionAmount> <!-- The rounding effect is negative in the summation at document level but here the value is a positive number -->
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+        <cbc:TaxableAmount currencyID="NOK">0.47</cbc:TaxableAmount>
+        <cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
+        <cac:TaxCategory>
+          <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
+          <cbc:Percent>0.0000</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+          </cac:TaxScheme>
+        </cac:TaxCategory>
+      </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item>
+      <cbc:Name>Øreavrunding/Invoice rounding</cbc:Name>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
+        <cbc:Percent>0.0000</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>MVA</cbc:Name>
+        <cbc:Value>*</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Fiskeslag</cbc:Name>
+        <cbc:Value> </cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>MSC Sertifikatnr.</cbc:Name>
+        <cbc:Value> </cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Sortiment</cbc:Name>
+        <cbc:Value> </cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Anvendelse</cbc:Name>
+        <cbc:Value> </cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Snitt kv.</cbc:Name>
+        <cbc:Value> </cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Tillegg/Fradrag</cbc:Name>
+        <cbc:Value>Øreavrunding/Invoice rounding</cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="NOK">0.47</cbc:PriceAmount>
+    </cac:Price>
+  </cac:InvoiceLine>
+</Invoice>

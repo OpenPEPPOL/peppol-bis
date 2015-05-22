@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice xmlns:cnt="urn:oasis:names:specification:ubl:schema:xsd:CountryIdentificationCode-2"
+         xmlns:cur="urn:oasis:names:specification:ubl:schema:xsd:CurrencyCode-2"
+         xmlns:pty="urn:oasis:names:specification:ubl:schema:xsd:PaymentMeansCode-2"
+         xmlns:clm54217="urn:un:unece:uncefact:codelist:specification:54217:2001"
+         xmlns:clm66411="urn:un:unece:uncefact:codelist:specification:66411:2001"
+         xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+         xmlns:clmIANAMIMEMediaType="urn:un:unece:uncefact:codelist:specification:IANAMIMEMediaType:2003"
+         xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2"
+         xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+         xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 C:/Users/MARTIN~1/Documents/Projects/Peppol/Svefaktura-BIICoreInvoice/BIICoreInvoiceXSD/ProfileSchema/UBL-Invoice-2.0.xsd">
+   <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
+   <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdm010:ver1.0</cbc:CustomizationID>
+   <cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver1.0</cbc:ProfileID>
+   <cbc:ID>8220278</cbc:ID>
+   <cbc:IssueDate>2006-10-02</cbc:IssueDate>
+   <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+   <cbc:AccountingCost>7366554433220, MMO0000738132</cbc:AccountingCost>
+   <cac:InvoicePeriod>
+      <cbc:StartDate>2006-09-01</cbc:StartDate>
+      <cbc:EndDate>2006-09-30</cbc:EndDate>
+   </cac:InvoicePeriod>
+   <cac:ContractDocumentReference>
+      <cbc:ID>100206837</cbc:ID>
+   </cac:ContractDocumentReference>
+   <cac:AdditionalDocumentReference>
+      <cbc:ID>MMO194721</cbc:ID>
+      <cbc:DocumentType>Invoiced object</cbc:DocumentType>
+   </cac:AdditionalDocumentReference>
+   <cac:AccountingSupplierParty>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeAgencyID="9">7312345500001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:PartyName>
+            <cbc:Name>E-Försäljning Sverige AB</cbc:Name>
+         </cac:PartyName>
+         <cac:PostalAddress>
+            <cbc:Department>Företagskundservice</cbc:Department>
+            <cbc:CityName>Malmö</cbc:CityName>
+            <cbc:PostalZone>20123</cbc:PostalZone>
+         </cac:PostalAddress>
+         <cac:PartyTaxScheme>
+            <cbc:CompanyID>SE556677889901</cbc:CompanyID>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:PartyTaxScheme>
+         <cac:PartyLegalEntity>
+            <cbc:CompanyID schemeID="SE:ORGNR">5566778899</cbc:CompanyID>
+            <cac:RegistrationAddress>
+               <cbc:CityName>Malmö</cbc:CityName>
+               <cac:Country>
+                  <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:RegistrationAddress>
+         </cac:PartyLegalEntity>
+         <cac:Contact/>
+      </cac:Party>
+   </cac:AccountingSupplierParty>
+   <cac:AccountingCustomerParty>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID>1226125</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:PartyIdentification>
+            <cbc:ID schemeAgencyID="9">7366655500001</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:PartyName>
+            <cbc:Name>Fastighets AB</cbc:Name>
+            <cbc:Name>c/o HS Fastigheter AB</cbc:Name>
+         </cac:PartyName>
+         <cac:PostalAddress>
+            <cbc:CityName>Norrköping</cbc:CityName>
+            <cbc:PostalZone>12345</cbc:PostalZone>
+         </cac:PostalAddress>
+      </cac:Party>
+   </cac:AccountingCustomerParty>
+   <cac:Delivery>
+      <cac:DeliveryLocation>
+         <cac:Address>
+            <cbc:StreetName>Stiggatan 11</cbc:StreetName>
+            <cbc:CityName>Malmö</cbc:CityName>
+         </cac:Address>
+      </cac:DeliveryLocation>
+   </cac:Delivery>
+   <cac:PaymentMeans>
+      <cbc:PaymentMeansCode>1</cbc:PaymentMeansCode>
+      <cbc:PaymentDueDate>2006-11-05</cbc:PaymentDueDate>
+      <cbc:PaymentChannelCode>SE:BANKGIRO</cbc:PaymentChannelCode>
+      <cbc:PaymentID>8220278</cbc:PaymentID>
+      <cac:PayeeFinancialAccount>
+         <cbc:ID>12345678</cbc:ID>
+      </cac:PayeeFinancialAccount>
+   </cac:PaymentMeans>
+   <cac:PaymentMeans>
+      <cbc:PaymentMeansCode>1</cbc:PaymentMeansCode>
+      <cbc:PaymentDueDate>2006-11-05</cbc:PaymentDueDate>
+      <cbc:PaymentChannelCode>SE:PLUSGIRO</cbc:PaymentChannelCode>
+      <cbc:PaymentID>8220278</cbc:PaymentID>
+      <cac:PayeeFinancialAccount>
+         <cbc:ID>1234567</cbc:ID>
+      </cac:PayeeFinancialAccount>
+   </cac:PaymentMeans>
+   <cac:PaymentMeans>
+      <cbc:PaymentMeansCode>31</cbc:PaymentMeansCode>
+      <cbc:PaymentDueDate>2006-11-05</cbc:PaymentDueDate>
+      <cbc:PaymentID>8220278</cbc:PaymentID>
+      <cac:PayeeFinancialAccount>
+         <cbc:ID>SE9999000099887766554433</cbc:ID>
+         <cac:FinancialInstitutionBranch>
+            <cac:FinancialInstitution>
+               <cbc:ID>NDEASESS</cbc:ID>
+            </cac:FinancialInstitution>
+         </cac:FinancialInstitutionBranch>
+      </cac:PayeeFinancialAccount>
+   </cac:PaymentMeans>
+   <cac:PaymentTerms>
+      <cbc:Note>Vid försenad betalning tillkommer avgift enligt gällande avtalsvillkor.</cbc:Note>
+   </cac:PaymentTerms>
+   <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="SEK">19.17</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+         <cbc:TaxableAmount currencyID="SEK">76.66</cbc:TaxableAmount>
+         <cbc:TaxAmount currencyID="SEK">19.17</cbc:TaxAmount>
+         <cac:TaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>25</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:TaxCategory>
+      </cac:TaxSubtotal>
+      <cac:TaxSubtotal>
+         <cbc:TaxableAmount currencyID="SEK">50</cbc:TaxableAmount>
+         <cbc:TaxAmount currencyID="SEK">0</cbc:TaxAmount>
+         <cac:TaxCategory>
+            <cbc:ID>E</cbc:ID>
+            <cbc:Percent>0</cbc:Percent>
+            <cbc:TaxExemptionReason>ML är inte tillämplig</cbc:TaxExemptionReason>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:TaxCategory>
+      </cac:TaxSubtotal>
+   </cac:TaxTotal>
+   <cac:LegalMonetaryTotal>
+      <cbc:LineExtensionAmount currencyID="SEK">126.66</cbc:LineExtensionAmount>
+      <cbc:TaxExclusiveAmount currencyID="SEK">126.66</cbc:TaxExclusiveAmount>
+      <cbc:TaxInclusiveAmount currencyID="SEK">146</cbc:TaxInclusiveAmount>
+      <cbc:PayableRoundingAmount currencyID="SEK">0.17</cbc:PayableRoundingAmount>
+      <cbc:PayableAmount currencyID="SEK">146</cbc:PayableAmount>
+   </cac:LegalMonetaryTotal>
+   <cac:InvoiceLine>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Note>Invoiced Quantity Code:kWh&#xD;20060901-20060930
+		</cbc:Note>
+      <cbc:InvoicedQuantity unitCode="ZZ">144</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="SEK">35.28</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Description>El</cbc:Description>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>25</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="SEK">0.245</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Note>Invoiced Quantity Code:kWh&#xD;20060901-20060930
+		</cbc:Note>
+      <cbc:InvoicedQuantity unitCode="ZZ">144</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="SEK">37.58</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Description>Energiskatt</cbc:Description>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>25</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="SEK">0.261</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>3</cbc:ID>
+      <cbc:Note>Invoiced Quantity Code:kWh&#xD;20060901-20060930
+		</cbc:Note>
+      <cbc:InvoicedQuantity unitCode="ZZ">144</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="SEK">3.8</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Description>Elcertifikat</cbc:Description>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>S</cbc:ID>
+            <cbc:Percent>25</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="SEK">0.0264</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+   <cac:InvoiceLine>
+      <cbc:ID>4</cbc:ID>
+      <cbc:Note>Faktura 8220111
+		</cbc:Note>
+      <cbc:LineExtensionAmount currencyID="SEK">50</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Description>Påminnelseavgift</cbc:Description>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID>E</cbc:ID>
+            <cbc:Percent>0</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID>VAT</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount>0</cbc:PriceAmount>
+      </cac:Price>
+   </cac:InvoiceLine>
+</Invoice>

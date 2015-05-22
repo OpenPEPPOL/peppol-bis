@@ -1,0 +1,274 @@
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 UBL-Invoice-2.0.xsd">
+      <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
+      <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdm010:ver1.0</cbc:CustomizationID>
+      <cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver1.0</cbc:ProfileID>
+      <cbc:ID>32399748</cbc:ID>
+      <cbc:IssueDate>2010-06-17</cbc:IssueDate>
+      <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
+      <cbc:DocumentCurrencyCode>DKK</cbc:DocumentCurrencyCode>
+      <cac:OrderReference>
+        <cbc:ID>FAX 93</cbc:ID>
+      </cac:OrderReference>
+      <cac:AccountingSupplierParty>
+        <cac:Party>
+          <cbc:EndpointID>28106009</cbc:EndpointID>
+          <cac:PartyName>
+            <cbc:Name>JOHNSON &amp; JOHNSON DENMARK</cbc:Name>
+          </cac:PartyName>
+          <cac:PostalAddress>
+            <cbc:StreetName>BREGNERØDVEJ 133</cbc:StreetName>
+            <cbc:CityName>BIRKERØD</cbc:CityName>
+            <cbc:PostalZone>DK-3460</cbc:PostalZone>
+            <cac:Country>
+              <cbc:CountryIdentificationCode>DK</cbc:CountryIdentificationCode>
+            </cac:Country>
+          </cac:PostalAddress>
+          <cac:PartyLegalEntity>
+            <cbc:CompanyID>28106009</cbc:CompanyID>
+          </cac:PartyLegalEntity>
+        </cac:Party>
+      </cac:AccountingSupplierParty>
+      <cac:AccountingCustomerParty>
+          <cac:Party>
+          <cbc:EndpointID>003712433284</cbc:EndpointID>
+          <cac:PartyIdentification>
+            <cbc:ID>003712433284</cbc:ID>
+          </cac:PartyIdentification>
+          <cac:PartyName>
+            <cbc:Name>TEST CUSTOMER 1</cbc:Name>
+          </cac:PartyName>
+          <cac:PostalAddress>
+            <cbc:StreetName>TEST STREET 3</cbc:StreetName>
+            <cbc:AdditionalStreetName>TEST STREET 4</cbc:AdditionalStreetName>
+            <cbc:CityName>HELSINKI</cbc:CityName>
+            <cbc:PostalZone>FI-00500</cbc:PostalZone>
+            <cac:Country>
+              <cbc:CountryIdentificationCode>DK</cbc:CountryIdentificationCode>
+            </cac:Country>
+          </cac:PostalAddress>
+          <cac:PartyLegalEntity>
+            <cbc:CompanyID>12433284</cbc:CompanyID>
+          </cac:PartyLegalEntity>
+        </cac:Party>
+      </cac:AccountingCustomerParty>
+      <cac:PayeeParty>
+        <cac:Party>
+          <cac:PartyName>
+            <cbc:Name>JOHNSON &amp; JOHNSON DENMARK</cbc:Name>
+          </cac:PartyName>
+          <cac:PartyLegalEntity>
+            <cbc:CompanyID>28106009</cbc:CompanyID>
+          </cac:PartyLegalEntity>
+        </cac:Party>
+      </cac:PayeeParty>
+      <cac:Delivery>
+        <cac:DeliveryLocation>
+          <cac:Address>
+            <cbc:StreetName>TEST STREET 3</cbc:StreetName>
+            <cbc:AdditionalStreetName>TEST STREET 4</cbc:AdditionalStreetName>
+            <cbc:CityName>HELSINKI</cbc:CityName>
+            <cbc:PostalZone>FI-00500</cbc:PostalZone>
+            <cac:Country>
+              <cbc:CountryIdentificationCode>FI</cbc:CountryIdentificationCode>
+            </cac:Country>
+          </cac:Address>
+        </cac:DeliveryLocation>
+      </cac:Delivery>
+      <cac:PaymentMeans>
+        <cbc:PaymentMeansCode listID="UN/ECE 4461">31</cbc:PaymentMeansCode>
+        <cbc:PaymentDueDate>2010-07-17</cbc:PaymentDueDate>
+        <cbc:PaymentChannelCode>BBAN</cbc:PaymentChannelCode>
+        <cbc:PaymentID>0000003222</cbc:PaymentID>
+        <cac:PayeeFinancialAccount>
+          <cbc:ID>210320111111</cbc:ID>
+        </cac:PayeeFinancialAccount>
+      </cac:PaymentMeans>
+      <cac:TaxTotal>
+        <cbc:TaxAmount CurrencyID="DKK">4648.75</cbc:TaxAmount>
+        <cac:TaxSubtotal xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+          <cbc:TaxableAmount CurrencyID="DKK">18595</cbc:TaxableAmount>
+          <cbc:TaxAmount CurrencyID="DKK">4648.75</cbc:TaxAmount>
+          <cac:TaxCategory>
+            <cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
+            <cbc:Percent>25</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/ECE 5135">VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:TaxCategory>
+        </cac:TaxSubtotal>
+      </cac:TaxTotal>
+      <cac:LegalMonetaryTotal>
+        <cbc:LineExtensionAmount CurrencyID="DKK">18595</cbc:LineExtensionAmount>
+        <cbc:TaxExclusiveAmount CurrencyID="DKK">18595</cbc:TaxExclusiveAmount>
+        <cbc:TaxInclusiveAmount CurrencyID="DKK">23243.75</cbc:TaxInclusiveAmount>
+        <cbc:PayableAmount CurrencyID="DKK">23243.75</cbc:PayableAmount>
+      </cac:LegalMonetaryTotal>
+      <cac:InvoiceLine xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+        <cbc:ID>1</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="">1</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount CurrencyID="DKK">8595</cbc:LineExtensionAmount>
+        <cac:TaxTotal>
+          <cbc:TaxAmount CurrencyID="DKK">2148.75</cbc:TaxAmount>
+        </cac:TaxTotal>
+        <cac:Item>
+          <cbc:Name>TEST ITEM 5</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>55555</cbc:ID>
+          </cac:SellersItemIdentification>
+          <cac:ClassifiedTaxCategory>
+            <cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
+            <cbc:Percent>25</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+          <cbc:PriceAmount CurrencyID="DKK">8595</cbc:PriceAmount>
+        </cac:Price>
+      </cac:InvoiceLine>
+      <cac:InvoiceLine xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+        <cbc:ID>2</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="">2</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount CurrencyID="DKK">2000</cbc:LineExtensionAmount>
+        <cac:TaxTotal>
+          <cbc:TaxAmount CurrencyID="DKK">500</cbc:TaxAmount>
+        </cac:TaxTotal>
+        <cac:Item>
+          <cbc:Name>TEST ITEM 6</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>66660</cbc:ID>
+          </cac:SellersItemIdentification>
+          <cac:ClassifiedTaxCategory>
+            <cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
+            <cbc:Percent>25</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+          <cbc:PriceAmount CurrencyID="DKK">1000</cbc:PriceAmount>
+        </cac:Price>
+      </cac:InvoiceLine>
+      <cac:InvoiceLine xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+        <cbc:ID>3</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="">3</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount CurrencyID="DKK">3000</cbc:LineExtensionAmount>
+        <cac:TaxTotal>
+          <cbc:TaxAmount CurrencyID="DKK">750</cbc:TaxAmount>
+        </cac:TaxTotal>
+        <cac:Item>
+          <cbc:Name>TEST ITEM 5</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>555555</cbc:ID>
+          </cac:SellersItemIdentification>
+          <cac:ClassifiedTaxCategory>
+            <cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
+            <cbc:Percent>25</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+          <cbc:PriceAmount CurrencyID="DKK">1000</cbc:PriceAmount>
+        </cac:Price>
+      </cac:InvoiceLine>
+      <cac:InvoiceLine xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+        <cbc:ID>4</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="">1</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount CurrencyID="DKK">1000</cbc:LineExtensionAmount>
+        <cac:TaxTotal>
+          <cbc:TaxAmount CurrencyID="DKK">250</cbc:TaxAmount>
+        </cac:TaxTotal>
+        <cac:Item>
+          <cbc:Name>TEST ITEM 6</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>8666</cbc:ID>
+          </cac:SellersItemIdentification>
+          <cac:ClassifiedTaxCategory>
+            <cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
+            <cbc:Percent>25</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+          <cbc:PriceAmount CurrencyID="DKK">1000</cbc:PriceAmount>
+        </cac:Price>
+      </cac:InvoiceLine>
+      <cac:InvoiceLine xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+        <cbc:ID>5</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="">2</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount CurrencyID="DKK">2000</cbc:LineExtensionAmount>
+        <cac:TaxTotal>
+          <cbc:TaxAmount CurrencyID="DKK">500</cbc:TaxAmount>
+        </cac:TaxTotal>
+        <cac:Item>
+          <cbc:Name>TEST ITEM 7</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>87777</cbc:ID>
+          </cac:SellersItemIdentification>
+          <cac:ClassifiedTaxCategory>
+            <cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
+            <cbc:Percent>25</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+          <cbc:PriceAmount CurrencyID="DKK">1000</cbc:PriceAmount>
+        </cac:Price>
+      </cac:InvoiceLine>
+      <cac:InvoiceLine xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+        <cbc:ID>6</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="">1</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount CurrencyID="DKK">1000</cbc:LineExtensionAmount>
+        <cac:TaxTotal>
+          <cbc:TaxAmount CurrencyID="DKK">250</cbc:TaxAmount>
+        </cac:TaxTotal>
+        <cac:Item>
+          <cbc:Name>TEST ITEM 8</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>8888</cbc:ID>
+          </cac:SellersItemIdentification>
+          <cac:ClassifiedTaxCategory>
+            <cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
+            <cbc:Percent>25</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+          <cbc:PriceAmount CurrencyID="DKK">1000</cbc:PriceAmount>
+        </cac:Price>
+      </cac:InvoiceLine>
+      <cac:InvoiceLine xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+        <cbc:ID>7</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="">1</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount CurrencyID="DKK">1000</cbc:LineExtensionAmount>
+        <cac:TaxTotal>
+          <cbc:TaxAmount CurrencyID="DKK">250</cbc:TaxAmount>
+        </cac:TaxTotal>
+        <cac:Item>
+          <cbc:Name>TEST ITEM 9</cbc:Name>
+          <cac:SellersItemIdentification>
+            <cbc:ID>89999</cbc:ID>
+          </cac:SellersItemIdentification>
+          <cac:ClassifiedTaxCategory>
+            <cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
+            <cbc:Percent>25</cbc:Percent>
+            <cac:TaxScheme>
+              <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+            </cac:TaxScheme>
+          </cac:ClassifiedTaxCategory>
+        </cac:Item>
+        <cac:Price>
+          <cbc:PriceAmount CurrencyID="DKK">1000</cbc:PriceAmount>
+        </cac:Price>
+      </cac:InvoiceLine>
+    </Invoice>

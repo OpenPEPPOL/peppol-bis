@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="reikningurEN.xsl"?>
+<!-- 
+    Document Descripition:     Italian Invoice - XML instance example 
+    Generated On:              September 2010                              
+    Scope:                     Example created by Intercent-ER for Peppol WP5
+-->
+
+<in:Invoice xmlns:in="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+    xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+    xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+    xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2"
+    xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 http://docs.oasis-open.org/ubl/os-UBL-2.0/xsd/maindoc/UBL-Invoice-2.0.xsd">
+    <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
+    <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdm010:ver1.0</cbc:CustomizationID>
+    <cbc:ProfileID>urn:www.cenbii.eu:profile:profile04:ver1.0</cbc:ProfileID>
+    <cbc:ID>30/2009</cbc:ID>
+    <cbc:IssueDate>2009-12-23</cbc:IssueDate>
+    <cbc:InvoiceTypeCode listID="UN/ECE 1001" listAgencyID="6">380</cbc:InvoiceTypeCode>
+    <cbc:Note>Italian invoice example</cbc:Note>
+    <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha" listAgencyID="5">EUR</cbc:DocumentCurrencyCode>
+    <cac:ContractDocumentReference>
+        <cbc:ID>364</cbc:ID>
+        <cbc:IssueDate>2009-05-07</cbc:IssueDate>
+    </cac:ContractDocumentReference>
+     <cac:AccountingSupplierParty>
+        <cac:Party>
+            <cac:PartyName>
+                <cbc:Name>G P S C srl Government Procurement Services Consulting</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:StreetName>Via Alessandro Torlonia</cbc:StreetName>
+                <cbc:BuildingNumber>39</cbc:BuildingNumber>
+                <cbc:CityName>Roma</cbc:CityName>
+                <cbc:PostalZone>00161</cbc:PostalZone>
+                <cbc:CountrySubentity>Roma</cbc:CountrySubentity>
+                <cac:Country>
+                    <cbc:IdentificationCode listID="ISO3166-1" listAgencyID="5">IT</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:PartyTaxScheme>
+                <cbc:CompanyID schemeID="IT:VAT"
+                    schemeURI="urn:oasis:names:tc:ebcore:partyid-type:unregistered:bii:it:vat">IT07305421005</cbc:CompanyID>
+                <cac:TaxScheme>
+                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:PartyTaxScheme>
+            <cac:PartyTaxScheme>
+                <cbc:CompanyID schemeID="IT:CF"
+                    schemeURI="urn:oasis:names:tc:ebcore:partyid-type:unregistered:bii:it:cf">IT07305421005</cbc:CompanyID>
+                 <cac:TaxScheme>
+                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:PartyTaxScheme>
+            <cac:PartyLegalEntity>
+                <cbc:CompanyID>1024333</cbc:CompanyID>
+                <cac:CorporateRegistrationScheme>
+                    <cbc:CorporateRegistrationTypeCode>REA</cbc:CorporateRegistrationTypeCode>
+                    <cac:JurisdictionRegionAddress>
+                        <cbc:CountrySubentity>Roma</cbc:CountrySubentity>
+                    </cac:JurisdictionRegionAddress>
+                </cac:CorporateRegistrationScheme>
+            </cac:PartyLegalEntity>        
+        </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+        <cac:Party>
+            <cac:PartyName>
+                <cbc:Name>INTERCENT-ER Agenzia regionale di sviluppo dei mercati telematici</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:StreetName>Via Aldo Moro</cbc:StreetName>
+                <cbc:BuildingNumber>38</cbc:BuildingNumber>
+                <cbc:CityName>Bologna</cbc:CityName>
+                <cbc:PostalZone>40127</cbc:PostalZone>
+                <cbc:CountrySubentity>Bologna</cbc:CountrySubentity>
+                <cac:Country>
+                    <cbc:IdentificationCode listID="ISO3166-1" listAgencyID="5">IT</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:PartyTaxScheme>
+                <cbc:CompanyID schemeID="IT:VAT"
+                    schemeURI="urn:oasis:names:tc:ebcore:partyid-type:unregistered:bii:it:vat">91252510374</cbc:CompanyID>
+                <cac:TaxScheme>
+                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:PartyTaxScheme>
+            <cac:PartyTaxScheme>
+                <cbc:CompanyID schemeID="IT:CF"
+                    schemeURI="urn:oasis:names:tc:ebcore:partyid-type:unregistered:bii:it:cf">91252510374</cbc:CompanyID>
+                <cac:TaxScheme>
+                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:PartyTaxScheme>
+        </cac:Party>
+    </cac:AccountingCustomerParty>
+    <cac:PaymentMeans>
+        <cbc:PaymentMeansCode listID="UN/ECE 4461" listAgencyID="6">30</cbc:PaymentMeansCode>
+        <cbc:PaymentDueDate>2010-02-22</cbc:PaymentDueDate>
+    </cac:PaymentMeans>
+      <cac:PaymentTerms>
+        <cbc:Note>Payment at 60 days from invoice date</cbc:Note>
+    </cac:PaymentTerms>       
+    <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="EUR">200</cbc:TaxAmount>
+        <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="EUR">1000</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="EUR">200</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">S</cbc:ID>
+                <cbc:Percent>20</cbc:Percent>
+                <cac:TaxScheme >
+                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>        
+    </cac:TaxTotal>
+    <cac:LegalMonetaryTotal>
+        <cbc:LineExtensionAmount currencyID="EUR">1000</cbc:LineExtensionAmount>
+        <cbc:TaxExclusiveAmount currencyID="EUR">1000</cbc:TaxExclusiveAmount>
+        <cbc:TaxInclusiveAmount currencyID="EUR">1200</cbc:TaxInclusiveAmount>
+        <cbc:PayableAmount currencyID="EUR">1200</cbc:PayableAmount>
+    </cac:LegalMonetaryTotal>
+    <cac:InvoiceLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:InvoicedQuantity unitCode="C62">1</cbc:InvoicedQuantity>
+        <cbc:LineExtensionAmount currencyID="EUR">1000</cbc:LineExtensionAmount>
+        <cac:Delivery>
+            <cac:RequestedDeliveryPeriod>
+                <cbc:StartDate>2009-11-05</cbc:StartDate>
+                <cbc:EndDate>2009-11-05</cbc:EndDate>
+            </cac:RequestedDeliveryPeriod>
+        </cac:Delivery>
+        <cac:TaxTotal>
+            <cbc:TaxAmount currencyID="EUR">200</cbc:TaxAmount>
+        </cac:TaxTotal>
+        <cac:Item>
+            <cbc:Description>Terza tranche</cbc:Description>
+            <cbc:Name>Studio di fattibilità</cbc:Name>
+        </cac:Item>
+        <cac:Price>
+            <cbc:PriceAmount currencyID="EUR">1000</cbc:PriceAmount>
+        </cac:Price>
+    </cac:InvoiceLine>
+</in:Invoice>
