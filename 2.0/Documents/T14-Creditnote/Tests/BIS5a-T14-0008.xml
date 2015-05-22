@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!--
+                Description:
+                This file contains a PEPPOL CreditNote BIS5a. The intention of the test is to check that a full spec CreditNote is valid and can pass.
+
+                Error:
+				None
+		
+				Warning: 
+				None
+
+-->
+
+
+<CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2"
+
+ xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+
+ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+
+ xmlns:ccts="urn:un:unece:uncefact:documentation:2"
+
+ xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2"
+
+ xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2">
+
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+
+	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns014:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</cbc:CustomizationID>
+
+	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii05:ver2.0</cbc:ProfileID>
+
+	<cbc:ID>998877</cbc:ID>
+
+	<cbc:IssueDate>2013-05-31</cbc:IssueDate>
+
+	<cbc:TaxPointDate>2013-05-31</cbc:TaxPointDate>
+	<cbc:Note>PEPPOL BIS 5a (C/N): The "MAX DATA" test case. Test of certain special characters: ÅåÄäÖöØøÆæéü</cbc:Note>
+
+	<cbc:DocumentCurrencyCode listID="ISO4217">SEK</cbc:DocumentCurrencyCode>
+	<cbc:TaxCurrencyCode listID="ISO4217">EUR</cbc:TaxCurrencyCode>
+
+	<cbc:AccountingCost>Project-123</cbc:AccountingCost>
+
+	<cac:InvoicePeriod>
+
+		<cbc:StartDate>2013-05-01</cbc:StartDate>
+
+		<cbc:EndDate>2013-05-31</cbc:EndDate>
+
+	</cac:InvoicePeriod>
+
+	<cac:OrderReference>
+		<cbc:ID>123456</cbc:ID>
+
+	</cac:OrderReference>
+
+
+	<cac:BillingReference>
+		<cac:CreditNoteDocumentReference>
+			<cbc:ID>654321</cbc:ID>
+
+			<cbc:IssueDate>2013-05-31</cbc:IssueDate>
+
+		</cac:CreditNoteDocumentReference>
+	</cac:BillingReference>
+
+	<cac:BillingReference>
+		<cac:CreditNoteDocumentReference>
+			<cbc:ID>456789</cbc:ID>
+
+			<cbc:IssueDate>2013-05-31</cbc:IssueDate>
+
+		</cac:CreditNoteDocumentReference>
+	</cac:BillingReference>
+
+	<cac:BillingReference>
+		<cac:InvoiceDocumentReference>
+			<cbc:ID>123456</cbc:ID>
+
+			<cbc:IssueDate>2013-05-30</cbc:IssueDate>
+
+		</cac:InvoiceDocumentReference>
+	</cac:BillingReference>
+
+
+
+	<cac:ContractDocumentReference>
+
+		<cbc:ID>2013/123</cbc:ID>
+
+		<cbc:DocumentTypeCode listID="UNCL1001">991</cbc:DocumentTypeCode>
+
+		<cbc:DocumentType>Government contract</cbc:DocumentType>
+
+	</cac:ContractDocumentReference>
+
+	<cac:AdditionalDocumentReference>
+
+		<cbc:ID>Attachment1</cbc:ID>
+
+		<cbc:DocumentType>Timesheet</cbc:DocumentType>
+
+		<cac:Attachment>
+
+			<cac:ExternalReference>
+
+				<cbc:URI>http://www.suppliersite.eu/sheet001.html</cbc:URI>
+
+			</cac:ExternalReference>
+
+		</cac:Attachment>
+
+	</cac:AdditionalDocumentReference>
+
+	<cac:AdditionalDocumentReference>
+
+		<cbc:ID>Attachment2</cbc:ID>
+
+		<cbc:DocumentType>EHF specification</cbc:DocumentType>
+
+		<cac:Attachment>
+
+			<cbc:EmbeddedDocumentBinaryObject format="BASE64" mimeCode="text/plain" filename="testfile1.txt">KioqIFBsYWNlLWhvbGRlciBmb3IgYW4gYXR0YWNobWVudCBlbWJlZGRlZCBpbiBhIFBFUFBPTCBC
+SVMgZG9jdW1lbnQgKioq</cbc:EmbeddedDocumentBinaryObject>
+
+		</cac:Attachment>
+
+
+	</cac:AdditionalDocumentReference>
+
+	<cac:AccountingSupplierParty>
+
+		<cac:Party>
+
+			<cbc:EndpointID schemeID="SE:ORGNR">5566778899</cbc:EndpointID>
+
+			<cac:PartyIdentification>
+
+				<cbc:ID schemeID="GLN">7312345678909</cbc:ID>
+
+			</cac:PartyIdentification>
+
+			<cac:PartyName>
+
+				<cbc:Name>Accomodation &amp; Supplies</cbc:Name>
+
+			</cac:PartyName>
+
+			<cac:PostalAddress>
+
+				<cbc:StreetName>Stora gatan 34</cbc:StreetName>
+
+				<cbc:AdditionalStreetName>P.O. Box 123</cbc:AdditionalStreetName>
+
+				<cbc:CityName>Stockholm</cbc:CityName>
+
+				<cbc:PostalZone>12345</cbc:PostalZone>
+
+				<cbc:CountrySubentity>RegionAB</cbc:CountrySubentity>
+
+				<cac:Country>
+
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">SE</cbc:IdentificationCode>
+
+				</cac:Country>
+
+			</cac:PostalAddress>
+
+			<cac:PartyTaxScheme>
+
+				<cbc:CompanyID schemeID="SE:VAT">SE556677889901</cbc:CompanyID>
+
+				<cbc:ExemptionReason>Registered for VAT since 1998</cbc:ExemptionReason>
+				<cac:TaxScheme>
+
+					<cbc:ID>VAT</cbc:ID>
+
+				</cac:TaxScheme>
+
+			</cac:PartyTaxScheme>
+
+			<cac:PartyLegalEntity>
+
+				<cbc:RegistrationName>Accomodation and Supplies Sweden AB</cbc:RegistrationName>
+
+				<cbc:CompanyID schemeID="SE:ORGNR">5566778899</cbc:CompanyID>
+
+				<cac:RegistrationAddress>
+
+					<cbc:CityName>Stockholm</cbc:CityName>
+
+					<cac:Country>
+
+						<cbc:IdentificationCode listID="ISO3166-1:Alpha2">SE</cbc:IdentificationCode>
+
+					</cac:Country>
+
+				</cac:RegistrationAddress>
+
+			</cac:PartyLegalEntity>
+
+			<cac:Contact>
+
+				<cbc:ID>"A/c receivable X"</cbc:ID>
+
+				<cbc:Name>Per Sellman</cbc:Name>
+
+				<cbc:Telephone>+4681234567</cbc:Telephone>
+
+				<cbc:Telefax>+4681234599</cbc:Telefax>
+
+				<cbc:ElectronicMail>sellman@accommodationsupplies.se</cbc:ElectronicMail>
+
+			</cac:Contact>
+
+		</cac:Party>
+
+	</cac:AccountingSupplierParty>
+
+	<cac:AccountingCustomerParty>
+
+		<cac:Party>
+
+			<cbc:EndpointID schemeID="SE:ORGNR">9876543210</cbc:EndpointID>
+
+			<cac:PartyIdentification>
+
+				<cbc:ID schemeID="GLN">7399887766677</cbc:ID>
+
+			</cac:PartyIdentification>
+
+			<cac:PartyName>
+
+				<cbc:Name>Inköpsnavet i Väst</cbc:Name>
+
+			</cac:PartyName>
+
+			<cac:PostalAddress>
+
+				<cbc:StreetName>Avenyn 789</cbc:StreetName>
+
+				<cbc:AdditionalStreetName>Annexet</cbc:AdditionalStreetName>
+
+				<cbc:CityName>Göteborg</cbc:CityName>
+
+				<cbc:PostalZone>40123</cbc:PostalZone>
+
+				<cbc:CountrySubentity>Västra Götalandregionen</cbc:CountrySubentity>
+
+				<cac:Country>
+
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">SE</cbc:IdentificationCode>
+
+				</cac:Country>
+
+			</cac:PostalAddress>
+
+			<cac:PartyTaxScheme>
+
+				<cbc:CompanyID schemeID="SE:VAT">SE987654321001</cbc:CompanyID>
+
+				<cac:TaxScheme>
+
+					<cbc:ID>VAT</cbc:ID>
+
+				</cac:TaxScheme>
+
+			</cac:PartyTaxScheme>
+
+			<cac:PartyLegalEntity>
+
+				<cbc:RegistrationName>Inköpsnavet Väst AB</cbc:RegistrationName>
+
+				<cbc:CompanyID schemeID="SE:ORGNR">9876543210</cbc:CompanyID>
+
+			</cac:PartyLegalEntity>
+
+			<cac:Contact>
+
+				<cbc:ID>"A/c payable Y"</cbc:ID>
+
+				<cbc:Name>John Stocker</cbc:Name>
+
+				<cbc:Telephone>031123123</cbc:Telephone>
+
+				<cbc:Telefax>031123321</cbc:Telefax>
+
+				<cbc:ElectronicMail>john@navet.se</cbc:ElectronicMail>
+
+			</cac:Contact>
+
+		</cac:Party>
+
+	</cac:AccountingCustomerParty>
+
+	<cac:PayeeParty>
+
+		<cac:PartyIdentification>
+
+			<cbc:ID schemeID="GLN">7311223344554</cbc:ID>
+
+		</cac:PartyIdentification>
+
+		<cac:PartyName>
+
+			<cbc:Name>A and S Finacial Services AB</cbc:Name>
+
+		</cac:PartyName>
+
+		<cac:PartyLegalEntity>
+
+			<cbc:CompanyID schemeID="SE:ORGNR">5566771233</cbc:CompanyID>
+
+		</cac:PartyLegalEntity>
+
+	</cac:PayeeParty>
+
+	<cac:TaxRepresentativeParty>
+
+		<cac:PartyName>
+
+			<cbc:Name>"NotYetOperationalInSE"</cbc:Name>
+
+		</cac:PartyName>
+
+		<cac:PartyTaxScheme>
+
+			<cbc:CompanyID schemeID="SE:VAT">SE998899889901</cbc:CompanyID>
+
+			<cac:TaxScheme>
+
+				<cbc:ID>VAT</cbc:ID>
+
+			</cac:TaxScheme>
+
+		</cac:PartyTaxScheme>
+
+	</cac:TaxRepresentativeParty>
+
+	<cac:Delivery>
+
+		<cbc:ActualDeliveryDate>2013-05-31</cbc:ActualDeliveryDate>
+
+		<cac:DeliveryLocation>
+
+			<cbc:ID schemeID="GLN">7399887766660</cbc:ID>
+
+			<cac:Address>
+
+				<cbc:StreetName>Raka Spåret 1</cbc:StreetName>
+
+				<cbc:AdditionalStreetName>Varumottagningen</cbc:AdditionalStreetName>
+
+				<cbc:CityName>Göteborg</cbc:CityName>
+
+				<cbc:PostalZone>40102</cbc:PostalZone>
+
+				<cbc:CountrySubentity>Västra Götalandregionen</cbc:CountrySubentity>
+
+				<cac:Country>
+
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">SE</cbc:IdentificationCode>
+
+				</cac:Country>
+
+			</cac:Address>
+
+		</cac:DeliveryLocation>
+
+	</cac:Delivery>
+
+	<cac:PaymentMeans>
+
+		<cbc:PaymentMeansCode listID="UNCL4461">1</cbc:PaymentMeansCode>
+
+		<cbc:PaymentDueDate>2013-06-20</cbc:PaymentDueDate>
+
+		<cbc:PaymentID>ComplexCasePaymRef-123</cbc:PaymentID>
+
+		<cac:PayeeFinancialAccount>
+
+			<cbc:ID schemeID="LOCAL">111222333</cbc:ID>
+
+			<cac:FinancialInstitutionBranch>
+
+				<cbc:ID>9710</cbc:ID>
+
+				<cac:FinancialInstitution>
+
+					<cbc:ID schemeID="BIC">BANKBICA</cbc:ID>
+
+					<cbc:Name>F.I.-name</cbc:Name>
+
+					<cac:Address>
+
+						<cbc:StreetName>F.I.-street 12a</cbc:StreetName>
+
+						<cbc:AdditionalStreetName>F.I.-postbox</cbc:AdditionalStreetName>
+
+						<cbc:CityName>F.I.-city</cbc:CityName>
+
+						<cbc:PostalZone>523427</cbc:PostalZone>
+
+						<cbc:CountrySubentity>F.I. state</cbc:CountrySubentity>
+
+						<cac:Country>
+
+							<cbc:IdentificationCode listID="ISO3166-1:Alpha2">US</cbc:IdentificationCode>
+
+						</cac:Country>
+
+					</cac:Address>
+
+				</cac:FinancialInstitution>
+
+			</cac:FinancialInstitutionBranch>
+
+		</cac:PayeeFinancialAccount>
+
+	</cac:PaymentMeans>
+
+	<cac:PaymentMeans>
+
+		<cbc:PaymentMeansCode listID="UNCL4461">31</cbc:PaymentMeansCode>
+
+		<cbc:PaymentDueDate>2013-06-20</cbc:PaymentDueDate>
+
+		<cbc:PaymentChannelCode>SE:Bankgiro</cbc:PaymentChannelCode>
+
+		<cbc:PaymentID>SwedishBgPaymRef-234</cbc:PaymentID>
+
+		<cac:PayeeFinancialAccount>
+
+			<cbc:ID schemeID="LOCAL">1234567</cbc:ID>
+
+		</cac:PayeeFinancialAccount>
+
+	</cac:PaymentMeans>
+
+	<cac:PaymentMeans>
+
+		<cbc:PaymentMeansCode listID="UNCL4461">31</cbc:PaymentMeansCode>
+
+		<cbc:PaymentDueDate>2013-06-20</cbc:PaymentDueDate>
+
+		<cbc:PaymentChannelCode>SE:Plusgiro</cbc:PaymentChannelCode>
+
+		<cbc:PaymentID>SwedishPgPaymRef-345</cbc:PaymentID>
+
+		<cac:PayeeFinancialAccount>
+
+			<cbc:ID schemeID="LOCAL">98765432</cbc:ID>
+
+		</cac:PayeeFinancialAccount>
+
+	</cac:PaymentMeans>
+
+	<cac:PaymentMeans>
+
+		<cbc:PaymentMeansCode listID="UNCL4461">31</cbc:PaymentMeansCode>
+
+		<cbc:PaymentDueDate>2013-06-20</cbc:PaymentDueDate>
+
+		<cbc:PaymentChannelCode>BBAN</cbc:PaymentChannelCode>
+		<cbc:PaymentID>DomesticPaymRef-456</cbc:PaymentID>
+
+		<cac:PayeeFinancialAccount>
+
+			<cbc:ID schemeID="LOCAL">9386011117947</cbc:ID>
+
+			<cac:FinancialInstitutionBranch>
+
+				<cac:FinancialInstitution>
+
+					<cbc:ID schemeID="BIC">BANKBICB</cbc:ID>
+
+				</cac:FinancialInstitution>
+
+			</cac:FinancialInstitutionBranch>
+
+		</cac:PayeeFinancialAccount>
+
+	</cac:PaymentMeans>
+
+	<cac:PaymentMeans>
+
+		<cbc:PaymentMeansCode listID="UNCL4461">31</cbc:PaymentMeansCode>
+
+		<cbc:PaymentDueDate>2013-06-20</cbc:PaymentDueDate>
+
+		<cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
+		<cbc:PaymentID>SEPApaymRef-567</cbc:PaymentID>
+
+		<cac:PayeeFinancialAccount>
+
+			<cbc:ID schemeID="IBAN">NO9386011117947</cbc:ID>
+
+			<cac:FinancialInstitutionBranch>
+
+				<cac:FinancialInstitution>
+
+					<cbc:ID schemeID="BIC">BANKBICC</cbc:ID>
+
+				</cac:FinancialInstitution>
+
+			</cac:FinancialInstitutionBranch>
+
+		</cac:PayeeFinancialAccount>
+
+	</cac:PaymentMeans>
+
+	<cac:PaymentMeans>
+
+		<cbc:PaymentMeansCode listID="UNCL4461">48</cbc:PaymentMeansCode>
+
+		<cbc:PaymentDueDate>2013-05-31</cbc:PaymentDueDate>
+		<cbc:PaymentChannelCode>PaymentCard</cbc:PaymentChannelCode>
+
+		<cbc:PaymentID>CardPaymRef-678</cbc:PaymentID>
+
+		<cac:CardAccount>
+
+			<cbc:PrimaryAccountNumberID>**********123456</cbc:PrimaryAccountNumberID>
+			<cbc:NetworkID>TheDeepPocketCard</cbc:NetworkID>
+
+		</cac:CardAccount>
+
+	</cac:PaymentMeans>
+
+	<cac:PaymentMeans>
+
+		<cbc:PaymentMeansCode listID="UNCL4461">49</cbc:PaymentMeansCode>
+
+		<cbc:PaymentDueDate>2013-06-20</cbc:PaymentDueDate>
+
+		<cbc:PaymentChannelCode>SE:Autogiro</cbc:PaymentChannelCode>
+		<cbc:PaymentID>AutogiroPaymRef-678</cbc:PaymentID>
+
+		<cac:PayeeFinancialAccount>
+
+			<cbc:ID schemeID="LOCAL">222333444</cbc:ID>
+
+		</cac:PayeeFinancialAccount>
+
+	</cac:PaymentMeans>
+
+	<cac:PaymentMeans>
+
+		<cbc:PaymentMeansCode listID="UNCL4461">97</cbc:PaymentMeansCode>
+
+		<cbc:PaymentDueDate>2013-05-31</cbc:PaymentDueDate>
+		<cbc:PaymentChannelCode>ClientAccount</cbc:PaymentChannelCode>
+
+		<cbc:PaymentID>PartnerAccountPaymRef-789</cbc:PaymentID>
+
+	</cac:PaymentMeans>
+
+	<cac:PaymentTerms>
+
+		<cbc:Note>2 % discount if paid within 2 days</cbc:Note>
+
+	</cac:PaymentTerms>
+
+	<cac:PaymentTerms>
+
+		<cbc:Note>Penalty percentage 10% from due date</cbc:Note>
+
+	</cac:PaymentTerms>
+
+	<cac:TaxExchangeRate>
+		<cbc:SourceCurrencyCode listID="ISO4217">SEK</cbc:SourceCurrencyCode>
+
+		<cbc:TargetCurrencyCode listID="ISO4217">EUR</cbc:TargetCurrencyCode>
+
+		<cbc:CalculationRate>0.1150</cbc:CalculationRate>
+		<cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+
+		<cbc:Date>2013-05-31</cbc:Date>
+
+	</cac:TaxExchangeRate>
+
+	<cac:AllowanceCharge>
+
+		<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+
+		<cbc:AllowanceChargeReasonCode listID="UNCL4465">93</cbc:AllowanceChargeReasonCode>
+
+		<cbc:AllowanceChargeReason>Invoicing fee</cbc:AllowanceChargeReason>
+
+		<cbc:Amount currencyID="SEK">100</cbc:Amount>
+
+		<cac:TaxCategory>
+
+			<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+
+			<cbc:Percent>25</cbc:Percent>
+
+			<cac:TaxScheme>
+
+				<cbc:ID>VAT</cbc:ID>
+
+			</cac:TaxScheme>
+
+		</cac:TaxCategory>
+
+	</cac:AllowanceCharge>
+
+	
+	<cac:AllowanceCharge>
+
+		<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+
+		<cbc:AllowanceChargeReason>Transport cost</cbc:AllowanceChargeReason>
+
+		<cbc:Amount currencyID="SEK">100</cbc:Amount>
+
+		<cac:TaxCategory>
+
+			<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+
+			<cbc:Percent>12</cbc:Percent>
+
+			<cac:TaxScheme>
+
+				<cbc:ID>VAT</cbc:ID>
+
+			</cac:TaxScheme>
+
+		</cac:TaxCategory>
+
+	</cac:AllowanceCharge>
+
+	
+	<cac:AllowanceCharge>
+
+		<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+
+		<cbc:AllowanceChargeReasonCode listID="UNCL4465">72</cbc:AllowanceChargeReasonCode>
+
+		<cbc:AllowanceChargeReason>Special promotion</cbc:AllowanceChargeReason>
+
+		<cbc:Amount currencyID="SEK">10</cbc:Amount>
+
+		<cac:TaxCategory>
+
+			<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+
+			<cbc:Percent>25</cbc:Percent>
+
+			<cac:TaxScheme>
+
+				<cbc:ID>VAT</cbc:ID>
+
+			</cac:TaxScheme>
+
+		</cac:TaxCategory>
+
+	</cac:AllowanceCharge>
+
+
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="SEK">3926.8</cbc:TaxAmount>
+
+		<cac:TaxSubtotal>
+
+			<cbc:TaxableAmount currencyID="SEK">9540</cbc:TaxableAmount>
+
+			<cbc:TaxAmount currencyID="SEK">2385</cbc:TaxAmount>
+
+			<cbc:TransactionCurrencyTaxAmount currencyID="EUR">274.28</cbc:TransactionCurrencyTaxAmount>
+
+			<cac:TaxCategory>
+
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+
+				<cbc:Percent>25</cbc:Percent>
+
+				<cac:TaxScheme>
+
+					<cbc:ID>VAT</cbc:ID>
+
+				</cac:TaxScheme>
+
+			</cac:TaxCategory>
+
+		</cac:TaxSubtotal>
+
+		<cac:TaxSubtotal>
+
+			<cbc:TaxableAmount currencyID="SEK">12820</cbc:TaxableAmount>
+
+			<cbc:TaxAmount currencyID="SEK">1538.4</cbc:TaxAmount>
+
+			<cbc:TransactionCurrencyTaxAmount currencyID="EUR">176.92</cbc:TransactionCurrencyTaxAmount>
+
+			<cac:TaxCategory>
+
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+
+				<cbc:Percent>12</cbc:Percent>
+
+				<cac:TaxScheme>
+
+					<cbc:ID>VAT</cbc:ID>
+
+				</cac:TaxScheme>
+
+			</cac:TaxCategory>
+
+		</cac:TaxSubtotal>
+
+		<cac:TaxSubtotal>
+
+			<cbc:TaxableAmount currencyID="SEK">56.6</cbc:TaxableAmount>
+
+			<cbc:TaxAmount currencyID="SEK">3.40</cbc:TaxAmount>
+
+			<cbc:TransactionCurrencyTaxAmount currencyID="EUR">0.39</cbc:TransactionCurrencyTaxAmount>
+			<cac:TaxCategory>
+
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+
+				<cbc:Percent>6</cbc:Percent>
+
+				<cac:TaxScheme>
+
+					<cbc:ID>VAT</cbc:ID>
+
+				</cac:TaxScheme>
+
+			</cac:TaxCategory>
+
+		</cac:TaxSubtotal>
+
+		<cac:TaxSubtotal>
+
+			<cbc:TaxableAmount currencyID="SEK">150.9</cbc:TaxableAmount>
+
+			<cbc:TaxAmount currencyID="SEK">0</cbc:TaxAmount>
+
+			<cbc:TransactionCurrencyTaxAmount currencyID="EUR">0</cbc:TransactionCurrencyTaxAmount>
+			<cac:TaxCategory>
+
+				<cbc:ID schemeID="UNCL5305">E</cbc:ID>
+
+				<cbc:Percent>0</cbc:Percent>
+
+				<cbc:TaxExemptionReason>Outside scope of VAT law</cbc:TaxExemptionReason>
+
+				<cac:TaxScheme>
+
+					<cbc:ID>VAT</cbc:ID>
+
+				</cac:TaxScheme>
+
+			</cac:TaxCategory>
+
+		</cac:TaxSubtotal>
+
+	</cac:TaxTotal>
+
+	<cac:LegalMonetaryTotal>
+
+		<cbc:LineExtensionAmount currencyID="SEK">22377.5</cbc:LineExtensionAmount>
+
+		<cbc:TaxExclusiveAmount currencyID="SEK">22567.5</cbc:TaxExclusiveAmount>
+
+		<cbc:TaxInclusiveAmount currencyID="SEK">26494.3</cbc:TaxInclusiveAmount>
+
+		<cbc:AllowanceTotalAmount currencyID="SEK">10</cbc:AllowanceTotalAmount>
+
+		<cbc:ChargeTotalAmount currencyID="SEK">200</cbc:ChargeTotalAmount>
+
+		<cbc:PrepaidAmount currencyID="SEK">0</cbc:PrepaidAmount>
+
+		<cbc:PayableRoundingAmount currencyID="SEK">-0.3</cbc:PayableRoundingAmount>
+
+		<cbc:PayableAmount currencyID="SEK">26494</cbc:PayableAmount>
+
+	</cac:LegalMonetaryTotal>
+
+
+	<cac:CreditNoteLine>
+
+		<cbc:ID>10</cbc:ID>
+
+		<cbc:Note>Provided at dates and times as listed below</cbc:Note>
+
+		<cbc:CreditedQuantity unitCode="NAR" unitCodeListID="UNECERec20">30</cbc:CreditedQuantity>
+
+		<cbc:LineExtensionAmount currencyID="SEK">5550.00</cbc:LineExtensionAmount>
+
+		<cbc:AccountingCost>BookingCode001</cbc:AccountingCost>
+
+		<cac:InvoicePeriod>
+
+			<cbc:StartDate>2013-05-01</cbc:StartDate>
+
+			<cbc:EndDate>2013-05-31</cbc:EndDate>
+
+		</cac:InvoicePeriod>
+
+		<cac:OrderLineReference>
+
+			<cbc:LineID>1</cbc:LineID>
+
+		</cac:OrderLineReference>
+
+		<cac:BillingReference>
+			<cac:CreditNoteDocumentReference>
+				<cbc:ID>654321</cbc:ID>
+
+			</cac:CreditNoteDocumentReference>
+			<cac:BillingReferenceLine>
+				<cbc:ID>1</cbc:ID>
+
+			</cac:BillingReferenceLine>
+		</cac:BillingReference>
+		<cac:Delivery>
+
+			<cbc:ActualDeliveryDate>2013-05-22</cbc:ActualDeliveryDate>
+
+			<cac:DeliveryLocation>
+				<cbc:ID schemeID="GLN">579000436071</cbc:ID>
+
+				<cac:Address>
+
+					<cbc:StreetName>Raka Spåret 1</cbc:StreetName>
+
+					<cbc:AdditionalStreetName>Fikarummet</cbc:AdditionalStreetName>
+
+					<cbc:CityName>Göteborg</cbc:CityName>
+
+					<cbc:PostalZone>40102</cbc:PostalZone>
+
+					<cbc:CountrySubentity>VG-regionen</cbc:CountrySubentity>
+
+					<cac:Country>
+
+						<cbc:IdentificationCode listID="ISO3166-1:Alpha2">SE</cbc:IdentificationCode>
+
+					</cac:Country>
+
+				</cac:Address>
+
+			</cac:DeliveryLocation>
+
+		</cac:Delivery>
+
+
+		<cac:Delivery>
+
+			<cbc:ActualDeliveryDate>2013-05-22</cbc:ActualDeliveryDate>
+
+			<cac:DeliveryLocation>
+				<cbc:ID schemeID="GLN">579000436999</cbc:ID>
+
+			</cac:DeliveryLocation>
+
+		</cac:Delivery>
+
+		<cac:Delivery>
+
+			<cbc:ActualDeliveryDate>2013-05-23</cbc:ActualDeliveryDate>
+
+			<cac:DeliveryLocation>
+				<cbc:ID schemeID="GLN">579000436999</cbc:ID>
+
+			</cac:DeliveryLocation>
+
+		</cac:Delivery>
+
+		<cac:TaxTotal>
+
+			<cbc:TaxAmount currencyID="SEK">88.99</cbc:TaxAmount>
+
+		</cac:TaxTotal>
+
+		<cac:AllowanceCharge>
+
+			<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+
+			<cbc:AllowanceChargeReason>Quantity rebate</cbc:AllowanceChargeReason>
+
+			<cbc:Amount currencyID="SEK">300</cbc:Amount>
+
+		</cac:AllowanceCharge>
+
+		<cac:AllowanceCharge>
+
+			<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+
+			<cbc:AllowanceChargeReason>2nd floor, no elevator</cbc:AllowanceChargeReason>
+
+			<cbc:Amount currencyID="SEK">600</cbc:Amount>
+
+		</cac:AllowanceCharge>
+
+		<cac:Item>
+
+			<cbc:Description>Includes salad, hot meal, bread, soft drinks</cbc:Description>
+
+			<cbc:Name>Catering service - standard lunch</cbc:Name>
+
+			<cac:SellersItemIdentification>
+
+				<cbc:ID>LU001</cbc:ID>
+
+			</cac:SellersItemIdentification>
+
+			<cac:StandardItemIdentification>
+
+				<cbc:ID schemeID="IndustryStandardX">Service 3</cbc:ID>
+
+			</cac:StandardItemIdentification>
+
+			<cac:OriginCountry>
+
+				<cbc:IdentificationCode listID="ISO3166-1:Alpha2">SE</cbc:IdentificationCode>
+
+			</cac:OriginCountry>
+
+			<cac:CommodityClassification>
+
+				<cbc:CommodityCode listID="Buyer's">112233</cbc:CommodityCode>
+
+			</cac:CommodityClassification>
+
+			<cac:CommodityClassification>
+
+				<cbc:CommodityCode listID="UNSPSC">90111600</cbc:CommodityCode>
+
+				<cbc:ItemClassificationCode listID="CPV">55120000</cbc:ItemClassificationCode>
+
+			</cac:CommodityClassification>
+
+			<cac:ClassifiedTaxCategory>
+
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+
+				<cbc:Percent>12</cbc:Percent>
+
+				<cac:TaxScheme>
+
+					<cbc:ID>VAT</cbc:ID>
+
+				</cac:TaxScheme>
+
+			</cac:ClassifiedTaxCategory>
+
+			<cac:AdditionalItemProperty>
+
+				<cbc:Name>Dietary restrictions</cbc:Name>
+
+				<cbc:Value>None</cbc:Value>
+
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+
+				<cbc:Name>Additional drinks</cbc:Name>
+
+				<cbc:Value>Coffe or tea</cbc:Value>
+
+			</cac:AdditionalItemProperty>
+
+		</cac:Item>
+
+		<cac:Price>
+
+			<cbc:PriceAmount currencyID="SEK">175.00</cbc:PriceAmount>
+
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
+
+			<cac:AllowanceCharge>
+
+				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+
+				<cbc:Amount currencyID="SEK">1.00</cbc:Amount>
+
+				<cbc:BaseAmount currencyID="SEK">176.00</cbc:BaseAmount>
+
+			</cac:AllowanceCharge>
+
+		</cac:Price>
+
+	</cac:CreditNoteLine>
+
+
+	<cac:CreditNoteLine>
+
+		<cbc:ID>20</cbc:ID>
+
+		<cbc:Note>Cancellations refund</cbc:Note>
+
+		<cbc:CreditedQuantity unitCode="NAR" unitCodeListID="UNECERec20">-6</cbc:CreditedQuantity>
+
+		<cbc:LineExtensionAmount currencyID="SEK">-1050</cbc:LineExtensionAmount>
+
+		<cac:OrderLineReference>
+
+			<cbc:LineID>1</cbc:LineID>
+
+		</cac:OrderLineReference>
+		<cac:BillingReference>
+			<cac:InvoiceDocumentReference>
+				<cbc:ID>123456</cbc:ID>
+
+			</cac:InvoiceDocumentReference>
+			<cac:BillingReferenceLine>
+				<cbc:ID>2</cbc:ID>
+
+			</cac:BillingReferenceLine>
+		</cac:BillingReference>
+		<cac:Item>
+
+			<cbc:Name>Catering service - standard lunch</cbc:Name>
+
+			<cac:SellersItemIdentification>
+
+				<cbc:ID>LU001</cbc:ID>
+
+			</cac:SellersItemIdentification>
+
+			<cac:ClassifiedTaxCategory>
+
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+
+				<cbc:Percent>12</cbc:Percent>
+
+				<cac:TaxScheme>
+
+					<cbc:ID>VAT</cbc:ID>
+
+				</cac:TaxScheme>
+
+			</cac:ClassifiedTaxCategory>
+
+		</cac:Item>
+
+		<cac:Price>
+
+			<cbc:PriceAmount currencyID="SEK">175.00</cbc:PriceAmount>
+
+		</cac:Price>
+
+	</cac:CreditNoteLine>
+
+	<cac:CreditNoteLine>
+
+		<cbc:ID>30</cbc:ID>
+
+		<cbc:CreditedQuantity unitCode="NAR" unitCodeListID="UNECERec20">24</cbc:CreditedQuantity>
+
+		<cbc:LineExtensionAmount currencyID="SEK">9450</cbc:LineExtensionAmount>
+
+		<cbc:AccountingCost>E-invoicing summit</cbc:AccountingCost>
+
+		<cac:AllowanceCharge>
+
+			<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+
+			<cbc:AllowanceChargeReason>Late delivery of material</cbc:AllowanceChargeReason>
+
+			<cbc:Amount currencyID="SEK">450</cbc:Amount>
+
+		</cac:AllowanceCharge>
+
+
+
+		<cac:Item>
+
+			<cbc:Name>Conference facilities &amp; services, per participant</cbc:Name>
+
+
+			<cac:StandardItemIdentification>
+
+				<cbc:ID schemeID="GTIN">73012345678901</cbc:ID>
+
+			</cac:StandardItemIdentification>
+
+			<cac:ClassifiedTaxCategory>
+
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+
+				<cbc:Percent>25</cbc:Percent>
+
+				<cac:TaxScheme>
+
+					<cbc:ID>VAT</cbc:ID>
+
+				</cac:TaxScheme>
+
+			</cac:ClassifiedTaxCategory>
+
+		</cac:Item>
+
+		<cac:Price>
+
+			<cbc:PriceAmount currencyID="SEK">375</cbc:PriceAmount>
+
+		</cac:Price>
+
+	</cac:CreditNoteLine>
+	<cac:CreditNoteLine>
+
+		<cbc:ID>40</cbc:ID>
+
+		<cbc:Note>De luxe, 2 nights, breakfast included</cbc:Note>
+
+		<cbc:CreditedQuantity unitCode="NAR" unitCodeListID="UNECERec20">4</cbc:CreditedQuantity>
+
+		<cbc:LineExtensionAmount currencyID="SEK">8220</cbc:LineExtensionAmount>
+
+		<cac:Item>
+
+			<cbc:Name>Over-night accommodation package</cbc:Name>
+
+			<cac:ClassifiedTaxCategory>
+
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+
+				<cbc:Percent>12</cbc:Percent>
+
+				<cac:TaxScheme>
+
+					<cbc:ID>VAT</cbc:ID>
+
+				</cac:TaxScheme>
+
+			</cac:ClassifiedTaxCategory>
+
+		</cac:Item>
+
+		<cac:Price>
+
+			<cbc:PriceAmount currencyID="SEK">4110</cbc:PriceAmount>
+
+			<cbc:BaseQuantity>2</cbc:BaseQuantity>
+
+		</cac:Price>
+
+	</cac:CreditNoteLine>
+
+	<cac:CreditNoteLine>
+
+		<cbc:ID>50</cbc:ID>
+
+		<cbc:CreditedQuantity unitCode="NAR" unitCodeListID="UNECERec20">4</cbc:CreditedQuantity>
+
+		<cbc:LineExtensionAmount currencyID="SEK">56.6</cbc:LineExtensionAmount>
+
+		<cac:Item>
+
+			<cbc:Name>Local newspaper</cbc:Name>
+
+			<cac:CommodityClassification>
+
+				<cbc:CommodityCode listID="Buyer's">445566</cbc:CommodityCode>
+
+			</cac:CommodityClassification>
+
+			<cac:CommodityClassification>
+
+				<cbc:CommodityCode listID="UNSPSC">55101504</cbc:CommodityCode>
+
+			</cac:CommodityClassification>
+
+			<cac:ClassifiedTaxCategory>
+
+
+				<cbc:ID>S</cbc:ID>
+
+				<cbc:Percent>6</cbc:Percent>
+
+				<cac:TaxScheme>
+
+					<cbc:ID>VAT</cbc:ID>
+
+				</cac:TaxScheme>
+
+			</cac:ClassifiedTaxCategory>
+
+		</cac:Item>
+
+		<cac:Price>
+
+			<cbc:PriceAmount currencyID="SEK">14.15</cbc:PriceAmount>
+
+		</cac:Price>
+
+	</cac:CreditNoteLine>
+
+	<cac:CreditNoteLine>
+
+		<cbc:ID>90</cbc:ID>
+
+		<cbc:Note>Extended credit facility A-123, 0.5%</cbc:Note>
+
+		<cbc:CreditedQuantity unitCode="MON" unitCodeListID="UNECERec20">3</cbc:CreditedQuantity>
+
+		<cbc:LineExtensionAmount currencyID="SEK">150.9</cbc:LineExtensionAmount>
+
+		<cac:Item>
+
+			<cbc:Name>Monthly interest</cbc:Name>
+
+			<cac:ClassifiedTaxCategory>
+
+				<cbc:ID schemeID="UNCL5305">E</cbc:ID>
+
+				<cbc:Percent>0</cbc:Percent>
+
+				<cac:TaxScheme>
+
+					<cbc:ID>VAT</cbc:ID>
+
+				</cac:TaxScheme>
+
+			</cac:ClassifiedTaxCategory>
+
+		</cac:Item>
+
+		<cac:Price>
+
+			<cbc:PriceAmount currencyID="SEK">50.30</cbc:PriceAmount>
+
+		</cac:Price>
+
+	</cac:CreditNoteLine>
+
+</CreditNote>
