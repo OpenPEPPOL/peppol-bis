@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+                Content:
+                This file contains a PEPPOL catalogue, profile 01
+                
+                Errors:
+                BII2-T19-R015
+                
+                
+                Warnings:
+               None
+                
+-->
+
+<Catalogue xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-2"
+  xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+  xmlns:a="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
+  xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+  xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
+  xmlns:ccts="urn:oasis:names:specification:ubl:schema:xsd:CoreComponentParameters-2">
+  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns019:ver2.0:extended:urn:www.peppol.eu:bis:peppol1a:ver2.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:www.cenbii.eu:profile:bii01:ver2.0</cbc:ProfileID>
+  <cbc:ID>123</cbc:ID>
+  <cbc:ActionCode listID="ACTIONCODE:PEPPOL">Add</cbc:ActionCode>
+  <cbc:Name languageID="no">Difi</cbc:Name>
+  <cbc:IssueDate>2014-09-01</cbc:IssueDate>
+  <cac:ValidityPeriod>
+    <cbc:StartDate>2015-06-01</cbc:StartDate>
+    <cbc:EndDate>2015-12-31</cbc:EndDate>
+  </cac:ValidityPeriod>
+  <cac:ProviderParty>
+    <cbc:EndpointID schemeID="NO:ORGNR">968993038</cbc:EndpointID>
+    <cac:PartyIdentification>
+      <cbc:ID schemeID="NO:ORGNR">968993038</cbc:ID>
+    </cac:PartyIdentification>
+  </cac:ProviderParty>
+  <cac:ReceiverParty>
+    <cbc:EndpointID schemeID="NO:ORGNR">991825827</cbc:EndpointID>
+    <cac:PartyName>
+      <cbc:Name>DIFI</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
+  <cac:ContractorCustomerParty>
+    <cac:Party>
+      <cbc:EndpointID schemeID="NO:ORGNR">991825827</cbc:EndpointID>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="NO:ORGNR">991825827</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:Contact>
+        <cbc:ElectronicMail>test@mail.no</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:ContractorCustomerParty>
+  <cac:CatalogueLine>
+    <cbc:ID>111</cbc:ID>
+    <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+    <cbc:OrderableUnit>CEN</cbc:OrderableUnit>
+    <cac:ReplacedRelatedItem>
+      <cbc:ID>323232</cbc:ID>
+    </cac:ReplacedRelatedItem>
+    <cac:RequiredItemLocationQuantity>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="NOK">123.3257</cbc:PriceAmount>
+      </cac:Price>
+    </cac:RequiredItemLocationQuantity>
+    <cac:Item>
+      <cbc:PackQuantity unitCodeListID="UNECERec20" unitCode="KGM">10</cbc:PackQuantity>
+      <cbc:Name>Compact Disk</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>12345</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:OriginCountry>
+        <cbc:IdentificationCode listID="ISO3166-1:Alpha2">US</cbc:IdentificationCode>
+      </cac:OriginCountry>
+      <cac:CommodityClassification>
+        <cbc:ItemClassificationCode listID="UNSPSC">43202001</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UNCL5305">S</cbc:ID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+  </cac:CatalogueLine>
+  <cac:CatalogueLine>
+    <cbc:ID>112</cbc:ID>
+    <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+    <cbc:OrderableUnit>EA</cbc:OrderableUnit>
+    <cac:RequiredItemLocationQuantity>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="EUR">-5</cbc:PriceAmount>
+      </cac:Price>
+    </cac:RequiredItemLocationQuantity>
+    <cac:Item>
+      <cbc:Name>Test</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>32165</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:CommodityClassification>
+        <cbc:ItemClassificationCode listID="UNSPSC">65131231</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UNCL5305">AA</cbc:ID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+  </cac:CatalogueLine>
+  <cac:CatalogueLine>
+    <cbc:ID>113</cbc:ID>
+    <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+    <cbc:OrderableUnit>EA</cbc:OrderableUnit>
+    <cac:RequiredItemLocationQuantity>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="NOK">0.0000</cbc:PriceAmount>
+      </cac:Price>
+    </cac:RequiredItemLocationQuantity>
+    <cac:Item>
+      <cbc:Description>tester</cbc:Description>
+      <cbc:Name>test2</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>687464</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:CommodityClassification>
+        <cbc:ItemClassificationCode listID="UNSPSC">lksdjf</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UNCL5305">H</cbc:ID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+  </cac:CatalogueLine>
+  <cac:CatalogueLine>
+    <cbc:ID>113</cbc:ID>
+    <cbc:OrderableIndicator>false</cbc:OrderableIndicator>
+    <cac:RequiredItemLocationQuantity>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="NOK">0.0000</cbc:PriceAmount>
+      </cac:Price>
+    </cac:RequiredItemLocationQuantity>
+    <cac:Item>
+      <cbc:Description>tester</cbc:Description>
+      <cbc:Name>test3</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>687464</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:CommodityClassification>
+        <cbc:ItemClassificationCode listID="UNSPSC">12345678</cbc:ItemClassificationCode>
+      </cac:CommodityClassification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID schemeID="UNCL5305">H</cbc:ID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+    </cac:Item>
+  </cac:CatalogueLine>
+</Catalogue>
