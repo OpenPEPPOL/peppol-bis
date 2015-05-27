@@ -3,6 +3,7 @@
 memory=600m
 
 path=$(dirname $(readlink -f $0))
+#echo "path=$path"
 cd $path/..
 
 if [ -e target/XSLT ]; then rm -r target/XSLT; fi
