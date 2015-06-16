@@ -9,3 +9,6 @@ Files for PEPPOL BIS:
 --- Test specification
 
 -- build files
+
+-------------------------------------
+Test TeamCity checkout on new Push...
