@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildConfigurations xmlns="http://difi.no/xsd/vefa/validator" build="20150415">
+
+    <testfolder>Tests</testfolder>
+
+    <configuration>
+        <identifier>peppolbis-05-t14-2.0</identifier>
+        <title>PEPPOL BIS Creditnote (Profile 05)</title>
+        <profileId>urn:www.cenbii.eu:profile:bii05:ver2.0</profileId>
+        <customizationId>urn:www.cenbii.eu:transaction:biitrns014:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</customizationId>
+        <file source="Schematron/BII CORE/BIICORE-UBL-T14-V1.0.sch" path="xsl/BIICORE-UBL-T14.xsl" />
+        <file source="Schematron/BII RULES/BIIRULES-UBL-T14.sch" path="xsl/BIIRULES-UBL-T14.xsl" />
+        <file source="Schematron/OPENPEPPOL/OPENPEPPOL-UBL-T14.sch" path="xsl/OPENPEPPOL-UBL-T14.xsl" />
+    </configuration>
+
+</buildConfigurations>
