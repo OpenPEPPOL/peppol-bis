@@ -54,7 +54,7 @@
         <foreach target="compileSchFile" param="schFile">
             <path>
                 <fileset dir="${documentType}/Schematron/">
-                    <include name="**/*.sch"/>
+                    <include name="*/*.sch"/>
                 </fileset>
             </path>
         </foreach>
