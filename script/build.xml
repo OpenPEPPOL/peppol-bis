@@ -124,21 +124,21 @@
 
     <target name="test" depends="compile" description="Run all tests">
         <!-- Run tool -->
-        <exec dir="test-tools" executable="cmd">
-            <arg value="/c"/>
-            <arg value="runAllTests.cmd"/>
-        </exec>
+        <!--<exec dir="test-tools" executable="cmd">-->
+            <!--<arg value="/c"/>-->
+            <!--<arg value="runAllTests.cmd"/>-->
+        <!--</exec>-->
 
         <!--Check if errors exists -->
-        <fileset id="matches" dir="test-tools" includes="test-log.txt">
-            <contains text="ERROR:"/>
-        </fileset>
+        <!--<fileset id="matches" dir="test-tools" includes="test-log.txt">-->
+            <!--<contains text="ERROR:"/>-->
+        <!--</fileset>-->
 
-        <fail message="Found ERRORS in test output">
-            <condition>
-                <resourcecount when="greater" count="0" refid="matches"/>
-            </condition>
-        </fail>
+        <!--<fail message="Found ERRORS in test output">-->
+            <!--<condition>-->
+                <!--<resourcecount when="greater" count="0" refid="matches"/>-->
+            <!--</condition>-->
+        <!--</fail>-->
     </target>
 
     <!-- build-all is intended for build server. -->
