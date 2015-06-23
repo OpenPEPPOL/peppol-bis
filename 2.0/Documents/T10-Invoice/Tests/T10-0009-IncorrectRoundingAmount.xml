@@ -2,7 +2,7 @@
 
 <!--
                 Description:
-                This file contains a norwegian invoice, profile invoice only. Case it to check for incorrect rounding amount.
+                This file contains a profile invoice only. Case it to check for incorrect rounding amount.
                 
                 Errors:
                 BII2-T10-R053

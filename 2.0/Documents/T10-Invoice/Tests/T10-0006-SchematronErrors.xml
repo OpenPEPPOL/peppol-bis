@@ -3,7 +3,7 @@
                 Content:
                 This file contains a PEPPOL invoice BIS4a - Singe lnvoice. The intention of the test is to check that the schematron validation of codelists are fired correctly.
 
-                Validation rules subject to test:
+                Errors:
                 CL-T10-R001
                 CL-T10-R002
                 CL-T10-R004 5 times
