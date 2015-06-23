@@ -13,8 +13,9 @@
     <!-- Format of version.releaseDate must be yyyy-mm-dd -->
     <!--<property name="version.releaseDate" value="2015-09-15"/>-->
 
-    <property name="target" value="../target"/>
-    <property name="target.xslt" value="${target}/XSLT"/>
+    <property name="test.dir" value="../2.0/Test"/>
+    <property name="target.dir" value="../target"/>
+    <property name="target.xslt" value="${target.dir}/XSLT"/>
 
     <taskdef resource="net/sf/antcontrib/antcontrib.properties">
         <classpath>
@@ -118,28 +119,100 @@
     </target>
 
     <target name="makeZip" depends="clean, compile" description="Make ZIP for release">
-        <zip destfile="${target}/OpenPEPPOL-Schematron_v${version.number}.zip">
+        <zip destfile="${target.dir}/OpenPEPPOL-Schematron_v${version.number}.zip">
             <fileset dir="${target.xslt}" includes="*.xsl"/>
         </zip>
     </target>
 
-    <target name="test" depends="compile" description="Run all tests">
+    <target name="test" depends="" description="Run all tests">
+        <loadfile property="testConfig" srcfile="${test.dir}/test-config.txt"/>
+        <foreach target="handleTestLine" param="line" list="${testConfig}" delimiter="${line.separator}"/>
         <!-- Run tool -->
         <!--<exec dir="test-tools" executable="cmd">-->
-            <!--<arg value="/c"/>-->
-            <!--<arg value="runAllTests.cmd"/>-->
+        <!--<arg value="/c"/>-->
+        <!--<arg value="runAllTests.cmd"/>-->
         <!--</exec>-->
 
         <!--Check if errors exists -->
         <!--<fileset id="matches" dir="test-tools" includes="test-log.txt">-->
-            <!--<contains text="ERROR:"/>-->
+        <!--<contains text="ERROR:"/>-->
         <!--</fileset>-->
 
         <!--<fail message="Found ERRORS in test output">-->
-            <!--<condition>-->
-                <!--<resourcecount when="greater" count="0" refid="matches"/>-->
-            <!--</condition>-->
+        <!--<condition>-->
+        <!--<resourcecount when="greater" count="0" refid="matches"/>-->
+        <!--</condition>-->
         <!--</fail>-->
+    </target>
+
+    <target name="parseTestLine">
+        <!--<echo message="${line}"/>-->
+
+        <script language="javascript">
+            if (project.getProperty('line').length==0 || project.getProperty('line').startsWith('#') ) {
+            project.setProperty('isCommentLine', true);
+            } else {
+            arr = project.getProperty('line').trim().split(';', 4);
+            project.setProperty('testType', arr[0].trim());
+            project.setProperty('testFile', arr[1].trim());
+            project.setProperty('testSchematronType', arr[2].trim());
+            project.setProperty('testErrors', arr[3].trim());
+            }
+        </script>
+    </target>
+
+    <target name="handleTestLine" depends="parseTestLine" unless="isCommentLine">
+        <echo>
+            $${testType} => ${testType}
+            $${testFile} => ${testFile}
+            $${testSchematronType} => ${testSchematronType}
+            $${testErrors} => ${testErrors}
+        </echo>
+
+        <property name="test.name" value="${testType}_${testFile}" environment=""/>
+        <echo message="##teamcity[testStarted name='${testType}_${testFile}']"/>
+        <!-- SAXON options: http://www.saxonica.com/documentation9.5/using-xsl/commandline.html -->
+        <java jar="Saxon-HE-9.5.1-8.jar"
+              fork="true"
+              failonerror="true"
+              maxmemory="2048m"
+              resultproperty="errorCode">
+            <arg value="-s:../2.0/Documents/T10-Invoice/Tests/${testFile}"/>
+            <arg value="-xsl:${target.xslt}/BIIRULES-UBL-${testSchematronType}.xsl"/>
+            <arg value="-o:${target.dir}/schematron-output.xml"/>
+            <arg value="-warnings:silent"/>
+            <jvmarg line="-Xmx2048m"/>
+        </java>
+
+        <loadfile property="validationOutput" srcfile="${target.dir}/schematron-output.xml"/>
+
+        <script language="javascript">
+            validationOutput = project.getProperty('validationOutput');
+
+            errorArray = project.getProperty('testErrors').trim().split(' ');
+            for (i=0; errorArray.length > i; i++) {
+                errorCode = errorArray[i];
+
+                // We have an errorCode, so it should be found to be OK!
+                if ( validationOutput.indexOf(errorCode) == -1 ) {
+                    project.setProperty('test.result', "error");
+                    project.setProperty('test.reason', "Error " + errorCode + " not found in output");
+                    break;
+                } else {
+                    project.setProperty('test.result', "ok");
+                }
+            }
+        </script>
+        <if>
+            <equals arg1="${test.result}" arg2="error"/>
+            <then>
+                <echo message="##teamcity[testFailed name='${testType}_${testFile}' message='${test.reason}']"/>
+            </then>
+            <else>
+                <echo message="##teamcity[testFinished name='${testType}_${testFile}']"/>
+            </else>
+        </if>
+
     </target>
 
     <!-- build-all is intended for build server. -->

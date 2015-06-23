@@ -1,0 +1,20 @@
+#5/6/7/8
+#
+# SYNTAX:
+# <Type>; <FileName>; <SchematronToUse>[; <ExpectedErrorCode>]*
+#
+# SYNTAX rules:
+# - Each line must contain 3 ; signs
+#
+# <Type>                : BII or PEPPOL (to determine if only BII, or also PEPPOL Schematron must be executed)
+# <FileName>            : Full file name of the file to test
+# <SchematronToUse>     : Schematron type to use (eg. T10)
+# <ExpectedErrorCode>   : Can be empty, or specify list of errors that must exist. Multiple errors must be separated by space
+#
+# Examples:
+#
+
+# Invoice/T10 tests
+#PEPPOL; T10-0026-FullSpec.xml; T10;
+#PEPPOL; T10-0002-minimal invoice wo addr id.xml; T10;
+PEPPOL; T10-0001-BII04 minimal invoice.xml; T10; [BII2-T10-R026] [BII2-T10-R0l18]
