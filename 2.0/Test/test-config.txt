@@ -17,4 +17,4 @@
 # Invoice/T10 tests
 #PEPPOL; T10-0026-FullSpec.xml; T10;
 #PEPPOL; T10-0002-minimal invoice wo addr id.xml; T10;
-PEPPOL; T10-0001-BII04 minimal invoice.xml; T10; [BII2-T10-R026] [BII2-T10-R0l18]
+PEPPOL; T10-0001-BII04 minimal invoice.xml; T10; [BII2-T10-R026] [BII2-T10-R0l18] [BII2-T10-R019]
