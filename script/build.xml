@@ -3,13 +3,17 @@
 
     <property name="agent.name" value="Manual generated"/>
     <!-- build.number is a property set by the build server (TeamCity) -->
-    <property name="build.number" value="DEV"/>
-    <property name="version.number" value="x.x.x.${build.number}"/>
+    <!--<property name="build.number" value="DEV"/>-->
+    <tstamp>
+        <format property="build.time" pattern="yyyyMMdd_HHmmss" locale="en,GB"/>
+    </tstamp>
+    <property name="version.number" value="x.x.x.${build.time}"/>
     <echo message="##teamcity[buildNumber '${version.number}']"/>
     <!-- Format of version.releaseDate must be yyyy-mm-dd -->
-    <property name="version.releaseDate" value="2015-09-15"/>
+    <!--<property name="version.releaseDate" value="2015-09-15"/>-->
 
-    <property name="target.xslt" value="../target/XSLT"/>
+    <property name="target" value="../target"/>
+    <property name="target.xslt" value="${target}/XSLT"/>
 
     <taskdef resource="net/sf/antcontrib/antcontrib.properties">
         <classpath>
@@ -89,11 +93,6 @@
             <jvmarg line="-Xmx2048m"/>
         </java>
 
-        <!--java -Xmx$memory -jar script/Saxon-HE-9.5.1-8.jar -warnings:silent -quit:on \-->
-        <!--<!-&#45;&#45;s:target/XSLT/$rootname.step2.xsl \&ndash;&gt;-->
-        <!--<!-&#45;&#45;xsl:script/iso-schematron-xslt2/iso_schematron_skeleton_for_saxon.xsl \&ndash;&gt;-->
-        <!--<!-&#45;&#45;o:target/XSLT/$rootname.step3.xsl \&ndash;&gt;-->
-
         <echo message="SCH: Staring step 3..."/>
         <java jar="Saxon-HE-9.5.1-8.jar"
               fork="true"
@@ -117,20 +116,10 @@
         </condition>
     </target>
 
-    <target name="makeZip" depends="clean, compile" description="Make XIP for release">
-        <exec executable="cmd">
-            <arg value="/c"/>
-            <arg value="release.cmd"/>
-        </exec>
-
-        <!-- Set the version information by replacement -->
-        <!--<replaceregexp match="##version.number##"-->
-        <!--replace="${version.number}">-->
-        <!--<fileset dir="zip-content/Stylesheets" includes="**/*.xsl"/>-->
-        <!--</replaceregexp>-->
-
-        <zip destfile="OIOUBL_Schematron_${version.releaseDate}_v${version.number}.zip" basedir="zip-content"/>
-        <delete dir="zip-content"/>
+    <target name="makeZip" depends="clean, compile" description="Make ZIP for release">
+        <zip destfile="${target}/OpenPEPPOL-Schematron_v${version.number}.zip">
+            <fileset dir="${target.xslt}" includes="*.xsl"/>
+        </zip>
     </target>
 
     <target name="test" depends="compile" description="Run all tests">
