@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-                Description:
-                This file contains a BII Invoice. 
+                Content:
+                This file contains a BII Invoice. The intention of the test is to check that the schematron validation of incorrect calculations is correct.
 
-                Errors:
-				BII2-T10-R026
-                BII2-T10-R018 x 5 times
-				BII2-T10-R019 x 5 times
+                Error:
+				BII2-T10-R053
+				BII2-T10-R056
 
-		
 				Warning: 
 				None
 
 -->
+
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 C:\Users\Notandi\Documents\Upplysingar\Standards\UBL\cs-UBL-2.0\xsd\maindoc\UBL-Invoice-2.0.xsd">
 	<cbc:UBLVersionID>2.0</cbc:UBLVersionID>
 	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdm010:ver1.0</cbc:CustomizationID>
@@ -27,16 +26,8 @@
 				<cbc:Name>Salescompany ltd.</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
-				<cbc:StreetName>Storgata</cbc:StreetName>
-				<cbc:CityName>Tromsø</cbc:CityName>
-				<cbc:PostalZone>9299</cbc:PostalZone>
-				<cac:Country>
-					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6">NO</cbc:IdentificationCode>
-				</cac:Country>
+				<cbc:ID schemeID="GLN" schemeAgencyID="9">1231412341324</cbc:ID>
 			</cac:PostalAddress>
-			<cac:PartyLegalEntity>
-				<cbc:CompanyID>840101834</cbc:CompanyID>
-			</cac:PartyLegalEntity>
 		</cac:Party>
 	</cac:AccountingSupplierParty>
 	<cac:AccountingCustomerParty>
@@ -45,36 +36,36 @@
 				<cbc:Name>Buyercompany ltd</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
-				<cbc:StreetName>Rådhusgata</cbc:StreetName>
-				<cbc:CityName>Oslo</cbc:CityName>
-				<cbc:PostalZone>0037</cbc:PostalZone>
+				<cbc:StreetName>Anystreet</cbc:StreetName>
+				<cbc:CityName>Anytown</cbc:CityName>
+				<cbc:PostalZone>101</cbc:PostalZone>
 				<cac:Country>
 					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6">NO</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
-			<cac:PartyLegalEntity>
-				<cbc:CompanyID>940101808</cbc:CompanyID>
-			</cac:PartyLegalEntity>
 		</cac:Party>
 	</cac:AccountingCustomerParty>
-	<cac:PaymentMeans>
-		<cbc:PaymentMeansCode>1</cbc:PaymentMeansCode>
-		<cbc:PaymentDueDate>2009-12-31</cbc:PaymentDueDate>
-	</cac:PaymentMeans>
 	<cac:TaxTotal>
 		<cbc:TaxAmount currencyID="EUR">0</cbc:TaxAmount>
 	</cac:TaxTotal>
 	<cac:LegalMonetaryTotal>
 		<cbc:LineExtensionAmount currencyID="EUR">1436.50</cbc:LineExtensionAmount>
 		<cbc:TaxExclusiveAmount currencyID="EUR">1436.50</cbc:TaxExclusiveAmount>
-		<cbc:TaxInclusiveAmount currencyID="EUR">1436.50</cbc:TaxInclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">1440.50</cbc:TaxInclusiveAmount>
 		<cbc:PayableAmount currencyID="EUR">1436.50</cbc:PayableAmount>
 	</cac:LegalMonetaryTotal>
 	<cac:InvoiceLine>
 		<cbc:ID>1</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">1273</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>Labtop computer</cbc:Name>
+			<ClassifiedTaxCategory xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
+				<cac:TaxScheme>
+					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+				</cac:TaxScheme>
+			</ClassifiedTaxCategory>
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="EUR">1273</cbc:PriceAmount>
@@ -82,9 +73,16 @@
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
 		<cbc:ID>2</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">-3.96</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>Returned "Advanced computing" book</cbc:Name>
+			<ClassifiedTaxCategory xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
+				<cac:TaxScheme>
+					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+				</cac:TaxScheme>
+			</ClassifiedTaxCategory>
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="EUR">3.96</cbc:PriceAmount>
@@ -92,9 +90,16 @@
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
 		<cbc:ID>3</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">4.96</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>Two "Computing for dummies" book</cbc:Name>
+			<ClassifiedTaxCategory xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
+				<cac:TaxScheme>
+					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+				</cac:TaxScheme>
+			</ClassifiedTaxCategory>
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="EUR">4.96</cbc:PriceAmount>
@@ -102,9 +107,16 @@
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
 		<cbc:ID>4</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">-25</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>Returned IBM 5150 desktop</cbc:Name>
+			<ClassifiedTaxCategory xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
+				<cac:TaxScheme>
+					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+				</cac:TaxScheme>
+			</ClassifiedTaxCategory>
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="EUR">25</cbc:PriceAmount>
@@ -112,9 +124,16 @@
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
 		<cbc:ID>5</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">187.5</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>250 mtr Network cable</cbc:Name>
+			<ClassifiedTaxCategory xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
+				<cac:TaxScheme>
+					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+				</cac:TaxScheme>
+			</ClassifiedTaxCategory>
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="EUR">187.5</cbc:PriceAmount>

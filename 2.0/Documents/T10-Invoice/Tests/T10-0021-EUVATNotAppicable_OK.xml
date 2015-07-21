@@ -64,6 +64,10 @@
 					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">SE</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>The Buyer Incorporated</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="SE:ORGNR">9876543210</cbc:CompanyID>
+			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>3150bdn</cbc:ID>
 				<cbc:Name>John Doe</cbc:Name>
