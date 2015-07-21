@@ -1,96 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-3                 Content: 
-4                 This file contains a PEPPOL invoice BIS4a - Singe lnvoice with full core. 
+       
+			   <!--Content:
+                This file contains a BII invoice, profile 5. Tests the common data of an Invoice.
 
-6                 Validation rules subject to test: 
-7                 No errors
-14  
-15  
-16 --> 
-
-<?xml-stylesheet type="text/xsl" href="..\..\artifacts\biicore0001-001\validation-xslt\biicore00001Bii04BiiCoreTrdm010ubl.xsl"?>
-<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2">
+                Errors:
+                None
+                
+                Warnings:
+               	None-->
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 C:\Users\GEORGB~1\Documents\Upplýsingar\Standards\UBL\cs-UBL-2.0\xsd\maindoc\UBL-Invoice-2.0.xsd">
 	<cbc:UBLVersionID>2.0</cbc:UBLVersionID>
-	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdm010:ver1.0</cbc:CustomizationID>
-	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver1.0</cbc:ProfileID>
+	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biifulltrdm010:ver1.0</cbc:CustomizationID>
+	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii05:ver1.0</cbc:ProfileID>
 	<cbc:ID>TOSL108</cbc:ID>
 	<cbc:IssueDate>2009-12-15</cbc:IssueDate>
 	<cbc:InvoiceTypeCode listID="UN/ECE 1001 Subset" listAgencyID="6">380</cbc:InvoiceTypeCode>
 	<cbc:Note languageID="en">Ordered in our booth at the convention.</cbc:Note>
 	<cbc:TaxPointDate>2009-11-30</cbc:TaxPointDate>
 	<cbc:DocumentCurrencyCode listID="ISO 4217 Alpha" listAgencyID="6">EUR</cbc:DocumentCurrencyCode>
-	<cbc:AccountingCost>Project cost code 123</cbc:AccountingCost>
-	<cac:InvoicePeriod>
-		<cbc:StartDate>2009-11-01</cbc:StartDate>
-		<cbc:EndDate>2009-11-30</cbc:EndDate>
-	</cac:InvoicePeriod>
-	<cac:OrderReference>
-		<cbc:ID>123</cbc:ID>
-	</cac:OrderReference>
-	<cac:ContractDocumentReference>
-		<cbc:ID>Contract321</cbc:ID>
-		<cbc:DocumentType>Framework agreement</cbc:DocumentType>
-	</cac:ContractDocumentReference>
-	<cac:AdditionalDocumentReference>
-		<cbc:ID>Doc1</cbc:ID>
-		<cbc:DocumentType>Timesheet</cbc:DocumentType>
-		<cac:Attachment>
-			<cac:ExternalReference>
-				<cbc:URI>http://www.suppliersite.eu/sheet001.html</cbc:URI>
-			</cac:ExternalReference>
-		</cac:Attachment>
-	</cac:AdditionalDocumentReference>
-	<cac:AdditionalDocumentReference>
-		<cbc:ID>Doc2</cbc:ID>
-		<cbc:DocumentType>Drawing</cbc:DocumentType>
-		<cac:Attachment>
-			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf">UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-		</cac:Attachment>
-	</cac:AdditionalDocumentReference>
+	<cbc:AccountingCost>Your ref XX1234</cbc:AccountingCost>
 	<cac:AccountingSupplierParty>
 		<cac:Party>
-			<cbc:EndpointID schemeID="GLN" schemeAgencyID="9">1234567890123</cbc:EndpointID>
-			<cac:PartyIdentification>
-				<cbc:ID schemeID="GLN">Supp123</cbc:ID> <!-- Error, the shemeID should not be GLN -->
-			</cac:PartyIdentification>
 			<cac:PartyName>
 				<cbc:Name>Salescompany ltd.</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
-				<cbc:ID schemeID="GLN" schemeAgencyID="9">1231412341324</cbc:ID>
-				<cbc:Postbox>5467</cbc:Postbox>
 				<cbc:StreetName>Main street</cbc:StreetName>
-				<cbc:AdditionalStreetName>Suite 123</cbc:AdditionalStreetName>
 				<cbc:BuildingNumber>1</cbc:BuildingNumber>
-				<cbc:Department>Revenue department</cbc:Department>
 				<cbc:CityName>Big city</cbc:CityName>
 				<cbc:PostalZone>54321</cbc:PostalZone>
-				<cbc:CountrySubentityCode>RegionA</cbc:CountrySubentityCode>
 				<cac:Country>
-					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6">DK</cbc:IdentificationCode>
+					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6">NO</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyTaxScheme>
-				<cbc:CompanyID schemeID="CVR" schemeAgencyID="ZZZ">DK5402697509</cbc:CompanyID>
+				<cbc:CompanyID schemeID="CVR" schemeAgencyID="ZZZ">NO5402697509</cbc:CompanyID>
 				<cac:TaxScheme>
 					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
 				</cac:TaxScheme>
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
-				<cbc:RegistrationName>The Sellercompany Incorporated</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="CVR" schemeAgencyID="ZZZ">5402697509</cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>Big city</cbc:CityName>
-					<cbc:CountrySubentity>RegionA</cbc:CountrySubentity>
-					<cac:Country>
-						<cbc:IdentificationCode>DK</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:Telephone>4621230</cbc:Telephone>
-				<cbc:Telefax>4621231</cbc:Telefax>
 				<cbc:ElectronicMail>antonio@salescompany.dk</cbc:ElectronicMail>
 			</cac:Contact>
 			<cac:Person>
@@ -103,7 +56,6 @@
 	</cac:AccountingSupplierParty>
 	<cac:AccountingCustomerParty>
 		<cac:Party>
-			<cbc:EndpointID schemeID="GLN" schemeAgencyID="9">1234567987654</cbc:EndpointID>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="ZZZ">345KS5324</cbc:ID>
 			</cac:PartyIdentification>
@@ -111,8 +63,6 @@
 				<cbc:Name>Buyercompany ltd</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
-				<cbc:ID schemeID="GLN" schemeAgencyID="9">1238764941386</cbc:ID>
-				<cbc:Postbox>123</cbc:Postbox>
 				<cbc:StreetName>Anystreet</cbc:StreetName>
 				<cbc:AdditionalStreetName>Back door</cbc:AdditionalStreetName>
 				<cbc:BuildingNumber>8</cbc:BuildingNumber>
@@ -131,44 +81,22 @@
 				</cac:TaxScheme>
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
-				<cbc:RegistrationName>The buyercompany inc.</cbc:RegistrationName>
 				<cbc:CompanyID schemeAgencyID="ZZZ" schemeID="ZZZ">5645342123</cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>Mainplace</cbc:CityName>
-					<cbc:CountrySubentity>RegionB</cbc:CountrySubentity>
-					<cac:Country>
-						<cbc:IdentificationCode>BE</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:Telephone>5121230</cbc:Telephone>
-				<cbc:Telefax>5121231</cbc:Telefax>
 				<cbc:ElectronicMail>john@buyercompany.eu</cbc:ElectronicMail>
 			</cac:Contact>
 			<cac:Person>
 				<cbc:FirstName>John</cbc:FirstName>
-				<cbc:FamilyName>X</cbc:FamilyName>
 				<cbc:MiddleName>Doe</cbc:MiddleName>
 				<cbc:JobTitle>Purchasing manager</cbc:JobTitle>
 			</cac:Person>
 		</cac:Party>
 	</cac:AccountingCustomerParty>
-	<cac:PayeeParty>
-		<cac:PartyIdentification>
-			<cbc:ID schemeID="GLN" schemeAgencyID="9">098740918237</cbc:ID>
-		</cac:PartyIdentification>
-		<cac:PartyName>
-			<cbc:Name>Ebeneser Scrooge Inc.</cbc:Name>
-		</cac:PartyName>
-		<cac:PartyLegalEntity>
-			<cbc:CompanyID schemeID="UK:CH" schemeAgencyID="ZZZ">6411982340</cbc:CompanyID>
-		</cac:PartyLegalEntity>
-	</cac:PayeeParty>
 	<cac:Delivery>
 		<cbc:ActualDeliveryDate>2009-12-15</cbc:ActualDeliveryDate>
 		<cac:DeliveryLocation>
-			<cbc:ID schemeID="GLN" schemeAgencyID="9">6754238987648</cbc:ID>
 			<cac:Address>
 				<cbc:StreetName>Deliverystreet</cbc:StreetName>
 				<cbc:AdditionalStreetName>Side door</cbc:AdditionalStreetName>
@@ -204,6 +132,8 @@
 		<cbc:AllowanceChargeReason>Packing cost</cbc:AllowanceChargeReason>
 		<cbc:Amount currencyID="EUR">100</cbc:Amount>
 		<cac:TaxCategory>
+			<cbc:ID>E</cbc:ID>
+			<cbc:Percent>0</cbc:Percent>
 			<cac:TaxScheme>
 				<cbc:ID>VAT</cbc:ID>
 			</cac:TaxScheme>
@@ -214,6 +144,8 @@
 		<cbc:AllowanceChargeReason>Promotional discount</cbc:AllowanceChargeReason>
 		<cbc:Amount currencyID="EUR">100</cbc:Amount>
 		<cac:TaxCategory>
+			<cbc:ID>E</cbc:ID>
+			<cbc:Percent>0</cbc:Percent>
 			<cac:TaxScheme>
 				<cbc:ID>VAT</cbc:ID>
 			</cac:TaxScheme>
@@ -272,10 +204,6 @@
 		<cbc:Note>Scratch on box</cbc:Note>
 		<cbc:InvoicedQuantity unitCode="C62">1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">1273</cbc:LineExtensionAmount>
-		<cbc:AccountingCost>BookingCode001</cbc:AccountingCost>
-		<cac:OrderLineReference>
-			<cbc:LineID>1</cbc:LineID>
-		</cac:OrderLineReference>
 		<cac:AllowanceCharge>
 			<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
 			<cbc:AllowanceChargeReason>Damage</cbc:AllowanceChargeReason>
@@ -307,9 +235,9 @@
 			<cac:ClassifiedTaxCategory>
 				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">S</cbc:ID>
 				<cbc:Percent>20</cbc:Percent>
-				<TaxScheme>
+				<cac:TaxScheme>
 					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
-				</TaxScheme>
+				</cac:TaxScheme>
 			</cac:ClassifiedTaxCategory>
 			<cac:AdditionalItemProperty>
 				<cbc:Name>Color</cbc:Name>
@@ -356,9 +284,9 @@
 			<cac:ClassifiedTaxCategory>
 				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">AA</cbc:ID>
 				<cbc:Percent>10</cbc:Percent>
-				<TaxScheme>
+				<cac:TaxScheme>
 					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
-				</TaxScheme>
+				</cac:TaxScheme>
 			</cac:ClassifiedTaxCategory>
 		</cac:Item>
 		<cac:Price>
@@ -393,9 +321,9 @@
 			<cac:ClassifiedTaxCategory>
 				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">AA</cbc:ID>
 				<cbc:Percent>10</cbc:Percent>
-				<TaxScheme>
+				<cac:TaxScheme>
 					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
-				</TaxScheme>
+				</cac:TaxScheme>
 			</cac:ClassifiedTaxCategory>
 		</cac:Item>
 		<cac:Price>
@@ -437,9 +365,9 @@
 			<cac:ClassifiedTaxCategory>
 				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
 				<cbc:Percent>0</cbc:Percent>
-				<TaxScheme>
+				<cac:TaxScheme>
 					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
-				</TaxScheme>
+				</cac:TaxScheme>
 			</cac:ClassifiedTaxCategory>
 		</cac:Item>
 		<cac:Price>
@@ -449,9 +377,8 @@
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
 		<cbc:ID>5</cbc:ID>
-		<cbc:InvoicedQuantity unitCode="C62">250</cbc:InvoicedQuantity>
+		<cbc:InvoicedQuantity unitCode="MTR">250</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">187.5</cbc:LineExtensionAmount>
-		<cbc:AccountingCost>BookingCode002</cbc:AccountingCost>
 		<cac:OrderLineReference>
 			<cbc:LineID>4</cbc:LineID>
 		</cac:OrderLineReference>
@@ -475,18 +402,18 @@
 			<cac:ClassifiedTaxCategory>
 				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">S</cbc:ID>
 				<cbc:Percent>20</cbc:Percent>
-				<TaxScheme>
+				<cac:TaxScheme>
 					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
-				</TaxScheme>
+				</cac:TaxScheme>
 			</cac:ClassifiedTaxCategory>
 			<cac:AdditionalItemProperty>
-				<cbc:Name>Type</cbc:Name>
+				<cbc:Name>Cable type</cbc:Name>
 				<cbc:Value>Cat5</cbc:Value>
 			</cac:AdditionalItemProperty>
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="EUR">0.75</cbc:PriceAmount>
-			<cbc:BaseQuantity unitCode="C62">1</cbc:BaseQuantity>
+			<cbc:BaseQuantity unitCode="MTR">1</cbc:BaseQuantity>
 		</cac:Price>
 	</cac:InvoiceLine>
 </Invoice>

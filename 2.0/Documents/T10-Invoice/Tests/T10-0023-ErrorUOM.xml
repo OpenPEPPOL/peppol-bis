@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
                 Content:
-                This file contains a PEPPOL invoice BIS4a - Singe lnvoice. The intention of the test is to check that the schematron validation of codelists are fired correctly.
+                This file contains a BII invoice The intention of the test is to check that the schematron validation of codelists are fired correctly.
 
                 Errors:
-                BII2-T10-R030
-				BII2-T10-R045
-				BII2-T10-R018 * 5times
-				BII2-T10-R019 * 5times
+                BII2-T10-R018 x 5 
+				BII2-T10-R019 x 5 
+
+				Warnings:
+				None
 -->
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 C:\Users\Notandi\Documents\Upplysingar\Standards\UBL\cs-UBL-2.0\xsd\maindoc\UBL-Invoice-2.0.xsd">
 	<cbc:UBLVersionID>2.0</cbc:UBLVersionID>
@@ -21,18 +22,6 @@
 			<cac:PartyName>
 				<cbc:Name>Salescompany ltd.</cbc:Name>
 			</cac:PartyName>
-			<cac:PostalAddress>
-				<cbc:ID schemeID="GLN" schemeAgencyID="9">1231412341324</cbc:ID>
-				<cac:Country>
-					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6">NO</cbc:IdentificationCode>
-				</cac:Country>
-			</cac:PostalAddress>
-			<cac:PartyTaxScheme>
-			<cbc:CompanyID>NO12345</cbc:CompanyID>
-				<cac:TaxScheme>
-					<cbc:ID>VAT</cbc:ID>
-				</cac:TaxScheme>
-			</cac:PartyTaxScheme>
 		</cac:Party>
 	</cac:AccountingSupplierParty>
 	<cac:AccountingCustomerParty>
@@ -43,58 +32,21 @@
 			<cac:PostalAddress>
 				<cbc:StreetName>Anystreet</cbc:StreetName>
 				<cbc:CityName>Anytown</cbc:CityName>
-				<cbc:PostalZone>101</cbc:PostalZone>
+				<cbc:PostalZone>1231</cbc:PostalZone>
 				<cac:Country>
-					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6">BE</cbc:IdentificationCode>
+					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6">NO</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
-			<cac:PartyTaxScheme>
-				<cbc:CompanyID>BW12345</cbc:CompanyID>
-				<cac:TaxScheme>
-					<cbc:ID>VAT</cbc:ID>
-				</cac:TaxScheme>
-			</cac:PartyTaxScheme>
 		</cac:Party>
 	</cac:AccountingCustomerParty>
 	<cac:TaxTotal>
-		<cbc:TaxAmount currencyID="EUR">292.2</cbc:TaxAmount>
-		<cac:TaxSubtotal>
-			<cbc:TaxableAmount currencyID="EUR">1460.5</cbc:TaxableAmount>
-			<cbc:TaxAmount currencyID="EUR">292.1</cbc:TaxAmount>
-			<cac:TaxCategory>
-				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">S</cbc:ID>
-				<cac:TaxScheme>
-					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
-				</cac:TaxScheme>
-			</cac:TaxCategory>
-		</cac:TaxSubtotal>
-		<cac:TaxSubtotal>
-			<cbc:TaxableAmount currencyID="EUR">1</cbc:TaxableAmount>
-			<cbc:TaxAmount currencyID="EUR">0.1</cbc:TaxAmount>
-			<cac:TaxCategory>
-				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">AA</cbc:ID>
-				<cac:TaxScheme>
-					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
-				</cac:TaxScheme>
-			</cac:TaxCategory>
-		</cac:TaxSubtotal>
-		<cac:TaxSubtotal>
-			<cbc:TaxableAmount currencyID="EUR">-25</cbc:TaxableAmount>
-			<cbc:TaxAmount currencyID="EUR">0</cbc:TaxAmount>
-			<cac:TaxCategory>
-				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
-				<cac:TaxScheme>
-					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
-				</cac:TaxScheme>
-			</cac:TaxCategory>
-		</cac:TaxSubtotal>
+		<cbc:TaxAmount currencyID="EUR">0</cbc:TaxAmount>
 	</cac:TaxTotal>
 	<cac:LegalMonetaryTotal>
 		<cbc:LineExtensionAmount currencyID="EUR">1436.50</cbc:LineExtensionAmount>
 		<cbc:TaxExclusiveAmount currencyID="EUR">1436.50</cbc:TaxExclusiveAmount>
-		<cbc:TaxInclusiveAmount currencyID="EUR">1729.00</cbc:TaxInclusiveAmount>
-		<cbc:PayableRoundingAmount currencyID="EUR">0.3</cbc:PayableRoundingAmount>
-		<cbc:PayableAmount currencyID="EUR">1729.00</cbc:PayableAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">1436.50</cbc:TaxInclusiveAmount>
+		<cbc:PayableAmount currencyID="EUR">1436.50</cbc:PayableAmount>
 	</cac:LegalMonetaryTotal>
 	<cac:InvoiceLine>
 		<cbc:ID>1</cbc:ID>
@@ -102,7 +54,7 @@
 		<cac:Item>
 			<cbc:Name>Labtop computer</cbc:Name>
 			<ClassifiedTaxCategory xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
-				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">S</cbc:ID>
+				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
 				<cac:TaxScheme>
 					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
 				</cac:TaxScheme>
@@ -118,7 +70,7 @@
 		<cac:Item>
 			<cbc:Name>Returned "Advanced computing" book</cbc:Name>
 			<ClassifiedTaxCategory xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
-				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">AA</cbc:ID>
+				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
 				<cac:TaxScheme>
 					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
 				</cac:TaxScheme>
@@ -134,7 +86,7 @@
 		<cac:Item>
 			<cbc:Name>Two "Computing for dummies" book</cbc:Name>
 			<ClassifiedTaxCategory xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
-				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">AA</cbc:ID>
+				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
 				<cac:TaxScheme>
 					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
 				</cac:TaxScheme>
@@ -166,7 +118,7 @@
 		<cac:Item>
 			<cbc:Name>250 mtr Network cable</cbc:Name>
 			<ClassifiedTaxCategory xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
-				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">S</cbc:ID>
+				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
 				<cac:TaxScheme>
 					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
 				</cac:TaxScheme>

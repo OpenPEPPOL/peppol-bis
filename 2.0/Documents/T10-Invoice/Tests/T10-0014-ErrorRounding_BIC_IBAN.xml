@@ -4,12 +4,11 @@
                 This file contains a PEPPOL invoice, profile 4
 
                 Errors:
-
-				        BII2-T10-R042
-				        BII2-T10-R040
+				BII2-T10-R042
+				BII2-T10-R040
                 
-						Warnings:
-						EUGEN-T10-R004
+				Warnings:
+			    EUGEN-T10-R004
 				
 -->
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">

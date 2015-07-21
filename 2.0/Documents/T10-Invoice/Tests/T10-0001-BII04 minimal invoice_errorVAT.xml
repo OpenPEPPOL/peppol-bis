@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-                Content:
-                This file contains a BII Invoice with error in VAT Exemption Reason and missing VAT on line
+
+       <!--Content:
+                This file contains a BII invoice, profile 4
 
                 Errors:
-				BII2-T10-R045
-				BII2-T10-R046 * 5 times
+                [BII2-T10-R026] x 1
+                
                 Warnings:
-               
-				
--->
+               	None-->
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 C:\Users\Notandi\Documents\Upplysingar\Standards\UBL\cs-UBL-2.0\xsd\maindoc\UBL-Invoice-2.0.xsd">
 	<cbc:UBLVersionID>2.0</cbc:UBLVersionID>
 	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdm010:ver1.0</cbc:CustomizationID>
@@ -23,19 +21,8 @@
 				<cbc:Name>Salescompany ltd.</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
-				<cbc:StreetName>Main street</cbc:StreetName>
-				<cbc:CityName>Big city</cbc:CityName>
-				<cbc:PostalZone>54321</cbc:PostalZone>
-				<cac:Country>
-					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6">DK</cbc:IdentificationCode>
-				</cac:Country>
+				<cbc:ID schemeID="GLN" schemeAgencyID="9">1231412341324</cbc:ID>
 			</cac:PostalAddress>
-			<cac:PartyTaxScheme>
-				<cbc:CompanyID>DK12345</cbc:CompanyID>
-				<cac:TaxScheme>
-					<cbc:ID>VAT</cbc:ID>
-				</cac:TaxScheme>
-			</cac:PartyTaxScheme>
 		</cac:Party>
 	</cac:AccountingSupplierParty>
 	<cac:AccountingCustomerParty>
@@ -48,40 +35,23 @@
 				<cbc:CityName>Anytown</cbc:CityName>
 				<cbc:PostalZone>101</cbc:PostalZone>
 				<cac:Country>
-					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6">BE</cbc:IdentificationCode>
+					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6">NO</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
-			<cac:PartyTaxScheme>
-				<cbc:CompanyID>BE98765</cbc:CompanyID>
-				<cac:TaxScheme>
-					<cbc:ID>VAT</cbc:ID>
-				</cac:TaxScheme>
-			</cac:PartyTaxScheme>
 		</cac:Party>
 	</cac:AccountingCustomerParty>
 	<cac:TaxTotal>
 		<cbc:TaxAmount currencyID="EUR">0</cbc:TaxAmount>
-		<cac:TaxSubtotal>
-			<cbc:TaxableAmount currencyID="EUR">1436.50</cbc:TaxableAmount>
-			<cbc:TaxAmount currencyID="EUR">0</cbc:TaxAmount>
-			<cac:TaxCategory>
-				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">AE</cbc:ID>
-				<cac:TaxScheme>
-					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
-				</cac:TaxScheme>
-			</cac:TaxCategory>
-		</cac:TaxSubtotal>
 	</cac:TaxTotal>
 	<cac:LegalMonetaryTotal>
 		<cbc:LineExtensionAmount currencyID="EUR">1436.50</cbc:LineExtensionAmount>
 		<cbc:TaxExclusiveAmount currencyID="EUR">1436.50</cbc:TaxExclusiveAmount>
-		<cbc:TaxInclusiveAmount currencyID="EUR">1437.00</cbc:TaxInclusiveAmount>
-		<cbc:PayableRoundingAmount currencyID="EUR">0.5</cbc:PayableRoundingAmount>
-		<cbc:PayableAmount currencyID="EUR">1437.00</cbc:PayableAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">1436.50</cbc:TaxInclusiveAmount>
+		<cbc:PayableAmount currencyID="EUR">1436.50</cbc:PayableAmount>
 	</cac:LegalMonetaryTotal>
 	<cac:InvoiceLine>
 		<cbc:ID>1</cbc:ID>
-		<cbc:InvoicedQuantity unitCode="C62">1</cbc:InvoicedQuantity>
+		<cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">1273</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>Labtop computer</cbc:Name>
@@ -92,7 +62,7 @@
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
 		<cbc:ID>2</cbc:ID>
-		<cbc:InvoicedQuantity unitCode="C62">-1</cbc:InvoicedQuantity>
+		<cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">-3.96</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>Returned "Advanced computing" book</cbc:Name>
@@ -103,18 +73,18 @@
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
 		<cbc:ID>3</cbc:ID>
-		<cbc:InvoicedQuantity unitCode="C62">2</cbc:InvoicedQuantity>
+		<cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">4.96</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>Two "Computing for dummies" book</cbc:Name>
 		</cac:Item>
 		<cac:Price>
-			<cbc:PriceAmount currencyID="EUR">2.48</cbc:PriceAmount>
+			<cbc:PriceAmount currencyID="EUR">4.96</cbc:PriceAmount>
 		</cac:Price>
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
 		<cbc:ID>4</cbc:ID>
-		<cbc:InvoicedQuantity unitCode="C62">-1</cbc:InvoicedQuantity>
+		<cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">-25</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>Returned IBM 5150 desktop</cbc:Name>
@@ -125,13 +95,13 @@
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
 		<cbc:ID>5</cbc:ID>
-		<cbc:InvoicedQuantity unitCode="MTR">250</cbc:InvoicedQuantity>
+		<cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">187.5</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>250 mtr Network cable</cbc:Name>
 		</cac:Item>
 		<cac:Price>
-			<cbc:PriceAmount currencyID="EUR">0.75</cbc:PriceAmount>
+			<cbc:PriceAmount currencyID="EUR">187.5</cbc:PriceAmount>
 		</cac:Price>
 	</cac:InvoiceLine>
 </Invoice>

@@ -4,7 +4,7 @@
                 This file contains a profile invoice only. Case is to check for TAX Amount and create error
 
                 Errors:
-                EUGEN-T10-R043
+				BII2-T10-R053
                 
                 Warnings:
                 EUGEN-T10-R041

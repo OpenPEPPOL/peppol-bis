@@ -1,53 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
                 Content:
-                This file contains a PEPPOL invoice, profile 4
-				
-				XSD error:
-				Error: cvc-complex-type.2.4.a: Invalid content was found starting with element 'cbc:LineExtensionAmount'. 
-				One of '	{"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2":ID}' is expected.
+               This file contains a PEPPOL invoice, profile 4
 
                 Errors:
-               	BII2-T10-R017
-				BII2-T10-R018
-				BII2-T10-R019
-				BII2-T10-R032
-				BII2-T10-R033
-				CL-T10-R003
-				
-                
-                Warnings:
-                EUGEN-T10-R003
-                EUGEN-T10-R041
-
-              
+				BII2-T10-R010
+				BII2-T10-R011
+				BII2-T10-R012
+				BII2-T10-R013
+				BII2-T10-R039
+				BII2-T10-R044
+				BII2-T10-R051
+                EUGEN-T10-R024 x 2
+                EUGEN-T10-R043
+             
+               Warnings:
+               EUGEN-T10-R041
+			
 -->
 <Invoice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
 	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol4a:ver2.0</cbc:CustomizationID>
 	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver2.0</cbc:ProfileID>
-	<cbc:ID>12345</cbc:ID>
-	<cbc:IssueDate>2012-11-21</cbc:IssueDate>
+	<cbc:ID/>
+	<cbc:IssueDate>2012-07-24</cbc:IssueDate>
 	<cbc:InvoiceTypeCode listID="UNCL1001">380</cbc:InvoiceTypeCode>
 	<cbc:DocumentCurrencyCode listID="ISO4217">NOK</cbc:DocumentCurrencyCode>
 	<cac:OrderReference>
-		<cbc:ID>5423</cbc:ID>
+		<cbc:ID/>
 	</cac:OrderReference>
 	<cac:ContractDocumentReference>
-		<cbc:ID>RA-564</cbc:ID>
+		<cbc:ID/>
 	</cac:ContractDocumentReference>
 	<cac:AccountingSupplierParty>
 		<cac:Party>
 			<cbc:EndpointID schemeID="NO:ORGNR">977187761</cbc:EndpointID>
 			<cac:PartyIdentification>
-				<cbc:ID schemeID="GLN">7080003093035</cbc:ID>
+				<cbc:ID/>
 			</cac:PartyIdentification>
 			<cac:PartyName>
-				<cbc:Name>Bedriften A/S</cbc:Name>
+				<cbc:Name/>
 			</cac:PartyName>
 			<cac:PostalAddress>
-				<cbc:ID schemeID="GLN" schemeAgencyID="9">7080003093035</cbc:ID>
-				<cbc:StreetName>Brugt. 10</cbc:StreetName>
+				<cbc:ID schemeID="GLN">7080003093035</cbc:ID>
 				<cbc:CityName>Sarpsborg</cbc:CityName>
 				<cbc:PostalZone>1710</cbc:PostalZone>
 				<cac:Country>
@@ -55,14 +50,11 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyTaxScheme>
-				<cbc:CompanyID schemeID="NO:VAT">977187761MVA</cbc:CompanyID>
 				<cac:TaxScheme>
 					<cbc:ID>VAT</cbc:ID>
 				</cac:TaxScheme>
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
-				<cbc:RegistrationName>IntegrasjonsPartner testkunde</cbc:RegistrationName>
-				<cbc:CompanyID schemeID="NO:ORGNR">977187761</cbc:CompanyID>
 				<cac:RegistrationAddress>
 					<cbc:CityName>Sarpsborg</cbc:CityName>
 					<cac:Country>
@@ -71,7 +63,6 @@
 				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
-				<cbc:ID>David</cbc:ID>
 			</cac:Contact>
 		</cac:Party>
 	</cac:AccountingSupplierParty>
@@ -79,13 +70,12 @@
 		<cac:Party>
 			<cbc:EndpointID schemeID="NO:ORGNR">810305282</cbc:EndpointID>
 			<cac:PartyIdentification>
-				<cbc:ID schemeID="GLN">7080003093035</cbc:ID>
+				<cbc:ID/>
 			</cac:PartyIdentification>
 			<cac:PartyName>
-				<cbc:Name>TestKunde</cbc:Name>
+				<cbc:Name/>
 			</cac:PartyName>
 			<cac:PostalAddress>
-				<cbc:StreetName>Storgata 3</cbc:StreetName>
 				<cbc:CityName>SARPSBORG</cbc:CityName>
 				<cbc:PostalZone>1701</cbc:PostalZone>
 				<cac:Country>
@@ -93,14 +83,11 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyTaxScheme>
-				<cbc:CompanyID schemeID="NO:VAT">810305282MVA</cbc:CompanyID>
 				<cac:TaxScheme>
 					<cbc:ID>VAT</cbc:ID>
 				</cac:TaxScheme>
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
-				<cbc:RegistrationName>TestKunde</cbc:RegistrationName>
-				<cbc:CompanyID schemeID="NO:ORGNR">810305282</cbc:CompanyID>
 				<cac:RegistrationAddress>
 					<cbc:CityName>SARPSBORG</cbc:CityName>
 					<cac:Country>
@@ -109,16 +96,13 @@
 				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
-				<cbc:ID>DTJ1234</cbc:ID>
 			</cac:Contact>
 		</cac:Party>
 	</cac:AccountingCustomerParty>
 	<cac:Delivery>
-		<cbc:ActualDeliveryDate>2012-11-21</cbc:ActualDeliveryDate>
 		<cac:DeliveryLocation>
 			<cbc:ID schemeID="GLN">7080000081769</cbc:ID>
 			<cac:Address>
-				<cbc:StreetName>Storgata 3</cbc:StreetName>
 				<cbc:CityName>SARPSBORG</cbc:CityName>
 				<cbc:PostalZone>1701</cbc:PostalZone>
 				<cac:Country>
@@ -129,11 +113,9 @@
 	</cac:Delivery>
 	<cac:PaymentMeans>
 		<cbc:PaymentMeansCode listID="UNCL4461">31</cbc:PaymentMeansCode>
-		<cbc:PaymentDueDate>2012-12-31</cbc:PaymentDueDate>
 		<cbc:PaymentChannelCode>SW</cbc:PaymentChannelCode>
 		<cbc:PaymentID>000200000032000100011</cbc:PaymentID>
 		<cac:PayeeFinancialAccount>
-			<cbc:ID schemeID="IBAN">NO98745566558</cbc:ID>
 			<cac:FinancialInstitutionBranch>
 				<cac:FinancialInstitution>
 					<cbc:ID schemeID="BIC">DNB</cbc:ID>
@@ -142,7 +124,7 @@
 		</cac:PayeeFinancialAccount>
 	</cac:PaymentMeans>
 	<cac:TaxTotal>
-		<cbc:TaxAmount currencyID="NOK">25.00</cbc:TaxAmount>
+		<cbc:TaxAmount currencyID="NOK">0</cbc:TaxAmount>
 		<cac:TaxSubtotal>
 			<cbc:TaxableAmount currencyID="NOK">100.00</cbc:TaxableAmount>
 			<cbc:TaxAmount currencyID="NOK">25.00</cbc:TaxAmount>
@@ -156,34 +138,34 @@
 		</cac:TaxSubtotal>
 	</cac:TaxTotal>
 	<cac:LegalMonetaryTotal>
-		<cbc:LineExtensionAmount currencyID="NOK">100.00</cbc:LineExtensionAmount>
-		<cbc:TaxExclusiveAmount currencyID="NOK">100.00</cbc:TaxExclusiveAmount>
-		<cbc:TaxInclusiveAmount currencyID="NOK">125.00</cbc:TaxInclusiveAmount>
-		<cbc:AllowanceTotalAmount currencyID="NOK">0.00</cbc:AllowanceTotalAmount>
-		<cbc:ChargeTotalAmount currencyID="NOK">0.00</cbc:ChargeTotalAmount>
-		<cbc:PrepaidAmount currencyID="NOK">0.00</cbc:PrepaidAmount>
-		<cbc:PayableRoundingAmount currencyID="NOK">0.00</cbc:PayableRoundingAmount>
-		<cbc:PayableAmount currencyID="NOK">125.00</cbc:PayableAmount>
+		<cbc:LineExtensionAmount currencyID="NOK">0</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="NOK">0</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="NOK">0</cbc:TaxInclusiveAmount>
+		<cbc:PayableAmount currencyID="NOK">0</cbc:PayableAmount>
 	</cac:LegalMonetaryTotal>
 	<cac:InvoiceLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="NAR" unitCodeListID="UNECERec20">1.00</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="NOK">100.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>123</cbc:AccountingCost>
+		<cac:OrderLineReference>
+			<cbc:LineID>1</cbc:LineID>
+		</cac:OrderLineReference>
 		<cac:Item>
-			<cbc:Name>Vare A123456789012345678901234567890123456789012345</cbc:Name>
-			<cac:StandardItemIdentification>
-				<cbc:ID>123</cbc:ID>
-			</cac:StandardItemIdentification>
-			<cac:CommodityClassification>
-				<cbc:ItemClassificationCode>AAA</cbc:ItemClassificationCode>
-			</cac:CommodityClassification>
+			<cbc:Name>Vare A</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>AAA</cbc:ID>
+			</cac:SellersItemIdentification>
 			<cac:ClassifiedTaxCategory>
-				<cbc:ID schemeID="UNCL5305">SXX</cbc:ID>
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+				<cbc:Percent>25.00</cbc:Percent>
 				<cac:TaxScheme>
-					<cbc:ID>VATXX</cbc:ID>
+					<cbc:ID>VAT</cbc:ID>
 				</cac:TaxScheme>
 			</cac:ClassifiedTaxCategory>
 		</cac:Item>
 		<cac:Price>
-			<cbc:PriceAmount currencyID="NRK">100.00</cbc:PriceAmount>
+			<cbc:PriceAmount currencyID="NOK">100.00</cbc:PriceAmount>
 		</cac:Price>
 	</cac:InvoiceLine>
 </Invoice>

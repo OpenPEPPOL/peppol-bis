@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-                Description:
-                This file contains a standard PEPPOL Invoice BIS4a. The intention of the test is to check that a full spec Invoice is valid and can pass.
+                Content:
+                This file contains a PEPPOL invoice BIS4a - Singe lnvoice. The intention of the test is to check that the schematron validation of multiple currencies is correct.
 
                 Error:
-				None
+				[EUGEN-T10-R026] x 2
+				[EUGEN-T10-R046]
 		
 				Warning: 
-				None
+				[EUGEN-T10-R040]
+
 
 -->
-<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2">
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 F:\PROJEK~1\IT-Telestyrelsen\UBL-2.1-PRD2-20110526\xsd\maindoc\UBL-Invoice-2.1.xsd">
 	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
-	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol4a:ver2.0</cbc:CustomizationID>
+	<cbc:CustomizationID schemeID="PEPPOL">urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol4a:ver2.0</cbc:CustomizationID>
 	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver2.0</cbc:ProfileID>
 	<cbc:ID>TOSL108</cbc:ID>
 	<cbc:IssueDate>2013-04-10</cbc:IssueDate>
-	<cbc:InvoiceTypeCode listID="UNCL1001">380</cbc:InvoiceTypeCode>
-	<cbc:Note>Contract was established through our website</cbc:Note>
-	<cbc:DocumentCurrencyCode listID="ISO4217">DKK</cbc:DocumentCurrencyCode>
+	<cbc:InvoiceTypeCode listID="UNCL1001" listAgencyID="6">380</cbc:InvoiceTypeCode>
+	<cbc:Note languageID="en">Contract was established through our website</cbc:Note>
+	<cbc:DocumentCurrencyCode listID="ISO4217" listAgencyID="6">DKK</cbc:DocumentCurrencyCode>
+	<cbc:TaxCurrencyCode listID="ISO4217" listAgencyID="6">SEK</cbc:TaxCurrencyCode>
 	<cac:InvoicePeriod>
-		<cbc:StartDate>2013-01-01</cbc:StartDate>
-		<cbc:EndDate>2013-04-01</cbc:EndDate>
+	<cbc:StartDate>2013-01-01</cbc:StartDate>
+	<cbc:EndDate>2013-04-01</cbc:EndDate>
 	</cac:InvoicePeriod>
 	<cac:ContractDocumentReference>
 		<cbc:ID>SUBSCR571</cbc:ID>
@@ -29,7 +32,7 @@
 	</cac:ContractDocumentReference>
 	<cac:AccountingSupplierParty>
 		<cac:Party>
-			<cbc:EndpointID schemeID="GLN">5790989675432</cbc:EndpointID>
+			<cbc:EndpointID schemeID="GLN" schemeAgencyID="9">5790989675432</cbc:EndpointID>
 			<cac:PartyName>
 				<cbc:Name>SubscriptionSeller.</cbc:Name>
 			</cac:PartyName>
@@ -38,13 +41,13 @@
 				<cbc:CityName>Big city</cbc:CityName>
 				<cbc:PostalZone>54321</cbc:PostalZone>
 				<cac:Country>
-					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">DK</cbc:IdentificationCode>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2" listAgencyID="6">DK</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyTaxScheme>
 				<cbc:CompanyID schemeID="DK:SE">DK16356706</cbc:CompanyID>
 				<cac:TaxScheme>
-					<cbc:ID>VAT</cbc:ID>
+					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
 				</cac:TaxScheme>
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
@@ -57,7 +60,7 @@
 	</cac:AccountingSupplierParty>
 	<cac:AccountingCustomerParty>
 		<cac:Party>
-			<cbc:EndpointID schemeID="GLN">5790000435975</cbc:EndpointID>
+			<cbc:EndpointID schemeID="GLN" schemeAgencyID="9">5790989876765</cbc:EndpointID>
 			<cac:PartyName>
 				<cbc:Name>Buyercompany ltd</cbc:Name>
 			</cac:PartyName>
@@ -66,7 +69,7 @@
 				<cbc:CityName>Anytown</cbc:CityName>
 				<cbc:PostalZone>101</cbc:PostalZone>
 				<cac:Country>
-					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">DK</cbc:IdentificationCode>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2" listAgencyID="6">DK</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
 		</cac:Party>
@@ -83,25 +86,32 @@
 		<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
 		<cbc:AllowanceChargeReasonCode listID="UNCL4465">94</cbc:AllowanceChargeReasonCode>
 		<cbc:AllowanceChargeReason>Freight charge</cbc:AllowanceChargeReason>
-		<cbc:Amount currencyID="DKK">100.00</cbc:Amount>
-		<cac:TaxCategory>
-			<cbc:ID schemeID="UNCL5305">S</cbc:ID>
-			<cbc:Percent>25</cbc:Percent>
-			<cac:TaxScheme>
-				<cbc:ID>VAT</cbc:ID>
-			</cac:TaxScheme>
-		</cac:TaxCategory>
+		<cbc:Amount currencyID="DKK">100</cbc:Amount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UNCL5305" schemeAgencyID="6">S</cbc:ID>
+				<cbc:Percent>25</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID schemeID="UNCL5153" schemeAgencyID="6">VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
 	</cac:AllowanceCharge>
+	<cac:TaxExchangeRate>
+		<cbc:SourceCurrencyCode>DKK</cbc:SourceCurrencyCode>
+		<cbc:TargetCurrencyCode>SEK</cbc:TargetCurrencyCode>
+		<cbc:CalculationRate>1.174</cbc:CalculationRate>
+		<cbc:MathematicOperatorCode>Multiply</cbc:MathematicOperatorCode>
+		<cbc:Date>2013-10-15</cbc:Date>
+	</cac:TaxExchangeRate>
 	<cac:TaxTotal>
 		<cbc:TaxAmount currencyID="DKK">225.00</cbc:TaxAmount>
 		<cac:TaxSubtotal>
 			<cbc:TaxableAmount currencyID="DKK">900.00</cbc:TaxableAmount>
 			<cbc:TaxAmount currencyID="DKK">225.00</cbc:TaxAmount>
 			<cac:TaxCategory>
-				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+				<cbc:ID schemeID="UNCL5305" schemeAgencyID="6">S</cbc:ID>
 				<cbc:Percent>25</cbc:Percent>
 				<cac:TaxScheme>
-					<cbc:ID>VAT</cbc:ID>
+					<cbc:ID schemeID="UNCL5153" schemeAgencyID="6">VAT</cbc:ID>
 				</cac:TaxScheme>
 			</cac:TaxCategory>
 		</cac:TaxSubtotal>
@@ -118,13 +128,13 @@
 		<cbc:InvoicedQuantity unitCode="C62" unitCodeListID="UNECERec20">1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="DKK">800.00</cbc:LineExtensionAmount>
 		<cac:Item>
-			<cbc:Description>Paper Subscription fee 1st quarter</cbc:Description>
+			<cbc:Description languageID="EN">Paper Subscription fee 1st quarter</cbc:Description>
 			<cbc:Name>Paper Subscription</cbc:Name>
 			<cac:ClassifiedTaxCategory>
-				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
-				<cbc:Percent>25</cbc:Percent>
+			<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">S</cbc:ID>
+			<cbc:Percent>25</cbc:Percent>
 				<cac:TaxScheme>
-					<cbc:ID>VAT</cbc:ID>
+					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
 				</cac:TaxScheme>
 			</cac:ClassifiedTaxCategory>
 		</cac:Item>
