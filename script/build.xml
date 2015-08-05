@@ -208,7 +208,7 @@
         <if>
             <equals arg1="${test.result}" arg2="error"/>
             <then>
-                <echo message="##teamcity[testStdErr name='${testType}_${testFile}' message='${validationOutput}']"/>
+                <!--<echo message="##teamcity[testStdErr name='${testType}_${testFile}' message='${validationOutput}']"/>-->
                 <echo message="##teamcity[testFailed name='${testType}_${testFile}' message='${test.reason}']"/>
             </then>
             <else>
