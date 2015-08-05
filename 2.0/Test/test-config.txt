@@ -18,3 +18,11 @@
 #PEPPOL; T10-0026-FullSpec.xml; T10;
 #PEPPOL; T10-0002-minimal invoice wo addr id.xml; T10;
 PEPPOL; T10-0001-BII04 minimal invoice_errorVAT.xml; T10; [BII2-T10-R026]
+PEPPOL; T10-0002-minimal VAT invoice_ErrorVAT.xml; T10; [BII2-T10-R030] [BII2-T10-R045]
+PEPPOL; T10-0003-full core data_OK.xml; T10;
+PEPPOL; T10-0004-example common data_OK.xml; T10;
+
+
+PEPPOL; T10-0007-RoundingAmount_OK.xml; T10;
+PEPPOL; T10-0009-FullSpecINV.xml; T10;
+PEPPOL; T10-0010-B2C_error.xml; T10; OP-T10-R004

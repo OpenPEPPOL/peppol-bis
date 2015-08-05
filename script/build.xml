@@ -166,8 +166,7 @@
             $${testType} => ${testType}
             $${testFile} => ${testFile}
             $${testSchematronType} => ${testSchematronType}
-            $${testErrors} => ${testErrors}
-        </echo>
+            $${testErrors} => ${testErrors}</echo>
 
         <property name="test.name" value="${testType}_${testFile}" environment=""/>
         <echo message="##teamcity[testStarted name='${testType}_${testFile}']"/>
