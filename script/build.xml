@@ -162,7 +162,7 @@
         </echo>
 
         <property name="test.name" value="${testType}_${testFile}" environment=""/>
-        <echo message="##teamcity[testStarted name='${testType}_${testFile}']"/>
+        <echo message="##teamcity[testStarted name='${testType}.${testFile}']"/>
         <!-- SAXON options: http://www.saxonica.com/documentation9.5/using-xsl/commandline.html -->
         <java jar="Saxon-HE-9.5.1-8.jar"
               fork="true"
@@ -207,13 +207,13 @@
                 <!--<replace file="${target.dir}/schematron-output.xml" token="'" value="|'"/>-->
                 <!--<loadfile property="validationOutputReplaced" srcfile="${target.dir}/schematron-output.xml"/>-->
                 <!--<echo message="##teamcity[testStdErr name='${testType}_${testFile}' message='${validationOutputReplaced}']"/>-->
-                <echo message="##teamcity[testFailed name='${testType}_${testFile}' message='${test.reason}']"/>
+                <echo message="##teamcity[testFailed name='${testType}.${testFile}' message='${test.reason}']"/>
                 <!--<echo message="ERROR: file='${testType}_${testFile}' message='${test.reason}']${line.separator}" file="${error.log}" append="true"/>-->
             </then>
             <!--<else>-->
             <!--</else>-->
         </if>
-        <echo message="##teamcity[testFinished name='${testType}_${testFile}']"/>
+        <echo message="##teamcity[testFinished name='${testType}.${testFile}']"/>
     </target>
 
     <!-- build-all is intended for build server. -->
