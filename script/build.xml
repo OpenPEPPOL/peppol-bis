@@ -8,7 +8,7 @@
     <tstamp>
         <format property="build.time" pattern="yyyyMMdd_HHmmss" locale="en,GB"/>
     </tstamp>
-    <echo message="##teamcity[buildNumber '${version.number}']"/>
+    <property name="version.number" value="x.x.x.${build.time}"/>
     <!-- Format of version.releaseDate must be yyyy-mm-dd -->
     <!--<property name="version.releaseDate" value="2015-09-15"/>-->
 
@@ -28,7 +28,7 @@
     </target>
 
     <target name="init">
-        <property name="version.number" value="x.x.x.${build.time}"/>
+        <echo message="##teamcity[buildNumber '${version.number}']"/>
         <mkdir dir="${target.xslt}"/>
     </target>
 
@@ -202,11 +202,11 @@
         <if>
             <equals arg1="${test.result}" arg2="error"/>
             <then>
-                <replace file="${target.dir}/schematron-output.xml" token="[" value="|["/>
-                <replace file="${target.dir}/schematron-output.xml" token="]" value="|]"/>
-                <replace file="${target.dir}/schematron-output.xml" token="'" value="|'"/>
-                <loadfile property="validationOutputReplaced" srcfile="${target.dir}/schematron-output.xml"/>
-                <echo message="##teamcity[testStdErr name='${testType}_${testFile}' message='${validationOutputReplaced}']"/>
+                <!--<replace file="${target.dir}/schematron-output.xml" token="[" value="|["/>-->
+                <!--<replace file="${target.dir}/schematron-output.xml" token="]" value="|]"/>-->
+                <!--<replace file="${target.dir}/schematron-output.xml" token="'" value="|'"/>-->
+                <!--<loadfile property="validationOutputReplaced" srcfile="${target.dir}/schematron-output.xml"/>-->
+                <!--<echo message="##teamcity[testStdErr name='${testType}_${testFile}' message='${validationOutputReplaced}']"/>-->
                 <echo message="##teamcity[testFailed name='${testType}_${testFile}' message='${test.reason}']"/>
                 <!--<echo message="ERROR: file='${testType}_${testFile}' message='${test.reason}']${line.separator}" file="${error.log}" append="true"/>-->
             </then>
