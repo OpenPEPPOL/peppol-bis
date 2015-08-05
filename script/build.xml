@@ -162,8 +162,7 @@
     </target>
 
     <target name="handleTestLine" depends="parseTestLine" unless="isCommentLine">
-        <echo>
-            $${testType} => ${testType}
+        <echo>            $${testType} => ${testType}
             $${testFile} => ${testFile}
             $${testSchematronType} => ${testSchematronType}
             $${testErrors} => ${testErrors}</echo>
@@ -189,12 +188,16 @@
             validationOutput = project.getProperty('validationOutput');
 
             errorArray = project.getProperty('testErrors').trim().split(' ');
+            var escapeChars = ["[", "]", "'"];
             for (i=0; errorArray.length > i; i++) {
                 errorCode = errorArray[i];
 
                 // We have an errorCode, so it should be found to be OK!
                 if ( validationOutput.indexOf(errorCode) == -1 ) {
                     project.setProperty('test.result', "error");
+                    for (var i = 0; escapeChars.length > i; i++) {
+                        errorCode = errorCode.replace(escapeChars[i], "|"+escapeChars[i]);
+                    }
                     project.setProperty('test.reason', "Error " + errorCode + " not found in output");
                     break;
                 } else {
