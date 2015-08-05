@@ -125,6 +125,9 @@
         <loadfile property="testConfig" srcfile="${test.dir}/test-config.txt"/>
         <foreach target="handleTestLine" param="line" list="${testConfig}" delimiter="${line.separator}"/>
 
+        <echo message="##teamcity[testStarted name='MyTest.test1']"/>
+        <echo message="##teamcity[testFailed name='MyTest.test1' message='failure message' details='message and stack trace']"/>
+        <echo message="##teamcity[testFinished name='MyTest.test1']"/>
         <!--Check if errors exists-->
         <!--<fileset id="matches" file="${error.log}">-->
             <!--<contains text="ERROR:"/>-->
@@ -143,19 +146,19 @@
 
         <script language="javascript">
             if (project.getProperty('line').length==0 || project.getProperty('line').startsWith('#') ) {
-            project.setProperty('isCommentLine', true);
+                project.setProperty('isCommentLine', true);
             } else {
-            arr = project.getProperty('line').trim().split(';', 4);
-            project.setProperty('testType', arr[0].trim());
-            project.setProperty('testFile', arr[1].trim());
-            project.setProperty('testSchematronType', arr[2].trim());
-            project.setProperty('testErrors', arr[3].trim());
+                arr = project.getProperty('line').trim().split(';', 4);
+                project.setProperty('testType', arr[0].trim());
+                project.setProperty('testFile', arr[1].trim());
+                project.setProperty('testSchematronType', arr[2].trim());
+                project.setProperty('testErrors', arr[3].trim());
             }
         </script>
     </target>
 
     <target name="handleTestLine" depends="parseTestLine" unless="isCommentLine">
-        <echo>$${testType} => ${testType}
+        <echo>            $${testType} => ${testType}
             $${testFile} => ${testFile}
             $${testSchematronType} => ${testSchematronType}
             $${testErrors} => ${testErrors}
@@ -188,15 +191,15 @@
 
             // We have an errorCode, so it should be found to be OK!
             if ( validationOutput.indexOf(errorCode) == -1 ) {
-            project.setProperty('test.result', "error");
-            for (var i = 0; escapeChars.length > i; i++) {
-            errorCode = errorCode.replace(escapeChars[i], "|"+escapeChars[i]);
-            }
-            project.setProperty('test.reason', "Error " + errorCode + " not found in output");
-            break;
-            } else {
-            project.setProperty('test.result', "ok");
-            }
+                project.setProperty('test.result', "error");
+                for (var i = 0; escapeChars.length > i; i++) {
+                    errorCode = errorCode.replace(escapeChars[i], "|"+escapeChars[i]);
+                }
+                project.setProperty('test.reason', "Error " + errorCode + " not found in output");
+                break;
+                } else {
+                    project.setProperty('test.result', "ok");
+                }
             }
         </script>
         <if>
@@ -208,7 +211,7 @@
                 <!--<loadfile property="validationOutputReplaced" srcfile="${target.dir}/schematron-output.xml"/>-->
                 <!--<echo message="##teamcity[testStdErr name='${testType}_${testFile}' message='${validationOutputReplaced}']"/>-->
                 <echo message="##teamcity[testFailed name='${testType}.${testFile}' message='${test.reason}']"/>
-                <!--<echo message="ERROR: file='${testType}_${testFile}' message='${test.reason}']${line.separator}" file="${error.log}" append="true"/>-->
+                <!--<echo message="ERROR: file='${testType}.${testFile}' message='${test.reason}']${line.separator}" file="${error.log}" append="true"/>-->
             </then>
             <!--<else>-->
             <!--</else>-->
