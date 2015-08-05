@@ -9,7 +9,6 @@
         <format property="build.time" pattern="yyyyMMdd_HHmmss" locale="en,GB"/>
     </tstamp>
     <property name="version.number" value="x.x.x.${build.time}"/>
-    <echo message="##teamcity[buildNumber '${version.number}']"/>
     <!-- Format of version.releaseDate must be yyyy-mm-dd -->
     <!--<property name="version.releaseDate" value="2015-09-15"/>-->
 
@@ -25,10 +24,11 @@
     </taskdef>
 
     <target name="clean">
-        <delete dir="../target"/>
+        <delete dir="${target.dir}"/>
     </target>
 
     <target name="init">
+        <echo message="##teamcity[buildNumber '${version.number}']"/>
         <mkdir dir="${target.xslt}"/>
     </target>
 
