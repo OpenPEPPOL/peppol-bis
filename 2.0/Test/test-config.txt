@@ -12,7 +12,11 @@
 # <ExpectedErrorCode>   : Can be empty, or specify list of errors that must exist. Multiple errors must be separated by space
 #
 # Examples:
-#
+# Valid line:
+# PEPPOL; T10-0003-full core data_OK.xml; T10;
+# Invalid file with multiple errors:
+# PEPPOL; T10-0006-MultipleCurrencies_error.xml; T10; EUGEN-T10-R026] [EUGEN-T10-R046]
+
 
 # Invoice/T10 tests
 #PEPPOL; T10-0026-FullSpec.xml; T10;
@@ -21,8 +25,23 @@ PEPPOL; T10-0001-BII04 minimal invoice_errorVAT.xml; T10; [BII2-T10-R026]
 PEPPOL; T10-0002-minimal VAT invoice_ErrorVAT.xml; T10; [BII2-T10-R030] [BII2-T10-R045]
 PEPPOL; T10-0003-full core data_OK.xml; T10;
 PEPPOL; T10-0004-example common data_OK.xml; T10;
-
-
+PEPPOL; T10-0005-MultipleSchematronErrors.xml; T10; [CL-T10-R001] [CL-T10-R002] [CL-T10-R004] [CL-T10-R003] [CL-[T10-R007] [CL-T10-R006] [OP-T10-R004]
+PEPPOL; T10-0006-MultipleCurrencies_error.xml; T10; EUGEN-T10-R026] [EUGEN-T10-R046]
 PEPPOL; T10-0007-RoundingAmount_OK.xml; T10;
 PEPPOL; T10-0009-FullSpecINV.xml; T10;
 PEPPOL; T10-0010-B2C_error.xml; T10; OP-T10-R004
+PEPPOL; T10-0013-negative_invoice_errors.xml; T10;
+PEPPOL; T10-0014-ErrorRounding_BIC_IBAN.xml; T10; [BII2-T10-R042] [BII2-T10-R040]
+PEPPOL; T10-0015-simpleINV_OK.xml; T10;
+PEPPOL; T10-0016-Valuta-EUR_Warn.xml; T10;
+PEPPOL; T10-0017-Standard_PEPPOL BIS_Warn.xml; T10;
+PEPPOL; T10-0018-OK2VATRatesSimple_OK.xml; T10;
+PEPPOL; T10-0019-RichContent_OK.xml; T10;
+PEPPOL; T10-0020-CrossBorder_OK.xml; T10;
+PEPPOL; T10-0021-EUVATNotAppicable_OK.xml; T10;
+PEPPOL; T10-0022-FullSpec_OK.xml; T10;
+PEPPOL; T10-0023-ErrorUOM.xml; T10; [BII2-T10-R018] [BII2-T10-R019]
+PEPPOL; T10-0026-ReverseChargeERR.xml; T10; [BII2-T10-R047] [BII2-T10-R048] [BII2-T10-R045]
+PEPPOL; T10-0027-MissVATCategory.xml; T10; BII2-T10-R026
+PEPPOL; T10-0028-MissExemptReasonERR.xml; T10; BII2-T10-R045
+PEPPOL; T10-0029-MissExemptReasonandVATOnLine.xml; T10; [BII2-T10-R045] [BII2-T10-R046]
