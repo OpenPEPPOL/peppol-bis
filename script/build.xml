@@ -122,23 +122,21 @@
     </target>
 
     <target name="test" depends="" description="Run all tests">
+        <delete file="${error.log}"/>
         <loadfile property="testConfig" srcfile="${test.dir}/test-config.txt"/>
         <foreach target="handleTestLine" param="line" list="${testConfig}" delimiter="${line.separator}"/>
 
-        <echo message="##teamcity[testStarted name='MyTest.test1']"/>
-        <echo message="##teamcity[testFailed name='MyTest.test1' message='failure message' details='message and stack trace']"/>
-        <echo message="##teamcity[testFinished name='MyTest.test1']"/>
         <!--Check if errors exists-->
-        <!--<fileset id="matches" file="${error.log}">-->
-            <!--<contains text="ERROR:"/>-->
-        <!--</fileset>-->
+        <fileset id="matches" file="${error.log}">
+            <contains text="ERROR:"/>
+        </fileset>
 
-        <!--<fail message="Found ERRORS in test output">-->
-            <!--<condition>-->
-                <!--<resourcecount when="greater" count="0" refid="matches"/>-->
-            <!--</condition>-->
-        <!--</fail>-->
-        <!--<delete file="${error.log}"/>-->
+        <fail message="Found ERRORS in tests">
+            <condition>
+                <resourcecount when="greater" count="0" refid="matches"/>
+            </condition>
+        </fail>
+        <delete file="${error.log}"/>
     </target>
 
     <target name="parseTestLine">
@@ -211,7 +209,7 @@
                 <!--<loadfile property="validationOutputReplaced" srcfile="${target.dir}/schematron-output.xml"/>-->
                 <!--<echo message="##teamcity[testStdErr name='${testType}_${testFile}' message='${validationOutputReplaced}']"/>-->
                 <echo message="##teamcity[testFailed name='${testType}.${testFile}' message='${test.reason}']"/>
-                <!--<echo message="ERROR: file='${testType}.${testFile}' message='${test.reason}']${line.separator}" file="${error.log}" append="true"/>-->
+                <echo message="ERROR: file='${testType}.${testFile}' message='${test.reason}']${line.separator}" file="${error.log}" append="true"/>
             </then>
             <!--<else>-->
             <!--</else>-->
