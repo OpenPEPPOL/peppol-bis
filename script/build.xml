@@ -208,7 +208,11 @@
         <if>
             <equals arg1="${test.result}" arg2="error"/>
             <then>
-                <!--<echo message="##teamcity[testStdErr name='${testType}_${testFile}' message='${validationOutput}']"/>-->
+                <replace file="${target.dir}/schematron-output.xml" token="[" value="|["/>
+                <replace file="${target.dir}/schematron-output.xml" token="]" value="|]"/>
+                <replace file="${target.dir}/schematron-output.xml" token="'" value="|'"/>
+                <loadfile property="validationOutputReplaced" srcfile="${target.dir}/schematron-output.xml"/>
+                <!--<echo message="##teamcity[testStdErr name='${testType}_${testFile}' message='${validationOutputReplaced}']"/>-->
                 <echo message="##teamcity[testFailed name='${testType}_${testFile}' message='${test.reason}']"/>
             </then>
             <else>
