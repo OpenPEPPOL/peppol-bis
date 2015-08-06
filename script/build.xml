@@ -27,7 +27,7 @@
     </target>
 
     <target name="init">
-        <echo message="##teamcity[buildNumber '${version.number}'"/>
+        <echo message="##teamcity[buildNumber '${version.number}']"/>
         <mkdir dir="${target.xslt}"/>
     </target>
 
