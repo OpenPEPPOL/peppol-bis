@@ -193,8 +193,8 @@
                 <replace file="${target.dir}/schematron-output.xml" token="]" value="|]"/>
                 <replace file="${target.dir}/schematron-output.xml" token="'" value="|'"/>
                 <loadfile property="validationOutputReplaced" srcfile="${target.dir}/schematron-output.xml"/>
-                <!--<echo message="##teamcity[testStdErr name='${testType}_${testFile}' message='${validationOutputReplaced}']"/>-->
-                <echo message="##teamcity[testFailed name='${testType}.${testFile}' message='${test.reason}' details='Output:${line.separator}${validationOutputReplaced}' flowId='12321']"/>
+                <echo message="##teamcity[testFailed name='${testType}.${testFile}' message='${test.reason}' flowId='12321']"/>
+                <echo message="##teamcity[testStdErr name='${testType}_${testFile}' message='${validationOutputReplaced}'] flowId='12321']"/>
             </then>
         </if>
         <echo message="##teamcity[testFinished name='${testType}.${testFile}' flowId='12321']"/>
