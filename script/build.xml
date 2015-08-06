@@ -52,7 +52,6 @@
     <target name="compileDocumentType" depends="dir.check" if="dir.exists">
         <basename property="baseDocumentType" file="${documentType}"/>
         <!--<echo message="${documentType}"/>-->
-        <echo message="##teamcity[compilationStarted compiler='${baseDocumentType}' flowId='12321']"/>
         <foreach target="compileSchFile" param="schFile">
             <path>
                 <fileset dir="${documentType}/Schematron/">
@@ -60,13 +59,11 @@
                 </fileset>
             </path>
         </foreach>
-
-        <echo message="##teamcity[compilationFinished compiler='${baseDocumentType}' flowId='12321']"/>
     </target>
 
     <target name="compileSchFile">
         <basename property="baseName" file="${schFile}" suffix=".sch"/>
-        <echo message="SCH: ${schFile}"/>
+        <echo message="##teamcity[compilationStarted compiler='${baseName}' flowId='12321']"/>
 
         <java jar="Saxon-HE-9.5.1-8.jar"
               fork="true"
@@ -106,6 +103,7 @@
         <move file="${target.xslt}/${baseName}.step3.xsl" tofile="${target.xslt}/${baseName}.xsl"/>
         <delete file="${target.xslt}/${baseName}.step1.xsl"/>
         <delete file="${target.xslt}/${baseName}.step2.xsl"/>
+        <echo message="##teamcity[compilationFinished compiler='${baseName}' flowId='12321']"/>
     </target>
 
     <target name="dir.check">
