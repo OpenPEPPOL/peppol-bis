@@ -1,4 +1,3 @@
-#5/6/7/8
 #
 # SYNTAX:
 # <Type>; <FileName>; <SchematronToUse>[; <ExpectedErrorCode>]*
@@ -19,7 +18,6 @@
 
 
 # Invoice/T10 tests
-<<<<<<< .mine
 BIIRULES; T10-0001-BII04 minimal invoice_errorVAT.xml; T10; [BII2-T10-R026] 
 BIIRULES; T10-0002-minimal VAT invoice_ErrorVAT.xml; T10; [BII2-T10-R030] [BII2-T10-R045] 
 BIIRULES; T10-0003-full core data_OK.xml; T10;  
@@ -66,5 +64,3 @@ BIIRULES; T10-0026-ReverseChargeERR.xml; T10; [BII2-T10-R047]  [BII2-T10-R048]  
 BIIRULES; T10-0027-MissVATCategory.xml; T10; BII2-T10-R026 
 BIIRULES; T10-0028-MissExemptReasonERR.xml; T10; BII2-T10-R045 
 BIIRULES; T10-0029-MissExemptReasonandVATOnLine.xml; T10; [BII2-T10-R045]  [BII2-T10-R046] 
-
->>>>>>> .r61
