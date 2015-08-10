@@ -177,10 +177,13 @@
 
         <loadfile property="validationOutput" srcfile="${target.dir}/schematron-output.xml"/>
 
-        <script language="javascript">
+        <script language="javascript"><![CDATA[
             validationOutput = project.getProperty('validationOutput');
 
             errorArray = project.getProperty('testErrors').trim().split(' ');
+//            echo = project.createTask("echo");
+//            echo.setMessage( "ETST..................................................... " + errorArray.length);
+//            echo.perform( );
             var escapeChars = ["[", "]", "'"];
             // Test for expected errors
             for (i=0; errorArray.length > i; i++) {
@@ -200,9 +203,14 @@
             }
 
             // Test for no errors expected
-            if (errorArray.length == 0 ) {
+            // If no errors expected and [ is found (start token for schematron error) - then fail test
+            // errorArray is created, holding 1 empty element
+            if (errorArray.length == 1 && errorArray[0].length()==0 && validationOutput.indexOf("[") > 0 ) {
+                project.setProperty('test.result', "error");
+                project.setProperty('test.reason', "Error(s) found, where no errors were expected");
+                project.setProperty('test.errorCode', "no errors");
             }
-        </script>
+        ]]></script>
         <if>
             <equals arg1="${test.result}" arg2="error"/>
             <then>
