@@ -169,7 +169,7 @@
               maxmemory="2048m"
               resultproperty="errorCode">
             <arg value="-s:../2.0/Documents/T10-Invoice/Tests/${testFile}"/>
-            <arg value="-xsl:${target.xslt}/BIIRULES-UBL-${testSchematronType}.xsl"/>
+            <arg value="-xsl:${target.xslt}/${testType}-UBL-${testSchematronType}.xsl"/>
             <arg value="-o:${target.dir}/schematron-output.xml"/>
             <arg value="-warnings:silent"/>
             <jvmarg line="-Xmx2048m"/>
@@ -182,8 +182,10 @@
 
             errorArray = project.getProperty('testErrors').trim().split(' ');
             var escapeChars = ["[", "]", "'"];
+            // Test for expected errors
             for (i=0; errorArray.length > i; i++) {
-                errorCode = errorArray[i];
+                project.setProperty('test.result', "ok");
+                errorCode = errorArray[i].trim();
 
                 // We have an errorCode, so it should be found to be OK!
                 if ( validationOutput.indexOf(errorCode) == -1 ) {
@@ -194,9 +196,11 @@
                     }
                     project.setProperty('test.reason', "Error " + errorCode + " not found in schematron output");
                     break;
-                } else {
-                    project.setProperty('test.result', "ok");
                 }
+            }
+
+            // Test for no errors expected
+            if (errorArray.length == 0 ) {
             }
         </script>
         <if>
