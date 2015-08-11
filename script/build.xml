@@ -15,7 +15,7 @@
     <property name="test.dir" value="../2.0/Test"/>
     <property name="target.dir" value="../target"/>
     <property name="target.xslt" value="${target.dir}/XSLT"/>
-    <property name="error.log" value="${target.dir}/error.log"/>
+    <property name="test.output" value="${target.dir}/test-output.log"/>
 
     <taskdef resource="net/sf/antcontrib/antcontrib.properties">
         <classpath>
@@ -53,7 +53,6 @@
     <target name="compileDocumentType" depends="dir.check" if="dir.exists">
         <basename property="baseDocumentType" file="${documentType}"/>
         <!--<echo message="${documentType}"/>-->
-        <echo message="##teamcity[compilationStarted compiler='${baseDocumentType}']"/>
         <foreach target="compileSchFile" param="schFile">
             <path>
                 <fileset dir="${documentType}/Schematron/">
@@ -61,13 +60,11 @@
                 </fileset>
             </path>
         </foreach>
-
-        <echo message="##teamcity[compilationFinished compiler='${baseDocumentType}']"/>
     </target>
 
     <target name="compileSchFile">
         <basename property="baseName" file="${schFile}" suffix=".sch"/>
-        <echo message="SCH: ${schFile}"/>
+        <echo message="##teamcity[compilationStarted compiler='${baseName}' flowId='12321']"/>
 
         <java jar="Saxon-HE-9.5.1-8.jar"
               fork="true"
@@ -107,6 +104,7 @@
         <move file="${target.xslt}/${baseName}.step3.xsl" tofile="${target.xslt}/${baseName}.xsl"/>
         <delete file="${target.xslt}/${baseName}.step1.xsl"/>
         <delete file="${target.xslt}/${baseName}.step2.xsl"/>
+        <echo message="##teamcity[compilationFinished compiler='${baseName}' flowId='12321']"/>
     </target>
 
     <target name="dir.check">
@@ -122,23 +120,21 @@
     </target>
 
     <target name="test" depends="" description="Run all tests">
+        <delete file="${test.output}"/>
         <loadfile property="testConfig" srcfile="${test.dir}/test-config.txt"/>
         <foreach target="handleTestLine" param="line" list="${testConfig}" delimiter="${line.separator}"/>
+        <delete file="${target.dir}/schematron-output.xml"/>
 
-        <echo message="##teamcity[testStarted name='MyTest.test1']"/>
-        <echo message="##teamcity[testFailed name='MyTest.test1' message='failure message' details='message and stack trace']"/>
-        <echo message="##teamcity[testFinished name='MyTest.test1']"/>
         <!--Check if errors exists-->
-        <!--<fileset id="matches" file="${error.log}">-->
-            <!--<contains text="ERROR:"/>-->
-        <!--</fileset>-->
+        <fileset id="matches" file="${test.output}">
+            <contains text="ERROR"/>
+        </fileset>
 
-        <!--<fail message="Found ERRORS in test output">-->
+        <!--<fail message="Found ERRORS in tests">-->
             <!--<condition>-->
                 <!--<resourcecount when="greater" count="0" refid="matches"/>-->
             <!--</condition>-->
         <!--</fail>-->
-        <!--<delete file="${error.log}"/>-->
     </target>
 
     <target name="parseTestLine">
@@ -165,7 +161,7 @@
         </echo>
 
         <property name="test.name" value="${testType}_${testFile}" environment=""/>
-        <echo message="##teamcity[testStarted name='${testType}.${testFile}']"/>
+        <echo message="##teamcity[testStarted name='${testType}.${testFile}' flowId='12321']"/>
         <!-- SAXON options: http://www.saxonica.com/documentation9.5/using-xsl/commandline.html -->
         <java jar="Saxon-HE-9.5.1-8.jar"
               fork="true"
@@ -173,7 +169,7 @@
               maxmemory="2048m"
               resultproperty="errorCode">
             <arg value="-s:../2.0/Documents/T10-Invoice/Tests/${testFile}"/>
-            <arg value="-xsl:${target.xslt}/BIIRULES-UBL-${testSchematronType}.xsl"/>
+            <arg value="-xsl:${target.xslt}/${testType}-UBL-${testSchematronType}.xsl"/>
             <arg value="-o:${target.dir}/schematron-output.xml"/>
             <arg value="-warnings:silent"/>
             <jvmarg line="-Xmx2048m"/>
@@ -181,42 +177,50 @@
 
         <loadfile property="validationOutput" srcfile="${target.dir}/schematron-output.xml"/>
 
-        <script language="javascript">
+        <script language="javascript"><![CDATA[
             validationOutput = project.getProperty('validationOutput');
 
             errorArray = project.getProperty('testErrors').trim().split(' ');
+//            echo = project.createTask("echo");
+//            echo.setMessage("TEST..................................................... " + errorArray.length);
+//            echo.perform( );
             var escapeChars = ["[", "]", "'"];
+            // Test for expected errors
             for (i=0; errorArray.length > i; i++) {
-            errorCode = errorArray[i];
+                project.setProperty('test.result', "ok");
+                errorCode = errorArray[i].trim();
 
-            // We have an errorCode, so it should be found to be OK!
-            if ( validationOutput.indexOf(errorCode) == -1 ) {
-                project.setProperty('test.result', "error");
-                for (var i = 0; escapeChars.length > i; i++) {
-                    errorCode = errorCode.replace(escapeChars[i], "|"+escapeChars[i]);
-                }
-                project.setProperty('test.reason', "Error " + errorCode + " not found in output");
-                break;
-                } else {
-                    project.setProperty('test.result', "ok");
+                // We have an errorCode, so it should be found to be OK!
+                if ( validationOutput.indexOf(errorCode) == -1 ) {
+                    project.setProperty('test.errorCode', errorCode);
+                    project.setProperty('test.result', "error");
+                    for (var i = 0; escapeChars.length > i; i++) {
+                        errorCode = errorCode.replace(escapeChars[i], "|"+escapeChars[i]);
+                    }
+                    project.setProperty('test.reason', "Error " + errorCode + " not found in schematron output");
+                    break;
                 }
             }
-        </script>
+
+            // Test for no errors expected
+            // If no errors expected and [ is found (start token for schematron error) - then fail test
+            // errorArray is created, holding 1 empty element
+            if (errorArray.length == 1 && errorArray[0].length()==0 && validationOutput.indexOf("[") > 0 ) {
+                project.setProperty('test.result', "error");
+                project.setProperty('test.reason', "Error(s) found, where no errors were expected");
+                project.setProperty('test.errorCode', "no errors");
+            }
+        ]]></script>
         <if>
             <equals arg1="${test.result}" arg2="error"/>
             <then>
-                <!--<replace file="${target.dir}/schematron-output.xml" token="[" value="|["/>-->
-                <!--<replace file="${target.dir}/schematron-output.xml" token="]" value="|]"/>-->
-                <!--<replace file="${target.dir}/schematron-output.xml" token="'" value="|'"/>-->
-                <!--<loadfile property="validationOutputReplaced" srcfile="${target.dir}/schematron-output.xml"/>-->
-                <!--<echo message="##teamcity[testStdErr name='${testType}_${testFile}' message='${validationOutputReplaced}']"/>-->
-                <echo message="##teamcity[testFailed name='${testType}.${testFile}' message='${test.reason}']"/>
-                <!--<echo message="ERROR: file='${testType}.${testFile}' message='${test.reason}']${line.separator}" file="${error.log}" append="true"/>-->
+                <echo message="##teamcity[testFailed name='${testType}.${testFile}' message='${test.reason}' flowId='12321']"/>
+
+                <echo message="ERROR: Output from ${testType} schematron validation of the file ${testFile} - expected ${test.errorCode}:${line.separator}" file="${test.output}" append="true"/>
+                <echo message="${validationOutput}${line.separator}${line.separator}" file="${test.output}" append="true"/>
             </then>
-            <!--<else>-->
-            <!--</else>-->
         </if>
-        <echo message="##teamcity[testFinished name='${testType}.${testFile}']"/>
+        <echo message="##teamcity[testFinished name='${testType}.${testFile}' flowId='12321']"/>
     </target>
 
     <!-- build-all is intended for build server. -->

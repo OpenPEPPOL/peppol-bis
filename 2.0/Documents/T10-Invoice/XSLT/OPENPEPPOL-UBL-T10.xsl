@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<axsl:stylesheet xmlns:axsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:saxon="http://saxon.sf.net/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:schold="http://www.ascc.net/xml/schematron" xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" version="1.0"><!--Implementers: please note that overriding process-prolog or process-root is 
+<axsl:stylesheet xmlns:axsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:saxon="http://saxon.sf.net/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:schold="http://www.ascc.net/xml/schematron" xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" version="2.0"><!--Implementers: please note that overriding process-prolog or process-root is 
     the preferred method for meta-stylesheets to use where possible. -->
 
-
+   <axsl:param name="archiveDirParameter" tunnel="no"/>
+   <axsl:param name="archiveNameParameter" tunnel="no"/>
+   <axsl:param name="fileNameParameter" tunnel="no"/>
+   <axsl:param name="fileDirParameter" tunnel="no"/>
 
 <!--PHASES-->
 
@@ -147,7 +150,10 @@
    <axsl:template match="/">
       <svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl" title="OPENPEPPOL  T10 bound to UBL" schemaVersion="">
          <axsl:comment>
-
+            <axsl:value-of select="$archiveDirParameter"/>   
+		 <axsl:value-of select="$archiveNameParameter"/>  
+		 <axsl:value-of select="$fileNameParameter"/>  
+		 <axsl:value-of select="$fileDirParameter"/>
          </axsl:comment>
          <svrl:ns-prefix-in-attribute-values uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" prefix="cbc"/>
          <svrl:ns-prefix-in-attribute-values uri="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" prefix="cac"/>
@@ -692,9 +698,9 @@
 		<!--ASSERT -->
 
       <axsl:choose>
-         <axsl:when test="(number(child::cbc:TaxAmount)= round(number(sum(cac:TaxSubtotal/cbc:TaxAmount) * 10 * 10)) div 100) "/>
+         <axsl:when test="(xs:decimal(child::cbc:TaxAmount)= round(number(xs:decimal(sum(cac:TaxSubtotal/cbc:TaxAmount)) * 10 * 10)) div 100) "/>
          <axsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(number(child::cbc:TaxAmount)= round(number(sum(cac:TaxSubtotal/cbc:TaxAmount) * 10 * 10)) div 100)">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(xs:decimal(child::cbc:TaxAmount)= round(number(xs:decimal(sum(cac:TaxSubtotal/cbc:TaxAmount)) * 10 * 10)) div 100)">
                <axsl:attribute name="id">EUGEN-T10-R043</axsl:attribute>
                <axsl:attribute name="flag">fatal</axsl:attribute>
                <axsl:attribute name="location">
@@ -738,9 +744,9 @@
 		<!--ASSERT -->
 
       <axsl:choose>
-         <axsl:when test="((cbc:TaxableAmount) and (cac:TaxCategory/cbc:Percent) and (number(cbc:TaxAmount - 1) &lt; number(cbc:TaxableAmount * (cac:TaxCategory/cbc:Percent div 100))) and (number(cbc:TaxAmount + 1) &gt; number(cbc:TaxableAmount * (cac:TaxCategory/cbc:Percent div 100)))) or not(cac:TaxCategory/cbc:Percent) or not(cbc:TaxableAmount)"/>
+         <axsl:when test="((cbc:TaxableAmount) and (cac:TaxCategory/cbc:Percent) and ((xs:decimal(cbc:TaxAmount)) = round((xs:decimal(cbc:TaxableAmount) * (xs:decimal(cac:TaxCategory/cbc:Percent) div 100)) *10 * 10) div 100)) or not(cac:TaxCategory/cbc:Percent) or not(cbc:TaxableAmount)"/>
          <axsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="((cbc:TaxableAmount) and (cac:TaxCategory/cbc:Percent) and (number(cbc:TaxAmount - 1) &lt; number(cbc:TaxableAmount * (cac:TaxCategory/cbc:Percent div 100))) and (number(cbc:TaxAmount + 1) &gt; number(cbc:TaxableAmount * (cac:TaxCategory/cbc:Percent div 100)))) or not(cac:TaxCategory/cbc:Percent) or not(cbc:TaxableAmount)">
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="((cbc:TaxableAmount) and (cac:TaxCategory/cbc:Percent) and ((xs:decimal(cbc:TaxAmount)) = round((xs:decimal(cbc:TaxableAmount) * (xs:decimal(cac:TaxCategory/cbc:Percent) div 100)) *10 * 10) div 100)) or not(cac:TaxCategory/cbc:Percent) or not(cbc:TaxableAmount)">
                <axsl:attribute name="id">EUGEN-T10-R042</axsl:attribute>
                <axsl:attribute name="flag">fatal</axsl:attribute>
                <axsl:attribute name="location">
@@ -817,7 +823,6 @@
             </svrl:failed-assert>
          </axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*" mode="M7"/>
    </axsl:template>
 
 	<!--RULE -->
@@ -839,7 +844,6 @@
             </svrl:failed-assert>
          </axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*" mode="M7"/>
    </axsl:template>
 
 	<!--RULE -->
@@ -861,7 +865,6 @@
             </svrl:failed-assert>
          </axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*" mode="M7"/>
    </axsl:template>
 
 	<!--RULE -->
@@ -883,7 +886,6 @@
             </svrl:failed-assert>
          </axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*" mode="M7"/>
    </axsl:template>
 
 	<!--RULE -->
@@ -905,7 +907,6 @@
             </svrl:failed-assert>
          </axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*" mode="M7"/>
    </axsl:template>
 
 	<!--RULE -->
