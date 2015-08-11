@@ -160,7 +160,6 @@
 		<cbc:PayableAmount currencyID="NOK">125.00</cbc:PayableAmount>
 	</cac:LegalMonetaryTotal>
 	<cac:InvoiceLine>
-		<cbc:ID>1</cbc:ID>
 		<cbc:LineExtensionAmount currencyID="NOK">100.00</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>Vare A123456789012345678901234567890123456789012345</cbc:Name>
