@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
                 Content:
-                This file contains a PEPPOL invoice BIS4a - Singe lnvoice. The intention of the test is to check that the schematron validation of codelists are fired correctly.
+                This file contains a PEPPOL invoice BIS4a - Singe invoice. The intention of the test is to check that the schematron validation of codelists are fired correctly.
 
                 Errors:
                 CL-T10-R001
