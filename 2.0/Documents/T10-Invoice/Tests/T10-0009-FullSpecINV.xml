@@ -2,10 +2,12 @@
 
 <!--
                 Description:
-                This file contains a PEPPOL Invoice BIS4a. The intention of the test is to check that a full spec Invoice is valid and can pass.
+                This file contains a PEPPOL Invoice BIS4a. The intention of the test is to check that a full spec is invalid..
 
                 Error:
-				None
+				BII2-T10-R053
+				BII2-T10-R056
+				BII2-T10-R032
 		
 				Warning: 
 				None
