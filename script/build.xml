@@ -96,7 +96,8 @@
               maxmemory="2048m"
               resultproperty="errorCode">
             <arg value="-s:${target.xslt}/${baseName}.step2.xsl"/>
-            <arg value="-xsl:iso-schematron-xslt2/iso_schematron_skeleton_for_saxon.xsl"/>
+            <!--<arg value="-xsl:iso-schematron-xslt2/iso_schematron_skeleton_for_saxon.xsl"/>-->
+            <arg value="-xsl:iso-schematron-xslt2/iso_svrl_for_xslt2.xsl"/>
             <arg value="-o:${target.xslt}/${baseName}.step3.xsl"/>
             <jvmarg line="-Xmx2048m"/>
         </java>
@@ -131,9 +132,9 @@
         </fileset>
 
         <!--<fail message="Found ERRORS in tests">-->
-            <!--<condition>-->
-                <!--<resourcecount when="greater" count="0" refid="matches"/>-->
-            <!--</condition>-->
+        <!--<condition>-->
+        <!--<resourcecount when="greater" count="0" refid="matches"/>-->
+        <!--</condition>-->
         <!--</fail>-->
     </target>
 
@@ -142,13 +143,13 @@
 
         <script language="javascript">
             if (project.getProperty('line').length==0 || project.getProperty('line').startsWith('#') ) {
-                project.setProperty('isCommentLine', true);
+            project.setProperty('isCommentLine', true);
             } else {
-                arr = project.getProperty('line').trim().split(';', 4);
-                project.setProperty('testType', arr[0].trim());
-                project.setProperty('testFile', arr[1].trim());
-                project.setProperty('testSchematronType', arr[2].trim());
-                project.setProperty('testErrors', arr[3].trim());
+            arr = project.getProperty('line').trim().split(';', 4);
+            project.setProperty('testType', arr[0].trim());
+            project.setProperty('testFile', arr[1].trim());
+            project.setProperty('testSchematronType', arr[2].trim());
+            project.setProperty('testErrors', arr[3].trim());
             }
         </script>
     </target>
@@ -203,9 +204,9 @@
             }
 
             // Test for no errors expected
-            // If no errors expected and [ is found (start token for schematron error) - then fail test
+            // If no errors expected and "failed-assert" is found - then fail test
             // errorArray is created, holding 1 empty element
-            if (errorArray.length == 1 && errorArray[0].length()==0 && validationOutput.indexOf("[") > 0 ) {
+            if (errorArray.length == 1 && errorArray[0].length()==0 && validationOutput.indexOf("failed-assert") > 0 ) {
                 project.setProperty('test.result', "error");
                 project.setProperty('test.reason', "Error(s) found, where no errors were expected");
                 project.setProperty('test.errorCode', "no errors");
