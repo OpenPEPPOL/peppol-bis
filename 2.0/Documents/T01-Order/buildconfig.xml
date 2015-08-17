@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildConfigurations xmlns="http://difi.no/xsd/vefa/validator/1.0">
 
+	<package>PEPPOL BIS 3A Order only 2.0</package>
+
     <testfolder>Tests</testfolder>
 
-	<package>PEPPOL BIS 3A Order only 2.0</package>
-	
     <configuration>
-        <identifier>peppolbis-03-t01-2.0</identifier>
+        <identifier>peppolbis-t01-03-2.0</identifier>
         <title>PEPPOL BIS Order (Profile 03)</title>
         <profileId>urn:www.cenbii.eu:profile:bii03:ver2.0</profileId>
         <customizationId>urn:www.cenbii.eu:transaction:biitrns001:ver2.0:extended:urn:www.peppol.eu:bis:peppol03a:ver2.0</customizationId>
+		<inherit>ubl-order-2.1</inherit>
         <file source="Schematron/BII CORE/BIICORE-UBL-T01-V1.0.sch" path="xsl/BIICORE-UBL-T01.xsl" />
         <file source="Schematron/BII RULES/BIIRULES-UBL-T01.sch" path="xsl/BIIRULES-UBL-T01.xsl" />
         <file source="Schematron/OPENPEPPOL/OPENPEPPOL-UBL-T01.sch" path="xsl/OPENPEPPOL-UBL-T01.xsl" />
     </configuration>
     <configuration>
-        <identifier>peppolbis-28-t01-2.0</identifier>
+        <identifier>peppolbis-t01-28-2.0</identifier>
         <title>PEPPOL BIS Order (Profile 28)</title>
         <profileId>urn:www.cenbii.eu:profile:bii28:ver2.0</profileId>
         <customizationId>urn:www.cenbii.eu:transaction:biitrns001:ver2.0:extended:urn:www.peppol.eu:bis:peppol28a:ver2.0</customizationId>
-        <inherit>peppolbis-03-t01-2.0</inherit>
+        <inherit>peppolbis-t01-03-2.0</inherit>
     </configuration>
 	
 </buildConfigurations>
