@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<buildConfigurations xmlns="http://difi.no/xsd/vefa/validator" build="20150415">
+<buildConfigurations xmlns="http://difi.no/xsd/vefa/validator/1.0">
 
     <testfolder>Tests</testfolder>
+	
+	<package>PEPPOL BIS 4A Invoice 2.0</package>
+	<package>PEPPOL BIS 5A Billing 2.0</package>
 
     <configuration>
         <identifier>peppolbis-04-t10-2.0</identifier>
