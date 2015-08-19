@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress AntResolveInspection -->
+<project name="PEPPOL-BIS" basedir="." default="compile">
+
+    <property name="agent.name" value="Manual generated"/>
+    <!-- build.number is a property set by the build server (TeamCity) -->
+    <!--<property name="build.number" value="DEV"/>-->
+    <tstamp>
+        <format property="build.time" pattern="yyyyMMdd_HHmmss" locale="en,GB"/>
+    </tstamp>
+    <property name="version.number" value="x.x.x.${build.time}"/>
+    <!-- Format of version.releaseDate must be yyyy-mm-dd -->
+    <!--<property name="version.releaseDate" value="2015-09-15"/>-->
+
+    <property name="test.dir" value="../2.0/Test"/>
+    <property name="target.dir" value="../target"/>
+    <property name="target.xslt" value="${target.dir}/XSLT"/>
+    <property name="test.output" value="${target.dir}/test-output.log"/>
+
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+        <classpath>
+            <pathelement location="lib/ant-contrib-1.0b3.jar"/>
+        </classpath>
+    </taskdef>
+
+    <target name="clean">
+        <delete dir="../target"/>
+    </target>
+
+    <target name="init">
+        <echo message="##teamcity[buildNumber '${version.number}']"/>
+        <mkdir dir="${target.xslt}"/>
+    </target>
+
+    <target name="injectVersionNumber">
+        <replaceregexp file="Build/iso_schematron_skeleton_oioubl.xsl"
+                       match="name=&#34;dateRelease&#34; select=&#34;.*?'&#34;"
+                       replace="name=&#34;dateRelease&#34; select=&#34;', ${version.releaseDate}, Version ${version.number}'&#34;"
+                       byline="true"/>
+    </target>
+
+
+    <target name="compile" depends="clean, init">
+        <foreach target="compileDocumentType" param="documentType">
+            <path>
+                <dirset dir="../2.0/Documents">
+                    <include name="*"/>
+                </dirset>
+            </path>
+        </foreach>
+    </target>
+
+    <target name="compileDocumentType" depends="dir.check" if="dir.exists">
+        <basename property="baseDocumentType" file="${documentType}"/>
+        <!--<echo message="${documentType}"/>-->
+        <foreach target="compileSchFile" param="schFile">
+            <path>
+                <fileset dir="${documentType}/Schematron/">
+                    <include name="*/*.sch"/>
+                </fileset>
+            </path>
+        </foreach>
+    </target>
+
+    <target name="compileSchFile">
+        <basename property="baseName" file="${schFile}" suffix=".sch"/>
+        <echo message="##teamcity[compilationStarted compiler='${baseName}' flowId='12321']"/>
+
+        <java jar="Saxon-HE-9.5.1-8.jar"
+              fork="true"
+              failonerror="true"
+              maxmemory="2048m"
+              resultproperty="errorCode">
+            <arg value="-s:${schFile}"/>
+            <arg value="-xsl:iso-schematron-xslt2/iso_dsdl_include.xsl"/>
+            <arg value="-o:${target.xslt}/${baseName}.step1.xsl"/>
+            <jvmarg line="-Xmx2048m"/>
+        </java>
+
+        <echo message="SCH: Staring step 2..."/>
+        <java jar="Saxon-HE-9.5.1-8.jar"
+              fork="true"
+              failonerror="true"
+              maxmemory="2048m"
+              resultproperty="errorCode">
+            <arg value="-s:${target.xslt}/${baseName}.step1.xsl"/>
+            <arg value="-xsl:iso-schematron-xslt2/iso_abstract_expand.xsl"/>
+            <arg value="-o:${target.xslt}/${baseName}.step2.xsl"/>
+            <jvmarg line="-Xmx2048m"/>
+        </java>
+
+        <echo message="SCH: Staring step 3..."/>
+        <java jar="Saxon-HE-9.5.1-8.jar"
+              fork="true"
+              failonerror="true"
+              maxmemory="2048m"
+              resultproperty="errorCode">
+            <arg value="-s:${target.xslt}/${baseName}.step2.xsl"/>
+            <!--<arg value="-xsl:iso-schematron-xslt2/iso_schematron_skeleton_for_saxon.xsl"/>-->
+            <arg value="-xsl:iso-schematron-xslt2/iso_svrl_for_xslt2.xsl"/>
+            <arg value="-o:${target.xslt}/${baseName}.step3.xsl"/>
+            <jvmarg line="-Xmx2048m"/>
+        </java>
+
+        <move file="${target.xslt}/${baseName}.step3.xsl" tofile="${target.xslt}/${baseName}.xsl"/>
+        <delete file="${target.xslt}/${baseName}.step1.xsl"/>
+        <delete file="${target.xslt}/${baseName}.step2.xsl"/>
+        <echo message="##teamcity[compilationFinished compiler='${baseName}' flowId='12321']"/>
+    </target>
+
+    <target name="dir.check">
+        <condition property="dir.exists">
+            <available file="${documentType}/Schematron" type="dir"/>
+        </condition>
+    </target>
+
+    <target name="makeZip" depends="clean, compile" description="Make ZIP for release">
+        <zip destfile="${target.dir}/OpenPEPPOL-Schematron_v${version.number}.zip">
+            <fileset dir="${target.xslt}" includes="*.xsl"/>
+        </zip>
+    </target>
+
+    <target name="test" depends="" description="Run all tests">
+        <delete file="${test.output}"/>
+        <loadfile property="testConfig" srcfile="${test.dir}/test-config.txt"/>
+        <foreach target="handleTestLine" param="line" list="${testConfig}" delimiter="${line.separator}"/>
+        <delete file="${target.dir}/schematron-output.xml"/>
+
+        <!--Check if errors exists-->
+        <fileset id="matches" file="${test.output}">
+            <contains text="ERROR"/>
+        </fileset>
+
+        <!--<fail message="Found ERRORS in tests">-->
+        <!--<condition>-->
+        <!--<resourcecount when="greater" count="0" refid="matches"/>-->
+        <!--</condition>-->
+        <!--</fail>-->
+    </target>
+
+    <target name="parseTestLine">
+        <!--<echo message="${line}"/>-->
+
+        <script language="javascript">
+            if (project.getProperty('line').length==0 || project.getProperty('line').startsWith('#') ) {
+            project.setProperty('isCommentLine', true);
+            } else {
+            arr = project.getProperty('line').trim().split(';', 4);
+            project.setProperty('testType', arr[0].trim());
+            project.setProperty('testFile', arr[1].trim());
+            project.setProperty('testSchematronType', arr[2].trim());
+            project.setProperty('testErrors', arr[3].trim());
+            }
+        </script>
+    </target>
+
+    <target name="handleTestLine" depends="parseTestLine" unless="isCommentLine">
+        <echo>            $${testType} => ${testType}
+            $${testFile} => ${testFile}
+            $${testSchematronType} => ${testSchematronType}
+            $${testErrors} => ${testErrors}
+        </echo>
+
+        <property name="test.name" value="${testType}_${testFile}" environment=""/>
+        <echo message="##teamcity[testStarted name='${testType}.${testFile}' flowId='12321']"/>
+        <!-- SAXON options: http://www.saxonica.com/documentation9.5/using-xsl/commandline.html -->
+        <java jar="Saxon-HE-9.5.1-8.jar"
+              fork="true"
+              failonerror="true"
+              maxmemory="2048m"
+              resultproperty="errorCode">
+            <arg value="-s:../2.0/Documents/T10-Invoice/Tests/${testFile}"/>
+            <arg value="-xsl:${target.xslt}/${testType}-UBL-${testSchematronType}.xsl"/>
+            <arg value="-o:${target.dir}/schematron-output.xml"/>
+            <arg value="-warnings:silent"/>
+            <jvmarg line="-Xmx2048m"/>
+        </java>
+
+        <loadfile property="validationOutput" srcfile="${target.dir}/schematron-output.xml"/>
+
+        <script language="javascript"><![CDATA[
+            validationOutput = project.getProperty('validationOutput');
+
+            errorArray = project.getProperty('testErrors').trim().split(' ');
+//            echo = project.createTask("echo");
+//            echo.setMessage("TEST..................................................... " + errorArray.length);
+//            echo.perform( );
+            var escapeChars = ["[", "]", "'"];
+            // Test for expected errors
+            for (i=0; errorArray.length > i; i++) {
+                project.setProperty('test.result', "ok");
+                errorCode = errorArray[i].trim();
+
+                // We have an errorCode, so it should be found to be OK!
+                if ( validationOutput.indexOf(errorCode) == -1 ) {
+                    project.setProperty('test.errorCode', errorCode);
+                    project.setProperty('test.result', "error");
+                    for (var i = 0; escapeChars.length > i; i++) {
+                        errorCode = errorCode.replace(escapeChars[i], "|"+escapeChars[i]);
+                    }
+                    project.setProperty('test.reason', "Error " + errorCode + " not found in schematron output");
+                    break;
+                }
+            }
+
+            // Test for no errors expected
+            // If no errors expected and "failed-assert" is found - then fail test
+            // errorArray is created, holding 1 empty element
+            if (errorArray.length == 1 && errorArray[0].length()==0 && validationOutput.indexOf("failed-assert") > 0 ) {
+                project.setProperty('test.result', "error");
+                project.setProperty('test.reason', "Error(s) found, where no errors were expected");
+                project.setProperty('test.errorCode', "no errors");
+            }
+        ]]></script>
+        <if>
+            <equals arg1="${test.result}" arg2="error"/>
+            <then>
+                <echo message="##teamcity[testFailed name='${testType}.${testFile}' message='${test.reason}' flowId='12321']"/>
+
+                <echo message="ERROR: Output from ${testType} schematron validation of the file ${testFile} - expected ${test.errorCode}:${line.separator}" file="${test.output}" append="true"/>
+                <echo message="${validationOutput}${line.separator}${line.separator}" file="${test.output}" append="true"/>
+            </then>
+        </if>
+        <echo message="##teamcity[testFinished name='${testType}.${testFile}' flowId='12321']"/>
+    </target>
+
+    <!-- build-all is intended for build server. -->
+    <target name="build-all" depends="clean, compile, test, makeZip"/>
+
+</project>
