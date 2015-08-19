@@ -17,7 +17,7 @@
   <param name="BII2-T16-R016" value="(cac:Item/cbc:Name) or (cac:Item/cac:StandardItemIdentification/cbc:ID) or  (cac:Item/cac:SellersItemIdentification/cbc:ID)"/>
   <param name="BII2-T16-R017" value="(cbc:DeliveredQuantity)"/>
   <param name="BII2-T16-R018" value="(//cac:StandardItemIdentification/cbc:ID/@schemeID) or not(//cac:StandardItemIdentification)"/>
-  <param name="BII2-T16-R019" value="number(cbc:DeliveredQuantity) &gt;= 0"/>
+  <param name="BII2-T16-R019" value="(cbc:DeliveredQuantity) &gt;= 0"/>
   <param name="BII2-T16-R020" value="(cbc:DeliveredQuantity/@unitCode)"/>
   <param name="BII2-T16-R021" value="((cbc:OutstandingQuantity) and (cbc:OutstandingReason)) or not(cbc:OutstandingQuantity)"/>
   <param name="despatching_Party" value="//cac:DespatchSupplierParty"/>
