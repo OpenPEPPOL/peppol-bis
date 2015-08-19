@@ -28,6 +28,7 @@
     <assert test="$BII2-T10-R048" flag="fatal" id="BII2-T10-R048">[BII2-T10-R048]-An invoice with a VAT category code of reverse charge MUST NOT contain other VAT categories.</assert>
     <assert test="$BII2-T10-R049" flag="fatal" id="BII2-T10-R049">[BII2-T10-R049]-The invoice total without VAT MUST be equal to the VAT category taxable amount if the VAT category code is reverse charge</assert>
     <assert test="$BII2-T10-R050" flag="fatal" id="BII2-T10-R050">[BII2-T10-R050]-The VAT category tax amount MUST be zero  if the VAT category code is reverse charge (since there is only one VAT category allowed it follows that the invoice tax total for reverse charge invoices is zero)</assert>
+    <assert test="$BII2-T10-R058" flag="fatal" id="BII2-T10-R058">[BII2-T10-R058]-Invoice total without VAT MUST be equal to the sum of VAT category taxable amounts</assert>
   </rule>
   <rule context="$Invoice_Line">
     <assert test="$BII2-T10-R017" flag="fatal" id="BII2-T10-R017">[BII2-T10-R017]-Each invoice line MUST have an invoice line identifier</assert>
@@ -58,7 +59,6 @@
     <assert test="$BII2-T10-R054" flag="fatal" id="BII2-T10-R054">[BII2-T10-R054]-The sum of allowances at document level MUST be equal to the sum of document level allowance amounts</assert>
     <assert test="$BII2-T10-R055" flag="fatal" id="BII2-T10-R055">[BII2-T10-R055]-The sum of charges at document level MUST be equal to the sum of document level charge amounts</assert>
     <assert test="$BII2-T10-R056" flag="fatal" id="BII2-T10-R056">[BII2-T10-R056]-Amount due for payment MUST be equal to the invoice total amount with VAT minus the paid amounts</assert>
-    <assert test="$BII2-T10-R058" flag="fatal" id="BII2-T10-R058">[BII2-T10-R058]-Invoice total without VAT MUST be equal to the sum of VAT category taxable amounts</assert>
   </rule>
   <rule context="$VAT_category">
     <assert test="$BII2-T10-R027" flag="fatal" id="BII2-T10-R027">[BII2-T10-R027]-Each VAT category details MUST have a VAT category taxable amount</assert>
