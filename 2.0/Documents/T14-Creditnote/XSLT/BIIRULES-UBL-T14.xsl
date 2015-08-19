@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xsl:stylesheet xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -9,13 +10,26 @@
                 xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                 xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2"
                 version="2.0"><!--Implementers: please note that overriding process-prolog or process-root is 
+=======
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<axsl:stylesheet xmlns:axsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:saxon="http://saxon.sf.net/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:schold="http://www.ascc.net/xml/schematron" xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" version="2.0"><!--Implementers: please note that overriding process-prolog or process-root is 
+>>>>>>> 59adecfd59d84c755fd1d4dded04e411f8ffe0fe
     the preferred method for meta-stylesheets to use where possible. -->
 <xsl:param name="archiveDirParameter" tunnel="no"/>
    <xsl:param name="archiveNameParameter" tunnel="no"/>
    <xsl:param name="fileNameParameter" tunnel="no"/>
    <xsl:param name="fileDirParameter" tunnel="no"/>
 
+<<<<<<< HEAD
    <!--PHASES-->
+=======
+   <axsl:param name="archiveDirParameter" tunnel="no"/>
+   <axsl:param name="archiveNameParameter" tunnel="no"/>
+   <axsl:param name="fileNameParameter" tunnel="no"/>
+   <axsl:param name="fileDirParameter" tunnel="no"/>
+
+<!--PHASES-->
+>>>>>>> 59adecfd59d84c755fd1d4dded04e411f8ffe0fe
 
 
 <!--PROLOG-->
@@ -91,6 +105,7 @@
    <!--MODE: SCHEMATRON-FULL-PATH-3-->
 <!--This mode can be used to generate prefixed XPath for humans 
 	(Top-level element has index)-->
+<<<<<<< HEAD
 <xsl:template match="node() | @*" mode="schematron-get-full-path-3">
       <xsl:for-each select="ancestor-or-self::*">
          <xsl:text>/</xsl:text>
@@ -166,6 +181,84 @@
                                              prefix="cbc"/>
          <svrl:ns-prefix-in-attribute-values uri="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                                              prefix="cac"/>
+=======
+
+   <axsl:template match="node() | @*" mode="schematron-get-full-path-3">
+      <axsl:for-each select="ancestor-or-self::*">
+         <axsl:text>/</axsl:text>
+         <axsl:value-of select="name(.)"/>
+         <axsl:if test="parent::*">
+            <axsl:text>[</axsl:text>
+            <axsl:value-of select="count(preceding-sibling::*[name(.)=name(current())])+1"/>
+            <axsl:text>]</axsl:text>
+         </axsl:if>
+      </axsl:for-each>
+      <axsl:if test="not(self::*)">
+         <axsl:text/>/@<axsl:value-of select="name(.)"/>
+      </axsl:if>
+   </axsl:template>
+
+<!--MODE: GENERATE-ID-FROM-PATH -->
+
+   <axsl:template match="/" mode="generate-id-from-path"/>
+   <axsl:template match="text()" mode="generate-id-from-path">
+      <axsl:apply-templates select="parent::*" mode="generate-id-from-path"/>
+      <axsl:value-of select="concat('.text-', 1+count(preceding-sibling::text()), '-')"/>
+   </axsl:template>
+   <axsl:template match="comment()" mode="generate-id-from-path">
+      <axsl:apply-templates select="parent::*" mode="generate-id-from-path"/>
+      <axsl:value-of select="concat('.comment-', 1+count(preceding-sibling::comment()), '-')"/>
+   </axsl:template>
+   <axsl:template match="processing-instruction()" mode="generate-id-from-path">
+      <axsl:apply-templates select="parent::*" mode="generate-id-from-path"/>
+      <axsl:value-of select="concat('.processing-instruction-', 1+count(preceding-sibling::processing-instruction()), '-')"/>
+   </axsl:template>
+   <axsl:template match="@*" mode="generate-id-from-path">
+      <axsl:apply-templates select="parent::*" mode="generate-id-from-path"/>
+      <axsl:value-of select="concat('.@', name())"/>
+   </axsl:template>
+   <axsl:template match="*" mode="generate-id-from-path" priority="-0.5">
+      <axsl:apply-templates select="parent::*" mode="generate-id-from-path"/>
+      <axsl:text>.</axsl:text>
+      <axsl:value-of select="concat('.',name(),'-',1+count(preceding-sibling::*[name()=name(current())]),'-')"/>
+   </axsl:template>
+
+<!--MODE: GENERATE-ID-2 -->
+
+   <axsl:template match="/" mode="generate-id-2">U</axsl:template>
+   <axsl:template match="*" mode="generate-id-2" priority="2">
+      <axsl:text>U</axsl:text>
+      <axsl:number level="multiple" count="*"/>
+   </axsl:template>
+   <axsl:template match="node()" mode="generate-id-2">
+      <axsl:text>U.</axsl:text>
+      <axsl:number level="multiple" count="*"/>
+      <axsl:text>n</axsl:text>
+      <axsl:number count="node()"/>
+   </axsl:template>
+   <axsl:template match="@*" mode="generate-id-2">
+      <axsl:text>U.</axsl:text>
+      <axsl:number level="multiple" count="*"/>
+      <axsl:text>_</axsl:text>
+      <axsl:value-of select="string-length(local-name(.))"/>
+      <axsl:text>_</axsl:text>
+      <axsl:value-of select="translate(name(),':','.')"/>
+   </axsl:template><!--Strip characters-->
+   <axsl:template match="text()" priority="-1"/>
+
+<!--SCHEMA METADATA-->
+
+   <axsl:template match="/">
+      <svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl" title="BIIRULES  T14 bound to UBL" schemaVersion="">
+         <axsl:comment>
+            <axsl:value-of select="$archiveDirParameter"/>   
+		 <axsl:value-of select="$archiveNameParameter"/>  
+		 <axsl:value-of select="$fileNameParameter"/>  
+		 <axsl:value-of select="$fileDirParameter"/>
+         </axsl:comment>
+         <svrl:ns-prefix-in-attribute-values uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" prefix="cbc"/>
+         <svrl:ns-prefix-in-attribute-values uri="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" prefix="cac"/>
+>>>>>>> 59adecfd59d84c755fd1d4dded04e411f8ffe0fe
          <svrl:ns-prefix-in-attribute-values uri="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" prefix="ubl"/>
          <svrl:active-pattern>
             <xsl:attribute name="document">
@@ -340,6 +433,7 @@
                </xsl:attribute>
                <svrl:text>[BII2-T14-R008]-A credit note MUST have a buyer name and/or a buyer identifier</svrl:text>
             </svrl:failed-assert>
+<<<<<<< HEAD
          </xsl:otherwise>
       </xsl:choose>
 
@@ -402,6 +496,70 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
+=======
+         </axsl:otherwise>
+      </axsl:choose>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="(cac:LegalMonetaryTotal/cbc:LineExtensionAmount)"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(cac:LegalMonetaryTotal/cbc:LineExtensionAmount)">
+               <axsl:attribute name="id">BII2-T14-R010</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+               <svrl:text>[BII2-T14-R010]-A credit note MUST have the sum of line amounts</svrl:text>
+            </svrl:failed-assert>
+         </axsl:otherwise>
+      </axsl:choose>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="(cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount)"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount)">
+               <axsl:attribute name="id">BII2-T14-R011</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+               <svrl:text>[BII2-T14-R011]-A credit note MUST have the credit note total without VAT</svrl:text>
+            </svrl:failed-assert>
+         </axsl:otherwise>
+      </axsl:choose>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="(cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount)"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount)">
+               <axsl:attribute name="id">BII2-T14-R012</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+               <svrl:text>[BII2-T14-R012]-A credit note MUST have the credit note total with VAT (value of purchase)</svrl:text>
+            </svrl:failed-assert>
+         </axsl:otherwise>
+      </axsl:choose>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="(cac:LegalMonetaryTotal/cbc:PayableAmount)"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(cac:LegalMonetaryTotal/cbc:PayableAmount)">
+               <axsl:attribute name="id">BII2-T14-R013</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+>>>>>>> 59adecfd59d84c755fd1d4dded04e411f8ffe0fe
                <svrl:text>[BII2-T14-R013]-A credit note MUST have the amount due for payment</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -451,6 +609,7 @@
                </xsl:attribute>
                <svrl:text>[BII2-T14-R026]-A credit note MUST contain VAT category details  unless VAT total amount is omitted.</svrl:text>
             </svrl:failed-assert>
+<<<<<<< HEAD
          </xsl:otherwise>
       </xsl:choose>
 
@@ -481,6 +640,38 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
+=======
+         </axsl:otherwise>
+      </axsl:choose>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="(cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount) &gt;= 0"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount) &gt;= 0">
+               <axsl:attribute name="id">BII2-T14-R035</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+               <svrl:text>[BII2-T14-R035]-Credit Note total with VAT MUST NOT be negative</svrl:text>
+            </svrl:failed-assert>
+         </axsl:otherwise>
+      </axsl:choose>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="(cac:LegalMonetaryTotal/cbc:PayableAmount) &gt;= 0"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(cac:LegalMonetaryTotal/cbc:PayableAmount) &gt;= 0">
+               <axsl:attribute name="id">BII2-T14-R037</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+>>>>>>> 59adecfd59d84c755fd1d4dded04e411f8ffe0fe
                <svrl:text>[BII2-T14-R037]-Amount due for payment in a credit note MUST NOT be negative</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -646,6 +837,7 @@
                </xsl:attribute>
                <svrl:text>[BII2-T14-R021]-Each credit note line MUST have a credit note line item name and/or the credit note line item identifier</svrl:text>
             </svrl:failed-assert>
+<<<<<<< HEAD
          </xsl:otherwise>
       </xsl:choose>
 
@@ -660,6 +852,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
+=======
+         </axsl:otherwise>
+      </axsl:choose>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="(cac:Item/cac:StandardItemIdentification/cbc:ID/@schemeID) or not(cac:Item/cac:StandardItemIdentification)"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(cac:Item/cac:StandardItemIdentification/cbc:ID/@schemeID) or not(cac:Item/cac:StandardItemIdentification)">
+               <axsl:attribute name="id">BII2-T14-R032</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+>>>>>>> 59adecfd59d84c755fd1d4dded04e411f8ffe0fe
                <svrl:text>[BII2-T14-R032]-A scheme identifier for the credit note line item registered identifier MUST be provided if credit note line item registered identifiers are used to identify a product.(e.g. GTIN)</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -678,6 +886,7 @@
                </xsl:attribute>
                <svrl:text>[BII2-T14-R033]-A scheme identifier for a credit note line item commodity classification MUST be provided if credit note line item commodity classification are used to classify a credit note line item (e.g. CPV or UNSPSC)</svrl:text>
             </svrl:failed-assert>
+<<<<<<< HEAD
          </xsl:otherwise>
       </xsl:choose>
 
@@ -692,6 +901,22 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
+=======
+         </axsl:otherwise>
+      </axsl:choose>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="(cac:Price/cbc:PriceAmount) &gt;= 0"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(cac:Price/cbc:PriceAmount) &gt;= 0">
+               <axsl:attribute name="id">BII2-T14-R034</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+>>>>>>> 59adecfd59d84c755fd1d4dded04e411f8ffe0fe
                <svrl:text>[BII2-T14-R034]-Credit Note line item net price MUST NOT be negative</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -771,6 +996,7 @@
 <xsl:template match="//cac:LegalMonetaryTotal" priority="1001" mode="M6">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="//cac:LegalMonetaryTotal"/>
 
+<<<<<<< HEAD
 		    <!--ASSERT -->
 <xsl:choose>
          <xsl:when test="(xs:decimal(cbc:LineExtensionAmount)) = (round(xs:decimal(sum(//cac:CreditNoteLine/cbc:LineExtensionAmount)) * 10 * 10) div 100)"/>
@@ -880,6 +1106,132 @@
 <xsl:choose>
          <xsl:when test="(cbc:TaxableAmount)"/>
          <xsl:otherwise>
+=======
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="(xs:decimal(cbc:LineExtensionAmount)) = (round(xs:decimal(sum(//cac:CreditNoteLine/cbc:LineExtensionAmount)) * 10 * 10) div 100)"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(xs:decimal(cbc:LineExtensionAmount)) = (round(xs:decimal(sum(//cac:CreditNoteLine/cbc:LineExtensionAmount)) * 10 * 10) div 100)">
+               <axsl:attribute name="id">BII2-T14-R051</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+               <svrl:text>[BII2-T14-R051]-Sum of line amounts MUST equal the credit note line net amounts</svrl:text>
+            </svrl:failed-assert>
+         </axsl:otherwise>
+      </axsl:choose>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="((cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and ((xs:decimal(cbc:TaxExclusiveAmount)) = round((xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount) - xs:decimal(cbc:AllowanceTotalAmount)) * 10 * 10) div 100 ))  or (not(cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and ((xs:decimal(cbc:TaxExclusiveAmount)) = round((xs:decimal(cbc:LineExtensionAmount) - xs:decimal(cbc:AllowanceTotalAmount)) * 10 * 10 ) div 100)) or ((cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and ((xs:decimal(cbc:TaxExclusiveAmount)) = round((xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount)) * 10 * 10 ) div 100)) or (not(cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and ((cbc:TaxExclusiveAmount) = (cbc:LineExtensionAmount)))"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="((cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and ((xs:decimal(cbc:TaxExclusiveAmount)) = round((xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount) - xs:decimal(cbc:AllowanceTotalAmount)) * 10 * 10) div 100 )) or (not(cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and ((xs:decimal(cbc:TaxExclusiveAmount)) = round((xs:decimal(cbc:LineExtensionAmount) - xs:decimal(cbc:AllowanceTotalAmount)) * 10 * 10 ) div 100)) or ((cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and ((xs:decimal(cbc:TaxExclusiveAmount)) = round((xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount)) * 10 * 10 ) div 100)) or (not(cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and ((cbc:TaxExclusiveAmount) = (cbc:LineExtensionAmount)))">
+               <axsl:attribute name="id">BII2-T14-R052</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+               <svrl:text>[BII2-T14-R052]-A credit note total without VAT MUST equal the sum of line amounts plus the sum of charges on document level minus the sum of allowances on document level</svrl:text>
+            </svrl:failed-assert>
+         </axsl:otherwise>
+      </axsl:choose>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="((cbc:PayableRoundingAmount) and ((xs:decimal(cbc:TaxInclusiveAmount)) = (round((xs:decimal(cbc:TaxExclusiveAmount) + (xs:decimal(sum(/ubl:CreditNote/cac:TaxTotal/cbc:TaxAmount))) + xs:decimal(cbc:PayableRoundingAmount)) *10 * 10) div 100))) or (not(cbc:PayableRoundingAmount) and ((xs:decimal(cbc:TaxInclusiveAmount)) = round((xs:decimal(cbc:TaxExclusiveAmount) + (xs:decimal(sum(/ubl:CreditNote/cac:TaxTotal/cbc:TaxAmount)))) * 10 * 10) div 100))"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="((cbc:PayableRoundingAmount) and ((xs:decimal(cbc:TaxInclusiveAmount)) = (round((xs:decimal(cbc:TaxExclusiveAmount) + (xs:decimal(sum(/ubl:CreditNote/cac:TaxTotal/cbc:TaxAmount))) + xs:decimal(cbc:PayableRoundingAmount)) *10 * 10) div 100))) or (not(cbc:PayableRoundingAmount) and ((xs:decimal(cbc:TaxInclusiveAmount)) = round((xs:decimal(cbc:TaxExclusiveAmount) + (xs:decimal(sum(/ubl:CreditNote/cac:TaxTotal/cbc:TaxAmount)))) * 10 * 10) div 100))">
+               <axsl:attribute name="id">BII2-T14-R053</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+               <svrl:text>[BII2-T14-R053]-A credit note total with VAT MUST equal the credit note total without VAT plus the VAT total amount and the rounding of credit note total</svrl:text>
+            </svrl:failed-assert>
+         </axsl:otherwise>
+      </axsl:choose>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="(xs:decimal(cbc:AllowanceTotalAmount)) = (round(xs:decimal(sum(/ubl:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator=&#34;false&#34;]/cbc:Amount)) * 10 * 10) div 100) or not(cbc:AllowanceTotalAmount)"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(xs:decimal(cbc:AllowanceTotalAmount)) = (round(xs:decimal(sum(/ubl:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator=&#34;false&#34;]/cbc:Amount)) * 10 * 10) div 100) or not(cbc:AllowanceTotalAmount)">
+               <axsl:attribute name="id">BII2-T14-R054</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+               <svrl:text>[BII2-T14-R054]-The sum of allowances at document level MUST be equal to the sum of document level allowance amounts</svrl:text>
+            </svrl:failed-assert>
+         </axsl:otherwise>
+      </axsl:choose>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="(xs:decimal(cbc:ChargeTotalAmount)) = (round(xs:decimal(sum(/ubl:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator=&#34;true&#34;]/cbc:Amount)) * 10 * 10) div 100) or not(cbc:ChargeTotalAmount)"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(xs:decimal(cbc:ChargeTotalAmount)) = (round(xs:decimal(sum(/ubl:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator=&#34;true&#34;]/cbc:Amount)) * 10 * 10) div 100) or not(cbc:ChargeTotalAmount)">
+               <axsl:attribute name="id">BII2-T14-R055</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+               <svrl:text>[BII2-T14-R055]-The sum of charges at document level MUST be equal to the sum of document level charge amounts</svrl:text>
+            </svrl:failed-assert>
+         </axsl:otherwise>
+      </axsl:choose>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="((cbc:PrepaidAmount) and ((xs:decimal(cbc:PayableAmount)) = (round((xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount)) * 10 * 10) div 100))) or (cbc:PayableAmount = cbc:TaxInclusiveAmount)"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="((cbc:PrepaidAmount) and ((xs:decimal(cbc:PayableAmount)) = (round((xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount)) * 10 * 10) div 100))) or (cbc:PayableAmount = cbc:TaxInclusiveAmount)">
+               <axsl:attribute name="id">BII2-T14-R056</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+               <svrl:text>[BII2-T14-R056]-Amount due for payment MUST be equal to the credit note total amount with VAT minus the paid amounts</svrl:text>
+            </svrl:failed-assert>
+         </axsl:otherwise>
+      </axsl:choose>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="((cac:TaxTotal[cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID = 'VAT']/cbc:TaxAmount) and (round(xs:decimal(sum(cac:TaxTotal//cac:TaxSubtotal/cbc:TaxableAmount)) *10 * 10) div 100 = ((xs:decimal(cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount))))) or  not((cac:TaxTotal[cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID = 'VAT']))"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="((cac:TaxTotal[cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID = 'VAT']/cbc:TaxAmount) and (round(xs:decimal(sum(cac:TaxTotal//cac:TaxSubtotal/cbc:TaxableAmount)) *10 * 10) div 100 = ((xs:decimal(cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount))))) or not((cac:TaxTotal[cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID = 'VAT']))">
+               <axsl:attribute name="id">BII2-T14-R058</axsl:attribute>
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+               <svrl:text>[BII2-T14-R058]-Credit Note total without VAT MUST be equal to the sum of VAT category taxable amounts</svrl:text>
+            </svrl:failed-assert>
+         </axsl:otherwise>
+      </axsl:choose>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M6"/>
+   </axsl:template>
+
+	<!--RULE -->
+
+   <axsl:template match="//cac:TaxSubtotal[cac:TaxCategory/cac:TaxScheme/cbc:ID = 'VAT']" priority="1000" mode="M6">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="//cac:TaxSubtotal[cac:TaxCategory/cac:TaxScheme/cbc:ID = 'VAT']"/>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="(cbc:TaxableAmount)"/>
+         <axsl:otherwise>
+>>>>>>> 59adecfd59d84c755fd1d4dded04e411f8ffe0fe
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="(cbc:TaxableAmount)">
                <xsl:attribute name="id">BII2-T14-R027</xsl:attribute>
                <xsl:attribute name="flag">fatal</xsl:attribute>
@@ -1015,6 +1367,7 @@
                </xsl:attribute>
                <svrl:text>[CL-T14-R003]-currencyID MUST be coded using ISO code list 4217</svrl:text>
             </svrl:failed-assert>
+<<<<<<< HEAD
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
@@ -1034,6 +1387,27 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
+=======
+         </axsl:otherwise>
+      </axsl:choose>
+   </axsl:template>
+
+	<!--RULE -->
+
+   <axsl:template match="cac:Country//cbc:IdentificationCode" priority="1004" mode="M7">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="cac:Country//cbc:IdentificationCode"/>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="( ( not(contains(normalize-space(.),' ')) and contains( ' AD AE AF AG AI AL AM AN AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BL BJ BM BN BO BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW ',concat(' ',normalize-space(.),' ') ) ) )"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="( ( not(contains(normalize-space(.),' ')) and contains( ' AD AE AF AG AI AL AM AN AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BL BJ BM BN BO BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW ',concat(' ',normalize-space(.),' ') ) ) )">
+               <axsl:attribute name="flag">fatal</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+>>>>>>> 59adecfd59d84c755fd1d4dded04e411f8ffe0fe
                <svrl:text>[CL-T14-R004]-Country codes in an invoice MUST be coded using ISO code list 3166-1</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
@@ -1100,6 +1474,7 @@
                </xsl:attribute>
                <svrl:text>[CL-T14-R008]-For Mime code in attribute use MIMEMediaType.</svrl:text>
             </svrl:failed-assert>
+<<<<<<< HEAD
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
@@ -1120,6 +1495,27 @@
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
+=======
+         </axsl:otherwise>
+      </axsl:choose>
+   </axsl:template>
+
+	<!--RULE -->
+
+   <axsl:template match="cac:AllowanceCharge//cbc:AllowanceChargeReasonCode" priority="1000" mode="M7">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="cac:AllowanceCharge//cbc:AllowanceChargeReasonCode"/>
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="( ( not(contains(normalize-space(.),' ')) and contains( ' 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 ',concat(' ',normalize-space(.),' ') ) ) )"/>
+         <axsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="( ( not(contains(normalize-space(.),' ')) and contains( ' 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 ',concat(' ',normalize-space(.),' ') ) ) )">
+               <axsl:attribute name="flag">warning</axsl:attribute>
+               <axsl:attribute name="location">
+                  <axsl:apply-templates select="." mode="schematron-get-full-path"/>
+               </axsl:attribute>
+>>>>>>> 59adecfd59d84c755fd1d4dded04e411f8ffe0fe
                <svrl:text>[CL-T14-R010]-Coded allowance and charge reasons SHOULD belong to the UNCL 4465 code list BII2 subset</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
