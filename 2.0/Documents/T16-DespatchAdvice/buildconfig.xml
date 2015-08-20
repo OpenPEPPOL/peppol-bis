@@ -13,7 +13,7 @@
         <file source="Schematron/OPENPEPPOL/OPENPEPPOL-UBL-T16.sch" path="xsl/OPENPEPPOL-UBL-T16.xsl" />
     </configuration>
     <configuration>
-        <identifier>peppolbis-t76-28-2.0</identifier>
+        <identifier>peppolbis-t16-28-2.0</identifier>
         <title>PEPPOL BIS Despatch Advice 2.0 (Profile 28)</title>
         <profileId>urn:www.cenbii.eu:profile:bii30:ver2.0</profileId>
         <customizationId>urn:www.cenbii.eu:transaction:biitrns016:ver1.0:extended:urn:www.peppol.eu:bis:peppol30a:ver1.0</customizationId>
