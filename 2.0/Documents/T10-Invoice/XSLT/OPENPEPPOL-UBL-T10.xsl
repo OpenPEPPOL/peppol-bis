@@ -815,7 +815,6 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="@*|*" mode="M7"/>
    </xsl:template>
 
 	  <!--RULE -->
@@ -837,7 +836,6 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="@*|*" mode="M7"/>
    </xsl:template>
 
 	  <!--RULE -->
@@ -859,7 +857,6 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="@*|*" mode="M7"/>
    </xsl:template>
 
 	  <!--RULE -->
@@ -880,7 +877,6 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="@*|*" mode="M7"/>
    </xsl:template>
 
 	  <!--RULE -->
@@ -904,7 +900,6 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="@*|*" mode="M7"/>
    </xsl:template>
 
 	  <!--RULE -->
@@ -925,7 +920,6 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="@*|*" mode="M7"/>
    </xsl:template>
 
 	  <!--RULE -->
