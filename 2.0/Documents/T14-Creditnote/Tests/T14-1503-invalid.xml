@@ -3,7 +3,7 @@
 
     Content:
     Release October 2015.
-    This file contains a norwegian invoice, profile only
+    This file contains a norwegian creditnote, profile only. CustomizationId as PEPPOL BIS to trigger test.
 
     Errors:
     BII2-T14-R034
@@ -25,7 +25,7 @@
 	xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2"
 	xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2">
 	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
-	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns014:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0:extended:urn:www.difi.no:ehf:kreditnota:ver2.0</cbc:CustomizationID>
+	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns014:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</cbc:CustomizationID>
 	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii05:ver2.0</cbc:ProfileID>
 	<cbc:ID>32</cbc:ID>
 	<cbc:IssueDate>2012-07-24</cbc:IssueDate>
