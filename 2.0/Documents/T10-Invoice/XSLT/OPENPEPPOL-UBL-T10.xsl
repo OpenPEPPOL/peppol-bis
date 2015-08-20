@@ -687,10 +687,10 @@
 
 		    <!--ASSERT -->
 <xsl:choose>
-         <xsl:when test="(number(child::cbc:TaxAmount)= round(number(sum(cac:TaxSubtotal/cbc:TaxAmount) * 10 * 10)) div 100) "/>
+         <xsl:when test="(xs:decimal(child::cbc:TaxAmount)= round(number(xs:decimal(sum(cac:TaxSubtotal/cbc:TaxAmount)) * 10 * 10)) div 100) "/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(number(child::cbc:TaxAmount)= round(number(sum(cac:TaxSubtotal/cbc:TaxAmount) * 10 * 10)) div 100)">
+                                test="(xs:decimal(child::cbc:TaxAmount)= round(number(xs:decimal(sum(cac:TaxSubtotal/cbc:TaxAmount)) * 10 * 10)) div 100)">
                <xsl:attribute name="id">EUGEN-T10-R043</xsl:attribute>
                <xsl:attribute name="flag">fatal</xsl:attribute>
                <xsl:attribute name="location">
@@ -735,10 +735,10 @@
 
 		    <!--ASSERT -->
 <xsl:choose>
-         <xsl:when test="((cbc:TaxableAmount) and (cac:TaxCategory/cbc:Percent) and (cbc:TaxAmount = round((cbc:TaxableAmount * (cac:TaxCategory/cbc:Percent div 100)) *10 * 10) div 100)) or not(cac:TaxCategory/cbc:Percent) or not(cbc:TaxableAmount)"/>
+         <xsl:when test="((cbc:TaxableAmount) and (cac:TaxCategory/cbc:Percent) and ((xs:decimal(cbc:TaxAmount)) = round((xs:decimal(cbc:TaxableAmount) * (xs:decimal(cac:TaxCategory/cbc:Percent) div 100)) *10 * 10) div 100)) or not(cac:TaxCategory/cbc:Percent) or not(cbc:TaxableAmount)"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="((cbc:TaxableAmount) and (cac:TaxCategory/cbc:Percent) and (cbc:TaxAmount = round((cbc:TaxableAmount * (cac:TaxCategory/cbc:Percent div 100)) *10 * 10) div 100)) or not(cac:TaxCategory/cbc:Percent) or not(cbc:TaxableAmount)">
+                                test="((cbc:TaxableAmount) and (cac:TaxCategory/cbc:Percent) and ((xs:decimal(cbc:TaxAmount)) = round((xs:decimal(cbc:TaxableAmount) * (xs:decimal(cac:TaxCategory/cbc:Percent) div 100)) *10 * 10) div 100)) or not(cac:TaxCategory/cbc:Percent) or not(cbc:TaxableAmount)">
                <xsl:attribute name="id">EUGEN-T10-R042</xsl:attribute>
                <xsl:attribute name="flag">fatal</xsl:attribute>
                <xsl:attribute name="location">
@@ -815,6 +815,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+      <xsl:apply-templates select="@*|*" mode="M7"/>
    </xsl:template>
 
 	  <!--RULE -->
@@ -836,6 +837,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+      <xsl:apply-templates select="@*|*" mode="M7"/>
    </xsl:template>
 
 	  <!--RULE -->
@@ -857,6 +859,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+      <xsl:apply-templates select="@*|*" mode="M7"/>
    </xsl:template>
 
 	  <!--RULE -->
@@ -877,6 +880,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+      <xsl:apply-templates select="@*|*" mode="M7"/>
    </xsl:template>
 
 	  <!--RULE -->
@@ -900,6 +904,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+      <xsl:apply-templates select="@*|*" mode="M7"/>
    </xsl:template>
 
 	  <!--RULE -->
@@ -920,6 +925,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+      <xsl:apply-templates select="@*|*" mode="M7"/>
    </xsl:template>
 
 	  <!--RULE -->
