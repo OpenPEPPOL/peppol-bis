@@ -2,6 +2,7 @@
 <buildConfigurations xmlns="http://difi.no/xsd/vefa/validator/1.0">
 
 	<package>PEPPOL BIS 3A Order only 2.0</package>
+	<package>PEPPOL BIS 28A Ordering 2.0</package>
 
     <testfolder>Tests</testfolder>
 

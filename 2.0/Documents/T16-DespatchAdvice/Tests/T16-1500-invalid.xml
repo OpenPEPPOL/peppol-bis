@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-	Content:
-	Release October 2015.
-	This file contains a PEPPOL Despatch advice, profile 30.
+    Content:
+    Release October 2015.
+    This file contains a PEPPOL Despatch advice, profile 30.
 
-	Errors:
-	BII2-T16-R006
-	BII2-T16-R008
-	BII2-T16-R019
+    Errors:
+    BII2-T16-R006
+    BII2-T16-R008
+    BII2-T16-R019
 
-	Warning:
-	None
-				
+    Warning:
+    None
+
 -->
 <DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
