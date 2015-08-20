@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildConfigurations xmlns="http://difi.no/xsd/vefa/validator/1.0">
 
-	<package>PEPPOL BIS 4A Invoice 2.0</package>
-	<package>PEPPOL BIS 5A Billing 2.0</package>
+	<package>PEPPOL BIS 04A Invoice 2.0</package>
+	<package>PEPPOL BIS 05A Billing 2.0</package>
 
     <testfolder>Tests</testfolder>
 
@@ -10,7 +10,6 @@
         <identifier>peppolbis-t10-base-2.0</identifier>
         <title>PEPPOL BIS Invoice 2.0 (Base)</title>
 		<inherit>ubl-invoice-2.1</inherit>
-        <!-- <file source="Schematron/BII CORE/BIICORE-UBL-T10-V1.0.sch" path="xsl/BIICORE-UBL-T10.xsl" /> -->
         <file source="Schematron/BII RULES/BIIRULES-UBL-T10.sch" path="xsl/BIIRULES-UBL-T10.xsl" />
         <file source="Schematron/OPENPEPPOL/OPENPEPPOL-UBL-T10.sch" path="xsl/OPENPEPPOL-UBL-T10.xsl" />
 	</configuration>
