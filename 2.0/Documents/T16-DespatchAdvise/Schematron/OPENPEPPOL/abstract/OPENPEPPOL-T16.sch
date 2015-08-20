@@ -14,7 +14,7 @@
   <rule context="$endpoint">
     <assert test="$EUGEN-T16-R001" flag="fatal" id="EUGEN-T16-R001">[EUGEN-T16-R001]-An endpoint identifier MUST have a scheme identifier attribute.</assert>
   </rule>
-  <rule context="$despatch_advice">
+  <rule context="$party">
     <assert test="$EUGEN-T16-R002" flag="fatal" id="EUGEN-T16-R002">[EUGEN-T16-R002]-A party identifier MUST have a scheme identifier attribute.</assert>
   </rule>
   <rule context="$country">
