@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-	Content:
-	Release October 2015.
-	This file contains a PEPPOL Order, profile 28
+    Content:
+    Release October 2015.
+    This file contains a PEPPOL Order, profile 28
 
-	Errors:
-	EUGEN-T01-R013
-	BII2-T01-R010
-	BII2-T01-R011
-	BII2-T01-R012
-	BII2-T01-R013
-	BII2-T01-R014
-	BII2-T01-R015
-	BII2-T01-R016
-	BII2-T01-R017
+    Errors:
+    EUGEN-T01-R013
+    BII2-T01-R010
+    BII2-T01-R011
+    BII2-T01-R012
+    BII2-T01-R013
+    BII2-T01-R014
+    BII2-T01-R015
+    BII2-T01-R016
+    BII2-T01-R017
 
-	Warning:
-	BII2-T01-R018
-				
+    Warning:
+    BII2-T01-R018
+
 -->
 <Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Order-2 ../../3%20Ordre/UBL%202.1%20schema/maindoc/UBL-Order-2.1.xsd">
 	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>

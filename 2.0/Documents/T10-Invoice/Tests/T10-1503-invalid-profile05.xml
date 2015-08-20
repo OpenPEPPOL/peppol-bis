@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-	Content:
-	Release October 2015.
-	This file contains a PEPPOL Invoice, profile 05
+    Content:
+    Release October 2015.
+    This file contains a PEPPOL Invoice, profile 05
 
-	Errors:
-	EUGEN-T10-R008 x 2
-	EUGEN-T10-R042                
-	EUGEN-T10-R043
-	BII2-T10-R053
-	BII2-T10-R032
-	BII2-T10-R051
-	BII2-T10-R052
-	BII2-T10-R054
-	BII2-T10-R055
-	BII2-T10-R056
-	BII2-T10-R058
-	BII2-T10-R027
-	BII2-T10-R028
-	BII2-T10-R029
-	BII2-T10-R030
-	BII2-T10-R045
-	CL-T10-R006
-	CL-T10-R007
+    Errors:
+    EUGEN-T10-R008 x 2
+    EUGEN-T10-R042
+    EUGEN-T10-R043
+    BII2-T10-R053
+    BII2-T10-R032
+    BII2-T10-R051
+    BII2-T10-R052
+    BII2-T10-R054
+    BII2-T10-R055
+    BII2-T10-R056
+    BII2-T10-R058
+    BII2-T10-R027
+    BII2-T10-R028
+    BII2-T10-R029
+    BII2-T10-R030
+    BII2-T10-R045
+    CL-T10-R006
+    CL-T10-R007
 
-	Warnings:
-	None
-				
+    Warnings:
+    None
+
 -->
 
 

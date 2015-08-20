@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-	Content:
-	Release October 2015.
-	This file contains a norwegian invoice, profile only
+    Content:
+    Release October 2015.
+    This file contains a norwegian invoice, profile only
 
-	Errors:
-	BII2-T14-R034
-	BII2-T14-R037
-	BII2-T14-R035
+    Errors:
+    BII2-T14-R034
+    BII2-T14-R037
+    BII2-T14-R035
 
-	Warnings:
-	EUGEN-T14-R041
-				
+    Warnings:
+    EUGEN-T14-R041
+
 -->
 <CreditNote xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"

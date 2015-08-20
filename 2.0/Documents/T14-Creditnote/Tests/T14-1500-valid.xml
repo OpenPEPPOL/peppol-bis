@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-	Content:
-	Release October 2015.
-	This file contains a PEPPOL credit note, profile 05
+    Content:
+    Release October 2015.
+    This file contains a PEPPOL credit note, profile 05
 
-	Successes:
-	EUGEN-T14-R043
-	EUGEN-T14-R042
-	BII2-T14-R035
-	BII2-T14-R037
-	BII2-T14-R032
-	BII2-T14-R034
-	BII2-T14-R051
-	BII2-T14-R052
-	BII2-T14-R053
-	BII2-T14-R054
-	BII2-T14-R055
-	BII2-T14-R056
-	BII2-T14-R058
-	BII2-T14-R027
-	BII2-T14-R028
-	BII2-T14-R029
-	BII2-T14-R030
-	BII2-T14-R045
-	CL-T14-R006
-	CL-T14-R007
+    Successes:
+    EUGEN-T14-R043
+    EUGEN-T14-R042
+    BII2-T14-R035
+    BII2-T14-R037
+    BII2-T14-R032
+    BII2-T14-R034
+    BII2-T14-R051
+    BII2-T14-R052
+    BII2-T14-R053
+    BII2-T14-R054
+    BII2-T14-R055
+    BII2-T14-R056
+    BII2-T14-R058
+    BII2-T14-R027
+    BII2-T14-R028
+    BII2-T14-R029
+    BII2-T14-R030
+    BII2-T14-R045
+    CL-T14-R006
+    CL-T14-R007
 
-	Errors:
-	None
+    Errors:
+    None
 
-	Warnings:
-	None
-				
+    Warnings:
+    None
+
 -->
 <CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2">
 	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>

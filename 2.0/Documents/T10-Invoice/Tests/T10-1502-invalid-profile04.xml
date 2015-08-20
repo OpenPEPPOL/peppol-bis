@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-	Content:
-	Release October 2015.
-	This file contains a PEPPOL invoice, profile 04
+    Content:
+    Release October 2015.
+    This file contains a PEPPOL invoice, profile 04
 
-	Errors:
-	BII2-T10-R034
-	BII2-T10-R037
-	BII2-T10-R035
-	BII2-T10-R039
+    Errors:
+    BII2-T10-R034
+    BII2-T10-R037
+    BII2-T10-R035
+    BII2-T10-R039
 
-	Warnings:
-	EUGEN-T10-R041
-				
+    Warnings:
+    EUGEN-T10-R041
+
 -->
 <Invoice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"

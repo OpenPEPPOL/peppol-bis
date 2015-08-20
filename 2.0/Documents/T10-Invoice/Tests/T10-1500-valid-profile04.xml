@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 
-	Content:
-	Release October 2015.
-	This file contains a PEPPOL invoice, profile 04
+    Content:
+    Release October 2015.
+    This file contains a PEPPOL invoice, profile 04
 
-	Successes:
-	EUGEN-T10-R043
-	EUGEN-T10-R042
-	BII2-T10-R035
-	BII2-T10-R037
-	BII2-T10-R032
-	BII2-T10-R034
-	BII2-T10-R039
-	BII2-T10-R051
-	BII2-T10-R052
-	BII2-T10-R053
-	BII2-T10-R054
-	BII2-T10-R055
-	BII2-T10-R056
-	BII2-T10-R058
-	BII2-T10-R027
-	BII2-T10-R028
-	BII2-T10-R029
-	BII2-T10-R030
-	BII2-T10-R045
-	CL-T10-R006
-	CL-T10-R007
+    Successes:
+    EUGEN-T10-R043
+    EUGEN-T10-R042
+    BII2-T10-R035
+    BII2-T10-R037
+    BII2-T10-R032
+    BII2-T10-R034
+    BII2-T10-R039
+    BII2-T10-R051
+    BII2-T10-R052
+    BII2-T10-R053
+    BII2-T10-R054
+    BII2-T10-R055
+    BII2-T10-R056
+    BII2-T10-R058
+    BII2-T10-R027
+    BII2-T10-R028
+    BII2-T10-R029
+    BII2-T10-R030
+    BII2-T10-R045
+    CL-T10-R006
+    CL-T10-R007
 
-	Errors:
-	None
+    Errors:
+    None
 
-	Warnings:
-	None
-				
+    Warnings:
+    None
+<
 -->
 <Invoice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
