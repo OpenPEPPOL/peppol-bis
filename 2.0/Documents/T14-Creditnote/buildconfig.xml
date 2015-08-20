@@ -4,14 +4,19 @@
     <testfolder>Tests</testfolder>
 
     <configuration>
-        <identifier>peppolbis-t14-05-2.0</identifier>
-        <title>PEPPOL BIS Creditnote (Profile 05)</title>
-        <profileId>urn:www.cenbii.eu:profile:bii05:ver2.0</profileId>
-        <customizationId>urn:www.cenbii.eu:transaction:biitrns014:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</customizationId>
+        <identifier>peppolbis-t14-base-2.0</identifier>
+        <title>PEPPOL BIS Creditnote 2.0 (Base)</title>
 		<inherit>ubl-creditnote-2.1</inherit>
-        <file source="Schematron/BII CORE/BIICORE-UBL-T14-V1.0.sch" path="xsl/BIICORE-UBL-T14.xsl" />
+        <!-- <file source="Schematron/BII CORE/BIICORE-UBL-T14-V1.0.sch" path="xsl/BIICORE-UBL-T14.xsl" /> -->
         <file source="Schematron/BII RULES/BIIRULES-UBL-T14.sch" path="xsl/BIIRULES-UBL-T14.xsl" />
         <file source="Schematron/OPENPEPPOL/OPENPEPPOL-UBL-T14.sch" path="xsl/OPENPEPPOL-UBL-T14.xsl" />
+    </configuration>
+    <configuration>
+        <identifier>peppolbis-t14-05-2.0</identifier>
+        <title>PEPPOL BIS Creditnote 2.0 (Profile 05)</title>
+        <profileId>urn:www.cenbii.eu:profile:bii05:ver2.0</profileId>
+        <customizationId>urn:www.cenbii.eu:transaction:biitrns014:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</customizationId>
+		<inherit>peppolbis-t14-base-2.0</inherit>
     </configuration>
 
 </buildConfigurations>
