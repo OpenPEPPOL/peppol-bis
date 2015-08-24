@@ -3,10 +3,10 @@
                 Description:
                 This file contains a PEPPOL invoice BIS4a - Singe lnvoice. The intention of the test is to check that the file is ok with Rounding Amount.
 
-                Error:
+                Errors:
 				None
 		
-				Warning: 
+				Warnings:
 				None
 
 -->

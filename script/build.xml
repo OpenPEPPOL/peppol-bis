@@ -129,7 +129,7 @@
         <foreach target="executeTest" param="testFile" inheritall="true">
             <path>
                 <fileset dir="../2.0/Documents/">
-                    <include name="**/Tests/T10-*.xml"/>
+                    <include name="**/Tests/T10-0009*.xml"/>
                 </fileset>
             </path>
         </foreach>
@@ -180,7 +180,7 @@
                 <!--echo = project.createTask("echo");-->
                 <!--echo.setMessage("TEST..................................................... " + commentLineArray[i].trim());-->
                 <!--echo.perform( );-->
-                if ( commentLineArray[i]!=null && commentLineArray[i].trim().indexOf('Errors:')>=0 ) {
+                if ( commentLineArray[i]!=null && commentLineArray[i].trim().indexOf('Error')==0 ) {
                     headlineFound = true;
                     continue;
                 }
@@ -196,7 +196,7 @@
             var warningArr = [];
             headlineFound = false;
             for (i=0; commentLineArray.length > i; i++) {
-                if ( commentLineArray[i]!=null && commentLineArray[i].trim().indexOf('Warnings:')>=0 ) {
+                if ( commentLineArray[i]!=null && commentLineArray[i].trim().indexOf('Warning')==0 ) {
                     headlineFound = true;
                     continue;
                 }
