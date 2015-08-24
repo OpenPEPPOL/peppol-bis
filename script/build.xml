@@ -129,7 +129,7 @@
         <foreach target="executeTest" param="testFile" inheritall="true">
             <path>
                 <fileset dir="../2.0/Documents/">
-                    <include name="**/Tests/T10-0009*.xml"/>
+                    <include name="**/Tests/T10-*.xml"/>
                 </fileset>
             </path>
         </foreach>
