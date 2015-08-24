@@ -122,8 +122,17 @@
 
     <target name="test" depends="" description="Run all tests">
         <delete file="${test.output}"/>
-        <loadfile property="testConfig" srcfile="${test.dir}/test-config.txt"/>
-        <foreach target="handleTestLine" param="line" list="${testConfig}" delimiter="${line.separator}"/>
+        <!--<loadfile property="testConfig" srcfile="${test.dir}/test-config.txt"/>-->
+        <!--<foreach target="handleTestLine" param="line" list="${testConfig}" delimiter="${line.separator}"/>-->
+
+        <!-- For each test folder-->
+        <foreach target="executeTest" param="testFile" inheritall="true">
+            <path>
+                <fileset dir="../2.0/Documents/">
+                    <include name="**/Tests/T10-000*.xml"/>
+                </fileset>
+            </path>
+        </foreach>
         <delete file="${target.dir}/schematron-output.xml"/>
 
         <!--Check if errors exists-->
@@ -138,90 +147,163 @@
         <!--</fail>-->
     </target>
 
-    <target name="parseTestLine">
-        <!--<echo message="${line}"/>-->
-
+    <target name="parseTestFilePath">
         <script language="javascript">
-            if (project.getProperty('line').length==0 || project.getProperty('line').startsWith('#') ) {
-            project.setProperty('isCommentLine', true);
-            } else {
-            arr = project.getProperty('line').trim().split(';', 4);
-            project.setProperty('testType', arr[0].trim());
-            project.setProperty('testFile', arr[1].trim());
-            project.setProperty('testSchematronType', arr[2].trim());
-            project.setProperty('testErrors', arr[3].trim());
-            }
+            // Find DocumentType
+            filePath = project.getProperty('testFile');
+            documentStartPos = filePath.indexOf('Documents\\');
+            docType = filePath.substring(documentStartPos+10, documentStartPos+13);
+            project.setProperty('docType', docType);
+//            echo = project.createTask("echo");
+//            echo.setMessage("TEST..................................................... " + filePath);
+//            echo.perform( );
         </script>
+        <basename property="testFile.base" file="${testFile}"/>
     </target>
 
-    <target name="handleTestLine" depends="parseTestLine" unless="isCommentLine">
-        <echo>            $${testType} => ${testType}
-            $${testFile} => ${testFile}
-            $${testSchematronType} => ${testSchematronType}
-            $${testErrors} => ${testErrors}
-        </echo>
+    <target name="executeTest" depends="parseTestFilePath, schematronValidateFile">
+        <echo message="${testFile}"/>
+        <loadfile property="testFile.content" srcfile="${testFile}"/>
+        <loadfile property="validationOutput.BII" srcfile="${target.dir}/schematron-BIIRULES-output.xml"/>
+        <loadfile property="validationOutput.PEPPOL" srcfile="${target.dir}/schematron-OPENPEPPOL-output.xml"/>
 
-        <property name="test.name" value="${testType}_${testFile}" environment=""/>
-        <echo message="##teamcity[testStarted name='${testType}.${testFile}' flowId='12321']"/>
+        <script language="javascript"><![CDATA[
+            // Parse test file for ERRORS and WARNINGS
+            content = project.getProperty('testFile.content');
+            commentStart = content.indexOf('<!--');
+            commentEnd = content.indexOf('-->');
+            commentLineArray = content.substring(commentStart, commentEnd).split('\n');
+            var headlineFound = false;
+            // Find ERRORS
+            var errorArr = [];
+            for (i=0; commentLineArray.length > i; i++) {
+                if ( commentLineArray[i]!=null && commentLineArray[i].trim().indexOf('Errors:')>=0  && commentLineArray[i].trim()!='None' ) {
+                    headlineFound = true;
+                    continue;
+                }
+                if ( headlineFound ) {
+                    if ( commentLineArray[i]!=null && commentLineArray[i].trim().length() > 0 ) {
+                        errorArr.push(commentLineArray[i].trim())
+                    } else {
+                        break;
+                    }
+                }
+            }
+            // Find WARNINGS
+            var warningArr = [];
+            headlineFound = false;
+            for (i=0; commentLineArray.length > i; i++) {
+                if ( commentLineArray[i]!=null && commentLineArray[i].trim().indexOf('Warnings:')>=0 ) {
+                    headlineFound = true;
+                    continue;
+                }
+                if ( headlineFound ) {
+                    if ( commentLineArray[i]!=null && commentLineArray[i].trim().length() > 0 && commentLineArray[i].trim()!='None' ) {
+                        warningArr.push(commentLineArray[i].trim())
+                    } else {
+                        break;
+                    }
+                }
+            }
+            <!--echo = project.createTask("echo");-->
+            <!--echo.setMessage("TEST..................................................... " + warningArr.length);-->
+            <!--echo.perform( );-->
+
+
+            // Verify that errors+warnings exists in schematron output
+            var escapeChars = ["[", "]", "'"];
+            validationOutput_BII = project.getProperty('validationOutput.BII');
+            validationOutput_PEPPOL = project.getProperty('validationOutput.PEPPOL');
+            for (i=0; errorArr.length > i; i++) {
+                // if error code start with BII, when use BII schematron output
+                testType = (errorArr[i].indexOf('BII')==0) ? 'BIIRULES' : 'OPENPEPPOL';
+                validationOutput = testType=='BIIRULES' ? validationOutput_BII : validationOutput_PEPPOL;
+
+                if ( validationOutput.indexOf(errorArr[i]) == -1 ) {
+                    <!--for (var i = 0; escapeChars.length > i; i++) {-->
+                        <!--errorArr[i] = errorArr[i].replace(escapeChars[i], "|"+escapeChars[i]);-->
+                    <!--}-->
+
+                    project.setProperty('test.errorCode', errorArr[i]);
+                    project.setProperty('test.reason', "Error " + errorArr[i] + " not found in schematron output");
+                    project.setProperty('test.result', "error");
+                    project.setProperty('test.type', testType);
+                    project.setProperty('validationOutput', validationOutput);
+                    break;
+                }
+            }
+
+
+
+            <!--errorArray = project.getProperty('testErrors').trim().split(' ');-->
+            <!--var escapeChars = ["[", "]", "'"];-->
+            <!--// Test for expected errors-->
+            <!--for (i=0; errorArray.length > i; i++) {-->
+                <!--project.setProperty('test.result', "ok");-->
+                <!--errorCode = errorArray[i].trim();-->
+
+                <!--// We have an errorCode, so it should be found to be OK!-->
+                <!--if ( validationOutput.indexOf(errorCode) == -1 ) {-->
+                    <!--project.setProperty('test.errorCode', errorCode);-->
+                    <!--project.setProperty('test.result', "error");-->
+                    <!--for (var i = 0; escapeChars.length > i; i++) {-->
+                        <!--errorCode = errorCode.replace(escapeChars[i], "|"+escapeChars[i]);-->
+                    <!--}-->
+                    <!--project.setProperty('test.reason', "Error " + errorCode + " not found in schematron output");-->
+                    <!--break;-->
+                <!--}-->
+            <!--}-->
+
+            // Test for no errors expected
+            // If no errors expected and "failed-assert" is found - then fail test
+            // errorArray is created, holding 1 empty element
+            <!--if (errorArray.length == 1 && errorArray[0].length()==0 && validationOutput.indexOf("failed-assert") > 0 ) {-->
+                <!--project.setProperty('test.result', "error");-->
+                <!--project.setProperty('test.reason', "Error(s) found, where no errors were expected");-->
+                <!--project.setProperty('test.errorCode', "no errors");-->
+            <!--}-->
+        ]]></script>
+        <if>
+            <equals arg1="${test.result}" arg2="error"/>
+            <then>
+                <echo message="##teamcity[testFailed name='${test.type}.${testFile.base}' message='${test.reason}' flowId='12321']"/>
+
+                <echo message="ERROR: Output from ${test.type} schematron validation of the file ${testFile.base} - expected ${test.errorCode}:${line.separator}"
+                      file="${test.output}" append="true"/>
+                <echo message="${validationOutput}${line.separator}${line.separator}" file="${test.output}" append="true"/>
+            </then>
+        </if>
+        <echo message="##teamcity[testFinished name='${test.type}.${testFile}' flowId='12321']"/>
+    </target>
+
+    <target name="schematronValidateFile">
+        <property name="test.name" value="${docType}_${testFile.base}" environment=""/>
+
+        <echo message="##teamcity[testStarted name='${test.name}' flowId='12321']"/>
         <!-- SAXON options: http://www.saxonica.com/documentation9.5/using-xsl/commandline.html -->
         <java jar="Saxon-HE-9.5.1-8.jar"
               fork="true"
               failonerror="true"
               maxmemory="2048m"
               resultproperty="errorCode">
-            <arg value="-s:../2.0/Documents/T10-Invoice/Tests/${testFile}"/>
-            <arg value="-xsl:${target.xslt}/${testType}-UBL-${testSchematronType}.xsl"/>
-            <arg value="-o:${target.dir}/schematron-output.xml"/>
+            <arg value="-s:${testFile}"/>
+            <arg value="-xsl:${target.xslt}/BIIRULES-UBL-${docType}.xsl"/>
+            <arg value="-o:${target.dir}/schematron-BIIRULES-output.xml"/>
             <arg value="-warnings:silent"/>
             <jvmarg line="-Xmx2048m"/>
         </java>
 
-        <loadfile property="validationOutput" srcfile="${target.dir}/schematron-output.xml"/>
-
-        <script language="javascript"><![CDATA[
-            validationOutput = project.getProperty('validationOutput');
-
-            errorArray = project.getProperty('testErrors').trim().split(' ');
-//            echo = project.createTask("echo");
-//            echo.setMessage("TEST..................................................... " + errorArray.length);
-//            echo.perform( );
-            var escapeChars = ["[", "]", "'"];
-            // Test for expected errors
-            for (i=0; errorArray.length > i; i++) {
-                project.setProperty('test.result', "ok");
-                errorCode = errorArray[i].trim();
-
-                // We have an errorCode, so it should be found to be OK!
-                if ( validationOutput.indexOf(errorCode) == -1 ) {
-                    project.setProperty('test.errorCode', errorCode);
-                    project.setProperty('test.result', "error");
-                    for (var i = 0; escapeChars.length > i; i++) {
-                        errorCode = errorCode.replace(escapeChars[i], "|"+escapeChars[i]);
-                    }
-                    project.setProperty('test.reason', "Error " + errorCode + " not found in schematron output");
-                    break;
-                }
-            }
-
-            // Test for no errors expected
-            // If no errors expected and "failed-assert" is found - then fail test
-            // errorArray is created, holding 1 empty element
-            if (errorArray.length == 1 && errorArray[0].length()==0 && validationOutput.indexOf("failed-assert") > 0 ) {
-                project.setProperty('test.result', "error");
-                project.setProperty('test.reason', "Error(s) found, where no errors were expected");
-                project.setProperty('test.errorCode', "no errors");
-            }
-        ]]></script>
-        <if>
-            <equals arg1="${test.result}" arg2="error"/>
-            <then>
-                <echo message="##teamcity[testFailed name='${testType}.${testFile}' message='${test.reason}' flowId='12321']"/>
-
-                <echo message="ERROR: Output from ${testType} schematron validation of the file ${testFile} - expected ${test.errorCode}:${line.separator}" file="${test.output}" append="true"/>
-                <echo message="${validationOutput}${line.separator}${line.separator}" file="${test.output}" append="true"/>
-            </then>
-        </if>
-        <echo message="##teamcity[testFinished name='${testType}.${testFile}' flowId='12321']"/>
+        <java jar="Saxon-HE-9.5.1-8.jar"
+              fork="true"
+              failonerror="true"
+              maxmemory="2048m"
+              resultproperty="errorCode">
+            <arg value="-s:${testFile}"/>
+            <arg value="-xsl:${target.xslt}/OPENPEPPOL-UBL-${docType}.xsl"/>
+            <arg value="-o:${target.dir}/schematron-OPENPEPPOL-output.xml"/>
+            <arg value="-warnings:silent"/>
+            <jvmarg line="-Xmx2048m"/>
+        </java>
     </target>
 
     <!-- build-all is intended for build server. -->
