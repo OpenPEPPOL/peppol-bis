@@ -214,6 +214,7 @@
             var escapeChars = ["[", "]", "'"];
             validationOutput_BII = project.getProperty('validationOutput.BII');
             validationOutput_PEPPOL = project.getProperty('validationOutput.PEPPOL');
+            // Errors
             for (i=0; errorArr.length > i; i++) {
                 // if error code start with BII, when use BII schematron output
                 testType = (errorArr[i].indexOf('BII')==0) ? 'BIIRULES' : 'OPENPEPPOL';
@@ -233,26 +234,26 @@
                 }
             }
 
+            // Warnings
+            for (i=0; warningArr.length > i; i++) {
+                // if warning code start with BII, when use BII schematron output
+                testType = (warningArr[i].indexOf('BII')==0) ? 'BIIRULES' : 'OPENPEPPOL';
+                validationOutput = testType=='BIIRULES' ? validationOutput_BII : validationOutput_PEPPOL;
 
-
-            <!--errorArray = project.getProperty('testErrors').trim().split(' ');-->
-            <!--var escapeChars = ["[", "]", "'"];-->
-            <!--// Test for expected errors-->
-            <!--for (i=0; errorArray.length > i; i++) {-->
-                <!--project.setProperty('test.result', "ok");-->
-                <!--errorCode = errorArray[i].trim();-->
-
-                <!--// We have an errorCode, so it should be found to be OK!-->
-                <!--if ( validationOutput.indexOf(errorCode) == -1 ) {-->
-                    <!--project.setProperty('test.errorCode', errorCode);-->
-                    <!--project.setProperty('test.result', "error");-->
+                if ( validationOutput.indexOf(warningArr[i]) == -1 ) {
                     <!--for (var i = 0; escapeChars.length > i; i++) {-->
-                        <!--errorCode = errorCode.replace(escapeChars[i], "|"+escapeChars[i]);-->
+                        <!--warningArr[i] = warningArr[i].replace(escapeChars[i], "|"+escapeChars[i]);-->
                     <!--}-->
-                    <!--project.setProperty('test.reason', "Error " + errorCode + " not found in schematron output");-->
-                    <!--break;-->
-                <!--}-->
-            <!--}-->
+
+                    project.setProperty('test.errorCode', warningArr[i]);
+                    project.setProperty('test.reason', "Error " + warningArr[i] + " not found in schematron output");
+                    project.setProperty('test.result', "error");
+                    project.setProperty('test.type', testType);
+                    project.setProperty('validationOutput', validationOutput);
+                    break;
+                }
+            }
+
 
             // Test for no errors expected
             // If no errors expected and "failed-assert" is found - then fail test
@@ -266,14 +267,14 @@
         <if>
             <equals arg1="${test.result}" arg2="error"/>
             <then>
-                <echo message="##teamcity[testFailed name='${test.type}.${testFile.base}' message='${test.reason}' flowId='12321']"/>
+                <echo message="##teamcity[testFailed name='${test.name}' message='${test.reason}' flowId='12321']"/>
 
                 <echo message="ERROR: Output from ${test.type} schematron validation of the file ${testFile.base} - expected ${test.errorCode}:${line.separator}"
                       file="${test.output}" append="true"/>
                 <echo message="${validationOutput}${line.separator}${line.separator}" file="${test.output}" append="true"/>
             </then>
         </if>
-        <echo message="##teamcity[testFinished name='${test.type}.${testFile}' flowId='12321']"/>
+        <echo message="##teamcity[testFinished name='${test.name}' flowId='12321']"/>
     </target>
 
     <target name="schematronValidateFile">
