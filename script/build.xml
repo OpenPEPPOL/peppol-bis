@@ -39,7 +39,6 @@
                        byline="true"/>
     </target>
 
-
     <target name="compile" depends="clean, init">
         <foreach target="compileDocumentType" param="documentType">
             <path>
@@ -129,7 +128,7 @@
         <foreach target="executeTest" param="testFile" inheritall="true">
             <path>
                 <fileset dir="../2.0/Documents/">
-                    <include name="**/Tests/T10-*.xml"/>
+                    <include name="**/Tests/T*-*.xml"/>
                 </fileset>
             </path>
         </foreach>
@@ -292,7 +291,7 @@
     </target>
 
     <target name="schematronValidateFile">
-        <property name="test.name" value="${docType}_${testFile.base}" environment=""/>
+        <property name="test.name" value="${docType}.${testFile.base}" environment=""/>
 
         <echo message="##teamcity[testStarted name='${test.name}' flowId='12321']"/>
         <!-- SAXON options: http://www.saxonica.com/documentation9.5/using-xsl/commandline.html -->
