@@ -127,7 +127,7 @@
             <path>
                 <fileset dir="../2.0/Documents/">
                     <filename name="**/Tests/T*-*.xml"/>
-                    <exclude name="**/Tests/TBL*.xml"/>
+                    <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
             </path>
         </foreach>
