@@ -121,14 +121,13 @@
 
     <target name="test" depends="" description="Run all tests">
         <delete file="${test.output}"/>
-        <!--<loadfile property="testConfig" srcfile="${test.dir}/test-config.txt"/>-->
-        <!--<foreach target="handleTestLine" param="line" list="${testConfig}" delimiter="${line.separator}"/>-->
 
         <!-- For each test folder-->
         <foreach target="executeTest" param="testFile" inheritall="true">
             <path>
                 <fileset dir="../2.0/Documents/">
-                    <include name="**/Tests/T*-*.xml"/>
+                    <filename name="**/Tests/T*-*.xml"/>
+                    <exclude name="**/Tests/TBL*.xml"/>
                 </fileset>
             </path>
         </foreach>
@@ -153,15 +152,12 @@
             documentStartPos = filePath.indexOf('Documents\\');
             docType = filePath.substring(documentStartPos+10, documentStartPos+13);
             project.setProperty('docType', docType);
-//            echo = project.createTask("echo");
-//            echo.setMessage("TEST..................................................... " + filePath);
-//            echo.perform( );
         </script>
         <basename property="testFile.base" file="${testFile}"/>
     </target>
 
     <target name="executeTest" depends="parseTestFilePath, schematronValidateFile">
-        <echo message="${testFile}"/>
+        <!--<echo message="FILE: ${testFile}"/>-->
         <loadfile property="testFile.content" srcfile="${testFile}"/>
         <loadfile property="validationOutput.BII" srcfile="${target.dir}/schematron-BIIRULES-output.xml"/>
         <loadfile property="validationOutput.PEPPOL" srcfile="${target.dir}/schematron-OPENPEPPOL-output.xml"/>
@@ -185,7 +181,11 @@
                 }
                 if ( headlineFound ) {
                     if ( commentLineArray[i]!=null && commentLineArray[i].trim().length() > 0  && commentLineArray[i].trim()!='None') {
-                        errorArr.push(commentLineArray[i].trim())
+                        lineArr = commentLineArray[i].trim().split(' ');
+            <!--echo = project.createTask("echo");-->
+            <!--echo.setMessage("TEST..................................................... " + commentLineArray[i].trim().split(' '));-->
+            <!--echo.perform( );-->
+                        errorArr.push(lineArr[0])
                     } else {
                         break;
                     }
@@ -209,7 +209,7 @@
             }
             <!--echo = project.createTask("echo");-->
             <!--echo.setMessage("TEST..................................................... " + warningArr.length);-->
-            <!--echo.perform( );-->
+            <!--echo.perform();-->
 
 
             // Verify that errors+warnings exists in schematron output
