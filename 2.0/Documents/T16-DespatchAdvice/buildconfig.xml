@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildConfigurations xmlns="http://difi.no/xsd/vefa/validator/1.0">
+
+	<package>PEPPOL BIS 30A Despatch Advice 2.0</package>
+
+    <testfolder>Tests</testfolder>
+
+    <configuration>
+        <identifier>peppolbis-t16-base-2.0</identifier>
+        <title>PEPPOL BIS Despatch Advice 2.0 (Base)</title>
+		<inherit>ubl-despatchadvice-2.1</inherit>
+        <file source="Schematron/BII RULES/BIIRULES-UBL-T16.sch" path="xsl/BIIRULES-UBL-T16.xsl" />
+        <file source="Schematron/OPENPEPPOL/OPENPEPPOL-UBL-T16.sch" path="xsl/OPENPEPPOL-UBL-T16.xsl" />
+    </configuration>
+    <configuration>
+        <identifier>peppolbis-t16-30-2.0</identifier>
+        <title>PEPPOL BIS Despatch Advice 2.0 (Profile 30)</title>
+        <profileId>urn:www.cenbii.eu:profile:bii30:ver2.0</profileId>
+        <customizationId>urn:www.cenbii.eu:transaction:biitrns016:ver1.0:extended:urn:www.peppol.eu:bis:peppol30a:ver1.0</customizationId>
+		<inherit>peppolbis-t16-base-2.0</inherit>
+    </configuration>
+	
+</buildConfigurations>

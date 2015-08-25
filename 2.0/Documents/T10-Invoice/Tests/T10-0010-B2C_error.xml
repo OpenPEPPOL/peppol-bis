@@ -109,7 +109,7 @@
 		<cbc:PaymentDueDate>2013-05-25</cbc:PaymentDueDate>
 		<cbc:PaymentID>0003434323213231</cbc:PaymentID>
 		<cac:PayeeFinancialAccount>
-			<cbc:ID schemeID="BBAN">51400567890</cbc:ID>
+			<cbc:ID schemeID="ERROR">51400567890</cbc:ID>
 		</cac:PayeeFinancialAccount>
 	</cac:PaymentMeans>
 	<cac:PaymentTerms>

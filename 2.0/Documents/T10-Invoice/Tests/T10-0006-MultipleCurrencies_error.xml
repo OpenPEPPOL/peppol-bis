@@ -3,11 +3,11 @@
                 Content:
                 This file contains a PEPPOL invoice BIS4a - Singe lnvoice. The intention of the test is to check that the schematron validation of multiple currencies is correct.
 
-                Error:
+                Errors:
 				EUGEN-T10-R026 x 2
 				EUGEN-T10-R046
 		
-				Warning:
+				Warnings:
 				EUGEN-T10-R040
 
 
