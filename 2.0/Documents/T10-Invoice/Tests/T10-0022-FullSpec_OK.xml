@@ -296,7 +296,7 @@
 				<cbc:ID>JB007</cbc:ID>
 			</cac:SellersItemIdentification>
 			<cac:StandardItemIdentification>
-				<cbc:ID schemeID="GTIN">05704368876486</cbc:ID>
+				<cbc:ID schemeID="CPV">05704368876486</cbc:ID>
 			</cac:StandardItemIdentification>
 			<cac:OriginCountry>
 				<cbc:IdentificationCode listID="ISO3166-1:Alpha2">DE</cbc:IdentificationCode>

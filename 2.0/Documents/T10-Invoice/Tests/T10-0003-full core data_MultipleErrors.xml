@@ -3,7 +3,6 @@
                 This file contains a BII Invoice profile 4. The intention of this test is to control that a full core Invoice is validated correctly
 
                 Errors:
-
 				EUGEN-T10-R025
 				EUGEN-T10-R026
 				EUGEN-T10-R027 x 5
