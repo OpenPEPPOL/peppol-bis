@@ -15,7 +15,7 @@
     <property name="test.dir" value="../2.0/Test"/>
     <property name="target.dir" value="../target"/>
     <property name="target.xslt" value="${target.dir}/XSLT"/>
-    <property name="test.output" value="${target.dir}/test-output.log"/>
+    <property name="test.output" value="${target.dir}/test-output_${version.number}.log"/>
 
     <taskdef resource="net/sf/antcontrib/antcontrib.properties">
         <classpath>
