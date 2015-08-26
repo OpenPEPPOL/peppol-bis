@@ -219,7 +219,7 @@
             // Errors
             for (i=0; errorArr.length > i; i++) {
                 // if error code start with BII, when use BII schematron output
-                testType = (errorArr[i].indexOf('BII')==0) ? 'BIIRULES' : 'OPENPEPPOL';
+                testType = (errorArr[i].indexOf('OP')==0 || errorArr[i].indexOf('EUGEN')==0) ? 'OPENPEPPOL' : 'BIIRULES';
                 validationOutput = testType=='BIIRULES' ? validationOutput_BII : validationOutput_PEPPOL;
 
                 if ( validationOutput.indexOf(errorArr[i]) == -1 ) {
