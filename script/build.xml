@@ -120,7 +120,9 @@
     </target>
 
     <target name="test" depends="" description="Run all tests">
-        <delete file="${test.output}"/>
+        <delete>
+            <fileset dir="${target.dir}" includes="*.log"/>
+        </delete>
 
         <!-- For each test folder-->
         <foreach target="executeTest" param="testFile" inheritall="true">
