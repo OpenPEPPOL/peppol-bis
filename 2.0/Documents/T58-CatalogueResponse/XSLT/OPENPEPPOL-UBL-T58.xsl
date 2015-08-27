@@ -1,41 +1,52 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<xsl:stylesheet xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
                 xmlns:saxon="http://saxon.sf.net/"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:schold="http://www.ascc.net/xml/schematron"
                 xmlns:iso="http://purl.oclc.org/dsdl/schematron"
+                xmlns:xhtml="http://www.w3.org/1999/xhtml"
                 xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
                 xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                 xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2"
                 version="2.0"><!--Implementers: please note that overriding process-prolog or process-root is 
     the preferred method for meta-stylesheets to use where possible. -->
-<xsl:param name="archiveDirParameter" tunnel="no"/>
-   <xsl:param name="archiveNameParameter" tunnel="no"/>
-   <xsl:param name="fileNameParameter" tunnel="no"/>
-   <xsl:param name="fileDirParameter" tunnel="no"/>
+   <xsl:param name="archiveDirParameter"/>
+   <xsl:param name="archiveNameParameter"/>
+   <xsl:param name="fileNameParameter"/>
+   <xsl:param name="fileDirParameter"/>
+   <xsl:variable name="document-uri">
+      <xsl:value-of select="document-uri(/)"/>
+   </xsl:variable>
 
    <!--PHASES-->
 
 
-<!--PROLOG-->
-<xsl:output xmlns:svrl="http://purl.oclc.org/dsdl/svrl" method="xml"
+   <!--PROLOG-->
+   <xsl:output xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+               method="xml"
                omit-xml-declaration="no"
                standalone="yes"
                indent="yes"/>
 
-   <!--XSD TYPES-->
+   <!--XSD TYPES FOR XSLT2-->
 
 
-<!--KEYS AND FUCNTIONS-->
+   <!--KEYS AND FUNCTIONS-->
 
 
-<!--DEFAULT RULES-->
+   <!--DEFAULT RULES-->
 
 
-<!--MODE: SCHEMATRON-FULL-PATH-->
-<!--This mode can be used to generate an ugly though full XPath for locators-->
-<xsl:template match="*" mode="schematron-get-full-path">
+   <!--MODE: SCHEMATRON-SELECT-FULL-PATH-->
+   <!--This mode can be used to generate an ugly though full XPath for locators-->
+   <xsl:template match="*" mode="schematron-select-full-path">
+      <xsl:apply-templates select="." mode="schematron-get-full-path"/>
+   </xsl:template>
+
+   <!--MODE: SCHEMATRON-FULL-PATH-->
+   <!--This mode can be used to generate an ugly though full XPath for locators-->
+   <xsl:template match="*" mode="schematron-get-full-path">
       <xsl:apply-templates select="parent::*" mode="schematron-get-full-path"/>
       <xsl:text>/</xsl:text>
       <xsl:choose>
@@ -73,8 +84,8 @@
    </xsl:template>
 
    <!--MODE: SCHEMATRON-FULL-PATH-2-->
-<!--This mode can be used to generate prefixed XPath for humans-->
-<xsl:template match="node() | @*" mode="schematron-get-full-path-2">
+   <!--This mode can be used to generate prefixed XPath for humans-->
+   <xsl:template match="node() | @*" mode="schematron-get-full-path-2">
       <xsl:for-each select="ancestor-or-self::*">
          <xsl:text>/</xsl:text>
          <xsl:value-of select="name(.)"/>
@@ -89,9 +100,9 @@
       </xsl:if>
    </xsl:template>
    <!--MODE: SCHEMATRON-FULL-PATH-3-->
-<!--This mode can be used to generate prefixed XPath for humans 
+   <!--This mode can be used to generate prefixed XPath for humans 
 	(Top-level element has index)-->
-<xsl:template match="node() | @*" mode="schematron-get-full-path-3">
+   <xsl:template match="node() | @*" mode="schematron-get-full-path-3">
       <xsl:for-each select="ancestor-or-self::*">
          <xsl:text>/</xsl:text>
          <xsl:value-of select="name(.)"/>
@@ -107,7 +118,7 @@
    </xsl:template>
 
    <!--MODE: GENERATE-ID-FROM-PATH -->
-<xsl:template match="/" mode="generate-id-from-path"/>
+   <xsl:template match="/" mode="generate-id-from-path"/>
    <xsl:template match="text()" mode="generate-id-from-path">
       <xsl:apply-templates select="parent::*" mode="generate-id-from-path"/>
       <xsl:value-of select="concat('.text-', 1+count(preceding-sibling::text()), '-')"/>
@@ -131,7 +142,7 @@
    </xsl:template>
 
    <!--MODE: GENERATE-ID-2 -->
-<xsl:template match="/" mode="generate-id-2">U</xsl:template>
+   <xsl:template match="/" mode="generate-id-2">U</xsl:template>
    <xsl:template match="*" mode="generate-id-2" priority="2">
       <xsl:text>U</xsl:text>
       <xsl:number level="multiple" count="*"/>
@@ -150,11 +161,13 @@
       <xsl:text>_</xsl:text>
       <xsl:value-of select="translate(name(),':','.')"/>
    </xsl:template>
-   <!--Strip characters--><xsl:template match="text()" priority="-1"/>
+   <!--Strip characters-->
+   <xsl:template match="text()" priority="-1"/>
 
-   <!--SCHEMA METADATA-->
-<xsl:template match="/">
-      <svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl" title="OPENPEPPOL  T58 bound to UBL"
+   <!--SCHEMA SETUP-->
+   <xsl:template match="/">
+      <svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                              title="OPENPEPPOL  T58 bound to UBL"
                               schemaVersion="">
          <xsl:comment>
             <xsl:value-of select="$archiveDirParameter"/>   
@@ -190,17 +203,17 @@
    </xsl:template>
 
    <!--SCHEMATRON PATTERNS-->
-<svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">OPENPEPPOL  T58 bound to UBL</svrl:text>
+   <svrl:text xmlns:svrl="http://purl.oclc.org/dsdl/svrl">OPENPEPPOL  T58 bound to UBL</svrl:text>
 
    <!--PATTERN UBL-T58-->
 
 
-	<!--RULE -->
-<xsl:template match="//cbc:EndpointID" priority="1002" mode="M6">
+	  <!--RULE -->
+   <xsl:template match="//cbc:EndpointID" priority="1002" mode="M6">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="//cbc:EndpointID"/>
 
 		    <!--ASSERT -->
-<xsl:choose>
+      <xsl:choose>
          <xsl:when test="@schemeID"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="@schemeID">
@@ -217,12 +230,12 @@
    </xsl:template>
 
 	  <!--RULE -->
-<xsl:template match="//cac:PartyIdentification/cbc:ID" priority="1001" mode="M6">
+   <xsl:template match="//cac:PartyIdentification/cbc:ID" priority="1001" mode="M6">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="//cac:PartyIdentification/cbc:ID"/>
 
 		    <!--ASSERT -->
-<xsl:choose>
+      <xsl:choose>
          <xsl:when test="@schemeID"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="@schemeID">
@@ -239,11 +252,11 @@
    </xsl:template>
 
 	  <!--RULE -->
-<xsl:template match="//cbc:ResponseCode" priority="1000" mode="M6">
+   <xsl:template match="//cbc:ResponseCode" priority="1000" mode="M6">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="//cbc:ResponseCode"/>
 
 		    <!--ASSERT -->
-<xsl:choose>
+      <xsl:choose>
          <xsl:when test="@listID = 'UNCL4343'"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl" test="@listID = 'UNCL4343'">
@@ -266,12 +279,13 @@
    <!--PATTERN CodesT58-->
 
 
-	<!--RULE -->
-<xsl:template match="cbc:EndpointID//@schemeID" priority="1002" mode="M7">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="cbc:EndpointID//@schemeID"/>
+	  <!--RULE -->
+   <xsl:template match="cbc:EndpointID//@schemeID" priority="1002" mode="M7">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="cbc:EndpointID//@schemeID"/>
 
 		    <!--ASSERT -->
-<xsl:choose>
+      <xsl:choose>
          <xsl:when test="( ( not(contains(normalize-space(.),' ')) and contains( ' FR:SIRENE SE:ORGNR FR:SIRET FI:OVT DUNS GLN DK:P IT:FTI NL:KVK IT:SIA IT:SECETI DK:CPR DK:CVR DK:SE DK:VANS IT:VAT IT:CF NO:ORGNR NO:VAT HU:VAT EU:REID AT:VAT AT:GOV IS:KT IBAN AT:KUR ES:VAT IT:IPA AD:VAT AL:VAT BA:VAT BE:VAT BG:VAT CH:VAT CY:VAT CZ:VAT DE:VAT EE:VAT GB:VAT GR:VAT HR:VAT IE:VAT LI:VAT LT:VAT LU:VAT LV:VAT MC:VAT ME:VAT MK:VAT MT:VAT NL:VAT PL:VAT PT:VAT RO:VAT RS:VAT SI:VAT SK:VAT SM:VAT TR:VAT VA:VAT NL:ION SE:VAT ZZZ ',concat(' ',normalize-space(.),' ') ) ) )"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -284,15 +298,18 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+      <xsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M7"/>
    </xsl:template>
 
 	  <!--RULE -->
-<xsl:template match="cac:PartyIdentification/cbc:ID//@schemeID" priority="1001" mode="M7">
+   <xsl:template match="cac:PartyIdentification/cbc:ID//@schemeID"
+                 priority="1001"
+                 mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="cac:PartyIdentification/cbc:ID//@schemeID"/>
 
 		    <!--ASSERT -->
-<xsl:choose>
+      <xsl:choose>
          <xsl:when test="( ( not(contains(normalize-space(.),' ')) and contains( ' FR:SIRENE SE:ORGNR FR:SIRET FI:OVT DUNS GLN DK:P IT:FTI NL:KVK IT:SIA IT:SECETI DK:CPR DK:CVR DK:SE DK:VANS IT:VAT IT:CF NO:ORGNR NO:VAT HU:VAT EU:REID AT:VAT AT:GOV IS:KT IBAN AT:KUR ES:VAT IT:IPA AD:VAT AL:VAT BA:VAT BE:VAT BG:VAT CH:VAT CY:VAT CZ:VAT DE:VAT EE:VAT GB:VAT GR:VAT HR:VAT IE:VAT LI:VAT LT:VAT LU:VAT LV:VAT MC:VAT ME:VAT MK:VAT MT:VAT NL:VAT PL:VAT PT:VAT RO:VAT RS:VAT SI:VAT SK:VAT SM:VAT TR:VAT VA:VAT NL:ION SE:VAT ZZZ ',concat(' ',normalize-space(.),' ') ) ) )"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
@@ -305,14 +322,15 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
+      <xsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M7"/>
    </xsl:template>
 
 	  <!--RULE -->
-<xsl:template match="cbc:ResponseCode" priority="1000" mode="M7">
+   <xsl:template match="cbc:ResponseCode" priority="1000" mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="cbc:ResponseCode"/>
 
 		    <!--ASSERT -->
-<xsl:choose>
+      <xsl:choose>
          <xsl:when test="( ( not(contains(normalize-space(.),' ')) and contains( ' AP RE ',concat(' ',normalize-space(.),' ') ) ) )"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
