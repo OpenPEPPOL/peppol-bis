@@ -12,7 +12,7 @@ build.xml COMPILING (ant compile)
 
 
 build.xml TESTING (ant test)
-- Every .xml file below 2.0/Documents/T*/Tests/ named Txx-xxxx-*.xml if parsed for Errors and Warnings
+- Every .xml file below 2.0/Documents/T*/Tests/ named Txx-xxxx-*.xml is parsed for Errors and Warnings
 - Every test file is schematron validated with both BIIRULES-UBL-Txx.xsl and OPENPEPPOL-UBL-Txx.xsl
 - Error/Warning codes starting with "OP" and "EUGEN" are evaluated against OpenPEPPOL schematron output - all other codes against BIIRULES schematron output.
 - A file called TARGET/test-output_${version.number}.log is produces, holding all found errors and the associated schematron output
