@@ -149,6 +149,13 @@
 
     <target name="parseTestFilePath">
         <script language="javascript">
+            // testSuite stuff
+            oldDocType = project.getProperty('docType');
+            <!--echo = project.createTask("echo");-->
+            <!--echo.setMessage("TEST..................................................... " + project.getProperty('docType'));-->
+            <!--echo.setMessage("TEST..................................................... " + docType);-->
+            <!--echo.perform( );-->
+
             // Find DocumentType
             filePath = project.getProperty('testFile');
             documentStartPos = filePath.indexOf('Documents\\');
@@ -174,9 +181,6 @@
             // Find ERRORS
             var errorArr = [];
             for (i=0; commentLineArray.length > i; i++) {
-                <!--echo = project.createTask("echo");-->
-                <!--echo.setMessage("TEST..................................................... " + commentLineArray[i].trim());-->
-                <!--echo.perform( );-->
                 if ( commentLineArray[i]!=null && commentLineArray[i].trim().indexOf('Error')==0 ) {
                     headlineFound = true;
                     continue;
@@ -290,11 +294,14 @@
             </then>
         </if>
         <echo message="##teamcity[testFinished name='${test.name}' flowId='12321']"/>
+        <echo message="##teamcity[testSuiteFinished name='${docType}' flowId='12321']"/>
     </target>
 
     <target name="schematronValidateFile">
-        <property name="test.name" value="${docType}.${testFile.base}" environment=""/>
+        <!--<property name="test.name" value="${docType}.${testFile.base}" environment=""/>-->
+        <property name="test.name" value="${testFile.base}" environment=""/>
 
+        <echo message="##teamcity[testSuiteStarted name='${docType}' flowId='12321']"/>
         <echo message="##teamcity[testStarted name='${test.name}' flowId='12321']"/>
         <!-- SAXON options: http://www.saxonica.com/documentation9.5/using-xsl/commandline.html -->
         <java jar="Saxon-HE-9.5.1-8.jar"
