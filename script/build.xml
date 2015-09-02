@@ -29,7 +29,7 @@
     </target>
 
     <target name="init" depends="setBuildNumber.normal">
-        <echo message="##teamcity[buildNumber '${build.number}']"/>
+        <echo message="##teamcity[buildNumber '${local.build.number}']"/>
         <mkdir dir="${target.xslt}"/>
     </target>
 
@@ -121,8 +121,9 @@
         <echo message="This ZIP contains the official OpenPEPPOL Validation Artifacts (XSLT + SCH files) for BIS 2.0 documents.${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
         <echo message="Version   : ${version.number}${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
         <echo message="Build time: ${build.time}${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
+        <echo message="GIT number: ${build.number}${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
 
-        <zip destfile="${target.dir}/BIS2.0-VA-V${build.number}.zip">
+        <zip destfile="${target.dir}/BIS2.0-VA-V${local.build.number}.zip">
             <zipfileset dir="${target.xslt}" includes="*.xsl" prefix="XSLT"/>
             <zipfileset dir="${sch.dir}" includes="**/*.sch" prefix="SCH"/>
             <zipfileset dir="../2.0/Documentation" includes="*V${version.number}.pdf"/>
@@ -345,11 +346,11 @@
     <target name="release" depends="setBuildNumber.release, makeZip"/>
 
     <target name="setBuildNumber.release">
-        <property name="build.number" value="${version.number}"/>
+        <property name="local.build.number" value="${version.number}"/>
     </target>
 
     <target name="setBuildNumber.normal">
-        <property name="build.number" value="${version.number}.${build.time}"/>
+        <property name="local.build.number" value="${version.number}.${build.time}"/>
     </target>
 
 </project>
