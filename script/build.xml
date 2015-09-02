@@ -8,10 +8,11 @@
     <tstamp>
         <format property="build.time" pattern="yyyyMMdd_HHmmss" locale="en,GB"/>
     </tstamp>
-    <property name="version.number" value="x.x.x.${build.time}"/>
+    <property name="version.number" value="3.1.0_RC1"/>
     <!-- Format of version.releaseDate must be yyyy-mm-dd -->
     <!--<property name="version.releaseDate" value="2015-09-15"/>-->
 
+    <property name="sch.dir" value="../2.0/Documents"/>
     <property name="test.dir" value="../2.0/Test"/>
     <property name="target.dir" value="../target"/>
     <property name="target.xslt" value="${target.dir}/XSLT"/>
@@ -114,8 +115,20 @@
     </target>
 
     <target name="makeZip" depends="clean, compile" description="Make ZIP for release">
-        <zip destfile="${target.dir}/OpenPEPPOL-Schematron_v${version.number}.zip">
-            <fileset dir="${target.xslt}" includes="*.xsl"/>
+        <property name="build.number" value="${version.number}.${build.time}"/>
+
+        <!-- Make version-info file -->
+        <echo message="VERSION INFORMATION${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
+        <echo message="-------------------${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
+        <echo message="This ZIP contains the official OpenPEPPOL Validation Artifacts (XSLT + SCH files) for BIS 2.0 documents.${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
+        <echo message="Version   : ${version.number}${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
+        <echo message="Build time: ${build.time}${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
+
+        <zip destfile="${target.dir}/BIS2.0-VA-V${build.number}.zip">
+            <zipfileset dir="${target.xslt}" includes="*.xsl" prefix="XSLT"/>
+            <zipfileset dir="${sch.dir}" includes="**/*.sch" prefix="SCH"/>
+            <zipfileset dir="../2.0/Documentation" includes="*V${version.number}.pdf"/>
+            <zipfileset dir="${target.dir}" includes="*.txt"/>
         </zip>
     </target>
 
@@ -331,5 +344,9 @@
 
     <!-- build-all is intended for build server. -->
     <target name="build-all" depends="clean, compile, test, makeZip"/>
+    <target name="release">
+        <property name="build.number" value="${version.number}"/>
+        <antcall target="makeZip"/>
+    </target>
 
 </project>
