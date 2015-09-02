@@ -57,6 +57,7 @@
             <path>
                 <fileset dir="${documentType}/Schematron/">
                     <include name="*/*.sch"/>
+                    <exclude name="*/BIICORE*.sch"/>
                 </fileset>
             </path>
         </foreach>
@@ -125,7 +126,7 @@
 
         <zip destfile="${target.dir}/BIS2.0-VA-V${local.build.number}.zip">
             <zipfileset dir="${target.xslt}" includes="*.xsl" prefix="XSLT"/>
-            <zipfileset dir="${sch.dir}" includes="**/*.sch" prefix="SCH"/>
+            <zipfileset dir="${sch.dir}" includes="**/*.sch" excludes="**/BIICORE*.sch" prefix="SCH"/>
             <zipfileset dir="../2.0/Documentation" includes="*V${version.number}.pdf"/>
             <zipfileset dir="${target.dir}" includes="*.txt"/>
         </zip>
