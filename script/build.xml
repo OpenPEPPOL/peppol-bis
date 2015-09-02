@@ -29,7 +29,8 @@
     </target>
 
     <target name="init">
-        <echo message="##teamcity[buildNumber '${version.number}']"/>
+        <property name="build.number" value="${version.number}.${build.time}"/>
+        <echo message="##teamcity[buildNumber '${build.number}']"/>
         <mkdir dir="${target.xslt}"/>
     </target>
 
@@ -115,8 +116,6 @@
     </target>
 
     <target name="makeZip" depends="clean, compile" description="Make ZIP for release">
-        <property name="build.number" value="${version.number}.${build.time}"/>
-
         <!-- Make version-info file -->
         <echo message="VERSION INFORMATION${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
         <echo message="-------------------${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
