@@ -28,8 +28,7 @@
         <delete dir="../target"/>
     </target>
 
-    <target name="init">
-        <property name="build.number" value="${version.number}.${build.time}"/>
+    <target name="init" depends="setBuildNumber.normal">
         <echo message="##teamcity[buildNumber '${build.number}']"/>
         <mkdir dir="${target.xslt}"/>
     </target>
@@ -115,7 +114,7 @@
         </condition>
     </target>
 
-    <target name="makeZip" depends="clean, compile" description="Make ZIP for release">
+    <target name="makeZip" depends="compile" description="Make ZIP for release">
         <!-- Make version-info file -->
         <echo message="VERSION INFORMATION${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
         <echo message="-------------------${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
@@ -343,9 +342,14 @@
 
     <!-- build-all is intended for build server. -->
     <target name="build-all" depends="clean, compile, test, makeZip"/>
-    <target name="release">
+    <target name="release" depends="setBuildNumber.release, makeZip"/>
+
+    <target name="setBuildNumber.release">
         <property name="build.number" value="${version.number}"/>
-        <antcall target="makeZip"/>
+    </target>
+
+    <target name="setBuildNumber.normal">
+        <property name="build.number" value="${version.number}.${build.time}"/>
     </target>
 
 </project>
