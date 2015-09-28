@@ -115,7 +115,7 @@
 	<cac:TaxTotal>
 		<cbc:TaxAmount currencyID="DKK">0</cbc:TaxAmount>
 		<cac:TaxSubtotal>
-			<cbc:TaxableAmount currencyID="DKK">1500</cbc:TaxableAmount>
+			<cbc:TaxableAmount currencyID="DKK">1500.0</cbc:TaxableAmount>
 			<cbc:TaxAmount currencyID="DKK">0</cbc:TaxAmount>
 			<cac:TaxCategory>
 				<cbc:ID schemeID="UNCL5305">AE</cbc:ID>
