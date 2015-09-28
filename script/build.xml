@@ -57,7 +57,7 @@
             <path>
                 <fileset dir="${documentType}/Schematron/">
                     <include name="*/*.sch"/>
-                    <exclude name="*/BIICORE*.sch"/>
+                    <!--<exclude name="*/BIICORE*.sch"/>-->
                 </fileset>
             </path>
         </foreach>
