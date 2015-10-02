@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Content:
+    Release October 2015.
+    This file contains a PEPPOL Creditnote, profile 05
+
+    Errors:
+    EUGEN-T14-R008 x 2   
+    EUGEN-T14-R043
+    BII2-T14-R053
+    BII2-T14-R032
+    BII2-T14-R051
+    BII2-T14-R052
+    BII2-T14-R054
+    BII2-T14-R055
+    BII2-T14-R056
+    BII2-T14-R058
+    BII2-T14-R027
+    BII2-T14-R028
+    BII2-T14-R029
+    BII2-T14-R030
+    BII2-T14-R045
+    CL-T14-R006
+    CL-T14-R007
+
+    Warnings:
+    None
+                
+-->
+<CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2">
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns014:ver2.0:extended:urn:www.peppol.eu:bis:peppol5a:ver2.0</cbc:CustomizationID>
+    <cbc:ProfileID>urn:www.cenbii.eu:profile:bii05:ver2.0</cbc:ProfileID>
+    <cbc:ID>Kred-234567</cbc:ID>
+	<cbc:IssueDate>2013-06-30</cbc:IssueDate>
+	<cbc:Note>Merknad som ikke eksplisitt er angitt andre steder og som gjelder hele kreditnotaen.</cbc:Note>
+	<cbc:DocumentCurrencyCode listID="ISO4217">NOK</cbc:DocumentCurrencyCode>
+	<cbc:AccountingCost>Project cost code 123</cbc:AccountingCost>
+	<cac:InvoicePeriod>
+		<cbc:StartDate>2013-06-01</cbc:StartDate>
+		<cbc:EndDate>2013-06-30</cbc:EndDate>
+	</cac:InvoicePeriod>
+	<cac:BillingReference>
+		<cac:InvoiceDocumentReference>
+			<cbc:ID>TOSL108</cbc:ID>
+		</cac:InvoiceDocumentReference>
+	</cac:BillingReference>
+	<cac:ContractDocumentReference>
+		<cbc:ID>Contract321</cbc:ID>
+		<cbc:DocumentTypeCode listID="UNCL1001">2</cbc:DocumentTypeCode>
+		<cbc:DocumentType>Framework agreement</cbc:DocumentType>
+	</cac:ContractDocumentReference>	
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>Doc1</cbc:ID>
+		<cbc:DocumentType>Timesheet</cbc:DocumentType>
+		<cac:Attachment>
+			<cac:ExternalReference>
+				<cbc:URI>http://www.suppliersite.eu/sheet001.html</cbc:URI>
+			</cac:ExternalReference>
+		</cac:Attachment>
+	</cac:AdditionalDocumentReference>
+	<cac:AccountingSupplierParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="NO:ORGNR">123456789</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="GLN">3456789012091</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Salescompany ASA</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Main street 1</cbc:StreetName>
+				<cbc:AdditionalStreetName>Suite 123</cbc:AdditionalStreetName>
+				<cbc:CityName>Big city</cbc:CityName>
+				<cbc:PostalZone>54321</cbc:PostalZone>
+				<cbc:CountrySubentity>RegionA</cbc:CountrySubentity>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID schemeID="NO:VAT">NO123456789MVA</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>The Sellercompany ASA</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="NO:ORGNR" schemeName="Foretaksregisteret">123456789</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:ID>Our ref.</cbc:ID>
+				<cbc:Name>Antonio Salemacher</cbc:Name>
+				<cbc:Telephone>46211230</cbc:Telephone>
+				<cbc:Telefax>46211231</cbc:Telefax>
+				<cbc:ElectronicMail>antonio@salescompany.no</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="NO:ORGNR">987654321</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="GLN">3456789012091</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Buyercompany ASA</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Anystreet 8</cbc:StreetName>
+				<cbc:AdditionalStreetName>Back door</cbc:AdditionalStreetName>
+				<cbc:CityName>Anytown</cbc:CityName>
+				<cbc:PostalZone>101</cbc:PostalZone>
+				<cbc:CountrySubentity>RegionB</cbc:CountrySubentity>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID schemeID="NO:VAT">NO987654321MVA</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Buyercompany ASA</cbc:RegistrationName>
+				<cbc:CompanyID schemeAgencyID="NO:ORGNR">987654321</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:ID>3150bdn</cbc:ID>
+				<cbc:Name>John Doe</cbc:Name>
+				<cbc:Telephone>5121230</cbc:Telephone>
+				<cbc:Telefax>5121231</cbc:Telefax>
+				<cbc:ElectronicMail>john@buyercompany.no</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:PayeeParty>
+		<cac:PartyIdentification>
+			<cbc:ID schemeID="GLN">0987409182397</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>Ebeneser Scrooge A/S</cbc:Name>
+		</cac:PartyName>
+		<cac:PartyLegalEntity>
+			<cbc:CompanyID schemeID="NO:ORGNR">987345678</cbc:CompanyID>
+		</cac:PartyLegalEntity>
+	</cac:PayeeParty>
+	<cac:TaxRepresentativeParty>
+		<cac:PartyName>
+			<cbc:Name>Tax handling company AS</cbc:Name>
+		</cac:PartyName>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID schemeID="NO:VAT">967611265MVA</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+	</cac:TaxRepresentativeParty>
+	<cac:Delivery>
+		<cbc:ActualDeliveryDate>2013-06-15</cbc:ActualDeliveryDate>
+		<cac:DeliveryLocation>
+			<cbc:ID schemeID="GLN">6754238987648</cbc:ID>
+			<cac:Address>
+				<cbc:StreetName>Deliverystreet 12</cbc:StreetName>
+				<cbc:AdditionalStreetName>Side door</cbc:AdditionalStreetName>
+				<cbc:CityName>DeliveryCity</cbc:CityName>
+				<cbc:PostalZone>523427</cbc:PostalZone>
+				<cbc:CountrySubentity>RegionD</cbc:CountrySubentity>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:DeliveryLocation>
+	</cac:Delivery>
+	<cac:PaymentMeans>
+		<cbc:PaymentMeansCode listID="UNCL4461">79</cbc:PaymentMeansCode>
+		<cbc:PaymentDueDate>2013-07-20</cbc:PaymentDueDate>
+		<cbc:PaymentID>0003434323213231</cbc:PaymentID>
+		<cac:PayeeFinancialAccount>
+			<cbc:ID schemeID="IBAN">NO9386011117947</cbc:ID>
+			<cac:FinancialInstitutionBranch>
+			<cbc:ID>9710</cbc:ID>
+			   <cac:FinancialInstitution>
+			      <cbc:ID schemeID="BIC">DNBANOKK</cbc:ID>
+			    </cac:FinancialInstitution>
+			</cac:FinancialInstitutionBranch>
+		</cac:PayeeFinancialAccount>
+	</cac:PaymentMeans>
+	<cac:AllowanceCharge>
+		<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+		<cbc:AllowanceChargeReasonCode listID="UNCL4465">75</cbc:AllowanceChargeReasonCode>
+		<cbc:AllowanceChargeReason>Promotion discount</cbc:AllowanceChargeReason>
+		<cbc:Amount currencyID="NOK">99.65</cbc:Amount>
+		<cac:TaxCategory>
+			<cbc:ID schemeID="UNCL5305">G</cbc:ID>
+			<cbc:Percent>25</cbc:Percent>
+			<cac:TaxScheme>
+				<cbc:ID>VAT</cbc:ID>
+			</cac:TaxScheme>
+		</cac:TaxCategory>
+	</cac:AllowanceCharge>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="NOK">293.74</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="NOK">1172.00</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="NOK">293.00</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+				<cbc:Percent>25</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="NOK">4.96</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="NOK">0.78</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UNCL5305">H</cbc:ID>
+				<cbc:Percent>10</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="NOK">-25</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="NOK">0</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UNCL5305">E</cbc:ID>
+				<cbc:Percent>0</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+		<cac:TaxSubtotal>
+			<cac:TaxCategory>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="NOK">0</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="NOK">0</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="NOK">1276.86</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="NOK">1176.96</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="NOK">1471.00</cbc:TaxInclusiveAmount>
+		<cbc:AllowanceTotalAmount currencyID="NOK">100</cbc:AllowanceTotalAmount>
+		<cbc:ChargeTotalAmount currencyID="NOK">1.0</cbc:ChargeTotalAmount>
+		<cbc:PrepaidAmount currencyID="NOK">0.0</cbc:PrepaidAmount>
+		<cbc:PayableRoundingAmount currencyID="NOK">0.31</cbc:PayableRoundingAmount>
+		<cbc:PayableAmount currencyID="NOK">1471.01</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:CreditNoteLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:Note>Freetext note</cbc:Note>
+		<cbc:CreditedQuantity unitCode="NAR" unitCodeListID="UNECERec20">1.0</cbc:CreditedQuantity>
+		<cbc:LineExtensionAmount currencyID="NOK">1272</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>BookingCode001</cbc:AccountingCost>
+		<cac:InvoicePeriod>
+			<cbc:StartDate>2013-06-01</cbc:StartDate>
+			<cbc:EndDate>2013-06-30</cbc:EndDate>
+		</cac:InvoicePeriod>
+		<cac:OrderLineReference>
+			<cbc:LineID>1</cbc:LineID>
+		</cac:OrderLineReference>	
+		<cac:BillingReference>
+			<cac:InvoiceDocumentReference>
+				<cbc:ID>TOSL108</cbc:ID>
+			</cac:InvoiceDocumentReference>
+			<cac:BillingReferenceLine>
+				<cbc:ID>1</cbc:ID>
+			</cac:BillingReferenceLine>
+		</cac:BillingReference>
+		<cac:Delivery>
+			<cbc:ActualDeliveryDate>2013-06-15</cbc:ActualDeliveryDate>
+			<cac:DeliveryLocation>
+				<cbc:ID schemeID="GLN">6754238987648</cbc:ID>
+				<cac:Address>
+					<cbc:StreetName>Deliverystreet 12</cbc:StreetName>
+					<cbc:AdditionalStreetName>Side door</cbc:AdditionalStreetName>
+					<cbc:CityName>DeliveryCity</cbc:CityName>
+					<cbc:PostalZone>523427</cbc:PostalZone>
+					<cbc:CountrySubentity>RegionD</cbc:CountrySubentity>
+					<cac:Country>
+						<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:DeliveryLocation>
+		</cac:Delivery>
+				<cac:Delivery>
+			<cbc:ActualDeliveryDate>2013-06-15</cbc:ActualDeliveryDate>
+			<cac:DeliveryLocation>
+				<cbc:ID schemeID="GLN">6754238987648</cbc:ID>
+				<cac:Address>
+					<cbc:StreetName>Deliverystreet 12</cbc:StreetName>
+					<cbc:AdditionalStreetName>Side door</cbc:AdditionalStreetName>
+					<cbc:CityName>DeliveryCity</cbc:CityName>
+					<cbc:PostalZone>523427</cbc:PostalZone>
+					<cbc:CountrySubentity>RegionD</cbc:CountrySubentity>
+					<cac:Country>
+						<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+			</cac:DeliveryLocation>
+		</cac:Delivery>
+		<cac:AllowanceCharge>
+			<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+			<cbc:AllowanceChargeReason>Damage</cbc:AllowanceChargeReason>
+			<cbc:Amount currencyID="NOK">1</cbc:Amount>
+		</cac:AllowanceCharge>
+		<cac:Item>
+			<cbc:Description>Processor: Intel Core 2 Duo SU9400 LV (1.4GHz). RAM: 3MB. Screen 1440x900</cbc:Description>
+			<cbc:Name>Laptop computer</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>JB007</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID>1234567890124</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:OriginCountry>
+				<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+			</cac:OriginCountry>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="UNSPSC">12344321</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="CPV">65434568</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Color</cbc:Name>
+				<cbc:Value>Black</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<cac:ManufacturerParty>
+			   <cac:PartyName>
+					<cbc:Name>Company name ASA</cbc:Name>
+			    </cac:PartyName>
+			   <cac:PartyLegalEntity>
+				   <cbc:CompanyID schemeID="NO:ORGNR">904312347</cbc:CompanyID>
+			    </cac:PartyLegalEntity>
+			</cac:ManufacturerParty>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="NOK">1273</cbc:PriceAmount>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
+			<cac:AllowanceCharge>
+				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+				<cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
+				<cbc:MultiplierFactorNumeric>0.15</cbc:MultiplierFactorNumeric>
+				<cbc:Amount currencyID="NOK">225.0</cbc:Amount>
+				<cbc:BaseAmount currencyID="NOK">1500.0</cbc:BaseAmount>
+			</cac:AllowanceCharge>
+		</cac:Price>
+	</cac:CreditNoteLine>
+    <cac:CreditNoteLine>
+		<cbc:ID>2</cbc:ID>
+		<cbc:CreditedQuantity unitCode="NAR" unitCodeListID="UNECERec20">2.0</cbc:CreditedQuantity>
+		<cbc:LineExtensionAmount currencyID="NOK">4.96</cbc:LineExtensionAmount>
+		<cac:Item>
+			<cbc:Name>"Computing for dummies" book</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>JB009</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">1234567890126</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="UNSPSC">32344324</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="CPV">65434566</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID schemeID="UNCL5305">H</cbc:ID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="NOK">2.48</cbc:PriceAmount>
+			<cac:AllowanceCharge>
+				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+				<cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
+				<cbc:MultiplierFactorNumeric>0.1</cbc:MultiplierFactorNumeric>
+				<cbc:Amount currencyID="NOK">0.275</cbc:Amount>
+				<cbc:BaseAmount currencyID="NOK">2.75</cbc:BaseAmount>
+			</cac:AllowanceCharge>
+		</cac:Price>
+	</cac:CreditNoteLine>
+</CreditNote>
