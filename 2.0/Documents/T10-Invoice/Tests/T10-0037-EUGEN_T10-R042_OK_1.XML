@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+                Content:
+                This file contains a PEPPOL invoice, profile only
+                
+                Errors:
+                None
+                
+                Warnings:
+                None
+				
+-->
+
+<Invoice
+ xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 UBL-Invoice-2.0.xsd"
+ xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+ xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+ <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+ <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol4a:ver2.0</cbc:CustomizationID>
+ <cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver2.0</cbc:ProfileID>
+ <cbc:ID>12345</cbc:ID>
+ <cbc:IssueDate>2015-09-23</cbc:IssueDate>
+ <cbc:InvoiceTypeCode listID="UNCL1001">380</cbc:InvoiceTypeCode>
+ <cbc:DocumentCurrencyCode listID="ISO4217">NOK</cbc:DocumentCurrencyCode>
+ <cac:OrderReference>
+  <cbc:ID>O123</cbc:ID>
+ </cac:OrderReference>
+ <cac:ContractDocumentReference>
+  <cbc:ID>C765</cbc:ID>
+ </cac:ContractDocumentReference>
+ <cac:AccountingSupplierParty>
+  <cac:Party>
+   <cac:PartyName>
+    <cbc:Name>SupplierParty</cbc:Name>
+   </cac:PartyName>
+   <cac:PostalAddress>
+    <cbc:StreetName>Drammensveien 10</cbc:StreetName>
+    <cbc:CityName>Oslo</cbc:CityName>
+    <cbc:PostalZone>0101</cbc:PostalZone>
+    <cac:Country>
+     <cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+    </cac:Country>
+   </cac:PostalAddress>
+   <cac:PartyTaxScheme>
+    <cbc:CompanyID schemeID="NO:VAT">NO123456789MVA</cbc:CompanyID>
+    <cac:TaxScheme>
+     <cbc:ID>VAT</cbc:ID>
+    </cac:TaxScheme>
+   </cac:PartyTaxScheme>
+   <cac:PartyLegalEntity>
+    <cbc:RegistrationName>SupplierParty</cbc:RegistrationName>
+    <cbc:CompanyID schemeID="NO:ORGNR" schemeName="Foretaksregisteret">123456789</cbc:CompanyID>
+   </cac:PartyLegalEntity>
+   <cac:Contact>
+    <cbc:ID>123</cbc:ID>
+   </cac:Contact>
+  </cac:Party>
+ </cac:AccountingSupplierParty>
+ <cac:AccountingCustomerParty>
+  <cac:Party>
+   <cbc:EndpointID schemeID="NO:ORGNR">987654321</cbc:EndpointID>
+   <cac:PartyIdentification>
+    <cbc:ID schemeID="ZZZ">9876543</cbc:ID>
+   </cac:PartyIdentification>
+   <cac:PartyName>
+    <cbc:Name>CustomerParty</cbc:Name>
+   </cac:PartyName>
+   <cac:PostalAddress>
+    <cbc:StreetName>Postboks 123</cbc:StreetName>
+    <cbc:CityName>OSLO</cbc:CityName>
+    <cbc:PostalZone>0202</cbc:PostalZone>
+    <cac:Country>
+     <cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+    </cac:Country>
+   </cac:PostalAddress>
+   <cac:PartyLegalEntity>
+    <cbc:RegistrationName>CustomerParty</cbc:RegistrationName>
+    <cbc:CompanyID schemeID="NO:ORGNR">987654321</cbc:CompanyID>
+   </cac:PartyLegalEntity>
+   <cac:Contact>
+    <cbc:ID>c76543</cbc:ID>
+   </cac:Contact>
+  </cac:Party>
+ </cac:AccountingCustomerParty>
+ <cac:Delivery>
+  <cbc:ActualDeliveryDate>2015-09-24</cbc:ActualDeliveryDate>
+  <cac:DeliveryLocation>
+   <cbc:ID schemeID="GSRN">98766754643544324</cbc:ID>
+   <cac:Address>
+    <cbc:StreetName>DeliveryStreet</cbc:StreetName>
+    <cbc:CityName>OSLO</cbc:CityName>
+    <cbc:PostalZone>0101</cbc:PostalZone>
+    <cac:Country>
+     <cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+    </cac:Country>
+   </cac:Address>
+  </cac:DeliveryLocation>
+ </cac:Delivery>
+ <cac:PaymentMeans>
+  <cbc:PaymentMeansCode listID="UNCL4461">31</cbc:PaymentMeansCode>
+  <cbc:PaymentDueDate>2015-09-24</cbc:PaymentDueDate>
+  <cbc:PaymentID>123465789098765</cbc:PaymentID>
+  <cac:PayeeFinancialAccount>
+   <cbc:ID schemeID="LOCAL">12345667890</cbc:ID>
+  </cac:PayeeFinancialAccount>
+ </cac:PaymentMeans>
+ <cac:PaymentMeans>
+  <cbc:PaymentMeansCode listID="UNCL4461">31</cbc:PaymentMeansCode>
+  <cbc:PaymentDueDate>2015-08-24</cbc:PaymentDueDate>
+  <cbc:PaymentChannelCode>SW</cbc:PaymentChannelCode>
+  <cbc:PaymentID>123465789098765</cbc:PaymentID>
+  <cac:PayeeFinancialAccount>
+   <cbc:ID schemeID="IBAN">NO12345667890</cbc:ID>
+   <cac:FinancialInstitutionBranch>
+    <cbc:ID>1234</cbc:ID>
+    <cac:FinancialInstitution>
+     <cbc:ID schemeID="BIC">BICNOKK</cbc:ID>
+    </cac:FinancialInstitution>
+   </cac:FinancialInstitutionBranch>
+  </cac:PayeeFinancialAccount>
+ </cac:PaymentMeans>
+ <cac:TaxTotal>
+  <cbc:TaxAmount currencyID="NOK">2.55</cbc:TaxAmount>
+  <cac:TaxSubtotal>
+   <cbc:TaxableAmount currencyID="NOK">10.01</cbc:TaxableAmount>
+   <cbc:TaxAmount currencyID="NOK">2.55</cbc:TaxAmount>
+   <cac:TaxCategory>
+    <cbc:ID schemeID="UNCL5305">S</cbc:ID>
+    <cbc:Percent>25.00</cbc:Percent>
+    <cac:TaxScheme>
+     <cbc:ID>VAT</cbc:ID>
+    </cac:TaxScheme>
+   </cac:TaxCategory>
+  </cac:TaxSubtotal>
+ </cac:TaxTotal>
+ <cac:LegalMonetaryTotal>
+  <cbc:LineExtensionAmount currencyID="NOK">10.01</cbc:LineExtensionAmount>
+  <cbc:TaxExclusiveAmount currencyID="NOK">10.01</cbc:TaxExclusiveAmount>
+  <cbc:TaxInclusiveAmount currencyID="NOK">12.56</cbc:TaxInclusiveAmount>
+  <cbc:PayableAmount currencyID="NOK">12.56</cbc:PayableAmount>
+ </cac:LegalMonetaryTotal>
+ <cac:InvoiceLine>
+  <cbc:ID>1</cbc:ID>
+  <cbc:InvoicedQuantity unitCode="KWH" unitCodeListID="UNECERec20">1.0000000000</cbc:InvoicedQuantity>
+  <cbc:LineExtensionAmount currencyID="NOK">10.01</cbc:LineExtensionAmount>
+  <cbc:AccountingCost>12344</cbc:AccountingCost>
+  <cac:OrderLineReference>
+   <cbc:LineID>1</cbc:LineID>
+  </cac:OrderLineReference>
+  <cac:Item>
+   <cbc:Name>ItemName</cbc:Name>
+   <cac:SellersItemIdentification>
+    <cbc:ID>NA</cbc:ID>
+   </cac:SellersItemIdentification>
+   <cac:ClassifiedTaxCategory>
+    <cbc:ID schemeID="UNCL5305">S</cbc:ID>
+    <cbc:Percent>25.00</cbc:Percent>
+    <cac:TaxScheme>
+     <cbc:ID>VAT</cbc:ID>
+    </cac:TaxScheme>
+   </cac:ClassifiedTaxCategory>
+  </cac:Item>
+  <cac:Price>
+   <cbc:PriceAmount currencyID="NOK">10.010000</cbc:PriceAmount>
+  </cac:Price>
+ </cac:InvoiceLine>
+
+</Invoice>

@@ -8,7 +8,7 @@
     <tstamp>
         <format property="build.time" pattern="yyyyMMdd_HHmmss" locale="en,GB"/>
     </tstamp>
-    <property name="version.number" value="3.1.0_RC1"/>
+    <property name="version.number" value="3.1.0_RC2"/>
     <!-- Format of version.releaseDate must be yyyy-mm-dd -->
     <!--<property name="version.releaseDate" value="2015-09-15"/>-->
 
@@ -126,6 +126,7 @@
 
         <zip destfile="${target.dir}/BIS2.0-VA-V${local.build.number}.zip">
             <zipfileset dir="${target.xslt}" includes="*.xsl" prefix="XSLT"/>
+            <!-- excludes="**/BIICORE*.sch" fromversion 3.1 -->
             <zipfileset dir="${sch.dir}" includes="**/*.sch" excludes="**/BIICORE*.sch" prefix="SCH"/>
             <zipfileset dir="../2.0/Documentation" includes="*V${version.number}.pdf"/>
             <zipfileset dir="${target.dir}" includes="*.txt"/>
