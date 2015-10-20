@@ -154,12 +154,11 @@
 
    <!--SCHEMA METADATA-->
 <xsl:template match="/">
-      <svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl" title="BIIRULES  T01 bound to UBL"
-                              schemaVersion="">
+      <svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl" title="BIIRULES  T01 bound to UBL" schemaVersion="">
          <xsl:comment>
-            <xsl:value-of select="$archiveDirParameter"/>   
-		 <xsl:value-of select="$archiveNameParameter"/>  
-		 <xsl:value-of select="$fileNameParameter"/>  
+            <xsl:value-of select="$archiveDirParameter"/>
+		 <xsl:value-of select="$archiveNameParameter"/>
+		 <xsl:value-of select="$fileNameParameter"/>
 		 <xsl:value-of select="$fileDirParameter"/>
          </xsl:comment>
          <svrl:ns-prefix-in-attribute-values uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"

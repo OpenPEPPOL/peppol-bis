@@ -147,9 +147,9 @@
    <axsl:template match="/">
       <svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:xs="http://www.w3.org/2001/XMLSchema" title="BII2 CORE restrictions for Credit Note Transaction (T14) UBL-CreditNote-2.1" schemaVersion="iso">
          <axsl:comment>
-            <axsl:value-of select="$archiveDirParameter"/>   
-		 <axsl:value-of select="$archiveNameParameter"/>  
-		 <axsl:value-of select="$fileNameParameter"/>  
+            <axsl:value-of select="$archiveDirParameter"/>
+		 <axsl:value-of select="$archiveNameParameter"/>
+		 <axsl:value-of select="$fileNameParameter"/>
 		 <axsl:value-of select="$fileDirParameter"/>
          </axsl:comment>
          <svrl:ns-prefix-in-attribute-values uri="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" prefix="cac"/>

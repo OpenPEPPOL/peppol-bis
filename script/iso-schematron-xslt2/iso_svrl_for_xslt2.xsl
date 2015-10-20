@@ -228,7 +228,7 @@
 	<xsl:param name="see" />
 	<xsl:param name="space" />
 	
-	<svrl:schematron-output title="{$title}" schemaVersion="{$schemaVersion}" >
+	<svrl:schematron-output title="{$title}" schemaVersion="{$schemaVersion}">
 		<xsl:if test=" string-length( normalize-space( $phase )) &gt; 0 and 
 		not( normalize-space( $phase ) = '#ALL') ">
 			<axsl:attribute name="phase">
@@ -236,9 +236,9 @@
 			</axsl:attribute>
 		</xsl:if> 
 		
-		 <axsl:comment><axsl:value-of select="$archiveDirParameter"/>  &#xA0;
-		 <axsl:value-of select="$archiveNameParameter"/> &#xA0;
-		 <axsl:value-of select="$fileNameParameter"/> &#xA0;
+		 <axsl:comment><axsl:value-of select="$archiveDirParameter"/>
+		 <axsl:value-of select="$archiveNameParameter"/>
+		 <axsl:value-of select="$fileNameParameter"/>
 		 <axsl:value-of select="$fileDirParameter"/></axsl:comment> 
 		 
 		
