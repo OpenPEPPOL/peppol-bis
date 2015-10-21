@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
        			Description:
-                This file contains a Bii invoice, profile 4. The Intention is to control that a BII invoice with min VAT detalis does NOT produce errors or warnings.
+                This file contains a Bii invoice, profile 4. The Intention is to control that a BII invoice with min VAT details does NOT produce errors or warnings.
 
                 Errors:
                 BII2-T10-R030
