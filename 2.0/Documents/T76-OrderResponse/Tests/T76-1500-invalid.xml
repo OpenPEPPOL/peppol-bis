@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--
+		Description:
+		Release October 2015.
+		This file contains a PEPPOL Order confirmation, profile 28
 
-    Content:
-    Release October 2015.
-    This file contains a PEPPOL Order confirmation, profile 28
+		Errors:
+		OP-T76-R007
 
-    Errors:
-    OP-T76-R007
-
-    Warning:
-    None
+		Warning:
+		None
 
 -->
+
 <OrderResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2 ../../3%20Ordre/UBL%202.1%20schema/maindoc/UBL-OrderResponse-2.1.xsd">
 	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
 	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns076:ver2.0:extended:urn:www.peppol.eu:bis:peppol28a:ver1.0</cbc:CustomizationID>

@@ -17,6 +17,8 @@
     <property name="target.dir" value="../target"/>
     <property name="target.xslt" value="${target.dir}/XSLT"/>
     <property name="test.output" value="${target.dir}/test-output_${version.number}.log"/>
+    <property name="test.overview" value="${target.dir}/test-overview_${version.number}.html"/>
+    <property name="test.overview.inner" value="${target.dir}/test-overview-inner.html"/>
 
     <taskdef resource="net/sf/antcontrib/antcontrib.properties">
         <classpath>
@@ -119,7 +121,8 @@
         <!-- Make version-info file -->
         <echo message="VERSION INFORMATION${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
         <echo message="-------------------${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
-        <echo message="This ZIP contains the official OpenPEPPOL Validation Artifacts (XSLT + SCH files) for BIS 2.0 documents.${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
+        <echo message="This ZIP contains the official OpenPEPPOL Validation Artifacts (XSLT + SCH files) for BIS 2.0 documents.${line.separator}"
+              file="${target.dir}/version-info.txt" append="true"/>
         <echo message="Version   : ${version.number}${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
         <echo message="Build time: ${build.time}${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
         <echo message="GIT number: ${build.number}${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
@@ -133,7 +136,7 @@
         </zip>
     </target>
 
-    <target name="test" depends="" description="Run all tests">
+    <target name="test" depends="init" description="Run all tests">
         <delete>
             <fileset dir="${target.dir}" includes="*.log"/>
         </delete>
@@ -148,6 +151,13 @@
             </path>
         </foreach>
         <delete file="${target.dir}/schematron-output.xml"/>
+
+        <!-- Make test overview output -->
+        <copy file="testOverview_template.html" tofile="${test.overview}" overwrite="true"/>
+        <loadfile property="innerHtml" srcfile="${test.overview.inner}"/>
+        <replaceregexp file="${test.overview}" match="#buildNumber#" replace="${local.build.number}" byline="true"/>
+        <replaceregexp file="${test.overview}" match="#innerHTML#" replace="${innerHtml}" byline="true"/>
+        <delete file="${test.overview.inner}"/>
 
         <!--Check if errors exists-->
         <fileset id="matches" file="${test.output}">
@@ -192,8 +202,31 @@
             commentEnd = content.indexOf('-->');
             commentLineArray = content.substring(commentStart, commentEnd).split('\n');
             var headlineFound = false;
+
+            // Find Description lines
+            var description = "";
+            headlineFound = false;
+            for (i=0; commentLineArray.length > i; i++) {
+                if ( commentLineArray[i]!=null && (commentLineArray[i].trim().indexOf('Description')==0 || commentLineArray[i].trim().indexOf('Content')==0) ) {
+                    headlineFound = true;
+                    continue;
+                }
+                if ( headlineFound ) {
+                    if ( commentLineArray[i]!=null && commentLineArray[i].trim().length() > 0  && commentLineArray[i].trim()!='None') {
+                        <!--lineArr = commentLineArray[i].trim().split(' ');-->
+            <!--echo = project.createTask("echo");-->
+            <!--echo.setMessage("TEST..................................................... " + commentLineArray[i].trim().split(' '));-->
+            <!--echo.perform( );-->
+                        description = description + commentLineArray[i] + "<br>"
+                    } else {
+                        break;
+                    }
+                }
+                project.setProperty('test.description', description);
+            }
             // Find ERRORS
             var errorArr = [];
+            headlineFound = false;
             for (i=0; commentLineArray.length > i; i++) {
                 if ( commentLineArray[i]!=null && commentLineArray[i].trim().indexOf('Error')==0 ) {
                     headlineFound = true;
@@ -296,6 +329,7 @@
                 project.setProperty('test.type', 'OPENPEPPOL');
                 project.setProperty('validationOutput', validationOutput_PEPPOL);
             }
+            project.setProperty('test.result', "OK");
         ]]></script>
         <if>
             <equals arg1="${test.result}" arg2="error"/>
@@ -307,6 +341,15 @@
                 <echo message="${validationOutput}${line.separator}${line.separator}" file="${test.output}" append="true"/>
             </then>
         </if>
+
+        <echo file="${test.overview.inner}" append="true"><![CDATA[
+<tr>
+<td>${testFile.base}</td>
+<td>${test.description}</td>
+<td class="status-${test.result}">${test.result}</td>
+</tr>
+]]>
+        </echo>
         <echo message="##teamcity[testFinished name='${test.name}' flowId='12321']"/>
         <echo message="##teamcity[testSuiteFinished name='${docType}' flowId='12321']"/>
     </target>

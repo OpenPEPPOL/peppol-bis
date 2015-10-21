@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-       <!--Content:
+<!--
+				Description:
                 This file contains a BII Invoice profile 4. The intention of this test is to control that a full core Invoice is validated correctly
 
                 Errors:
