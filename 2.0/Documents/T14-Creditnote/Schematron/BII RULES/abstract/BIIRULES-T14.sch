@@ -1,6 +1,6 @@
-<!-- Schematron rules generated automatically. -->
+<!-- Schematron rules generated automatically by Validex Generator Midran ltd -->
 <!-- Abstract rules for T14 -->
-<!-- (2009). Invinet Sistemes -->
+<!-- Timestamp: 2016-03-05 16:02:31 +0100 -->
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron" abstract="true" id="T14">
   <rule context="$Allowance_Charge">
     <assert test="$BII2-T14-R025" flag="fatal" id="BII2-T14-R025">[BII2-T14-R025]-Each document level allowance or charge details MUST have an allowance and charge reason text</assert>

@@ -3,7 +3,7 @@
 
         	UBL syntax binding to the T01   
         	Author: Oriol Bausà
-
+            Timestamp: 2016-03-05 16:35:55 +0100
      -->
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:UBL="urn:oasis:names:specification:ubl:schema:xsd:Order-2" queryBinding="xslt2">
   <title>BIIRULES  T01 bound to UBL</title>

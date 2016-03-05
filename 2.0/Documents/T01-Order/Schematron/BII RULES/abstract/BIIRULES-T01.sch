@@ -1,6 +1,6 @@
-<!-- Schematron rules generated automatically. -->
+<!-- Schematron rules generated automatically by Validex Generator Midran ltd -->
 <!-- Abstract rules for T01 -->
-<!-- (2009). Invinet Sistemes -->
+<!-- Timestamp: 2016-03-05 16:35:53 +0100 -->
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron" abstract="true" id="T01">
   <rule context="$Allowance_Charges">
     <assert test="$BII2-T01-R007" flag="fatal" id="BII2-T01-R007">[BII2-T01-R007]-Allowances and charges MUST have a reason</assert>
