@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+                Content:
+                This file contains a PEPPOL order, profile 28
+                
+                Errors:
+                BII2-T01-R011
+                
+                Warnings:
+                BII2-T01-R005
+                
+-->
+
+<Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2"
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+    <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+    <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns001:ver2.0:extended:urn:www.peppol.eu:bis:peppol28a:ver2.0</cbc:CustomizationID>
+    <cbc:ProfileID>urn:www.cenbii.eu:profile:bii28:ver2.0</cbc:ProfileID>
+    <cbc:ID>300260249</cbc:ID>
+    <cbc:CopyIndicator>false</cbc:CopyIndicator>
+    <cbc:IssueDate>2015-01-08</cbc:IssueDate>
+    <cbc:IssueTime>00:00:00</cbc:IssueTime>
+    <!--OrderTypeCode should only be filled if a consignment order, code 227-->
+    <cbc:OrderTypeCode listID="UNCL1001">220</cbc:OrderTypeCode>
+    <cbc:Note>Testordre</cbc:Note>
+    <cbc:DocumentCurrencyCode listID="ISO4217">NOK</cbc:DocumentCurrencyCode>
+    <cbc:AccountingCost>no_forsvars2</cbc:AccountingCost>
+    <cac:BuyerCustomerParty>
+        <cac:Party>
+            <!-- Orgnr skal bare være ni tall-->
+            <cbc:EndpointID schemeID="NO:ORGNR">00975950662 MVA</cbc:EndpointID>
+            <cac:PartyIdentification>
+                <!-- ZZZ brukes normalt om internt kundenummer, er dette et internt kundenr?-->
+                <cbc:ID schemeID="ZZZ">NO975950662MVAC</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name>Forsvarsbygg</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:StreetName>Fellestjenester Hamar, Fakturasenteret Postboks
+                    4394</cbc:StreetName>
+                <cbc:CityName>HAMAR</cbc:CityName>
+                <cbc:PostalZone>2308</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:Contact>
+                <cbc:ID>NA</cbc:ID>
+                <cbc:Name>EKERHOVD, ODDGEIR</cbc:Name>
+                <cbc:Telephone>81570400</cbc:Telephone>
+                <cbc:Telefax>81570400</cbc:Telefax>
+                <cbc:ElectronicMail>Oddgeir.Ekerhovd@forsvarsbygg.no</cbc:ElectronicMail>
+            </cac:Contact>
+        </cac:Party>
+    </cac:BuyerCustomerParty>
+    <cac:SellerSupplierParty>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <!--Dette ser ut som et org.nr, og normalt bør man da bruke schemeID = NO:ORGNR-->
+                <cbc:ID schemeID="ZZZ">979787723</cbc:ID>
+            </cac:PartyIdentification>
+            <!--PartyIdentification skal kun oppgis en gang ihht. EHF-->
+            <cac:PartyIdentification>
+                <cbc:ID schemeID="ZZZ">20634</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name>Per Strand Tromsø AS (RAMMELEV)</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:StreetName>Postboks 2029, Alkeveien 7</cbc:StreetName>
+                <cbc:CityName>TROMSØ</cbc:CityName>
+                <cbc:PostalZone>9265</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:Contact>
+                <cbc:ID>NA</cbc:ID>
+                <cbc:Name>Oddgeir Ekerhovd</cbc:Name>
+                <cbc:ElectronicMail>per.anders.ruud@byggmakker.no</cbc:ElectronicMail>
+            </cac:Contact>
+        </cac:Party>
+    </cac:SellerSupplierParty>
+    <cac:AccountingCustomerParty>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <!-- ZZZ brukes normalt om internt kundenummer, er dette et internt kundenr?-->
+                <cbc:ID schemeID="ZZZ">NO975950662MVAB</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name>Forsvarsbygg</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:StreetName>Fellestjenester Hamar, Fakturasenteret Postboks
+                    4394</cbc:StreetName>
+                <cbc:CityName>HAMAR</cbc:CityName>
+                <cbc:PostalZone>2308</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+        </cac:Party>
+    </cac:AccountingCustomerParty>
+    <cac:Delivery>
+        <cac:DeliveryLocation>
+            <cac:Address>
+                <cbc:ID schemeID="ZZZ">NO975950662MVA</cbc:ID>
+                <cbc:StreetName>Postboks 405, Sentrum</cbc:StreetName>
+                <cbc:CityName>OSLO</cbc:CityName>
+                <cbc:PostalZone>0103</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:Address>
+        </cac:DeliveryLocation>
+        <cac:RequestedDeliveryPeriod>
+            <cbc:StartDate>2015-01-11</cbc:StartDate>
+            <!--StartTime er ikke definert i EHF-->
+            <cbc:StartTime>00:00:00</cbc:StartTime>
+        </cac:RequestedDeliveryPeriod>
+        <cac:DeliveryParty>
+            <cac:PartyIdentification>
+                <!--Dette er ikke et GLN nummer-->
+                <cbc:ID schemeID="GLN">a6fad6d2-7aee-1000-8a55-c0a80a670001</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name>Forsvarsbygg</cbc:Name>
+            </cac:PartyName>
+        </cac:DeliveryParty>
+    </cac:Delivery>
+    <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="NOK">0</cbc:TaxAmount>
+    </cac:TaxTotal>
+    <cac:AnticipatedMonetaryTotal>
+        <cbc:LineExtensionAmount currencyID="NOK">14.69</cbc:LineExtensionAmount>
+        <cbc:TaxExclusiveAmount currencyID="NOK">14.69</cbc:TaxExclusiveAmount>
+        <cbc:TaxInclusiveAmount currencyID="NOK">14.69</cbc:TaxInclusiveAmount>
+        <cbc:PayableAmount currencyID="NOK">14.69</cbc:PayableAmount>
+    </cac:AnticipatedMonetaryTotal>
+    <cac:OrderLine>
+        <cac:LineItem>
+            <cbc:ID>1</cbc:ID>
+            <cbc:Quantity unitCode="MTR" unitCodeListID="UNECERec20">1</cbc:Quantity>
+            <cbc:LineExtensionAmount currencyID="NOK">14.69</cbc:LineExtensionAmount>
+            <cac:Delivery>
+                <cbc:Quantity unitCode="MTR" unitCodeListID="UNECERec20">1</cbc:Quantity>
+                <cac:RequestedDeliveryPeriod>
+                    <cbc:EndDate>2015-01-11</cbc:EndDate>
+                    <!--EndTime er ikke en del av EHF-->
+                    <cbc:EndTime>00:00:00</cbc:EndTime>
+                </cac:RequestedDeliveryPeriod>
+            </cac:Delivery>
+            <cac:Price>
+                <cbc:PriceAmount currencyID="NOK">-14.69</cbc:PriceAmount>
+            </cac:Price>
+            <cac:Item>
+                <cbc:Description>GRAN 36X098 K-VIRKE C24</cbc:Description>
+                <!--CatalogueIndicator er ikke en del av EHF-->
+                <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
+                <cbc:Name>GRAN 36X098 K-VIRKE C24</cbc:Name>
+                <!--BuyersItemIdentification er ikke en del av EHF-->
+                <cac:BuyersItemIdentification>
+                    <cbc:ID>UN-301036</cbc:ID>
+                </cac:BuyersItemIdentification>
+                <!--Er dette riktig Identifikasjonsnummer??-->
+                <cac:SellersItemIdentification>
+                    <cbc:ID>1</cbc:ID>
+                </cac:SellersItemIdentification>
+                <!--UNSPSC?-->
+                <cac:CommodityClassification>
+                    <cbc:ItemClassificationCode listID="Other">301036</cbc:ItemClassificationCode>
+                </cac:CommodityClassification>
+            </cac:Item>
+        </cac:LineItem>
+    </cac:OrderLine>
+</Order>
