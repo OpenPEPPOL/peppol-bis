@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" schemaVersion="iso">
-    <title>Schema for UBL-DespatchAdvice-2.1BII2 openPEPPOL BIS; 1.0</title>
+    <title>OPENPEPPOL CORE T16 bound to UBL</title>
     <ns uri="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" prefix="cac"/>
     <ns uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" prefix="cbc"/>
     <ns uri="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" prefix="ext"/>

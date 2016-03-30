@@ -6,16 +6,23 @@
     <configuration>
         <identifier>peppolbis-t76-base-2.0</identifier>
         <title>PEPPOL BIS Order Response 2.0 (Base)</title>
-		<inherit>ubl-orderresponse-2.1</inherit>
+        <inherit>ubl-orderresponse-2.1</inherit>
         <file source="Schematron/BII RULES/BIIRULES-UBL-T76.sch" path="xsl/BIIRULES-UBL-T76.xsl" />
         <file source="Schematron/OPENPEPPOL/OPENPEPPOL-UBL-T76.sch" path="xsl/OPENPEPPOL-UBL-T76.xsl" />
     </configuration>
+    <configuration>
+        <identifier>peppolbis-t76-core-2.0</identifier>
+        <title>PEPPOL BIS Order Response 2.0 (Core)</title>
+        <file source="Schematron/OPENPEPPOL CORE/OPENPEPPOLCORE-UBL-T76.sch" path="xsl/OPENPEPPOLCORE-UBL-T76.xsl" />
+    </configuration>
+
     <configuration>
         <identifier>peppolbis-t76-28-2.0</identifier>
         <title>PEPPOL BIS Order Response 2.0 (Profile 28)</title>
         <profileId>urn:www.cenbii.eu:profile:bii28:ver2.0</profileId>
         <customizationId>urn:www.cenbii.eu:transaction:biitrns076:ver2.0:extended:urn:www.peppol.eu:bis:peppol28a:ver1.0</customizationId>
-		<inherit>peppolbis-t76-base-2.0</inherit>
+        <inherit>peppolbis-t76-base-2.0</inherit>
+        <inherit>peppolbis-t76-core-2.0</inherit>
     </configuration>
-	
+
 </buildConfigurations>

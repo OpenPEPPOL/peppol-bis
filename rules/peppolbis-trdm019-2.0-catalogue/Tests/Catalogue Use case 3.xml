@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <Catalogue xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2 ../UBL%202.1%20schema/maindoc/UBL-Catalogue-2.1.xsd">
 	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
-	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdm019:ver2.0:extended:urn:www.peppol.eu:bis:peppol1a:ver2.0</cbc:CustomizationID>
+	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns019:ver2.0:extended:urn:www.peppol.eu:bis:peppol1a:ver2.0</cbc:CustomizationID>
 	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii01:ver2.0</cbc:ProfileID>
 	<cbc:ID>1234</cbc:ID>
 	<cbc:ActionCode listID="ACTIONCODE:PEPPOL">Replace</cbc:ActionCode>

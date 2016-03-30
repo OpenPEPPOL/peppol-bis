@@ -15,7 +15,7 @@
          xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 UBL-Invoice-2.0.xsd">
     <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
-    <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biifulltrdm010:ver1.0</cbc:CustomizationID>
+    <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdm010:ver1.0</cbc:CustomizationID>
     <cbc:ProfileID>urn:www.cenbii.eu:profile:bii05:ver1.0</cbc:ProfileID>
     <cbc:ID>TOSL108</cbc:ID>
     <cbc:IssueDate>2009-12-15</cbc:IssueDate>

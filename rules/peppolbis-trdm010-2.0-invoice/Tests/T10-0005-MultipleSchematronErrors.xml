@@ -22,8 +22,7 @@
          xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
          xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
     <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
-    <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol4a:ver2.0
-    </cbc:CustomizationID>
+    <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol4a:ver2.0</cbc:CustomizationID>
     <cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver2.0</cbc:ProfileID>
     <cbc:ID>12345</cbc:ID>
     <cbc:IssueDate>2012-11-21</cbc:IssueDate>
