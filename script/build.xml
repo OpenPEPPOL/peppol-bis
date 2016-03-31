@@ -143,7 +143,7 @@
         <!-- For each test folder-->
         <foreach target="executeTest" param="testFile" inheritall="true">
             <path>
-                <fileset dir="../rules/">
+                <fileset dir="${sch.dir}">
                     <filename name="**/Tests/T*-*.xml"/>
                     <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
