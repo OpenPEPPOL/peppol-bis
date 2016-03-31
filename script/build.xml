@@ -173,17 +173,17 @@
     <target name="parseTestFilePath">
         <script language="javascript">
             // testSuite stuff
-            oldDocType = project.getProperty('docType');
-            <!--echo = project.createTask("echo");-->
-            <!--echo.setMessage("TEST..................................................... " + project.getProperty('docType'));-->
-            <!--echo.setMessage("TEST..................................................... " + docType);-->
-            <!--echo.perform( );-->
+            <!--oldDocType = project.getProperty('docType');-->
 
             // Find DocumentType
             filePath = project.getProperty('testFile');
             documentStartPos = filePath.indexOf('rules\\');
-            // Extract "10" from "peppolbis-trdm010-2.0-invoice"
-            docType = filePath.substring(documentStartPos+10, documentStartPos+13);
+            // Extract T10 as: T + "10" from "test/peppolbis-trdm010-2.0-invoice"
+            docType = "T" + filePath.substring(documentStartPos+21, documentStartPos+23);
+            <!--echo = project.createTask("echo");-->
+            <!--echo.setMessage("..................................................... filePath: " + filePath);-->
+            <!--echo.setMessage("..................................................... docType : " + docType);-->
+            <!--echo.perform( );-->
             project.setProperty('docType', docType);
         </script>
         <basename property="testFile.base" file="${testFile}"/>
