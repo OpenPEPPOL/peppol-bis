@@ -8,7 +8,7 @@
     <tstamp>
         <format property="build.time" pattern="yyyyMMdd_HHmmss" locale="en,GB"/>
     </tstamp>
-    <property name="version.number" value="3.2.0"/>
+    <property name="version.number" value="3.2.0_RC1"/>
     <!-- Format of version.releaseDate must be yyyy-mm-dd -->
     <!--<property name="version.releaseDate" value="2015-09-15"/>-->
 
