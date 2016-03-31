@@ -34,12 +34,12 @@
         <mkdir dir="${target.xslt}"/>
     </target>
 
-    <target name="injectVersionNumber">
-        <replaceregexp file="Build/iso_schematron_skeleton_oioubl.xsl"
-                       match="name=&#34;dateRelease&#34; select=&#34;.*?'&#34;"
-                       replace="name=&#34;dateRelease&#34; select=&#34;', ${version.releaseDate}, Version ${version.number}'&#34;"
-                       byline="true"/>
-    </target>
+    <!--<target name="injectVersionNumber">-->
+        <!--<replaceregexp file="Build/iso_schematron_skeleton_oioubl.xsl"-->
+                       <!--match="name=&#34;dateRelease&#34; select=&#34;.*?'&#34;"-->
+                       <!--replace="name=&#34;dateRelease&#34; select=&#34;', ${version.releaseDate}, Version ${version.number}'&#34;"-->
+                       <!--byline="true"/>-->
+    <!--</target>-->
 
     <target name="compile" depends="clean, init">
         <foreach target="compileDocumentType" param="documentType">
