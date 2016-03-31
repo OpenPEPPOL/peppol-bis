@@ -8,12 +8,11 @@
     <tstamp>
         <format property="build.time" pattern="yyyyMMdd_HHmmss" locale="en,GB"/>
     </tstamp>
-    <property name="version.number" value="3.1.0"/>
+    <property name="version.number" value="3.2.0"/>
     <!-- Format of version.releaseDate must be yyyy-mm-dd -->
     <!--<property name="version.releaseDate" value="2015-09-15"/>-->
 
-    <property name="sch.dir" value="../2.0/Documents"/>
-    <property name="test.dir" value="../2.0/Test"/>
+    <property name="sch.dir" value="../rules"/>
     <property name="target.dir" value="../target"/>
     <property name="target.xslt" value="${target.dir}/XSLT"/>
     <property name="test.output" value="${target.dir}/test-output_${version.number}.log"/>
@@ -45,7 +44,7 @@
     <target name="compile" depends="clean, init">
         <foreach target="compileDocumentType" param="documentType">
             <path>
-                <dirset dir="../2.0/Documents">
+                <dirset dir="../rules">
                     <include name="*"/>
                 </dirset>
             </path>
@@ -131,7 +130,7 @@
             <zipfileset dir="${target.xslt}" includes="*.xsl" prefix="XSLT"/>
             <!-- excludes="**/BIICORE*.sch" fromversion 3.1 -->
             <zipfileset dir="${sch.dir}" includes="**/*.sch" excludes="**/BIICORE*.sch" prefix="SCH"/>
-            <zipfileset dir="../2.0/Documentation" includes="*V${version.number}.pdf"/>
+            <zipfileset dir="../release-notes" includes="*V${version.number}.pdf"/>
             <zipfileset dir="${target.dir}" includes="*.txt"/>
         </zip>
     </target>
@@ -144,7 +143,7 @@
         <!-- For each test folder-->
         <foreach target="executeTest" param="testFile" inheritall="true">
             <path>
-                <fileset dir="../2.0/Documents/">
+                <fileset dir="../rules/">
                     <filename name="**/Tests/T*-*.xml"/>
                     <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
@@ -182,7 +181,8 @@
 
             // Find DocumentType
             filePath = project.getProperty('testFile');
-            documentStartPos = filePath.indexOf('Documents\\');
+            documentStartPos = filePath.indexOf('rules\\');
+            // Extract "10" from "peppolbis-trdm010-2.0-invoice"
             docType = filePath.substring(documentStartPos+10, documentStartPos+13);
             project.setProperty('docType', docType);
         </script>
