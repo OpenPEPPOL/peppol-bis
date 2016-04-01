@@ -4,9 +4,9 @@
                 This file contains a PEPPOL CreditNote BIS5a - Billing. The intention of the test is to check that the schematron validation of Document currencies are correct.
 
                 Errors:                
-                CL-014-R003 11 times
+                CL-T14-R003 11 times
                 CL-T14-R004 4 times
-                CL-014-R002
+                CL-T14-R002
                 EUGEN-T14-R030
                 EUGEN-T14-R032
                 EUGEN-T14-R027 4 times

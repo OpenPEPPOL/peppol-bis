@@ -4,7 +4,8 @@
                 This file contains a PEPPOL CreditNote BIS5a. The intention of the test is to check that a full spec CreditNote is valid and can pass.
 
                 Error:
-				None
+				BII2-T14-R053
+				BII2-T14-R056
 		
 				Warning: 
 				None
@@ -714,7 +715,7 @@ SVMgZG9jdW1lbnQgKioq</cbc:EmbeddedDocumentBinaryObject>
 
 			<cbc:TaxableAmount currencyID="SEK">56.6</cbc:TaxableAmount>
 
-			<cbc:TaxAmount currencyID="SEK">3.40</cbc:TaxAmount>
+			<cbc:TaxAmount currencyID="SEK">3.40</cbc:TaxAmount>+2237
 
 			<cbc:TransactionCurrencyTaxAmount currencyID="EUR">0.39</cbc:TransactionCurrencyTaxAmount>
 			<cac:TaxCategory>
@@ -776,7 +777,7 @@ SVMgZG9jdW1lbnQgKioq</cbc:EmbeddedDocumentBinaryObject>
 
 		<cbc:PayableRoundingAmount currencyID="SEK">-0.3</cbc:PayableRoundingAmount>
 
-		<cbc:PayableAmount currencyID="SEK">26494</cbc:PayableAmount>
+		<cbc:PayableAmount currencyID="SEK">26694</cbc:PayableAmount>
 
 	</cac:LegalMonetaryTotal>
 
