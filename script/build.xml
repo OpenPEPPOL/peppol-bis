@@ -344,6 +344,15 @@
                 project.setProperty('validationOutput', validationOutput_BII);
             }
 
+            // OPENPEPPOLCORE
+            if (errorArr.length == 0 && warningArr.length==0 && validationOutput_PEPPOL_CORE.indexOf("failed-assert") > 0 ) {
+                project.setProperty('test.result', "error");
+                project.setProperty('test.reason', "Error(s) found in OPENPEPPOLCORE output, where no errors were expected");
+                project.setProperty('test.errorCode', "no errors");
+                project.setProperty('test.type', 'OPENPEPPOLCORE');
+                project.setProperty('validationOutput', validationOutput_PEPPOL_CORE);
+            }
+
             // OPENPEPPOL
             if (errorArr.length == 0 && warningArr.length==0 && validationOutput_PEPPOL.indexOf("failed-assert") > 0 ) {
                 project.setProperty('test.result', "error");
