@@ -272,95 +272,69 @@
             validationOutput_BII = project.getProperty('validationOutput.BII');
             validationOutput_PEPPOL_CORE = project.getProperty('validationOutput.PEPPOLCORE');
             validationOutput_PEPPOL = project.getProperty('validationOutput.PEPPOL');
-            <!--echo = project.createTask("echo");-->
-            <!--echo.setMessage("..................................................... Error list size: " + errorArr.length);-->
-            <!--echo.perform();-->
-            // Iterate through all found Errors
-            for (i=0; errorArr.length > i; i++) {
+
+            // Iterate through all found Errors and Warnings
+            loopThroughIssueArray(errorArr);
+            loopThroughIssueArray(warningArr);
+
+            function loopThroughIssueArray(issueArr) {
                 <!--echo = project.createTask("echo");-->
-                <!--echo.setMessage("..................................................... Expected error: " + errorArr[i]);-->
+                <!--echo.setMessage("..................................................... Error list size: " + issueArr.length);-->
                 <!--echo.perform();-->
+                for (i=0; issueArr.length > i; i++) {
+                    <!--echo = project.createTask("echo");-->
+                    <!--echo.setMessage("..................................................... Expected error: " + issueArr[i]);-->
+                    <!--echo.perform();-->
 
-                // if error code start with OP or EUGEN, when use OPENPEPPOL schematron output
-                // if error code start with PEPPOL_CORE, when use PEPPOL_CORE schematron output
-                if ( errorArr[i].indexOf('OP')>=0 || errorArr[i].indexOf('EUGEN')>=0 ) {
-                    testType = 'OPENPEPPOL';
-                } else if ( errorArr[i].indexOf('PEPPOL_CORE')>=0 ) {
-                    testType = 'OPENPEPPOLCORE';
-                } else {
-                    testType = 'BIIRULES';
-                }
-                <!--echo = project.createTask("echo");-->
-                <!--echo.setMessage("..................................................... testType: " + testType);-->
-                <!--echo.perform();-->
-                validationOutput = testType=='BIIRULES' ? validationOutput_BII : ( testType=='OPENPEPPOLCORE' ? validationOutput_PEPPOL_CORE : validationOutput_PEPPOL );
+                    // if error code start with OP or EUGEN, when use OPENPEPPOL schematron output
+                    // if error code start with PEPPOL_CORE, when use PEPPOL_CORE schematron output
+                    if ( issueArr[i].indexOf('OP')>=0 || issueArr[i].indexOf('EUGEN')>=0 ) {
+                        testType = 'OPENPEPPOL';
+                    } else if ( issueArr[i].indexOf('PEPPOL_CORE')>=0 ) {
+                        testType = 'OPENPEPPOLCORE';
+                    } else {
+                        testType = 'BIIRULES';
+                    }
+                    <!--echo = project.createTask("echo");-->
+                    <!--echo.setMessage("..................................................... testType: " + testType);-->
+                    <!--echo.perform();-->
+                    validationOutput = testType=='BIIRULES' ? validationOutput_BII : ( testType=='OPENPEPPOLCORE' ? validationOutput_PEPPOL_CORE : validationOutput_PEPPOL );
 
-                <!--echo = project.createTask("echo");-->
-                <!--echo.setMessage("..................................................... Error index: " + validationOutput.indexOf(errorArr[i]));-->
-                <!--echo.perform();-->
-                if ( validationOutput.indexOf(errorArr[i]) == -1 ) {
-                    <!--for (var i = 0; escapeChars.length > i; i++) {-->
-                        <!--errorArr[i] = errorArr[i].replace(escapeChars[i], "|"+escapeChars[i]);-->
-                    <!--}-->
+                    <!--echo = project.createTask("echo");-->
+                    <!--echo.setMessage("..................................................... Error index: " + validationOutput.indexOf(issueArr[i]));-->
+                    <!--echo.perform();-->
+                    if ( validationOutput.indexOf(issueArr[i]) == -1 ) {
+                        <!--for (var i = 0; escapeChars.length > i; i++) {-->
+                            <!--issueArr[i] = issueArr[i].replace(escapeChars[i], "|"+escapeChars[i]);-->
+                        <!--}-->
 
-                    project.setProperty('test.errorCode', errorArr[i]);
-                    project.setProperty('test.reason', "Error " + errorArr[i] + " not found in schematron output");
-                    project.setProperty('test.result', "error");
-                    project.setProperty('test.type', testType);
-                    project.setProperty('validationOutput', validationOutput);
-                    break;
-                }
-            }
-
-            // Check for Warnings
-            for (i=0; warningArr.length > i; i++) {
-                // if warning code start with BII, when use BII schematron output
-                testType = (warningArr[i].indexOf('BII')==0) ? 'BIIRULES' : 'OPENPEPPOL';
-                validationOutput = testType=='BIIRULES' ? validationOutput_BII : validationOutput_PEPPOL;
-
-                if ( validationOutput.indexOf(warningArr[i]) == -1 ) {
-                    <!--for (var i = 0; escapeChars.length > i; i++) {-->
-                        <!--warningArr[i] = warningArr[i].replace(escapeChars[i], "|"+escapeChars[i]);-->
-                    <!--}-->
-
-                    project.setProperty('test.errorCode', warningArr[i]);
-                    project.setProperty('test.reason', "Error " + warningArr[i] + " not found in schematron output");
-                    project.setProperty('test.result', "error");
-                    project.setProperty('test.type', testType);
-                    project.setProperty('validationOutput', validationOutput);
-                    break;
+                        project.setProperty('test.errorCode', issueArr[i]);
+                        project.setProperty('test.reason', "Error " + issueArr[i] + " not found in schematron output");
+                        project.setProperty('test.result', "error");
+                        project.setProperty('test.type', testType);
+                        project.setProperty('validationOutput', validationOutput);
+                        break;
+                    }
                 }
             }
 
 
             // Test for no errors expected
             // If no errors expected and "failed-assert" is found - then fail test
-            // BIIRULES
-            if (errorArr.length == 0 && warningArr.length==0 && validationOutput_BII.indexOf("failed-assert") > 0 ) {
-                project.setProperty('test.result', "error");
-                project.setProperty('test.reason', "Error(s) found in BIIRULES output, where no errors were expected");
-                project.setProperty('test.errorCode', "no errors");
-                project.setProperty('test.type', 'BIIRULES');
-                project.setProperty('validationOutput', validationOutput_BII);
+            findIssuesInValidFiles(validationOutput_BII, "BIIRULES");
+            findIssuesInValidFiles(validationOutput_PEPPOL_CORE, "OPENPEPPOLCORE");
+            findIssuesInValidFiles(validationOutput_PEPPOL, "OPENPEPPOL");
+
+            function findIssuesInValidFiles(validationOutput, outputType) {
+                if (errorArr.length == 0 && warningArr.length==0 && validationOutput.indexOf("failed-assert") > 0 ) {
+                    project.setProperty('test.result', "error");
+                    project.setProperty('test.reason', "Error(s) found in " + outputType + " output, where no errors were expected");
+                    project.setProperty('test.errorCode', "no errors");
+                    project.setProperty('test.type', outputType);
+                    project.setProperty('validationOutput', validationOutput);
+                }
             }
 
-            // OPENPEPPOLCORE
-            if (errorArr.length == 0 && warningArr.length==0 && validationOutput_PEPPOL_CORE.indexOf("failed-assert") > 0 ) {
-                project.setProperty('test.result', "error");
-                project.setProperty('test.reason', "Error(s) found in OPENPEPPOLCORE output, where no errors were expected");
-                project.setProperty('test.errorCode', "no errors");
-                project.setProperty('test.type', 'OPENPEPPOLCORE');
-                project.setProperty('validationOutput', validationOutput_PEPPOL_CORE);
-            }
-
-            // OPENPEPPOL
-            if (errorArr.length == 0 && warningArr.length==0 && validationOutput_PEPPOL.indexOf("failed-assert") > 0 ) {
-                project.setProperty('test.result', "error");
-                project.setProperty('test.reason', "Error(s) found in OPENPEPPOL output, where no errors were expected");
-                project.setProperty('test.errorCode', "no errors");
-                project.setProperty('test.type', 'OPENPEPPOL');
-                project.setProperty('validationOutput', validationOutput_PEPPOL);
-            }
         ]]></script>
         <!--<echo message="${test.result}"/>-->
         <if>

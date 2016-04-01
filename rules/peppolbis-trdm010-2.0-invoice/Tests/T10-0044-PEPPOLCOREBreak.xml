@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-                Content:
-                This file contains a PEPPOL invoice, profile 4.
-                Verify that PEPPOL_CORE throws a warning (PEPPOL_CORE_R002).
+        Content:
+        This file contains a PEPPOL invoice, profile 4.
+        Verify that PEPPOL_CORE throws a warning (PEPPOL_CORE_R002).
 
-                Errors:
-                None
+        Errors:
+        None
 
-                Warnings:
-                PEPPOL_CORE_R002
+        Warnings:
+        PEPPOL_CORE_R002
 				
 -->
 <Invoice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
