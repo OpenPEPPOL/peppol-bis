@@ -138,7 +138,9 @@
     <target name="test" depends="init" description="Run all tests">
         <delete>
             <fileset dir="${target.dir}" includes="*.log"/>
+            <fileset dir="${target.dir}" includes="schematron-*-output.xml"/>
         </delete>
+        <delete file="${test.overview.inner}"/>
 
         <!-- For each test folder-->
         <foreach target="executeTest" param="testFile" inheritall="true">
@@ -149,7 +151,7 @@
                 </fileset>
             </path>
         </foreach>
-        <delete file="${target.dir}/schematron-output.xml"/>
+        <delete file="${target.dir}/schematron-*-output.xml"/>
 
         <!-- Make test overview output -->
         <copy file="testOverview_template.html" tofile="${test.overview}" overwrite="true"/>
@@ -310,7 +312,7 @@
 
                         project.setProperty('test.errorCode', issueArr[i]);
                         project.setProperty('test.reason', "Error " + issueArr[i] + " not found in schematron output");
-                        project.setProperty('test.result', "error");
+                        project.setProperty('test.result', "ERROR");
                         project.setProperty('test.type', testType);
                         project.setProperty('validationOutput', validationOutput);
                         break;
@@ -327,7 +329,7 @@
 
             function findIssuesInValidFiles(validationOutput, outputType) {
                 if (errorArr.length == 0 && warningArr.length==0 && validationOutput.indexOf("failed-assert") > 0 ) {
-                    project.setProperty('test.result', "error");
+                    project.setProperty('test.result', "ERROR");
                     project.setProperty('test.reason', "Error(s) found in " + outputType + " output, where no errors were expected");
                     project.setProperty('test.errorCode', "no errors");
                     project.setProperty('test.type', outputType);
@@ -338,7 +340,7 @@
         ]]></script>
         <!--<echo message="${test.result}"/>-->
         <if>
-            <equals arg1="${test.result}" arg2="error"/>
+            <equals arg1="${test.result}" arg2="ERROR"/>
             <then>
                 <echo message="##teamcity[testFailed name='${test.name}' message='${test.reason}' flowId='12321']"/>
 
