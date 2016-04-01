@@ -7,7 +7,8 @@
 				None
 		
 				Warnings:
-				None
+				PEPPOL_CORE_R002
+				PEPPOL_CORE_R001
 
 -->
 <ubl:Invoice xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
