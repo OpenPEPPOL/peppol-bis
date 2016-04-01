@@ -128,7 +128,7 @@
 
         <zip destfile="${target.dir}/BIS2.0-VA-V${local.build.number}.zip">
             <zipfileset dir="${target.xslt}" includes="*.xsl" prefix="XSLT"/>
-            <!-- excludes="**/BIICORE*.sch" fromversion 3.1 -->
+            <!-- excludes="**/BIICORE*.sch" from version 3.1 -->
             <zipfileset dir="${sch.dir}" includes="**/*.sch" excludes="**/BIICORE*.sch" prefix="SCH"/>
             <zipfileset dir="../release-notes" includes="*V${version.number}.pdf"/>
             <zipfileset dir="${target.dir}" includes="*.txt"/>
