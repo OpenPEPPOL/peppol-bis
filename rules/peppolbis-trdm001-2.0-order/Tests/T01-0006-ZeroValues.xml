@@ -17,7 +17,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Order-2 ../../3%20Ordre/UBL%202.1%20schema/maindoc/UBL-Order-2.1.xsd">
 	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
-	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns001:ver2.0:extended:urn:www.peppol.eu:bis:peppol28a:ver2.0</cbc:CustomizationID>
+	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns001:ver2.0:extended:urn:www.peppol.eu:bis:peppol28a:ver1.0</cbc:CustomizationID>
 	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii28:ver2.0</cbc:ProfileID>
 	<cbc:ID>34</cbc:ID>
 	<cbc:IssueDate>2012-10-01</cbc:IssueDate>

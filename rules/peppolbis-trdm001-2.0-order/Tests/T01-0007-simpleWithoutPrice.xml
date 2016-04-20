@@ -8,6 +8,7 @@
                 
                 Warnings:
                 BII2-T01-R005
+				PEPPOL_CORE_R001
                 
 -->
 
@@ -15,7 +16,7 @@
     xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
     xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
     <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
-    <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns001:ver2.0:extended:urn:www.peppol.eu:bis:peppol28a:ver2.0</cbc:CustomizationID>
+    <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns001:ver2.0:extended:urn:www.peppol.eu:bis:peppol28a:ver1.0</cbc:CustomizationID>
     <cbc:ProfileID>urn:www.cenbii.eu:profile:bii28:ver2.0</cbc:ProfileID>
     <cbc:ID>300260249</cbc:ID>
     <cbc:CopyIndicator>false</cbc:CopyIndicator>
