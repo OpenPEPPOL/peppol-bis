@@ -11,9 +11,10 @@
 				EUGEN-T10-R031
 				EUGEN-T10-R032 x 5
                 EUGEN-T10-R030 x 10
+				OP-T10-R008 x 4
 				
                 Warnings:
-               	None
+                PEPPOL_CORE_R001 x 9
 -->
 
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
@@ -22,8 +23,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 UBL-Invoice-2.0.xsd">
     <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
-    <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdm010:ver1.0</cbc:CustomizationID>
-    <cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver1.0</cbc:ProfileID>
+    <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol4a:ver2.0</cbc:CustomizationID>
+    <cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver2.0</cbc:ProfileID>
     <cbc:ID>TOSL108</cbc:ID>
     <cbc:IssueDate>2009-12-15</cbc:IssueDate>
     <cbc:InvoiceTypeCode listID="UN/ECE 1001 Subset" listAgencyID="6">380</cbc:InvoiceTypeCode>
