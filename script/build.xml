@@ -227,42 +227,33 @@
                 }
                 project.setProperty('test.description', description);
             }
-            // Find expected ERRORS in the file header.
-            var errorArr = [];
-            headlineFound = false;
-            for (i=0; commentLineArray.length > i; i++) {
-                if ( commentLineArray[i]!=null && commentLineArray[i].trim().indexOf('Error')==0 ) {
-                    headlineFound = true;
-                    continue;
-                }
-                if ( headlineFound ) {
-                    if ( commentLineArray[i]!=null && commentLineArray[i].trim().length() > 0  && commentLineArray[i].trim()!='None') {
-                        lineArr = commentLineArray[i].trim().split(' ');
-            <!--echo = project.createTask("echo");-->
-            <!--echo.setMessage("TEST..................................................... " + commentLineArray[i].trim().split(' '));-->
-            <!--echo.setMessage("TEST..................................................... " + commentLineArray[i].trim());-->
-            <!--echo.perform( );-->
-                        errorArr.push(lineArr[0])
-                    } else {
-                        break;
+
+            // Find expected ERRORS/WARNINGS in the file header.
+            var errorArr = findErrorWarningLines(commentLineArray, "Error");
+            var warningArr = findErrorWarningLines(commentLineArray, "Warning");
+
+            function findErrorWarningLines(commentLineArray, headlineWord) {
+                var outputArr = [];
+                headlineFound = false;
+                for (i=0; commentLineArray.length > i; i++) {
+                    if ( commentLineArray[i]!=null && commentLineArray[i].trim().indexOf(headlineWord)==0 ) {
+                        headlineFound = true;
+                        continue;
+                    }
+                    if ( headlineFound ) {
+                        if ( commentLineArray[i]!=null && commentLineArray[i].trim().length() > 0 && commentLineArray[i].trim()!='None' ) {
+                            lineArr = commentLineArray[i].trim().split(' ');
+                <!--echo = project.createTask("echo");-->
+                <!--echo.setMessage("TEST..................................................... " + commentLineArray[i].trim().split(' '));-->
+                <!--echo.setMessage("TEST..................................................... " + commentLineArray[i].trim());-->
+                <!--echo.perform( );-->
+                            outputArr.push(lineArr[0])
+                        } else {
+                            break;
+                        }
                     }
                 }
-            }
-            // Find WARNINGS
-            var warningArr = [];
-            headlineFound = false;
-            for (i=0; commentLineArray.length > i; i++) {
-                if ( commentLineArray[i]!=null && commentLineArray[i].trim().indexOf('Warning')==0 ) {
-                    headlineFound = true;
-                    continue;
-                }
-                if ( headlineFound ) {
-                    if ( commentLineArray[i]!=null && commentLineArray[i].trim().length() > 0 && commentLineArray[i].trim()!='None' ) {
-                        warningArr.push(commentLineArray[i].trim())
-                    } else {
-                        break;
-                    }
-                }
+                return outputArr;
             }
 
 
