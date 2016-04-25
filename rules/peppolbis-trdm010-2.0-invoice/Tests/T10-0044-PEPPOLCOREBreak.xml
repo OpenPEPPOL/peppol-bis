@@ -77,6 +77,7 @@
             </cac:PartyName>
             <cac:PostalAddress>
                 <cbc:StreetName>Storgata 3</cbc:StreetName>
+				<cbc:CitySubdivisionName>Test</cbc:CitySubdivisionName>
                 <cbc:CityName>SARPSBORG</cbc:CityName>
                 <cbc:PostalZone>1701</cbc:PostalZone>
                 <cac:Country>
