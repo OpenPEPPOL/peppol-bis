@@ -8,7 +8,7 @@
     <tstamp>
         <format property="build.time" pattern="yyyyMMdd_HHmmss" locale="en,GB"/>
     </tstamp>
-    <property name="version.number" value="3.2.0_RC1"/>
+    <property name="version.number" value="3.2.0"/>
     <!-- Format of version.releaseDate must be yyyy-mm-dd -->
     <!--<property name="version.releaseDate" value="2015-09-15"/>-->
 
@@ -76,6 +76,7 @@
             <arg value="-s:${schFile}"/>
             <arg value="-xsl:iso-schematron-xslt2/iso_dsdl_include.xsl"/>
             <arg value="-o:${target.xslt}/${baseName}.step1.xsl"/>
+            <!--<jvmarg line="-Xms1024m"/>-->
             <jvmarg line="-Xmx2048m"/>
         </java>
 
@@ -132,6 +133,8 @@
             <zipfileset dir="${sch.dir}" includes="**/*.sch" excludes="**/BIICORE*.sch" prefix="SCH"/>
             <zipfileset dir="../release-notes" includes="*V${version.number}.pdf"/>
             <zipfileset dir="${target.dir}" includes="*.txt"/>
+            <!-- ODS dir added for version 3.2 only (so far) -->
+            <zipfileset dir="../ODS" includes="*.*" prefix="ODS"/>
         </zip>
     </target>
 
