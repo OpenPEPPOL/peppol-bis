@@ -326,8 +326,7 @@
 			<cbc:PriceAmount currencyID="NOK">1273</cbc:PriceAmount>
 			<cbc:BaseQuantity>1</cbc:BaseQuantity>
 			<cac:AllowanceCharge>
-				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-				<cbc:AllowanceChargeReason>Test</cbc:AllowanceChargeReason>				
+				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>	
 				<cbc:Amount currencyID="NOK">225</cbc:Amount>
 				<cbc:BaseAmount currencyID="NOK">1500</cbc:BaseAmount>
 			</cac:AllowanceCharge>
@@ -404,7 +403,6 @@
 			<cbc:BaseQuantity>1</cbc:BaseQuantity>
 			<cac:AllowanceCharge>
 				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-				<cbc:AllowanceChargeReason>Test</cbc:AllowanceChargeReason>
 				<cbc:Amount currencyID="NOK">0.275</cbc:Amount>
 				<cbc:BaseAmount currencyID="NOK">2.75</cbc:BaseAmount>
 			</cac:AllowanceCharge>
