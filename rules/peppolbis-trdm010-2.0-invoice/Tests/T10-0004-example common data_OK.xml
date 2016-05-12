@@ -19,10 +19,10 @@
     <cbc:ProfileID>urn:www.cenbii.eu:profile:bii05:ver1.0</cbc:ProfileID>
     <cbc:ID>TOSL108</cbc:ID>
     <cbc:IssueDate>2009-12-15</cbc:IssueDate>
-    <cbc:InvoiceTypeCode listID="UNCL1001" listAgencyID="6">380</cbc:InvoiceTypeCode>
-    <cbc:Note languageID="en">Ordered in our booth at the convention.</cbc:Note>
+    <cbc:InvoiceTypeCode listID="UNCL1001">380</cbc:InvoiceTypeCode>
+    <cbc:Note>Ordered in our booth at the convention.</cbc:Note>
     <cbc:TaxPointDate>2009-11-30</cbc:TaxPointDate>
-    <cbc:DocumentCurrencyCode listID="ISO4217" listAgencyID="6">EUR</cbc:DocumentCurrencyCode>
+    <cbc:DocumentCurrencyCode listID="ISO4217">EUR</cbc:DocumentCurrencyCode>
     <cbc:AccountingCost>Your ref XX1234</cbc:AccountingCost>
     <cac:AccountingSupplierParty>
         <cac:Party>
@@ -31,32 +31,25 @@
             </cac:PartyName>
             <cac:PostalAddress>
                 <cbc:StreetName>Main street</cbc:StreetName>
-                <cbc:BuildingNumber>1</cbc:BuildingNumber>
                 <cbc:CityName>Big city</cbc:CityName>
                 <cbc:PostalZone>54321</cbc:PostalZone>
                 <cac:Country>
-                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2" listAgencyID="6">NO</cbc:IdentificationCode>
+                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
                 </cac:Country>
             </cac:PostalAddress>
             <cac:PartyTaxScheme>
-                <cbc:CompanyID schemeID="NO:ORGNR" schemeAgencyID="ZZZ">NO5402697509</cbc:CompanyID>
+                <cbc:CompanyID schemeID="NO:ORGNR">NO5402697509</cbc:CompanyID>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                    <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:PartyTaxScheme>
             <cac:PartyLegalEntity>
-                <cbc:CompanyID schemeID="NO:ORGNR" schemeAgencyID="ZZZ">5402697509</cbc:CompanyID>
+                <cbc:CompanyID schemeID="NO:ORGNR">5402697509</cbc:CompanyID>
             </cac:PartyLegalEntity>
             <cac:Contact>
                 <cbc:Telephone>4621230</cbc:Telephone>
                 <cbc:ElectronicMail>antonio@salescompany.dk</cbc:ElectronicMail>
             </cac:Contact>
-            <cac:Person>
-                <cbc:FirstName>Antonio</cbc:FirstName>
-                <cbc:FamilyName>M</cbc:FamilyName>
-                <cbc:MiddleName>Salemacher</cbc:MiddleName>
-                <cbc:JobTitle>Sales manager</cbc:JobTitle>
-            </cac:Person>
         </cac:Party>
     </cac:AccountingSupplierParty>
     <cac:AccountingCustomerParty>
@@ -70,33 +63,26 @@
             <cac:PostalAddress>
                 <cbc:StreetName>Anystreet</cbc:StreetName>
                 <cbc:AdditionalStreetName>Back door</cbc:AdditionalStreetName>
-                <cbc:BuildingNumber>8</cbc:BuildingNumber>
-                <cbc:Department>Accounting department</cbc:Department>
                 <cbc:CityName>Anytown</cbc:CityName>
                 <cbc:PostalZone>101</cbc:PostalZone>
                 <cbc:CountrySubentity>RegionB</cbc:CountrySubentity>
                 <cac:Country>
-                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2" listAgencyID="6">BE</cbc:IdentificationCode>
+                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2">BE</cbc:IdentificationCode>
                 </cac:Country>
             </cac:PostalAddress>
             <cac:PartyTaxScheme>
-                <cbc:CompanyID schemeID="NO:ORGNR" schemeAgencyID="ZZZ">BE54321</cbc:CompanyID>
+                <cbc:CompanyID schemeID="NO:ORGNR">BE54321</cbc:CompanyID>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                    <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:PartyTaxScheme>
             <cac:PartyLegalEntity>
-                <cbc:CompanyID schemeAgencyID="NO:ORGNR" schemeID="ZZZ">5645342123</cbc:CompanyID>
+                <cbc:CompanyID schemeID="NO:ORGNR">5645342123</cbc:CompanyID>
             </cac:PartyLegalEntity>
             <cac:Contact>
                 <cbc:Telephone>5121230</cbc:Telephone>
                 <cbc:ElectronicMail>john@buyercompany.eu</cbc:ElectronicMail>
             </cac:Contact>
-            <cac:Person>
-                <cbc:FirstName>John</cbc:FirstName>
-                <cbc:MiddleName>Doe</cbc:MiddleName>
-                <cbc:JobTitle>Purchasing manager</cbc:JobTitle>
-            </cac:Person>
         </cac:Party>
     </cac:AccountingCustomerParty>
     <cac:Delivery>
@@ -105,7 +91,6 @@
             <cac:Address>
                 <cbc:StreetName>Deliverystreet</cbc:StreetName>
                 <cbc:AdditionalStreetName>Side door</cbc:AdditionalStreetName>
-                <cbc:BuildingNumber>12</cbc:BuildingNumber>
                 <cbc:CityName>DeliveryCity</cbc:CityName>
                 <cbc:PostalZone>523427</cbc:PostalZone>
                 <cbc:CountrySubentity>RegionC</cbc:CountrySubentity>
@@ -116,7 +101,7 @@
         </cac:DeliveryLocation>
     </cac:Delivery>
     <cac:PaymentMeans>
-        <cbc:PaymentMeansCode listID="UNCL4461" listAgencyID="NES">31</cbc:PaymentMeansCode>
+        <cbc:PaymentMeansCode listID="UNCL4461">31</cbc:PaymentMeansCode>
         <cbc:PaymentDueDate>2009-12-31</cbc:PaymentDueDate>
         <cbc:PaymentChannelCode>IBAN</cbc:PaymentChannelCode>
         <cbc:PaymentID>Payref1</cbc:PaymentID>
@@ -134,7 +119,6 @@
     </cac:PaymentTerms>
     <cac:AllowanceCharge>
         <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-        <cbc:AllowanceChargeReason>Packing cost</cbc:AllowanceChargeReason>
         <cbc:Amount currencyID="EUR">100</cbc:Amount>
         <cac:TaxCategory>
             <cbc:ID schemeID="UNCL5305">E</cbc:ID>
@@ -146,7 +130,6 @@
     </cac:AllowanceCharge>
     <cac:AllowanceCharge>
         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-        <cbc:AllowanceChargeReason>Promotional discount</cbc:AllowanceChargeReason>
         <cbc:Amount currencyID="EUR">100</cbc:Amount>
         <cac:TaxCategory>
             <cbc:ID schemeID="UNCL5305">E</cbc:ID>
@@ -162,10 +145,10 @@
             <cbc:TaxableAmount currencyID="EUR">1460.5</cbc:TaxableAmount>
             <cbc:TaxAmount currencyID="EUR">292.1</cbc:TaxAmount>
             <cac:TaxCategory>
-                <cbc:ID schemeID="UNCL5305" schemeAgencyID="6">S</cbc:ID>
+                <cbc:ID schemeID="UNCL5305">S</cbc:ID>
                 <cbc:Percent>20</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:TaxCategory>
         </cac:TaxSubtotal>
@@ -173,10 +156,10 @@
             <cbc:TaxableAmount currencyID="EUR">1</cbc:TaxableAmount>
             <cbc:TaxAmount currencyID="EUR">0.1</cbc:TaxAmount>
             <cac:TaxCategory>
-                <cbc:ID schemeID="UNCL5305" schemeAgencyID="6">AA</cbc:ID>
+                <cbc:ID schemeID="UNCL5305">AA</cbc:ID>
                 <cbc:Percent>10</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:TaxCategory>
         </cac:TaxSubtotal>
@@ -184,12 +167,11 @@
             <cbc:TaxableAmount currencyID="EUR">-25</cbc:TaxableAmount>
             <cbc:TaxAmount currencyID="EUR">0</cbc:TaxAmount>
             <cac:TaxCategory>
-                <cbc:ID schemeID="UNCL5305" schemeAgencyID="6">E</cbc:ID>
+                <cbc:ID schemeID="UNCL5305">E</cbc:ID>
                 <cbc:Percent>0</cbc:Percent>
-                <cbc:TaxExemptionReasonCode listID="CWA 15577" listAgencyID="ZZZ">AAM</cbc:TaxExemptionReasonCode>
                 <cbc:TaxExemptionReason>Exempt New Means of Transport</cbc:TaxExemptionReason>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:TaxCategory>
         </cac:TaxSubtotal>
@@ -211,37 +193,35 @@
         <cbc:LineExtensionAmount currencyID="EUR">1273</cbc:LineExtensionAmount>
         <cac:AllowanceCharge>
             <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReason>Damage</cbc:AllowanceChargeReason>
             <cbc:Amount currencyID="EUR">12</cbc:Amount>
         </cac:AllowanceCharge>
         <cac:AllowanceCharge>
             <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-            <cbc:AllowanceChargeReason>Testing</cbc:AllowanceChargeReason>
             <cbc:Amount currencyID="EUR">10</cbc:Amount>
         </cac:AllowanceCharge>
         <cac:TaxTotal>
             <cbc:TaxAmount currencyID="EUR">254.6</cbc:TaxAmount>
         </cac:TaxTotal>
         <cac:Item>
-            <cbc:Description languageID="EN">Processor: Intel Core 2 Duo SU9400 LV (1.4GHz). RAM: 3MB. Screen 1440x900</cbc:Description>
+            <cbc:Description>Processor: Intel Core 2 Duo SU9400 LV (1.4GHz). RAM: 3MB. Screen 1440x900</cbc:Description>
             <cbc:Name>Labtop computer</cbc:Name>
             <cac:SellersItemIdentification>
                 <cbc:ID>JB007</cbc:ID>
             </cac:SellersItemIdentification>
             <cac:StandardItemIdentification>
-                <cbc:ID schemeID="CV" schemeAgencyID="9">1234567890124</cbc:ID>
+                <cbc:ID schemeID="CV">1234567890124</cbc:ID>
             </cac:StandardItemIdentification>
             <cac:CommodityClassification>
-                <cbc:ItemClassificationCode listAgencyID="113" listID="UNSPSC">12344321</cbc:ItemClassificationCode>
+                <cbc:ItemClassificationCode listID="UNSPSC">12344321</cbc:ItemClassificationCode>
             </cac:CommodityClassification>
             <cac:CommodityClassification>
-                <cbc:ItemClassificationCode listAgencyID="2" listID="CPV">65434568</cbc:ItemClassificationCode>
+                <cbc:ItemClassificationCode listID="CPV">65434568</cbc:ItemClassificationCode>
             </cac:CommodityClassification>
             <cac:ClassifiedTaxCategory>
-                <cbc:ID schemeID="UNCL5305" schemeAgencyID="6">S</cbc:ID>
+                <cbc:ID>S</cbc:ID>
                 <cbc:Percent>20</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:ClassifiedTaxCategory>
             <cac:AdditionalItemProperty>
@@ -251,11 +231,9 @@
         </cac:Item>
         <cac:Price>
             <cbc:PriceAmount currencyID="EUR">1273</cbc:PriceAmount>
-            <cbc:BaseQuantity unitCode="C62" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
             <cac:AllowanceCharge>
                 <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-                <cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
-                <cbc:MultiplierFactorNumeric>0.15</cbc:MultiplierFactorNumeric>
                 <cbc:Amount currencyID="EUR">225</cbc:Amount>
                 <cbc:BaseAmount currencyID="EUR">1500</cbc:BaseAmount>
             </cac:AllowanceCharge>
@@ -278,16 +256,16 @@
                 <cbc:ID>JB008</cbc:ID>
             </cac:SellersItemIdentification>
             <cac:StandardItemIdentification>
-                <cbc:ID schemeID="CV" schemeAgencyID="9">1234567890125</cbc:ID>
+                <cbc:ID schemeID="CV">1234567890125</cbc:ID>
             </cac:StandardItemIdentification>
             <cac:CommodityClassification>
-                <cbc:ItemClassificationCode listAgencyID="113" listID="UNSPSC">32344324</cbc:ItemClassificationCode>
+                <cbc:ItemClassificationCode  listID="UNSPSC">32344324</cbc:ItemClassificationCode>
             </cac:CommodityClassification>
             <cac:CommodityClassification>
-                <cbc:ItemClassificationCode listAgencyID="2" listID="CPV">65434567</cbc:ItemClassificationCode>
+                <cbc:ItemClassificationCode  listID="CPV">65434567</cbc:ItemClassificationCode>
             </cac:CommodityClassification>
             <cac:ClassifiedTaxCategory>
-                <cbc:ID schemeID="UNCL5305" schemeAgencyID="6">AA</cbc:ID>
+                <cbc:ID>AA</cbc:ID>
                 <cbc:Percent>10</cbc:Percent>
                 <cac:TaxScheme>
                     <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
@@ -296,7 +274,7 @@
         </cac:Item>
         <cac:Price>
             <cbc:PriceAmount currencyID="EUR">3.96</cbc:PriceAmount>
-            <cbc:BaseQuantity unitCode="C62" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
         </cac:Price>
     </cac:InvoiceLine>
     <cac:InvoiceLine>
@@ -315,29 +293,27 @@
                 <cbc:ID>JB009</cbc:ID>
             </cac:SellersItemIdentification>
             <cac:StandardItemIdentification>
-                <cbc:ID schemeID="CV" schemeAgencyID="9">1234567890126</cbc:ID>
+                <cbc:ID schemeID="CV">1234567890126</cbc:ID>
             </cac:StandardItemIdentification>
             <cac:CommodityClassification>
-                <cbc:ItemClassificationCode listAgencyID="113" listID="UNSPSC">32344324</cbc:ItemClassificationCode>
+                <cbc:ItemClassificationCode listID="UNSPSC">32344324</cbc:ItemClassificationCode>
             </cac:CommodityClassification>
             <cac:CommodityClassification>
-                <cbc:ItemClassificationCode listAgencyID="2" listID="CPV">65434566</cbc:ItemClassificationCode>
+                <cbc:ItemClassificationCode listID="CPV">65434566</cbc:ItemClassificationCode>
             </cac:CommodityClassification>
             <cac:ClassifiedTaxCategory>
-                <cbc:ID schemeID="UNCL5305" schemeAgencyID="6">AA</cbc:ID>
+                <cbc:ID>AA</cbc:ID>
                 <cbc:Percent>10</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:ClassifiedTaxCategory>
         </cac:Item>
         <cac:Price>
             <cbc:PriceAmount currencyID="EUR">2.48</cbc:PriceAmount>
-            <cbc:BaseQuantity unitCode="C62" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
             <cac:AllowanceCharge>
                 <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-                <cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
-                <cbc:MultiplierFactorNumeric>0.1</cbc:MultiplierFactorNumeric>
                 <cbc:Amount currencyID="EUR">0.275</cbc:Amount>
                 <cbc:BaseAmount currencyID="EUR">2.75</cbc:BaseAmount>
             </cac:AllowanceCharge>
@@ -359,25 +335,25 @@
                 <cbc:ID>JB010</cbc:ID>
             </cac:SellersItemIdentification>
             <cac:StandardItemIdentification>
-                <cbc:ID schemeID="CV" schemeAgencyID="9">1234567890127</cbc:ID>
+                <cbc:ID schemeID="CV">1234567890127</cbc:ID>
             </cac:StandardItemIdentification>
             <cac:CommodityClassification>
-                <cbc:ItemClassificationCode listAgencyID="113" listID="UNSPSC">12344322</cbc:ItemClassificationCode>
+                <cbc:ItemClassificationCode listID="UNSPSC">12344322</cbc:ItemClassificationCode>
             </cac:CommodityClassification>
             <cac:CommodityClassification>
-                <cbc:ItemClassificationCode listAgencyID="2" listID="CPV">65434565</cbc:ItemClassificationCode>
+                <cbc:ItemClassificationCode listID="CPV">65434565</cbc:ItemClassificationCode>
             </cac:CommodityClassification>
             <cac:ClassifiedTaxCategory>
-                <cbc:ID schemeID="UNCL5305" schemeAgencyID="6">E</cbc:ID>
+                <cbc:ID>E</cbc:ID>
                 <cbc:Percent>0</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:ClassifiedTaxCategory>
         </cac:Item>
         <cac:Price>
             <cbc:PriceAmount currencyID="EUR">25</cbc:PriceAmount>
-            <cbc:BaseQuantity unitCode="C62" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
         </cac:Price>
     </cac:InvoiceLine>
     <cac:InvoiceLine>
@@ -396,19 +372,19 @@
                 <cbc:ID>JB011</cbc:ID>
             </cac:SellersItemIdentification>
             <cac:StandardItemIdentification>
-                <cbc:ID schemeID="CV" schemeAgencyID="9">1234567890128</cbc:ID>
+                <cbc:ID schemeID="CV">1234567890128</cbc:ID>
             </cac:StandardItemIdentification>
             <cac:CommodityClassification>
-                <cbc:ItemClassificationCode listAgencyID="113" listID="UNSPSC">12344325</cbc:ItemClassificationCode>
+                <cbc:ItemClassificationCode listID="UNSPSC">12344325</cbc:ItemClassificationCode>
             </cac:CommodityClassification>
             <cac:CommodityClassification>
-                <cbc:ItemClassificationCode listAgencyID="2" listID="CPV">65434564</cbc:ItemClassificationCode>
+                <cbc:ItemClassificationCode listID="CPV">65434564</cbc:ItemClassificationCode>
             </cac:CommodityClassification>
             <cac:ClassifiedTaxCategory>
-                <cbc:ID schemeID="UNCL5305" schemeAgencyID="6">S</cbc:ID>
+                <cbc:ID>S</cbc:ID>
                 <cbc:Percent>20</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:ClassifiedTaxCategory>
             <cac:AdditionalItemProperty>
@@ -418,7 +394,7 @@
         </cac:Item>
         <cac:Price>
             <cbc:PriceAmount currencyID="EUR">0.75</cbc:PriceAmount>
-            <cbc:BaseQuantity unitCode="MTR" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+            <cbc:BaseQuantity>1</cbc:BaseQuantity>
         </cac:Price>
     </cac:InvoiceLine>
 </Invoice>

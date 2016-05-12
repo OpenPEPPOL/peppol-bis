@@ -49,7 +49,7 @@
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>Leverandøren ASA</cbc:RegistrationName>
-				<cbc:CompanyID schemeID="NO:ORGNR" schemeName="Foretaksregisteret">123456789</cbc:CompanyID>
+				<cbc:CompanyID schemeID="NO:ORGNR">123456789</cbc:CompanyID>
 				<cac:RegistrationAddress>
 					<cbc:CityName>Oslo</cbc:CityName>
 					<cac:Country>
@@ -88,12 +88,6 @@
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>Kunden AS</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="NO:ORGNR">987654321</cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>Mainplace</cbc:CityName>
-					<cac:Country>
-						<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>3150Kun</cbc:ID>

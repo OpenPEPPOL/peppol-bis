@@ -87,9 +87,6 @@
 						<cac:PartyLegalEntity>
 				<cbc:RegistrationName>The Buyer</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="DK:CVR">DK12345678</cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>Big city</cbc:CityName>
-				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:Name>John Doe</cbc:Name>

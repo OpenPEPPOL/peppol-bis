@@ -49,7 +49,7 @@
 	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii05:ver2.0</cbc:ProfileID>
 	<cbc:ID>32</cbc:ID>
 	<cbc:IssueDate>2012-07-24</cbc:IssueDate>
-	<cbc:DocumentCurrencyCode listID="ISO4217" listAgencyID="6">NOK</cbc:DocumentCurrencyCode>
+	<cbc:DocumentCurrencyCode listID="ISO4217">NOK</cbc:DocumentCurrencyCode>
 	<cac:BillingReference>
 		<cac:InvoiceDocumentReference>
 			<cbc:ID>INV345</cbc:ID>
@@ -65,7 +65,6 @@
 				<cbc:Name>IntegrasjonsPartner testkunde</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
-				<cbc:ID schemeID="GLN" schemeAgencyID="9">7080003093035</cbc:ID>
 				<cbc:StreetName>Sarpsborg</cbc:StreetName>
 				<cbc:CityName>Sarpsborg</cbc:CityName>
 				<cbc:PostalZone>1710</cbc:PostalZone>
@@ -82,13 +81,6 @@
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>IntegrasjonsPartner testkunde</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="NO:ORGNR">977187761</cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>Sarpsborg</cbc:CityName>
-					<cac:Country>
-						<cbc:IdentificationCode listID="ISO3166-1:Alpha2"
-							>NO</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>David</cbc:ID>
