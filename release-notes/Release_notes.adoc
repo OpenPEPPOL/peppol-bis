@@ -1,0 +1,59 @@
+= Release notes for openPEPPOL, Spring Release 2016
+openPEPPOL AISBL <http://www.peppol.eu/>
+2016-05-10
+:icons: font
+
+This release from openPEPPOL includes changes to both the validation artifacts (VA's), as well as editorial changes to some of the BIS documents, and this version will be *mandatory in use from 23. May 2016 12:00 CEST.*
+
+
+.Overview of changes
+****
+. Several validation rules have been optimized according to incoming RFCs
+. The OPENPEPPOL core artifact have been added to the validation to validate that the document instance is conformant to the PEPPOL core elements
+. New rules have been implemented for the Despatch Advice (EUGEN-T16-R007) for validation of delivered quantities
+. Minor editorial changes to the order, catalogue and billing BIS.
+****
+
+
+== Changes to validation Artefacts
+
+NOTE: OpenPEPPOL is not committed to continue to provide the ODS files in the coming releases, as the Schematron files are considered the authoritative source for the Validation artefacts.
+
+
+.Changes pr. transaction
+[cols="3", options="header"]
+|====
+|BIS|Rule|Description
+.2+s|Invoice and credit note
+|BII-T10-R043
+.2+|Fix to prevent the rules from firing when no `cac:TaxTotal` element is present in a credit note or invoice instance.
+| BII-T14-R043
+.2+s|Order
+|BII-T01-R011
+|Fix to prevent firing of rule when `cac:Price` is not present in instance document.
+|BII-T01-R017
+|Fixed error in rounding precision due to old xslt 1.0 handling.
+.2+s|Despatch Advice
+|EUGEN-T16-R007
+|Implemented new rule to check that a dispatch advice line must have a delivered quantity
+|EUGEN-T16-R002
+|Fix to prevent rule from firing when parent element is not present in instance document
+|====
+
+== Editorial changes
+
+=== Billing (BIS 5A)
+
+Several xPaths in chapter 8.1 (Features added) has been changed from `cac:InvoiceLine`, to `cac:CreditNoteLine`
+
+
+=== Catalogue (BIS 1A)
+
+References to UBL and UBL Catalogue updated to reflect the approved standard (os) in chapter 2.
+
+
+=== Order (BIS 3A & 28A)
+
+Changed rule text on rule BII-T01-R005 (page 37) from MUST to SHOULD, as this is a warning, not a fatal error
+
+Edited example in section 9.7.3, removed element `cbc:AllowanceChargeReason` from example, as this element is not valid in this position.
