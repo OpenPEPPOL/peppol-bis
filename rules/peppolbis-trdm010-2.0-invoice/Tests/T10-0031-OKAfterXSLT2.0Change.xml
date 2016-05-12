@@ -165,7 +165,7 @@
 	<cac:AllowanceCharge>
 		<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
 		<cbc:AllowanceChargeReasonCode listID="UNCL4465">94</cbc:AllowanceChargeReasonCode>
-		<cac:AllowanceChargeReason>Test</cac:AllowanceChargeReason>
+		<cbc:AllowanceChargeReason>Test</cbc:AllowanceChargeReason>
 		<cbc:Amount currencyID="NOK">100</cbc:Amount>
 		<cac:TaxCategory>
 			<cbc:ID schemeID="UNCL5305">S</cbc:ID>
@@ -178,7 +178,7 @@
 	<cac:AllowanceCharge>
 		<cbc:ChargeIndicator>false</cbc:ChargeIndicator>	
 		<cbc:AllowanceChargeReasonCode listID="UNCL4465">75</cbc:AllowanceChargeReasonCode>
-		<cac:AllowanceChargeReason>Test</cac:AllowanceChargeReason>
+		<cbc:AllowanceChargeReason>Test</cbc:AllowanceChargeReason>
 		<cbc:Amount currencyID="NOK">100</cbc:Amount>
 		<cac:TaxCategory>
 		<cbc:ID schemeID="UNCL5305">S</cbc:ID>
