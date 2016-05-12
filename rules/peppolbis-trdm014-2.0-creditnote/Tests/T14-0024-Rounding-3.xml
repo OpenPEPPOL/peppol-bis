@@ -32,7 +32,6 @@
 				<cbc:Name>IntegrasjonsPartner testkunde</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
-				<cbc:ID schemeID="GLN">7080003093035</cbc:ID>
 				<cbc:StreetName>Sarpsborg</cbc:StreetName>
 				<cbc:CityName>Sarpsborg</cbc:CityName>
 				<cbc:PostalZone>1710</cbc:PostalZone>
@@ -49,12 +48,6 @@
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>IntegrasjonsPartner testkunde</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="NO:ORGNR">977187761</cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>Sarpsborg</cbc:CityName>
-					<cac:Country>
-					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>David</cbc:ID>
@@ -86,12 +79,6 @@
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>TestKunde</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="NO:ORGNR">810305282</cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>SARPSBORG</cbc:CityName>
-					<cac:Country>
-				<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>DTJ1234</cbc:ID>
@@ -130,7 +117,7 @@
 			<cbc:ID schemeID="UNCL5305">S</cbc:ID>
 			<cbc:Percent>25.00</cbc:Percent>
 			<cac:TaxScheme>
-				<cbc:ID>VAT</cbc:ID>
+				<cbc:ID>VAT</cbc:ID>ss
 			</cac:TaxScheme>
 		</cac:TaxCategory>
 	</cac:AllowanceCharge>
@@ -179,9 +166,6 @@
 			<cbc:PriceAmount currencyID="NOK">90.00</cbc:PriceAmount>
 			<cac:AllowanceCharge>
 				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-				<cbc:AllowanceChargeReason>10%Rabatt
-</cbc:AllowanceChargeReason>
-				<cbc:MultiplierFactorNumeric>0.100</cbc:MultiplierFactorNumeric>
 				<cbc:Amount currencyID="NOK">10.00</cbc:Amount>
 				<cbc:BaseAmount currencyID="NOK">100.00</cbc:BaseAmount>
 			</cac:AllowanceCharge>
@@ -209,8 +193,6 @@
 			<cbc:PriceAmount currencyID="NOK">170.00</cbc:PriceAmount>
 			<cac:AllowanceCharge>
 				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-				<cbc:AllowanceChargeReason>20% Kampanjerabatt, deretter 15% Rabatt
-</cbc:AllowanceChargeReason>
 				<cbc:Amount currencyID="NOK">80.00</cbc:Amount>
 				<cbc:BaseAmount currencyID="NOK">250.00</cbc:BaseAmount>
 			</cac:AllowanceCharge>

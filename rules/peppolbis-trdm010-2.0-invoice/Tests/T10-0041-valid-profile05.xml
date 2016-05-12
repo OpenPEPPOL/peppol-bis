@@ -134,12 +134,6 @@
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>Buyercompany ASA</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="NO:ORGNR">987654321</cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>Mainplace</cbc:CityName>
-					<cac:Country>
-						<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>3150bdn</cbc:ID>
@@ -189,6 +183,7 @@
 	</cac:PaymentTerms>
 	<cac:AllowanceCharge>
 		<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+		<cac:AllowanceChargeReason>Test</cac:AllowanceChargeReason>
 		<cbc:AllowanceChargeReasonCode listID="UNCL4465">94</cbc:AllowanceChargeReasonCode>
 		<cbc:AllowanceChargeReason>Freight</cbc:AllowanceChargeReason>
 		<cbc:Amount currencyID="NOK">100</cbc:Amount>
@@ -202,6 +197,7 @@
 	</cac:AllowanceCharge>
 	<cac:AllowanceCharge>
 		<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+		<cac:AllowanceChargeReason>Test</cac:AllowanceChargeReason>
 		<cbc:AllowanceChargeReasonCode listID="UNCL4465">75</cbc:AllowanceChargeReasonCode>
 		<cbc:AllowanceChargeReason>Promotion discount</cbc:AllowanceChargeReason>
 		<cbc:Amount currencyID="NOK">100</cbc:Amount>
