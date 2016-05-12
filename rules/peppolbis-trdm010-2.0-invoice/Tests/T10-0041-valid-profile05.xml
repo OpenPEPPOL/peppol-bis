@@ -285,10 +285,12 @@
 	    </cac:Delivery>
 		<cac:AllowanceCharge>
 			<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+			<cbc:AllowanceChargeReason>Test</cbc:AllowanceChargeReason>
 			<cbc:Amount currencyID="NOK">12</cbc:Amount>
 		</cac:AllowanceCharge>
 		<cac:AllowanceCharge>
 			<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+			<cbc:AllowanceChargeReason>Test</cbc:AllowanceChargeReason>
 			<cbc:Amount currencyID="NOK">12</cbc:Amount>
 		</cac:AllowanceCharge>
 		<cac:Item>
@@ -402,6 +404,7 @@
 			<cbc:BaseQuantity>1</cbc:BaseQuantity>
 			<cac:AllowanceCharge>
 				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+				<cbc:AllowanceChargeReason>Test</cbc:AllowanceChargeReason>
 				<cbc:Amount currencyID="NOK">0.275</cbc:Amount>
 				<cbc:BaseAmount currencyID="NOK">2.75</cbc:BaseAmount>
 			</cac:AllowanceCharge>
