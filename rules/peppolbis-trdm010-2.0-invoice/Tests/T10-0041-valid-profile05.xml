@@ -184,7 +184,6 @@
 	<cac:AllowanceCharge>
 		<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
 		<cbc:AllowanceChargeReasonCode listID="UNCL4465">94</cbc:AllowanceChargeReasonCode>
-		<cbc:AllowanceChargeReason>Test</cbc:AllowanceChargeReason>
 		<cbc:AllowanceChargeReason>Freight</cbc:AllowanceChargeReason>
 		<cbc:Amount currencyID="NOK">100</cbc:Amount>
 		<cac:TaxCategory>
@@ -198,7 +197,6 @@
 	<cac:AllowanceCharge>
 		<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
 		<cbc:AllowanceChargeReasonCode listID="UNCL4465">75</cbc:AllowanceChargeReasonCode>
-		<cbc:AllowanceChargeReason>Test</cbc:AllowanceChargeReason>
 		<cbc:AllowanceChargeReason>Promotion discount</cbc:AllowanceChargeReason>
 		<cbc:Amount currencyID="NOK">100</cbc:Amount>
 		<cac:TaxCategory>

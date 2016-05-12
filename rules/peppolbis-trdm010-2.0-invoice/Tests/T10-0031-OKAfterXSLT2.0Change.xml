@@ -266,10 +266,12 @@
 	    </cac:Delivery>
 		<cac:AllowanceCharge>
 			<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+			<cbc:AllowanceChargeReason>Test</cbc:AllowanceChargeReason>
 			<cbc:Amount currencyID="NOK">12</cbc:Amount>
 		</cac:AllowanceCharge>
 		<cac:AllowanceCharge>
 			<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+			<cbc:AllowanceChargeReason>Test</cbc:AllowanceChargeReason>
 			<cbc:Amount currencyID="NOK">12</cbc:Amount>
 		</cac:AllowanceCharge>
 		<cac:Item>
