@@ -32,7 +32,7 @@
       attribute MUST have a unit code list identifier attribute &#8220;UNECERec20&#8221;</assert>
   </rule>
   <rule context="$Order">
-    <assert test="$EUGEN-T10-R018" flag="warning" id="EUGEN-T10-R018">[EUGEN-T10-R018]- An order
+    <assert test="$EUGEN-T01-R018" flag="warning" id="EUGEN-T01-R018">[EUGEN-T01-R018]- An order
       should not contain empty elements</assert>
   </rule>
 </pattern>
