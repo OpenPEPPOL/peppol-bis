@@ -1,0 +1,103 @@
+= Release notes for openPEPPOL, Fall Release 2016
+openPEPPOL AISBL <http://www.peppol.eu/>
+2016-09-15
+:icons: font
+
+This release from openPEPPOL includes changes to the validation artifacts (VA's), changes to the Common BIS document, and the removal of support for BIS 1.0 versions. This version will be *mandatory in use from 15. November 2016 12:00 CEST.*
+
+
+.Overview of changes
+****
+. Several validation rules have been optimized according to incoming RFCs
+. Added chapter in Common BIS for validation principles.
+****
+
+
+== Changes to validation Artefacts
+
+NOTE: OpenPEPPOL is not committed to continue to provide the ODS files in the coming releases, as the Schematron files are considered the authoritative source for the Validation artefacts.
+
+
+.Changes pr. transaction
+[cols="3", options="header"]
+|====
+|Transaction|Rule|Description
+.10+s|Invoice
+|CL-T10-R003
+.3+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
+| CL-T10-R008
+| OP-T10-R006
+| EUGEN-T10-R047
+| Added warning for empty elements
+|BII2-T10-R051
+|Corrected validation rule, to do casting before sum and rounding
+|EUGEN-T10-R048
+.5+|Added rule to ensure document level amounts does not have more than 2 decimals
+|EUGEN-T10-R049
+|EUGEN-T10-R050
+|EUGEN-T10-R051
+|EUGEN-T10-R052
+
+.10+s|Credit note
+|OP-T14-R006
+.3+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
+|CL-T14-R003
+|CL-T14-R008
+| EUGEN-T14-R048
+| Added warning for empty elements
+|BII2-T10-R051
+|Corrected validation rule, to do casting before sum and rounding
+|EUGEN-T14-R049
+.5+|Added rule to ensure document level amounts does not have more than 2 decimals
+|EUGEN-T14-R050
+|EUGEN-T14-R051
+|EUGEN-T14-R052
+|EUGEN-T14-R053
+
+.5+s|Order
+|OP-T01-R007
+.3+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
+|OP-T01-R009
+|OP-T01-R003
+|EUGEN-T01-R018
+|Added warning for empty elements
+|BII2-T01-R007
+|Changed rule context, so rule does not fire when AllowanceCharge is stated at price level
+
+.4+s|Order response
+|OP-T76-R006
+.3+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
+|OP-T76-R006
+|OP-T76-R007
+|EUGEN-T76-R005
+|Added warning for empty elements
+
+.2+s|Despatch Advice
+|OP-T16-R002
+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
+|EUGEN-T16-R008
+|Added warning for empty elements
+
+.5+s|Catalogue
+|OP-T19-R002
+.4+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
+|CL-T19-R002
+|OP-T19-R011
+|OP-T19-R012
+|EUGEN-T19-R054
+|Added warning for empty elements
+
+s|Catalogue Response
+|EUGEN-T58-R004
+|Added warning for empty elements
+
+s|Message Level Response
+|EUGEN-T71-R006
+|Added warning for empty elements
+|====
+
+== Editorial changes
+
+=== Common BIS
+
+Added chapter on the validation pyramide and principles.

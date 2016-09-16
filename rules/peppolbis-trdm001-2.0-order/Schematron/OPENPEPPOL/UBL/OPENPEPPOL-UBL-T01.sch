@@ -9,6 +9,7 @@
   <param name="EUGEN-T01-R015" value="@listID = 'ISO3166-1:Alpha2'"/>
   <param name="EUGEN-T01-R016" value="not(attribute::unitCode) or (attribute::unitCode and attribute::unitCodeListID = 'UNECERec20')"/>
   <param name="EUGEN-T01-R017" value="@schemeID  = 'UNCL5305'"/>
+  <param name="EUGEN-T01-R018" value="not(count(//*[not(node()[not(self::comment())])]) &gt; 0)"/>
   <param name="Order_Line" value="//cac:OrderLine"/>
   <param name="Order_Type" value="//cbc:OrderTypeCode"/>
   <param name="Order" value="/ubl:Order"/>

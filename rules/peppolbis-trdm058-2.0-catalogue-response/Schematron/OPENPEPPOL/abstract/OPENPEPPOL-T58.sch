@@ -11,4 +11,7 @@
   <rule context="$response_code">
     <assert test="$EUGEN-T58-R003" flag="fatal" id="EUGEN-T58-R003">[EUGEN-T58-R003]-A response code MUST have a list identifier attribute &#8220;UNCL4343&#8221;</assert>
   </rule>
+  <rule context="$catalogue_response">
+    <assert test="$EUGEN-T58-R004" flag="warning" id="EUGEN-T58-R004">[EUGEN-T58-R004]- A catalogue response should not contain empty elements</assert>
+  </rule>
 </pattern>

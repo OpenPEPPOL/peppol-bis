@@ -12,6 +12,7 @@
   <param name="EUGEN-T19-R050" value="@listID = 'GS17009:PEPPOL'"/>
   <param name="EUGEN-T19-R051" value="@listID = 'UNCL8273'"/>
   <param name="EUGEN-T19-R053" value="@schemeID  = 'UNCL6313'"/>
+  <param name="EUGEN-T19-R054" value="not(count(//*[not(node()[not(self::comment())])]) &gt; 0)"/>
   <param name="Endpoint" value="//cbc:EndpointID"/>
   <param name="Party_Identifier" value="//cac:PartyIdentification/cbc:ID"/>
   <param name="Line_level_action_code" value="//cac:CatalogueLine/cbc:ActionCode"/>
@@ -22,4 +23,5 @@
   <param name="Package_Level_Code" value="//cbc:PackageLevelCode"/>
   <param name="UNDG_Code" value="//cbc:UNDGCode"/>
   <param name="Attribute_identifier_scheme" value="//cbc:AttributeID"/>
+  <param name="catalogue" value="/ubl:Catalogue"/>
 </pattern>

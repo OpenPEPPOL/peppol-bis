@@ -9,6 +9,7 @@
   <param name="EUGEN-T16-R005" value="@listID = 'UNCL8273'"/>
   <param name="EUGEN-T16-R006" value="@listID = 'UNECERec21'"/>
   <param name="EUGEN-T16-R007" value="(cbc:DeliveredQuantity)"/>
+  <param name="EUGEN-T16-R008" value="not(count(//*[not(node()[not(self::comment())])]) &gt; 0)"/>
   <param name="unit_code" value="//*[contains(name(),'Quantity')]"/>
   <param name="undg_code" value="cbc:UNDGCode"/>
   <param name="transport_handling_unit_type" value="cbc:TransportHandlingUnitTypeCode"/>
@@ -16,4 +17,5 @@
   <param name="country" value="/cac:Country"/>
   <param name="endpoint" value="//cbc:EndpointID"/>
   <param name="despatch_advice_Line" value="//cac:DespatchLine"/>
+  <param name="despatch_advice" value="/ubl:DespatchAdvice"/>
 </pattern>

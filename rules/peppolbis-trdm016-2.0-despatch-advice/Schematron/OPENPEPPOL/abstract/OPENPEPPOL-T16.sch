@@ -23,4 +23,7 @@
   <rule context="$despatch_advice_Line">
     <assert test="$EUGEN-T16-R007" flag="fatal" id="EUGEN-T16-R007">[EUGEN-T16-R007]-Each despatch advice line MUST have a delivered quantity</assert>
   </rule>
+  <rule context="$despatch_advice">
+  <assert test="$EUGEN-T16-R008" flag="warning" id="EUGEN-T16-R008">[EUGEN-T16-R008]- A despatch advice should not contain empty elements</assert>
+  </rule>
 </pattern>

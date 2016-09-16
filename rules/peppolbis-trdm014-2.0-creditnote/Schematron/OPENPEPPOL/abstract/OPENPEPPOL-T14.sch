@@ -5,6 +5,7 @@
   <rule context="$Allowance_Charge">
     <assert test="$EUGEN-T14-R012" flag="fatal" id="EUGEN-T14-R012">[EUGEN-T14-R012]-An allowance percentage MUST NOT be negative.</assert>
     <assert test="$EUGEN-T14-R022" flag="fatal" id="EUGEN-T14-R022">[EUGEN-T14-R022]-An allowance or charge amount MUST NOT be negative.</assert>
+    <assert test="$EUGEN-T14-R053" flag="fatal" id="EUGEN-T14-R053">[EUGEN-T14-R053]-Document level amounts cannot have more than 2 decimals</assert>
   </rule>
   <rule context="$Allowance_Charge_Reason_Code">
     <assert test="$EUGEN-T14-R029" flag="fatal" id="EUGEN-T14-R029">[EUGEN-T14-R029]-An allowance charge reason code MUST have a list identifier attribute 'UNCL4465'.</assert>
@@ -14,6 +15,7 @@
   </rule>
   <rule context="$Credit_Note">
     <assert test="$EUGEN-T14-R044" flag="fatal" id="EUGEN-T14-R044">[EUGEN-T14-R044]-If the tax currency code is different from the document currency code, the tax exchange rate MUST be provided</assert>
+    <assert test="$EUGEN-T14-R048" flag="warning" id="EUGEN-T14-R048">[EUGEN-T14-R048]- A credit note should not contain empty elements</assert>
   </rule>
   <rule context="$Currency_Code">
     <assert test="$EUGEN-T14-R026" flag="fatal" id="EUGEN-T14-R026">[EUGEN-T14-R026]-A currency code element MUST have a list identifier attribute 'ISO4217'.</assert>
@@ -60,6 +62,11 @@
   </rule>
   <rule context="$Tax_Total">
     <assert test="$EUGEN-T14-R043" flag="fatal" id="EUGEN-T14-R043">[EUGEN-T14-R043]-The total tax amount MUST equal the sum of tax amounts per category.</assert>
+    <assert test="$EUGEN-T14-R050" flag="fatal" id="EUGEN-T14-R050">[EUGEN-T14-R050]- Total tax amount cannot have more than 2 decimals.</assert>
+  </rule>
+  <rule context="$Tax_Subotal">
+    <assert test="$EUGEN-T14-R051" flag="fatal" id="EUGEN-T14-R051">[EUGEN-T14-R051]- Tax subtotal amounts cannot have more than 2 decimals.</assert>
+    <assert test="$EUGEN-T14-R052" flag="fatal" id="EUGEN-T14-R052">[EUGEN-T14-R052]-Document level amounts cannot have more than 2 decimals</assert>
   </rule>
   <rule context="$Unit_Code">
     <assert test="$EUGEN-T14-R030" flag="fatal" id="EUGEN-T14-R030">[EUGEN-T14-R030]-A unit code attribute MUST have a unit code list identifier attribute 'UNECERec20'.</assert>
@@ -70,5 +77,8 @@
   </rule>
   <rule context="$Billing_Reference">
     <assert test="$EUGEN-T14-R047" flag="fatal" id="EUGEN-T14-R047">[EUGEN-T14-R047]-A credit note MUST refer either to an invoice or a credit note</assert>
+  </rule>
+  <rule context="$Total_Amount">
+    <assert test="$EUGEN-T14-R049" flag="fatal" id="EUGEN-T14-R049">[EUGEN-T14-R049]-Document level amounts cannot have more than 2 decimals</assert>
   </rule>
 </pattern>

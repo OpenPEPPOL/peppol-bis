@@ -30,9 +30,16 @@
   <param name="EUGEN-T10-R044" value="not(//cbc:TaxCurrencyCode) or (//cac:TaxExchangeRate)"/>
   <param name="EUGEN-T10-R045" value="(cbc:CalculationRate) and (cbc:MathematicOperatorCode)"/>
   <param name="EUGEN-T10-R046" value="not(/ubl:Invoice/cbc:TaxCurrencyCode) or (cbc:TaxAmount and cbc:TransactionCurrencyTaxAmount)"/>
+  <param name="EUGEN-T10-R047" value="not(count(//*[not(node()[not(self::comment())])]) &gt; 0)"/>
+  <param name="EUGEN-T10-R048" value="string-length(substring-after(., '.')) &lt;= 2"/>
+  <param name="EUGEN-T10-R049" value="string-length(substring-after(cbc:TaxAmount, '.')) &lt;= 2"/>
+  <param name="EUGEN-T10-R050" value="string-length(substring-after(cbc:TaxableAmount, '.')) &lt;= 2"/>
+  <param name="EUGEN-T10-R051" value="string-length(substring-after(cbc:TaxAmount, '.')) &lt;= 2"/>
+  <param name="EUGEN-T10-R052" value="string-length(substring-after(cbc:Amount, '.')) &lt;= 2"/>
   <param name="VAT_category" value="//cac:TaxSubtotal[cac:TaxCategory/cac:TaxScheme/cbc:ID = 'VAT']"/>
   <param name="Unit_Code" value="//*[contains(name(),'Quantity')]"/>
   <param name="Total_Invoice" value="//cac:LegalMonetaryTotal"/>
+  <param name="Total_Amount" value="//cac:LegalMonetaryTotal/child::*"/>
   <param name="Tax_Category_Identifier" value="//cac:TaxCategory/cbc:ID"/>
   <param name="Tax_Category" value="//cac:TaxCategory"/>
   <param name="Payment_Means_Code" value="//cbc:PaymentMeansCode"/>
@@ -53,5 +60,6 @@
   <param name="Supplier" value="//cac:AccountingSupplierParty"/>
   <param name="Customer" value="//cac:AccountingCustomerParty"/>
   <param name="Tax_Total" value="/ubl:Invoice/cac:TaxTotal"/>
+  <param name="Tax_Subtotal" value="/ubl:Invoice/cac:TaxTotal/cac:TaxSubtotal"/>
   <param name="Tax_Exchange" value="//cac:TaxExchangeRate"/>
 </pattern>

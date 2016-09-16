@@ -5,7 +5,9 @@
   <param name="EUGEN-T58-R001" value="@schemeID"/>
   <param name="EUGEN-T58-R002" value="@schemeID"/>
   <param name="EUGEN-T58-R003" value="@listID = 'UNCL4343'"/>
+  <param name="EUGEN-T58-R004" value="not(count(//*[not(node()[not(self::comment())])]) &gt; 0)"/>
   <param name="endpoint" value="//cbc:EndpointID"/>
   <param name="party_identifier" value="//cac:PartyIdentification/cbc:ID"/>
   <param name="response_code" value="//cbc:ResponseCode"/>
+  <param name="catalogue_response" value="/ubl:ApplicationResponse"/>
 </pattern>

@@ -17,4 +17,7 @@
   <rule context="$Party_Identifier">
     <assert test="$EUGEN-T71-R005" flag="fatal" id="EUGEN-T71-R005">[EUGEN-T71-R005]-A party identifier MUST have a scheme identifier attribute.</assert>
   </rule>
+  <rule context="$mlr">
+    <assert test="$EUGEN-T71-R006" flag="warning" id="EUGEN-T71-R006">[EUGEN-T71-R006]- A message level response should not contain empty elements</assert>
+  </rule>
 </pattern>

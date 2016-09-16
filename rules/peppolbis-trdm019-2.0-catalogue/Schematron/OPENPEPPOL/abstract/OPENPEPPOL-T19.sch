@@ -32,4 +32,7 @@
   <rule context="$Unit_Code">
     <assert test="$EUGEN-T19-R048" flag="fatal" id="EUGEN-T19-R048">[EUGEN-T19-R048]-A unit code attribute MUST have a unit code list identifier attribute &#8220;UNECERec20&#8221;</assert>
   </rule>
+  <rule context="$catalogue">
+    <assert test="$EUGEN-T19-R054" flag="warning" id="EUGEN-T19-R054">[EUGEN-T19-R054]- A catalogue should not contain empty elements</assert>
+  </rule>
 </pattern>

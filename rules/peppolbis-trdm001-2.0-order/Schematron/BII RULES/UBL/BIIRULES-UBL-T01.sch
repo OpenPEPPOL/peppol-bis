@@ -63,7 +63,7 @@ not(cbc:AllowanceTotalAmount) and
   <param name="BII2-T01-R031" value="(cac:LineItem/cac:Item/cbc:Name) or (cac:LineItem/cac:Item/cac:StandardItemIdentification/cbc:ID) or  (cac:LineItem/cac:Item/cac:SellersItemIdentification/cbc:ID)"/>
   <param name="Order_Line" value="//cac:OrderLine"/>
   <param name="Order" value="/ubl:Order"/>
-  <param name="Allowance_Charges" value="//cac:AllowanceCharge"/>
+  <param name="Allowance_Charges" value="/ubl:Order/cac:AllowanceCharge"/>
   <param name="Expected_totals" value="//cac:AnticipatedMonetaryTotal"/>
   <param name="Item_property" value="//cac:AdditionalItemProperty"/>
   <param name="Seller" value="//cac:SellerSupplierParty"/>

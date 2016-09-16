@@ -31,9 +31,16 @@
   <param name="EUGEN-T14-R045" value="(cbc:CalculationRate) and (cbc:MathematicOperatorCode)"/>
   <param name="EUGEN-T14-R046" value="not(/ubl:CreditNote/cbc:TaxCurrencyCode) or (cbc:TaxAmount and cbc:TransactionCurrencyTaxAmount)"/>
   <param name="EUGEN-T14-R047" value="((cac:InvoiceDocumentReference) and not(cac:CreditNoteDocumentReference)) or (not(cac:InvoiceDocumentReference) and (cac:CreditNoteDocumentReference))"/>
+  <param name="EUGEN-T14-R048" value="not(count(//*[not(node()[not(self::comment())])]) &gt; 0)"/>
+  <param name="EUGEN-T14-R049" value="string-length(substring-after(., '.')) &lt;= 2"/>
+  <param name="EUGEN-T14-R050" value="string-length(substring-after(cbc:TaxAmount, '.')) &lt;= 2"/>
+  <param name="EUGEN-T14-R051" value="string-length(substring-after(cbc:TaxableAmount, '.')) &lt;= 2"/>
+  <param name="EUGEN-T14-R052" value="string-length(substring-after(cbc:TaxAmount, '.')) &lt;= 2"/>
+  <param name="EUGEN-T14-R053" value="string-length(substring-after(cbc:Amount, '.')) &lt;= 2"/>
   <param name="VAT_category" value="//cac:TaxSubtotal[cac:TaxCategory/cac:TaxScheme/cbc:ID = 'VAT']"/>
   <param name="Credit_Note" value="/ubl:CreditNote"/>
   <param name="Total_Credit_Note" value="//cac:LegalMonetaryTotal"/>
+  <param name="Total_Amount" value="//cac:LegalMonetaryTotal/child::*"/>
   <param name="Unit_Code" value="//*[contains(name(),'Quantity')]"/>
   <param name="Tax_Category_Identifier" value="//cac:TaxCategory/cbc:ID"/>
   <param name="Tax_Category" value="//cac:TaxCategory"/>
@@ -46,6 +53,7 @@
   <param name="Supplier" value="//cac:AccountingSupplierParty"/>
   <param name="Customer" value="//cac:AccountingCustomerParty"/>
   <param name="Tax_Total" value="/ubl:CreditNote/cac:TaxTotal"/>
+  <param name="Tax_Subtotal" value="/ubl:CreditNote/cac:TaxTotal/cac:TaxSubtotal"/>
   <param name="Tax_Exchange" value="//cac:TaxExchangeRate"/>
   <param name="Allowance_Charge" value="/ubl:CreditNote/cac:AllowanceCharge"/>
   <param name="Delivery_Location_Identifier" value="//cac:DeliveryLocation/cbc:ID"/>
