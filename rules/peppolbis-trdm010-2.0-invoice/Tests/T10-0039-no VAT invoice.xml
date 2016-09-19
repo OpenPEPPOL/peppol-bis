@@ -118,7 +118,7 @@
 	<cac:AllowanceCharge>
 		<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
 		<cbc:AllowanceChargeReason>2.35% Totalrabatt</cbc:AllowanceChargeReason>
-		<cbc:Amount currencyID="NOK">89.774465</cbc:Amount>
+		<cbc:Amount currencyID="NOK">89.77</cbc:Amount>
 	</cac:AllowanceCharge>
 	<cac:AllowanceCharge>
 		<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
