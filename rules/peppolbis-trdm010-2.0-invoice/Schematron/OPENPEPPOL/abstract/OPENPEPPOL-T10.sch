@@ -68,7 +68,7 @@
     <assert test="$EUGEN-T10-R043" flag="fatal" id="EUGEN-T10-R043">[EUGEN-T10-R043]-The total tax amount MUST equal the sum of tax amounts per category.</assert>
     <assert test="$EUGEN-T10-R049" flag="fatal" id="EUGEN-T10-R049">[EUGEN-T10-R049]- Total tax amount cannot have more than 2 decimals.</assert>
   </rule>
-  <rule context="$Tax_Subotal">
+  <rule context="$Tax_Subtotal">
     <assert test="$EUGEN-T10-R050" flag="fatal" id="EUGEN-T10-R050">[EUGEN-T10-R050]- Tax subtotal amounts cannot have more than 2 decimals.</assert>
     <assert test="$EUGEN-T10-R051" flag="fatal" id="EUGEN-T10-R051">[EUGEN-T10-R051]-Document level amounts cannot have more than 2 decimals</assert>
   </rule>
