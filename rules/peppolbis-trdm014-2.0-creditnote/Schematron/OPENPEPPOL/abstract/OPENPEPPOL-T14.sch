@@ -67,13 +67,11 @@
   <rule context="$Tax_Subtotal">
     <assert test="$EUGEN-T14-R051" flag="fatal" id="EUGEN-T14-R051">[EUGEN-T14-R051]- Tax subtotal amounts cannot have more than 2 decimals.</assert>
     <assert test="$EUGEN-T14-R052" flag="fatal" id="EUGEN-T14-R052">[EUGEN-T14-R052]-Document level amounts cannot have more than 2 decimals</assert>
+    <assert test="$EUGEN-T14-R042" flag="fatal" id="EUGEN-T14-R042">[EUGEN-T14-R042]-The tax amount per category MUST be the taxable amount multiplied by the category percentage.</assert>
+    <assert test="$EUGEN-T14-R046" flag="fatal" id="EUGEN-T14-R046">[EUGEN-T14-R046]-If the tax currency code is different from the document currency code, each tax subtotal has to include the tax amount in both currencies</assert>
   </rule>
   <rule context="$Unit_Code">
     <assert test="$EUGEN-T14-R030" flag="fatal" id="EUGEN-T14-R030">[EUGEN-T14-R030]-A unit code attribute MUST have a unit code list identifier attribute 'UNECERec20'.</assert>
-  </rule>
-  <rule context="$VAT_category">
-    <assert test="$EUGEN-T14-R042" flag="fatal" id="EUGEN-T14-R042">[EUGEN-T14-R042]-The tax amount per category MUST be the taxable amount multiplied by the category percentage.</assert>
-    <assert test="$EUGEN-T14-R046" flag="fatal" id="EUGEN-T14-R046">[EUGEN-T14-R046]-If the tax currency code is different from the document currency code, each tax subtotal has to include the tax amount in both currencies</assert>
   </rule>
   <rule context="$Billing_Reference">
     <assert test="$EUGEN-T14-R047" flag="fatal" id="EUGEN-T14-R047">[EUGEN-T14-R047]-A credit note MUST refer either to an invoice or a credit note</assert>

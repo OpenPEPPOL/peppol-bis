@@ -37,7 +37,6 @@
   <param name="EUGEN-T14-R051" value="string-length(substring-after(cbc:TaxableAmount, '.')) &lt;= 2"/>
   <param name="EUGEN-T14-R052" value="string-length(substring-after(cbc:TaxAmount, '.')) &lt;= 2"/>
   <param name="EUGEN-T14-R053" value="string-length(substring-after(cbc:Amount, '.')) &lt;= 2"/>
-  <param name="VAT_category" value="//cac:TaxSubtotal[cac:TaxCategory/cac:TaxScheme/cbc:ID = 'VAT']"/>
   <param name="Credit_Note" value="/ubl:CreditNote"/>
   <param name="Total_Credit_Note" value="//cac:LegalMonetaryTotal"/>
   <param name="Total_Amount" value="//cac:LegalMonetaryTotal/child::*"/>
