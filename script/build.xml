@@ -150,6 +150,8 @@
             <path>
                 <fileset dir="${sch.dir}" casesensitive="false">
                     <filename name="**/Tests/T*-*.xml"/>
+                    <!-- casesensitive="false" not working perfect, so make same lige with upper XML. -->
+                    <filename name="**/Tests/T*-*.XML"/>
                     <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
             </path>
