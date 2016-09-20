@@ -149,9 +149,9 @@
         <foreach target="executeTest" param="testFile" inheritall="true">
             <path>
                 <fileset dir="${sch.dir}" casesensitive="false">
-                    <filename name="**/Tests/T*-*.xml"/>
+                    <include name="**/Tests/T*-*.xml"/>
                     <!-- casesensitive="false" not working perfect, so make same lige with upper XML. -->
-                    <filename name="**/Tests/T*-*.XML"/>
+                    <include name="**/Tests/T*-*.XML"/>
                     <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
             </path>
