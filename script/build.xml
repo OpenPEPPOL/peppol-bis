@@ -131,7 +131,10 @@
             <zipfileset dir="${target.xslt}" includes="*.xsl" prefix="XSLT"/>
             <!-- excludes="**/BIICORE*.sch" from version 3.1 -->
             <zipfileset dir="${sch.dir}" includes="**/*.sch" excludes="**/BIICORE*.sch" prefix="SCH"/>
-            <zipfileset dir="../release-notes" includes="*V${version.number}.pdf"/>
+            <zipfileset dir="../release-notes">
+                <include name="*V${version.number}.pdf"/>
+                <include name="*V${version.number}.html"/>
+            </zipfileset>
             <zipfileset dir="${target.dir}" includes="*.txt"/>
             <!-- ODS dir added for version 3.2 only (so far) -->
             <zipfileset dir="../ODS" includes="*.*" prefix="ODS"/>
@@ -150,8 +153,6 @@
             <path>
                 <fileset dir="${sch.dir}" casesensitive="false">
                     <include name="**/Tests/T*-*.xml"/>
-                    <!-- casesensitive="false" not working perfect, so make same lige with upper XML. -->
-                    <include name="**/Tests/T*-*.XML"/>
                     <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
             </path>

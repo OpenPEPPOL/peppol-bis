@@ -1,6 +1,6 @@
 = Release notes for openPEPPOL Validation Artifact v3.3.0_RC1, Fall Release 2016
 openPEPPOL AISBL <http://www.peppol.eu/>
-2016-09-15
+2016-09-21
 :icons: font
 
 This release from openPEPPOL includes changes to the validation artifacts (VA's), changes to the Common BIS document, and the removal of support for BIS 1.0 versions. This version will be *mandatory in use from 15. November 2016 12:00 CEST.*
