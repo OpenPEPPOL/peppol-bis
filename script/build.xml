@@ -137,7 +137,7 @@
             </zipfileset>
             <zipfileset dir="${target.dir}" includes="*.txt"/>
             <!-- ODS dir added for version 3.2 only (so far) -->
-            <zipfileset dir="../ODS" includes="*.*" prefix="ODS"/>
+            <!--<zipfileset dir="../ODS" includes="*.*" prefix="ODS"/>-->
         </zip>
     </target>
 
