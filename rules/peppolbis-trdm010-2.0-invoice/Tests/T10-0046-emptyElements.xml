@@ -154,8 +154,6 @@
 		<cbc:LineExtensionAmount currencyID="NOK">100.00</cbc:LineExtensionAmount>
 		<cbc:TaxExclusiveAmount currencyID="NOK">100.00</cbc:TaxExclusiveAmount>
 		<cbc:TaxInclusiveAmount currencyID="NOK">125.00</cbc:TaxInclusiveAmount>
-		<cbc:AllowanceTotalAmount currencyID="NOK">0.00</cbc:AllowanceTotalAmount>
-		<cbc:ChargeTotalAmount currencyID="NOK">0.007</cbc:ChargeTotalAmount>
 		<cbc:PrepaidAmount currencyID="NOK">0.00</cbc:PrepaidAmount>
 		<cbc:PayableRoundingAmount currencyID="NOK">0.00</cbc:PayableRoundingAmount>
 		<cbc:PayableAmount currencyID="NOK">125.00</cbc:PayableAmount>
