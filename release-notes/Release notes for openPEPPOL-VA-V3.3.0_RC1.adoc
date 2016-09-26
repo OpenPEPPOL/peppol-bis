@@ -1,7 +1,12 @@
+
 = Release notes for openPEPPOL Validation Artifact v3.3.0_RC1, Fall Release 2016
 openPEPPOL AISBL <http://www.peppol.eu/>
 2016-09-21
 :icons: font
+:source-highlighter: coderay
+:sourcedir: .
+:imagesdir: ./images
+:title-logo-image: peppol.png
 
 This release from openPEPPOL includes changes to the validation artifacts (VA's), changes to the Common BIS document, and the removal of support for BIS 1.0 versions. This version will be *mandatory in use from 15. November 2016 12:00 CEST.*
 
@@ -10,7 +15,9 @@ This release from openPEPPOL includes changes to the validation artifacts (VA's)
 ****
 . Several validation rules have been optimized according to incoming RFCs
 . Added chapter in Common BIS for validation principles.
+.Editorial updates BIS 1a (Catalogue)
 ****
+
 
 
 == Changes to Validation Artifacts (VA)
@@ -45,7 +52,7 @@ NOTE: OpenPEPPOL is not committed to continue to provide the ODS files in the co
 |CL-T14-R008
 | EUGEN-T14-R048
 | Added warning for empty elements
-|BII2-T10-R051
+|BII2-T14-R051
 |Corrected validation rule, to do casting before sum and rounding
 |EUGEN-T14-R049
 .5+|Added rule to ensure document level amounts does not have more than 2 decimals
@@ -64,10 +71,9 @@ NOTE: OpenPEPPOL is not committed to continue to provide the ODS files in the co
 |BII2-T01-R007
 |Changed rule context, so rule does not fire when AllowanceCharge is stated at price level
 
-.4+s|Order response
+.3+s|Order response
 |OP-T76-R006
-.3+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
-|OP-T76-R006
+.2+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
 |OP-T76-R007
 |EUGEN-T76-R005
 |Added warning for empty elements
@@ -101,3 +107,6 @@ s|Message Level Response
 === Common BIS
 
 Added chapter on the validation pyramide and principles.
+
+=== BIS 1A – Catalogue
+Added customizationID and namespace for catalogue response in chapters 11.4 and 11.5
