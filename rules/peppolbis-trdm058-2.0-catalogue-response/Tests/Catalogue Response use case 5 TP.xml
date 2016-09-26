@@ -1,15 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-                Content:
-                This file contains a PEPPOL invoice, profile only
-                
-                Errors:
-                EUGEN-T58-R003
-                
-                Warnings:
-                None
-				
--->
 <ApplicationResponse
 	xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2 UBL-ApplicationResponse-2.0.xsd"
 	xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2"
@@ -48,7 +37,7 @@
 	<cac:DocumentResponse>
 		<cac:Response>
 			<!-- Coded decision -->
-			<cbc:ResponseCode>AP</cbc:ResponseCode>
+			<cbc:ResponseCode listID="UNCL4343">AP</cbc:ResponseCode>
 		</cac:Response>
 		<cac:DocumentReference>
 			<!-- Document identifier -->
