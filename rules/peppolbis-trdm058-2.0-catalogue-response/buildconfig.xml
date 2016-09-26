@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildConfigurations xmlns="http://difi.no/xsd/vefa/validator/1.0">
+
+    <!-- <package>PEPPOL BIS 01A Catalogue Only 2.0</package> -->
+
+    <testfolder>Tests</testfolder>
+
+    <configuration>
+        <identifier>peppolbis-t58-base-2.0</identifier>
+        <title>PEPPOL BIS Catalogue Response 2.0 (Base)</title>
+        <inherit>ubl-applicationresponse-2.1</inherit>
+        <file source="Schematron/BII RULES/BIIRULES-UBL-T58.sch" path="xsl/BIIRULES-UBL-T58.xsl" />
+        <file source="Schematron/OPENPEPPOL/OPENPEPPOL-UBL-T58.sch" path="xsl/OPENPEPPOL-UBL-T58.xsl" />
+    </configuration>
+    <configuration>
+        <identifier>peppolbis-t58-core-2.0</identifier>
+        <title>PEPPOL BIS Catalogue Response 2.0 (Core)</title>
+        <file source="Schematron/OPENPEPPOL CORE/OPENPEPPOLCORE-UBL-T58.sch" path="xsl/OPENPEPPOLCORE-UBL-T58.xsl" />
+    </configuration>
+
+    <configuration>
+        <identifier>peppolbis-t58-01-2.0</identifier>
+        <title>PEPPOL BIS Catalogue Response 2.0 (Profile 01)</title>
+        <profileId>urn:www.cenbii.eu:profile:bii01:ver2.0</profileId>
+        <customizationId>urn:www.cenbii.eu:transaction:biitrns058:ver2.0:extended:urn:www.peppol.eu:bis:peppol1a:ver2.0</customizationId>
+        <inherit>peppolbis-t58-base-2.0</inherit>
+        <inherit>peppolbis-t58-core-2.0</inherit>
+    </configuration>
+
+</buildConfigurations>

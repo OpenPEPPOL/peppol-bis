@@ -15,7 +15,7 @@ This release from openPEPPOL includes changes to both the validation artifacts (
 ****
 
 
-== Changes to validation Artefacts
+== Changes to Validation Artifacts (VA)
 
 NOTE: OpenPEPPOL is not committed to continue to provide the ODS files in the coming releases, as the Schematron files are considered the authoritative source for the Validation artefacts.
 

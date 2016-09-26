@@ -131,7 +131,10 @@
             <zipfileset dir="${target.xslt}" includes="*.xsl" prefix="XSLT"/>
             <!-- excludes="**/BIICORE*.sch" from version 3.1 -->
             <zipfileset dir="${sch.dir}" includes="**/*.sch" excludes="**/BIICORE*.sch" prefix="SCH"/>
-            <zipfileset dir="../release-notes" includes="*V${version.number}.pdf"/>
+            <zipfileset dir="../release-notes">
+                <include name="*V${version.number}.pdf"/>
+                <include name="*V${version.number}.html"/>
+            </zipfileset>
             <zipfileset dir="${target.dir}" includes="*.txt"/>
             <!-- ODS dir added for version 3.2 only (so far) -->
             <zipfileset dir="../ODS" includes="*.*" prefix="ODS"/>
@@ -148,8 +151,8 @@
         <!-- For each test folder-->
         <foreach target="executeTest" param="testFile" inheritall="true">
             <path>
-                <fileset dir="${sch.dir}">
-                    <filename name="**/Tests/T*-*.xml"/>
+                <fileset dir="${sch.dir}" casesensitive="false">
+                    <include name="**/Tests/T*-*.xml"/>
                     <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
             </path>
