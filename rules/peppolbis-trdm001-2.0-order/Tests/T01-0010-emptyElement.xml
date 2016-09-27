@@ -141,7 +141,6 @@
 	</cac:OriginatorCustomerParty>
 	<cac:Delivery>
 		<cac:DeliveryLocation>
-			<cbc:ID schemeID="GTIN">12345</cbc:ID>
 			<cac:Address>
 				<cbc:StreetName>Solheimsveien 10</cbc:StreetName>
 				<cbc:CityName>Lørenskog</cbc:CityName>

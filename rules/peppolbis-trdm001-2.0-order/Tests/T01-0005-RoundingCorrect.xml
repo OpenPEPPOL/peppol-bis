@@ -78,7 +78,6 @@
     </cac:SellerSupplierParty>
     <cac:Delivery>
         <cac:DeliveryLocation>
-            <cbc:ID schemeID="GLN">1111222222201</cbc:ID>
             <cac:Address>
                 <cbc:StreetName>UTTOXETER ROAD</cbc:StreetName>
                 <cbc:AdditionalStreetName>RECEIPT AND DISTRIBUTION</cbc:AdditionalStreetName>

@@ -108,7 +108,6 @@
     <cac:Delivery>
         <cac:DeliveryLocation>
             <cac:Address>
-                <cbc:ID schemeID="ZZZ">NO975950662MVA</cbc:ID>
                 <cbc:StreetName>Postboks 405, Sentrum</cbc:StreetName>
                 <cbc:CityName>OSLO</cbc:CityName>
                 <cbc:PostalZone>0103</cbc:PostalZone>
