@@ -153,6 +153,7 @@
             <path>
                 <fileset dir="${sch.dir}" casesensitive="false">
                     <include name="**/Tests/T*-*.xml"/>
+                    <!--<include name="**/T14-0023-rounding-1.xml"/>-->
                     <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
             </path>
@@ -234,7 +235,7 @@
                 project.setProperty('test.description', description);
             }
 
-            // Find expected ERRORS/WARNINGS in the file header.
+            // Find expected ERRORS/WARNINGS from the file header.
             var errorArr = findErrorWarningLines(commentLineArray, "Error");
             var warningArr = findErrorWarningLines(commentLineArray, "Warning");
 
@@ -263,75 +264,130 @@
             }
 
 
-            // Verify that errors+warnings exists in schematron output
-            // As a start, we assume that everything is OK:
-            project.setProperty('test.result', "OK");
-
-            var escapeChars = ["[", "]", "'"];
+            // Find actual ERRORS/WARNINGS in the 3 output files.
             validationOutput_BII = project.getProperty('validationOutput.BII');
             validationOutput_PEPPOL_CORE = project.getProperty('validationOutput.PEPPOLCORE');
             validationOutput_PEPPOL = project.getProperty('validationOutput.PEPPOL');
+            var foundErrors = [];
+            var foundWarnings = [];
+            findIssuesInOutputFile(validationOutput_BII, foundErrors, foundWarnings);
+            findIssuesInOutputFile(validationOutput_PEPPOL_CORE, foundErrors, foundWarnings);
+            findIssuesInOutputFile(validationOutput_PEPPOL, foundErrors, foundWarnings);
 
-            // Iterate through all found Errors and Warnings
-            loopThroughIssueArray(errorArr);
-            loopThroughIssueArray(warningArr);
-
-            function loopThroughIssueArray(issueArr) {
-                <!--echo = project.createTask("echo");-->
-                <!--echo.setMessage("..................................................... Error list size: " + issueArr.length);-->
-                <!--echo.perform();-->
-                for (i=0; issueArr.length > i; i++) {
-                    <!--echo = project.createTask("echo");-->
-                    <!--echo.setMessage("..................................................... Expected error: " + issueArr[i]);-->
-                    <!--echo.perform();-->
-
-                    // if error code start with OP or EUGEN, when use OPENPEPPOL schematron output
-                    // if error code start with PEPPOL_CORE, when use PEPPOL_CORE schematron output
-                    if ( issueArr[i].indexOf('OP')>=0 || issueArr[i].indexOf('EUGEN')>=0 ) {
-                        testType = 'OPENPEPPOL';
-                    } else if ( issueArr[i].indexOf('PEPPOL_CORE')>=0 ) {
-                        testType = 'OPENPEPPOLCORE';
-                    } else {
-                        testType = 'BIIRULES';
+            function findIssuesInOutputFile(validationOutput, errorArr, warningArr) {
+                var regex = /failed-assert test.*\n.*id=\"([^\"]+)\".*\n.*flag=\"(\w+)\"/g
+                var issueNumbers = [];
+                var issueTypes = [];
+                var match = regex.exec(validationOutput);
+                while (match != null) {
+                    issueNumbers.push(match[1]);
+                    issueTypes.push(match[2]);
+                    match = regex.exec(validationOutput);
+                }
+                for (i=0; issueNumbers.length > i; i++) {
+                    if ( issueTypes[i]=='warning' ) {
+                        warningArr.push(issueNumbers[i]);
                     }
-                    <!--echo = project.createTask("echo");-->
-                    <!--echo.setMessage("..................................................... testType: " + testType);-->
-                    <!--echo.perform();-->
-                    validationOutput = testType=='BIIRULES' ? validationOutput_BII : ( testType=='OPENPEPPOLCORE' ? validationOutput_PEPPOL_CORE : validationOutput_PEPPOL );
-
-                    <!--echo = project.createTask("echo");-->
-                    <!--echo.setMessage("..................................................... Error index: " + validationOutput.indexOf(issueArr[i]));-->
-                    <!--echo.perform();-->
-                    if ( validationOutput.indexOf(issueArr[i]) == -1 ) {
-                        <!--for (var i = 0; escapeChars.length > i; i++) {-->
-                            <!--issueArr[i] = issueArr[i].replace(escapeChars[i], "|"+escapeChars[i]);-->
-                        <!--}-->
-
-                        project.setProperty('test.errorCode', issueArr[i]);
-                        project.setProperty('test.reason', "Error " + issueArr[i] + " not found in schematron output");
-                        project.setProperty('test.result', "ERROR");
-                        project.setProperty('test.type', testType);
-                        project.setProperty('validationOutput', validationOutput);
-                        break;
+                    else {
+                        errorArr.push(issueNumbers[i]);
                     }
                 }
             }
 
 
-            // Test for no errors expected
-            // If no errors expected and "failed-assert" is found - then fail test
-            findIssuesInValidFiles(validationOutput_BII, "BIIRULES");
-            findIssuesInValidFiles(validationOutput_PEPPOL_CORE, "OPENPEPPOLCORE");
-            findIssuesInValidFiles(validationOutput_PEPPOL, "OPENPEPPOL");
+            // Verify that expected Errors+Warnings exists in schematron output
+            // As a start, we assume that everything is OK:
+            project.setProperty('test.result', "OK");
 
-            function findIssuesInValidFiles(validationOutput, outputType) {
+            var escapeChars = ["[", "]", "'"];
+
+            // Iterate through all found Errors and Warnings
+            foundErrors = loopThroughExpectedArray(errorArr, foundErrors);
+            foundWarnings = loopThroughExpectedArray(warningArr, foundWarnings);
+
+            function loopThroughExpectedArray(expectedArr, foundArr) {
+                <!--echo = project.createTask("echo");-->
+                <!--echo.setMessage("ErrorType=" + testType+" / expectedArr="+expectedArr.length + " / foundArr="+foundArr.length);-->
+                <!--echo.perform();-->
+
+                <!--for (i=0; foundArr.length > i; i++) {-->
+                    <!--echo = project.createTask("echo");-->
+                    <!--echo.setMessage("Found "+testType + " " + i + ": >" + foundArr[i] + "< / " + Object.prototype.toString.call(foundArr[i]));-->
+                    <!--echo.perform();-->
+                <!--}-->
+
+                for (i=0; expectedArr.length > i; i++) {
+                    <!-- expectedArr[i] is not of typr String, so force it to be! -->
+                    foundIndex = foundArr.indexOf(''+expectedArr[i]);
+
+                    <!--echo = project.createTask("echo");-->
+                    <!--echo.setMessage("..................................................... Expected error: >" + expectedArr[i] + "< / foundIndex: " + foundIndex + " / " + Object.prototype.toString.call(''+expectedArr[i]));-->
+                    <!--echo.perform();-->
+
+                    <!-- Fail-first strategy! -->
+                    if ( foundIndex < 0 ) {
+                        <!--for (var i = 0; escapeChars.length > i; i++) {-->
+                            <!--expectedArr[i] = expectedArr[i].replace(escapeChars[i], "|"+escapeChars[i]);-->
+                        <!--}-->
+
+                        project.setProperty('test.errorCode', expectedArr[i]);
+                        project.setProperty('test.reason', "Error/warning " + expectedArr[i] + " not found in schematron output");
+                        project.setProperty('test.result', "ERROR");
+                        <!--project.setProperty('test.type', testType);-->
+                        <!--project.setProperty('validationOutput', validationOutput);-->
+                        break;
+                    }
+
+                    <!-- Error found, so remove it from foundArr -->
+                    <!--foundArr = foundArr.splice(foundIndex, 1);-->
+                    foundArr = removeFromArray(foundArr, foundIndex);
+                }
+
+                return foundArr;
+            }
+
+
+            // Test for no errors expected
+            // Expected elements should match found elements, so foundArr should be empty now!
+            findIssuesInValidFiles(foundWarnings, "WARNINGS");
+            findIssuesInValidFiles(foundErrors, "ERROR");
+
+            function findIssuesInValidFiles(foundArr, issueType) {
+                if ( foundArr.length>0 ) {
+                    echo = project.createTask("echo");
+                    echo.setMessage("..................................................... Found error: " + foundArr.length + " / type=" + issueType);
+                    echo.perform();
+
+                    var reason = foundArr.length + ' ' + issueType + '(S) not found in schematron output: ';
+                    for (i=0; foundArr.length > i; i++) {
+                        reason = reason + foundArr[i];
+                        if ( i < (foundArr.length-1) ) {
+                            reason = reason + ', ';
+                        }
+                    }
+
+                    project.setProperty('test.result', "ERROR");
+                    project.setProperty('test.errorCode', "no errors");
+                    project.setProperty('test.reason', reason);
+                    <!--project.setProperty('validationOutput', validationOutput);-->
+                }
+
                 if (errorArr.length == 0 && warningArr.length==0 && validationOutput.indexOf("failed-assert") > 0 ) {
                     project.setProperty('test.result', "ERROR");
                     project.setProperty('test.reason', "Error(s) found in " + outputType + " output, where no errors were expected");
                     project.setProperty('test.errorCode', "no errors");
-                    project.setProperty('test.type', outputType);
-                    project.setProperty('validationOutput', validationOutput);
+                    <!--project.setProperty('validationOutput', validationOutput);-->
                 }
+            }
+
+            function removeFromArray(oldArr, removePos) {
+                var newArr = [];
+                for (i=0; oldArr.length > i; i++) {
+                    if ( i != removePos ) {
+                        newArr.push(oldArr[i]);
+                    }
+                }
+                return newArr;
             }
 
         ]]></script>
@@ -341,9 +397,9 @@
             <then>
                 <echo message="##teamcity[testFailed name='${test.name}' message='${test.reason}' flowId='12321']"/>
 
-                <echo message="ERROR: Output from ${test.type} schematron validation of the file ${testFile.base} - expected ${test.errorCode}:${line.separator}"
+                <echo message="ERROR: Output from schematron validation of file ${testFile.base} - expected ${test.errorCode}:${line.separator}"
                       file="${test.output}" append="true"/>
-                <echo message="${validationOutput}${line.separator}${line.separator}" file="${test.output}" append="true"/>
+                <!--<echo message="${validationOutput}${line.separator}${line.separator}" file="${test.output}" append="true"/>-->
             </then>
         </if>
 
