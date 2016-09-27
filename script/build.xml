@@ -343,8 +343,7 @@
 
                         project.setProperty('test.result', "ERROR");
                         project.setProperty('test.errorCode', expectedArr[i]);
-                        project.setProperty('test.reason', "Error/warning " + expectedArr[i] + " not found in schematron output");
-                        <!--project.setProperty('validationOutput', validationOutput);-->
+                        project.setProperty('test.reason', "Expected error/warning [" + expectedArr[i] + "] not found in schematron output.");
                         break;
                     }
 
@@ -392,7 +391,6 @@
                     project.setProperty('test.result', "ERROR");
                     project.setProperty('test.errorCode', "no errors");
                     project.setProperty('test.reason', reason);
-                    <!--project.setProperty('validationOutput', validationOutput);-->
                 }
             }
 
