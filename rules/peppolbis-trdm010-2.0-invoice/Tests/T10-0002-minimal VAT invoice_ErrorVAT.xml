@@ -69,7 +69,7 @@
             <cbc:TaxAmount currencyID="EUR">292.1</cbc:TaxAmount>
 		<cac:TaxCategory>
 			<cbc:ID schemeID="UNCL5305">S</cbc:ID>
-			<cbc:Percent>25</cbc:Percent>
+			<!--<cbc:Percent>25</cbc:Percent>-->
 			<cac:TaxScheme>
 				<cbc:ID>VAT</cbc:ID>
 			</cac:TaxScheme>
