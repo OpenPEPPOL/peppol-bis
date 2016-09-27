@@ -152,8 +152,8 @@
         <foreach target="executeTest" param="testFile" inheritall="true">
             <path>
                 <fileset dir="${sch.dir}" casesensitive="false">
-                    <!--<include name="**/Tests/T*-*.xml"/>-->
-                    <include name="**/T01-0007-simpleWithoutPrice.xml"/>
+                    <include name="**/Tests/T*-*.xml"/>
+                    <!--<include name="**/T01-0007-simpleWithoutPrice.xml"/>-->
                     <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
             </path>
