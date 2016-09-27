@@ -153,7 +153,7 @@
             <path>
                 <fileset dir="${sch.dir}" casesensitive="false">
                     <include name="**/Tests/T*-*.xml"/>
-                    <!--<include name="**/T01-0007-simpleWithoutPrice.xml"/>-->
+                    <!--<include name="**/T14-0023-rounding-1.xml"/>-->
                     <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
             </path>
@@ -367,8 +367,8 @@
 
             // Test for no errors expected
             // Expected elements should match found elements, so foundArr should be empty now!
-            handleUnexpectedIssues(foundWarnings, "WARNINGS");
             handleUnexpectedIssues(foundErrors, "ERROR");
+            handleUnexpectedIssues(foundWarnings, "WARNINGS");
 
             function handleUnexpectedIssues(foundArr, issueType) {
                 // if error state is set, then break.
