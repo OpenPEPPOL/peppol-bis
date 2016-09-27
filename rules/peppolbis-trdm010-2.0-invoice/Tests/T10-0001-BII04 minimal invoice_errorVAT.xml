@@ -7,8 +7,9 @@
         BII2-T10-R026
 
         Warnings:
-        None
-
+        EUGEN-T10-R039
+		EUGEN-T10-R040
+		PEPPOL_CORE_R002 x 2
 -->
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
          xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -18,6 +19,7 @@
     <cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver1.0</cbc:ProfileID>
     <cbc:ID>TOSL108</cbc:ID>
     <cbc:IssueDate>2009-12-15</cbc:IssueDate>
+    <cbc:InvoiceTypeCode listID="UNCL1001">380</cbc:InvoiceTypeCode>
     <cbc:DocumentCurrencyCode listID="ISO4217" listAgencyID="6">EUR</cbc:DocumentCurrencyCode>
     <cac:AccountingSupplierParty>
         <cac:Party>
@@ -39,7 +41,7 @@
                 <cbc:CityName>Anytown</cbc:CityName>
                 <cbc:PostalZone>101</cbc:PostalZone>
                 <cac:Country>
-                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2" listAgencyID="6">NO</cbc:IdentificationCode>
+                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
                 </cac:Country>
             </cac:PostalAddress>
         </cac:Party>

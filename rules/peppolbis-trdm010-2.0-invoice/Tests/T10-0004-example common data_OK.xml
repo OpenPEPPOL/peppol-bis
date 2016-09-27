@@ -132,6 +132,7 @@
     </cac:PaymentTerms>
     <cac:AllowanceCharge>
         <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReason>Freight</cbc:AllowanceChargeReason>
         <cbc:Amount currencyID="EUR">100</cbc:Amount>
         <cac:TaxCategory>
             <cbc:ID schemeID="UNCL5305">E</cbc:ID>
@@ -143,6 +144,7 @@
     </cac:AllowanceCharge>
     <cac:AllowanceCharge>
         <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+        <cbc:AllowanceChargeReason>Freight</cbc:AllowanceChargeReason>
         <cbc:Amount currencyID="EUR">100</cbc:Amount>
         <cac:TaxCategory>
             <cbc:ID schemeID="UNCL5305">E</cbc:ID>
@@ -161,7 +163,7 @@
                 <cbc:ID schemeID="UNCL5305">S</cbc:ID>
                 <cbc:Percent>20</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+                    <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:TaxCategory>
         </cac:TaxSubtotal>
@@ -172,7 +174,7 @@
                 <cbc:ID schemeID="UNCL5305">AA</cbc:ID>
                 <cbc:Percent>10</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+                    <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:TaxCategory>
         </cac:TaxSubtotal>
@@ -184,7 +186,7 @@
                 <cbc:Percent>0</cbc:Percent>
                 <cbc:TaxExemptionReason>Exempt New Means of Transport</cbc:TaxExemptionReason>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+                    <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:TaxCategory>
         </cac:TaxSubtotal>
@@ -206,10 +208,12 @@
         <cbc:LineExtensionAmount currencyID="EUR">1273</cbc:LineExtensionAmount>
         <cac:AllowanceCharge>
             <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReason>Freight</cbc:AllowanceChargeReason>
             <cbc:Amount currencyID="EUR">12</cbc:Amount>
         </cac:AllowanceCharge>
         <cac:AllowanceCharge>
             <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+            <cbc:AllowanceChargeReason>Freight</cbc:AllowanceChargeReason>
             <cbc:Amount currencyID="EUR">10</cbc:Amount>
         </cac:AllowanceCharge>
         <cac:TaxTotal>
@@ -234,7 +238,7 @@
                 <cbc:ID>S</cbc:ID>
                 <cbc:Percent>20</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+                    <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:ClassifiedTaxCategory>
             <cac:AdditionalItemProperty>
@@ -247,6 +251,7 @@
             <cbc:BaseQuantity>1</cbc:BaseQuantity>
             <cac:AllowanceCharge>
                 <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+                <cbc:AllowanceChargeReason>Freight</cbc:AllowanceChargeReason>
                 <cbc:Amount currencyID="EUR">225</cbc:Amount>
                 <cbc:BaseAmount currencyID="EUR">1500</cbc:BaseAmount>
             </cac:AllowanceCharge>
@@ -281,7 +286,7 @@
                 <cbc:ID>AA</cbc:ID>
                 <cbc:Percent>10</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                    <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:ClassifiedTaxCategory>
         </cac:Item>
@@ -318,7 +323,7 @@
                 <cbc:ID>AA</cbc:ID>
                 <cbc:Percent>10</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+                    <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:ClassifiedTaxCategory>
         </cac:Item>
@@ -327,6 +332,7 @@
             <cbc:BaseQuantity>1</cbc:BaseQuantity>
             <cac:AllowanceCharge>
                 <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+                <cbc:AllowanceChargeReason>Freight</cbc:AllowanceChargeReason>
                 <cbc:Amount currencyID="EUR">0.275</cbc:Amount>
                 <cbc:BaseAmount currencyID="EUR">2.75</cbc:BaseAmount>
             </cac:AllowanceCharge>
@@ -360,7 +366,7 @@
                 <cbc:ID>E</cbc:ID>
                 <cbc:Percent>0</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+                    <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:ClassifiedTaxCategory>
         </cac:Item>
@@ -397,7 +403,7 @@
                 <cbc:ID>S</cbc:ID>
                 <cbc:Percent>20</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+                    <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:ClassifiedTaxCategory>
             <cac:AdditionalItemProperty>

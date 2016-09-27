@@ -7,8 +7,7 @@
 				None
 		
 				Warnings:
-				PEPPOL_CORE_R002
-				PEPPOL_CORE_R001
+				None
 
 -->
 <ubl:Invoice xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
@@ -52,7 +51,7 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyTaxScheme>
-				<cbc:CompanyID>NO995432765MVA</cbc:CompanyID>
+				<cbc:CompanyID schemeID="NO:VAT">NO995432765MVA</cbc:CompanyID>
 				<cac:TaxScheme>
 					<cbc:ID>VAT</cbc:ID>
 				</cac:TaxScheme>
@@ -60,7 +59,7 @@
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>Diners Club Norge, filial av Diners Club Nordic
 					AB</cbc:RegistrationName>
-				<cbc:CompanyID>995432765</cbc:CompanyID>
+				<cbc:CompanyID schemeID="NO:VAT">NO995432765MVA</cbc:CompanyID>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>Diners Club Norge - Corporate Support</cbc:ID>
@@ -87,17 +86,14 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyTaxScheme>
-				<cbc:CompanyID>NO000000000MVA</cbc:CompanyID>
+				<cbc:CompanyID schemeID="DK:CVR">12345678</cbc:CompanyID>
 				<cac:TaxScheme>
 					<cbc:ID>VAT</cbc:ID>
 				</cac:TaxScheme>
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>SKATTEETATEN 20100031</cbc:RegistrationName>
-				<cbc:CompanyID>000000000</cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>HAMAR</cbc:CityName>
-				</cac:RegistrationAddress>
+				<cbc:CompanyID schemeID="DK:CVR">12345678</cbc:CompanyID>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>1214VINY</cbc:ID>
@@ -239,7 +235,7 @@
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="NOK">2620.00</cbc:PriceAmount>
-			<cbc:BaseQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
 		</cac:Price>
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
@@ -282,7 +278,7 @@
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="NOK">1389.00</cbc:PriceAmount>
-			<cbc:BaseQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
 		</cac:Price>
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
@@ -325,7 +321,7 @@
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="NOK">2863.00</cbc:PriceAmount>
-			<cbc:BaseQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
 		</cac:Price>
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
@@ -368,7 +364,7 @@
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="NOK">1659.00</cbc:PriceAmount>
-			<cbc:BaseQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
 		</cac:Price>
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
@@ -411,7 +407,7 @@
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="NOK">1389.00</cbc:PriceAmount>
-			<cbc:BaseQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
 		</cac:Price>
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
@@ -454,7 +450,7 @@
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="NOK">150.00</cbc:PriceAmount>
-			<cbc:BaseQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
 		</cac:Price>
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
@@ -497,7 +493,7 @@
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="NOK">216.00</cbc:PriceAmount>
-			<cbc:BaseQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
 		</cac:Price>
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
@@ -540,7 +536,7 @@
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="NOK">1694.00</cbc:PriceAmount>
-			<cbc:BaseQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
 		</cac:Price>
 	</cac:InvoiceLine>
 </ubl:Invoice>

@@ -5,6 +5,8 @@
 
                 Errors:
 				BII2-T10-R053
+			    BII2-T10-R055
+				EUGEN-T10-R052 x 2
                 
                 Warnings:
                 EUGEN-T10-R041
@@ -50,12 +52,6 @@
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>IntegrasjonsPartner testkunde</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="NO:ORGNR">977187761</cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>Sarpsborg</cbc:CityName>
-					<cac:Country>
-						<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>David</cbc:ID>
@@ -103,7 +99,6 @@
 	<cac:Delivery>
 		<cbc:ActualDeliveryDate>2012-07-24</cbc:ActualDeliveryDate>
 		<cac:DeliveryLocation>
-			<cbc:ID schemeID="GLN">7080000081769</cbc:ID>
 			<cac:Address>
 				<cbc:StreetName>Storgata 3</cbc:StreetName>
 				<cbc:CityName>SARPSBORG</cbc:CityName>
