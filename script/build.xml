@@ -153,7 +153,7 @@
             <path>
                 <fileset dir="${sch.dir}" casesensitive="false">
                     <include name="**/Tests/T*-*.xml"/>
-                    <!--<include name="**/T01-0008-simpleWithNegativePrice.xml"/>-->
+                    <!--<include name="**/T10-0006-MultipleCurrencies_error.xml"/>-->
                     <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
             </path>
@@ -242,17 +242,17 @@
             function findErrorWarningLines(commentLineArray, headlineWord) {
                 var outputArr = [];
                 headlineFound = false;
-                for (i=0; commentLineArray.length > i; i++) {
+                for (var i=0; commentLineArray.length > i; i++) {
                     if ( commentLineArray[i]!=null && commentLineArray[i].trim().indexOf(headlineWord)==0 ) {
                         headlineFound = true;
                         continue;
                     }
                     if ( headlineFound ) {
                         commentLine = (commentLineArray[i]==null) ? null : commentLineArray[i].trim();
-                        <!--echo = project.createTask("echo");-->
-                        <!--echo.setMessage("TEST..................................................... " + commentLine);-->
-                        <!--echo.perform( );-->
                         if ( commentLine!=null && commentLine.length() > 0 && commentLine!='None' ) {
+                            <!--echo = project.createTask("echo");-->
+                            <!--echo.setMessage("TEST..................................................... " + commentLine);-->
+                            <!--echo.perform( );-->
                             lineArr = commentLineArray[i].trim().split(' ');
                             if ( lineArr.length==3 && lineArr[1]=='x' ) {
                                 var cnt = lineArr[2];
@@ -260,8 +260,8 @@
                                     outputArr.push(lineArr[0])
                                 }
                             } else {
+                                outputArr.push(lineArr[0])
                             }
-                            outputArr.push(lineArr[0])
                         } else {
                             break;
                         }
@@ -293,10 +293,10 @@
                 }
                 for (i=0; issueNumbers.length > i; i++) {
                     if ( issueTypes[i]=='warning' ) {
-                        warningArr.push(issueNumbers[i]);
+                        warningArr.push(''+issueNumbers[i]);
                     }
                     else {
-                        errorArr.push(issueNumbers[i]);
+                        errorArr.push(''+issueNumbers[i]);
                     }
                 }
             }
@@ -343,7 +343,7 @@
 
                         project.setProperty('test.result', "ERROR");
                         project.setProperty('test.errorCode', expectedArr[i]);
-                        project.setProperty('test.reason', "Expected error/warning " + expectedArr[i] + " not found in schematron output.");
+                        project.setProperty('test.reason', "Expected error/warning " + expectedArr[i] + " not found in schematron output");
                         break;
                     }
 
