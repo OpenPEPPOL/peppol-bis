@@ -152,8 +152,8 @@
         <foreach target="executeTest" param="testFile" inheritall="true">
             <path>
                 <fileset dir="${sch.dir}" casesensitive="false">
-                    <include name="**/Tests/T*-*.xml"/>
-                    <!--<include name="**/T01-0005-RoundingCorrect.xml"/>-->
+                    <!--<include name="**/Tests/T*-*.xml"/>-->
+                    <include name="**/T01-0008-simpleWithNegativePrice.xml"/>
                     <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
             </path>
@@ -413,7 +413,7 @@
             <then>
                 <echo message="##teamcity[testFailed name='${test.name}' message='${test.reason}' flowId='12321']"/>
 
-                <echo message="ERROR: Output from schematron validation of file ${testFile.base} - expected ${test.errorCode}:${line.separator}"
+                <echo message="ERROR: Output from schematron validation of file ${testFile.base} - problem: ${test.reason}:${line.separator}"
                       file="${test.output}" append="true"/>
                 <echo message="${validationOutput.BII}${line.separator}${line.separator}" file="${test.output}" append="true"/>
                 <echo message="PEPPOLCORE:${line.separator}${validationOutput.PEPPOLCORE}${line.separator}" file="${test.output}" append="true"/>
