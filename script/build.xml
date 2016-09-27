@@ -153,7 +153,7 @@
             <path>
                 <fileset dir="${sch.dir}" casesensitive="false">
                     <include name="**/Tests/T*-*.xml"/>
-                    <!--<include name="**/T10-0006-MultipleCurrencies_error.xml"/>-->
+                    <!--<include name="**/T10-0029-MissExemptReasonandVATOnLine.xml"/>-->
                     <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
             </path>
