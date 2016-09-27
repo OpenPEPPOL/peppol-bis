@@ -18,7 +18,7 @@
     <cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver1.0</cbc:ProfileID>
     <cbc:ID>TOSL108</cbc:ID>
     <cbc:IssueDate>2009-12-15</cbc:IssueDate>
-    <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha" listAgencyID="6">EUR</cbc:DocumentCurrencyCode>
+    <cbc:DocumentCurrencyCode listID="ISO4217" listAgencyID="6">EUR</cbc:DocumentCurrencyCode>
     <cac:AccountingSupplierParty>
         <cac:Party>
             <cac:PartyName>
@@ -39,7 +39,7 @@
                 <cbc:CityName>Anytown</cbc:CityName>
                 <cbc:PostalZone>101</cbc:PostalZone>
                 <cac:Country>
-                    <cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6">NO</cbc:IdentificationCode>
+                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2" listAgencyID="6">NO</cbc:IdentificationCode>
                 </cac:Country>
             </cac:PostalAddress>
         </cac:Party>
@@ -55,7 +55,7 @@
     </cac:LegalMonetaryTotal>
     <cac:InvoiceLine>
         <cbc:ID>1</cbc:ID>
-        <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
+        <cbc:InvoicedQuantity unitCode="EA" unitCodeListID = "UNECERec20">1</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="EUR">1273</cbc:LineExtensionAmount>
         <cac:Item>
             <cbc:Name>Labtop computer</cbc:Name>
@@ -66,7 +66,7 @@
     </cac:InvoiceLine>
     <cac:InvoiceLine>
         <cbc:ID>2</cbc:ID>
-        <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
+        <cbc:InvoicedQuantity unitCode="EA" unitCodeListID = "UNECERec20">1</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="EUR">-3.96</cbc:LineExtensionAmount>
         <cac:Item>
             <cbc:Name>Returned "Advanced computing" book</cbc:Name>
@@ -77,7 +77,7 @@
     </cac:InvoiceLine>
     <cac:InvoiceLine>
         <cbc:ID>3</cbc:ID>
-        <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
+        <cbc:InvoicedQuantity unitCode="EA" unitCodeListID = "UNECERec20">1</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="EUR">4.96</cbc:LineExtensionAmount>
         <cac:Item>
             <cbc:Name>Two "Computing for dummies" book</cbc:Name>
@@ -88,7 +88,7 @@
     </cac:InvoiceLine>
     <cac:InvoiceLine>
         <cbc:ID>4</cbc:ID>
-        <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
+        <cbc:InvoicedQuantity unitCode="EA" unitCodeListID = "UNECERec20">1</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="EUR">-25</cbc:LineExtensionAmount>
         <cac:Item>
             <cbc:Name>Returned IBM 5150 desktop</cbc:Name>
@@ -99,7 +99,7 @@
     </cac:InvoiceLine>
     <cac:InvoiceLine>
         <cbc:ID>5</cbc:ID>
-        <cbc:InvoicedQuantity unitCode="EA">1</cbc:InvoicedQuantity>
+        <cbc:InvoicedQuantity unitCode="EA" unitCodeListID = "UNECERec20">1</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="EUR">187.5</cbc:LineExtensionAmount>
         <cac:Item>
             <cbc:Name>250 mtr Network cable</cbc:Name>

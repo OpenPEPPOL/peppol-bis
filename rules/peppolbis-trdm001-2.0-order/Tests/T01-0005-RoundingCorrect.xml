@@ -70,7 +70,6 @@
                 </cac:Country>
             </cac:PostalAddress>
             <cac:Contact>
-                <cbc:Name></cbc:Name>
                 <cbc:Telephone>08000856309</cbc:Telephone>
                 <cbc:ElectronicMail>sgb_accounts@synthes.com</cbc:ElectronicMail>
             </cac:Contact>
