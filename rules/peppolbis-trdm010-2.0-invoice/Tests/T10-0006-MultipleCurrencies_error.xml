@@ -6,8 +6,13 @@
 
                 Errors:
 				EUGEN-T10-R026 x 2
+<<<<<<< .mine
+				EUGEN-T10-R046
+		
+=======
 				EUGEN-T10-R046
 
+>>>>>>> .r446
 				Warnings:
 				EUGEN-T10-R040
 
@@ -19,14 +24,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 UBL-Invoice-2.1.xsd">
     <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
-    <cbc:CustomizationID schemeID="PEPPOL">urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol4a:ver2.0</cbc:CustomizationID>
+    <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol4a:ver2.0</cbc:CustomizationID>
     <cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver2.0</cbc:ProfileID>
     <cbc:ID>TOSL108</cbc:ID>
     <cbc:IssueDate>2013-04-10</cbc:IssueDate>
-    <cbc:InvoiceTypeCode listID="UNCL1001" listAgencyID="6">380</cbc:InvoiceTypeCode>
-    <cbc:Note languageID="en">Contract was established through our website</cbc:Note>
-    <cbc:DocumentCurrencyCode listID="ISO4217" listAgencyID="6">DKK</cbc:DocumentCurrencyCode>
-    <cbc:TaxCurrencyCode listID="ISO4217" listAgencyID="6">SEK</cbc:TaxCurrencyCode>
+    <cbc:InvoiceTypeCode listID="UNCL1001">380</cbc:InvoiceTypeCode>
+    <cbc:Note>Contract was established through our website</cbc:Note>
+    <cbc:DocumentCurrencyCode>DKK</cbc:DocumentCurrencyCode>
+    <cbc:TaxCurrencyCode>SEK</cbc:TaxCurrencyCode>
     <cac:InvoicePeriod>
         <cbc:StartDate>2013-01-01</cbc:StartDate>
         <cbc:EndDate>2013-04-01</cbc:EndDate>
@@ -37,7 +42,7 @@
     </cac:ContractDocumentReference>
     <cac:AccountingSupplierParty>
         <cac:Party>
-            <cbc:EndpointID schemeID="GLN" schemeAgencyID="9">5790989675432</cbc:EndpointID>
+            <cbc:EndpointID schemeID="GLN">5790989675432</cbc:EndpointID>
             <cac:PartyName>
                 <cbc:Name>SubscriptionSeller.</cbc:Name>
             </cac:PartyName>
@@ -46,13 +51,13 @@
                 <cbc:CityName>Big city</cbc:CityName>
                 <cbc:PostalZone>54321</cbc:PostalZone>
                 <cac:Country>
-                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2" listAgencyID="6">DK</cbc:IdentificationCode>
+                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2">DK</cbc:IdentificationCode>
                 </cac:Country>
             </cac:PostalAddress>
             <cac:PartyTaxScheme>
                 <cbc:CompanyID schemeID="DK:SE">DK16356706</cbc:CompanyID>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:PartyTaxScheme>
             <cac:PartyLegalEntity>
@@ -65,7 +70,7 @@
     </cac:AccountingSupplierParty>
     <cac:AccountingCustomerParty>
         <cac:Party>
-            <cbc:EndpointID schemeID="GLN" schemeAgencyID="9">5790989876765</cbc:EndpointID>
+            <cbc:EndpointID schemeID="GLN">5790989876765</cbc:EndpointID>
             <cac:PartyName>
                 <cbc:Name>Buyercompany ltd</cbc:Name>
             </cac:PartyName>
@@ -74,7 +79,7 @@
                 <cbc:CityName>Anytown</cbc:CityName>
                 <cbc:PostalZone>101</cbc:PostalZone>
                 <cac:Country>
-                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2" listAgencyID="6">DK</cbc:IdentificationCode>
+                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2">DK</cbc:IdentificationCode>
                 </cac:Country>
             </cac:PostalAddress>
         </cac:Party>
@@ -93,10 +98,10 @@
         <cbc:AllowanceChargeReason>Freight charge</cbc:AllowanceChargeReason>
         <cbc:Amount currencyID="DKK">100</cbc:Amount>
         <cac:TaxCategory>
-            <cbc:ID schemeID="UNCL5305" schemeAgencyID="6">S</cbc:ID>
+            <cbc:ID schemeID="UNCL5305">S</cbc:ID>
             <cbc:Percent>25</cbc:Percent>
             <cac:TaxScheme>
-                <cbc:ID schemeID="UNCL5153" schemeAgencyID="6">VAT</cbc:ID>
+                <cbc:ID>VAT</cbc:ID>
             </cac:TaxScheme>
         </cac:TaxCategory>
     </cac:AllowanceCharge>
@@ -113,10 +118,10 @@
             <cbc:TaxableAmount currencyID="DKK">900.00</cbc:TaxableAmount>
             <cbc:TaxAmount currencyID="DKK">225.00</cbc:TaxAmount>
             <cac:TaxCategory>
-                <cbc:ID schemeID="UNCL5305" schemeAgencyID="6">S</cbc:ID>
+                <cbc:ID schemeID="UNCL5305">S</cbc:ID>
                 <cbc:Percent>25</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UNCL5153" schemeAgencyID="6">VAT</cbc:ID>
+                    <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:TaxCategory>
         </cac:TaxSubtotal>
@@ -133,13 +138,13 @@
         <cbc:InvoicedQuantity unitCode="C62" unitCodeListID="UNECERec20">1</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="DKK">800.00</cbc:LineExtensionAmount>
         <cac:Item>
-            <cbc:Description languageID="EN">Paper Subscription fee 1st quarter</cbc:Description>
+            <cbc:Description>Paper Subscription fee 1st quarter</cbc:Description>
             <cbc:Name>Paper Subscription</cbc:Name>
             <cac:ClassifiedTaxCategory>
-                <cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">S</cbc:ID>
+                <cbc:ID schemeID="UN/ECE 5305">S</cbc:ID>
                 <cbc:Percent>25</cbc:Percent>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+                    <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:ClassifiedTaxCategory>
         </cac:Item>
