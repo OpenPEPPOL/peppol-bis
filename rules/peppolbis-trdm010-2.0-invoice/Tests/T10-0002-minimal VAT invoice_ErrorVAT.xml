@@ -6,12 +6,10 @@
                 Errors:
                 BII2-T10-R030
 				BII2-T10-R045
-				EUGEN-T10-R042
                 
                 Warnings:
                	EUGEN-T10-R039
 				EUGEN-T10-R040
-				EUGEN-T10-R042
 -->
 
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
@@ -71,6 +69,7 @@
             <cbc:TaxAmount currencyID="EUR">292.1</cbc:TaxAmount>
 		<cac:TaxCategory>
 			<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+			<cbc:Percent>25</cbc:Percent>
 			<cac:TaxScheme>
 				<cbc:ID>VAT</cbc:ID>
 			</cac:TaxScheme>
