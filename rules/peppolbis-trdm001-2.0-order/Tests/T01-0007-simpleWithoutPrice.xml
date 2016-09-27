@@ -19,7 +19,6 @@
     <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns001:ver2.0:extended:urn:www.peppol.eu:bis:peppol28a:ver1.0</cbc:CustomizationID>
     <cbc:ProfileID>urn:www.cenbii.eu:profile:bii28:ver2.0</cbc:ProfileID>
     <cbc:ID>300260249</cbc:ID>
-    <cbc:CopyIndicator>false</cbc:CopyIndicator>
     <cbc:IssueDate>2015-01-08</cbc:IssueDate>
     <cbc:IssueTime>00:00:00</cbc:IssueTime>
     <!--OrderTypeCode should only be filled if a consignment order, code 227-->
@@ -60,11 +59,7 @@
         <cac:Party>
             <cac:PartyIdentification>
                 <!--Dette ser ut som et org.nr, og normalt bør man da bruke schemeID = NO:ORGNR-->
-                <cbc:ID schemeID="ZZZ">979787723</cbc:ID>
-            </cac:PartyIdentification>
-            <!--PartyIdentification skal kun oppgis en gang ihht. EHF-->
-            <cac:PartyIdentification>
-                <cbc:ID schemeID="ZZZ">20634</cbc:ID>
+                <cbc:ID schemeID="NO:ORGNR">979787723</cbc:ID>
             </cac:PartyIdentification>
             <cac:PartyName>
                 <cbc:Name>Per Strand Tromsø AS (RAMMELEV)</cbc:Name>
@@ -78,7 +73,6 @@
                 </cac:Country>
             </cac:PostalAddress>
             <cac:Contact>
-                <cbc:ID>NA</cbc:ID>
                 <cbc:Name>Oddgeir Ekerhovd</cbc:Name>
                 <cbc:ElectronicMail>per.anders.ruud@byggmakker.no</cbc:ElectronicMail>
             </cac:Contact>
@@ -117,8 +111,6 @@
         </cac:DeliveryLocation>
         <cac:RequestedDeliveryPeriod>
             <cbc:StartDate>2015-01-11</cbc:StartDate>
-            <!--StartTime er ikke definert i EHF-->
-            <cbc:StartTime>00:00:00</cbc:StartTime>
         </cac:RequestedDeliveryPeriod>
         <cac:DeliveryParty>
             <cac:PartyIdentification>
@@ -145,22 +137,13 @@
             <cbc:Quantity unitCode="MTR" unitCodeListID="UNECERec20">1</cbc:Quantity>
             <cbc:LineExtensionAmount currencyID="NOK">14.69</cbc:LineExtensionAmount>
             <cac:Delivery>
-                <cbc:Quantity unitCode="MTR" unitCodeListID="UNECERec20">1</cbc:Quantity>
                 <cac:RequestedDeliveryPeriod>
                     <cbc:EndDate>2015-01-11</cbc:EndDate>
-                    <!--EndTime er ikke en del av EHF-->
-                    <cbc:EndTime>00:00:00</cbc:EndTime>
                 </cac:RequestedDeliveryPeriod>
             </cac:Delivery>
             <cac:Item>
                 <cbc:Description>GRAN 36X098 K-VIRKE C24</cbc:Description>
-                <!--CatalogueIndicator er ikke en del av EHF-->
-                <cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
                 <cbc:Name>GRAN 36X098 K-VIRKE C24</cbc:Name>
-                <!--BuyersItemIdentification er ikke en del av EHF-->
-                <cac:BuyersItemIdentification>
-                    <cbc:ID>UN-301036</cbc:ID>
-                </cac:BuyersItemIdentification>
                 <!--Er dette riktig Identifikasjonsnummer??-->
                 <cac:SellersItemIdentification>
                     <cbc:ID>1</cbc:ID>
