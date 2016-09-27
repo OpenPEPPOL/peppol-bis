@@ -255,7 +255,7 @@
                         if ( commentLine!=null && commentLine.length() > 0 && commentLine!='None' ) {
                             lineArr = commentLineArray[i].trim().split(' ');
                             if ( lineArr.length==3 && lineArr[1]=='x' ) {
-                                var cnt = lineArr[2]
+                                var cnt = lineArr[2];
                                 for (var j=0; cnt > j; j++) {
                                     outputArr.push(lineArr[0])
                                 }
@@ -313,6 +313,11 @@
             foundWarnings = loopThroughExpectedArray(warningArr, foundWarnings, 'Warning');
 
             function loopThroughExpectedArray(expectedArr, foundArr, testType) {
+                // if error state is set, then break.
+                if ( project.getProperty('test.result')=="ERROR") {
+                    return;
+                }
+
                 <!--echo = project.createTask("echo");-->
                 <!--echo.setMessage("ErrorType=" + testType+" / expectedArr="+expectedArr.length + " / foundArr="+foundArr.length);-->
                 <!--echo.perform();-->
@@ -344,7 +349,6 @@
                     }
 
                     <!-- Error found, so remove it from foundArr -->
-                    <!--foundArr = foundArr.splice(foundIndex, 1);-->
                     foundArr = removeFromArray(foundArr, foundIndex);
 
                     <!--echo = project.createTask("echo");-->
@@ -367,6 +371,11 @@
             handleUnexpectedIssues(foundErrors, "ERROR");
 
             function handleUnexpectedIssues(foundArr, issueType) {
+                // if error state is set, then break.
+                if ( project.getProperty('test.result')=="ERROR") {
+                    return;
+                }
+
                 if ( foundArr.length>0 ) {
                     <!--echo = project.createTask("echo");-->
                     <!--echo.setMessage(".............................................. Found elements=" + foundArr.length + " / type=" + issueType);-->
