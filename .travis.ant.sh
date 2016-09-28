@@ -1,2 +1,2 @@
 cd script
-ant compile
+ant build-all
