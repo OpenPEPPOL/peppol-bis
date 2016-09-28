@@ -153,7 +153,7 @@
             <path>
                 <fileset dir="${sch.dir}" casesensitive="false">
                     <include name="**/Tests/T*-*.xml"/>
-                    <!--<include name="**/T10-0029-MissExemptReasonandVATOnLine.xml"/>-->
+                    <!--<include name="**/T10-0013*.xml"/>-->
                     <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
             </path>
@@ -223,10 +223,9 @@
                 }
                 if ( headlineFound ) {
                     if ( commentLineArray[i]!=null && commentLineArray[i].trim().length() > 0  && commentLineArray[i].trim()!='None') {
-                        <!--lineArr = commentLineArray[i].trim().split(' ');-->
-            <!--echo = project.createTask("echo");-->
-            <!--echo.setMessage("TEST..................................................... " + commentLineArray[i].trim().split(' '));-->
-            <!--echo.perform( );-->
+            //echo = project.createTask("echo");
+            //echo.setMessage("TEST..................................................... " + commentLineArray[i].trim().split(' '));
+            //echo.perform( );
                         description = description + commentLineArray[i] + "<br>"
                     } else {
                         break;
@@ -250,9 +249,9 @@
                     if ( headlineFound ) {
                         commentLine = (commentLineArray[i]==null) ? null : commentLineArray[i].trim();
                         if ( commentLine!=null && commentLine.length() > 0 && commentLine!='None' ) {
-                            <!--echo = project.createTask("echo");-->
-                            <!--echo.setMessage("TEST..................................................... " + commentLine);-->
-                            <!--echo.perform( );-->
+                            //echo = project.createTask("echo");
+                            //echo.setMessage("TEST..................................................... " + commentLine);
+                            //echo.perform( );
                             lineArr = commentLineArray[i].trim().split(' ');
                             if ( lineArr.length==3 && lineArr[1]=='x' ) {
                                 var cnt = lineArr[2];
@@ -318,46 +317,33 @@
                     return;
                 }
 
-                <!--echo = project.createTask("echo");-->
-                <!--echo.setMessage("ErrorType=" + testType+" / expectedArr="+expectedArr.length + " / foundArr="+foundArr.length);-->
-                <!--echo.perform();-->
-                <!--for (i=0; foundArr.length > i; i++) {-->
-                    <!--echo = project.createTask("echo");-->
-                    <!--echo.setMessage("Found "+testType + " " + i + ": " + foundArr[i]);-->
-                    <!--echo.perform();-->
-                <!--}-->
+                //echo = project.createTask("echo");
+                //echo.setMessage("ErrorType=" + testType+" / expectedArr="+expectedArr.length + " / foundArr="+foundArr.length);
+                //echo.perform();
+                //for (i=0; foundArr.length > i; i++) {
+                //    echo = project.createTask("echo");
+                //    echo.setMessage("Found "+testType + " " + i + ": " + foundArr[i]);
+                //    echo.perform();
+                //}
 
                 for (i=0; expectedArr.length > i; i++) {
-                    <!-- expectedArr[i] is not of typr String, so force it to be! -->
+                    // expectedArr[i] is not of type String, so force it to be!
                     foundIndex = foundArr.indexOf(''+expectedArr[i]);
 
-                    <!--echo = project.createTask("echo");-->
-                    <!--echo.setMessage(".............................................. Expected "+testType +" ["+i+"]: >" + expectedArr[i] + "< / foundIndex: " + foundIndex + " / " + Object.prototype.toString.call(''+expectedArr[i]));-->
-                    <!--echo.perform();-->
+                    //echo = project.createTask("echo");
+                    //echo.setMessage(".............................................. Expected "+testType +" ["+i+"]: >" + expectedArr[i] + "< / foundIndex: " + foundIndex + " / " + Object.prototype.toString.call(''+expectedArr[i]));
+                    //echo.perform();
 
-                    <!-- Fail-first strategy! -->
+                    // Fail-first strategy!
                     if ( foundIndex < 0 ) {
-                        <!--for (var i = 0; escapeChars.length > i; i++) {-->
-                            <!--expectedArr[i] = expectedArr[i].replace(escapeChars[i], "|"+escapeChars[i]);-->
-                        <!--}-->
-
                         project.setProperty('test.result', "ERROR");
                         project.setProperty('test.errorCode', expectedArr[i]);
                         project.setProperty('test.reason', "Expected error/warning " + expectedArr[i] + " not found in schematron output");
                         break;
                     }
 
-                    <!-- Error found, so remove it from foundArr -->
+                    // Error found, so remove it from foundArr.
                     foundArr = removeFromArray(foundArr, foundIndex);
-
-                    <!--echo = project.createTask("echo");-->
-                    <!--echo.setMessage("ErrorType=" + testType+" / expectedArr="+expectedArr.length + " / foundArr="+foundArr.length);-->
-                    <!--echo.perform();-->
-                    <!--for (var j=0; foundArr.length > j; j++) {-->
-                        <!--echo = project.createTask("echo");-->
-                        <!--echo.setMessage("Found "+testType + " " + j + ": " + foundArr[j]);-->
-                        <!--echo.perform();-->
-                    <!--}-->
                 }
 
                 return foundArr;
@@ -376,9 +362,9 @@
                 }
 
                 if ( foundArr.length>0 ) {
-                    <!--echo = project.createTask("echo");-->
-                    <!--echo.setMessage(".............................................. Found elements=" + foundArr.length + " / type=" + issueType);-->
-                    <!--echo.perform();-->
+                    //echo = project.createTask("echo");
+                    //echo.setMessage(".............................................. Found elements=" + foundArr.length + " / type=" + issueType);
+                    //echo.perform();
 
                     var reason = foundArr.length + ' ' + issueType + '(S) found in schematron output (not defined in test-file): ';
                     for (i=0; foundArr.length > i; i++) {
