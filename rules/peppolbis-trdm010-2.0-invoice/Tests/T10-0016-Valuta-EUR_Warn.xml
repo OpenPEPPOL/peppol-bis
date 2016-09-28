@@ -49,13 +49,7 @@
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>Leverendøren ASA</cbc:RegistrationName>
-				<cbc:CompanyID schemeID="NO:ORGNR" schemeName="Foretaksregisteret">123456789</cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>Oslo</cbc:CityName>
-					<cac:Country>
-						<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:RegistrationAddress>
+				<cbc:CompanyID schemeID="NO:ORGNR">123456789</cbc:CompanyID>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>Vår ref.</cbc:ID>

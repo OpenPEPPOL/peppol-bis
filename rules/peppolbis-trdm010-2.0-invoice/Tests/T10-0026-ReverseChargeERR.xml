@@ -7,7 +7,8 @@
                 Errors:
                 BII2-T10-R047
                 BII2-T10-R048
-				BII2-T10-R045 x 2 
+				BII2-T10-R045 x 2
+				BII2-T10-R049
 
                 Warnings:
                 None
@@ -18,41 +19,77 @@
 	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver1.0</cbc:ProfileID>
 	<cbc:ID>TOSL108</cbc:ID>
 	<cbc:IssueDate>2009-12-15</cbc:IssueDate>
-	<cbc:DocumentCurrencyCode listID="ISO 4217 Alpha" listAgencyID="6">EUR</cbc:DocumentCurrencyCode>
-	<cac:AccountingSupplierParty>
+	<cbc:InvoiceTypeCode listID="UNCL1001">380</cbc:InvoiceTypeCode>
+	<cbc:DocumentCurrencyCode listID="ISO4217">EUR</cbc:DocumentCurrencyCode>
+<cac:AccountingSupplierParty>
 		<cac:Party>
+			<cbc:EndpointID schemeID="NO:ORGNR">123456789</cbc:EndpointID>
 			<cac:PartyName>
-				<cbc:Name>Salescompany ltd.</cbc:Name>
+				<cbc:Name>Leverendøren ASA</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
-				<cbc:StreetName>Main street</cbc:StreetName>
-				<cbc:CityName>Big city</cbc:CityName>
-				<cbc:PostalZone>54321</cbc:PostalZone>
+				<cbc:StreetName>Postboks 123</cbc:StreetName>
+				<cbc:CityName>Oslo</cbc:CityName>
+				<cbc:PostalZone>0203</cbc:PostalZone>
 				<cac:Country>
-					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6">DK</cbc:IdentificationCode>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyTaxScheme>
-				<cbc:CompanyID>12345</cbc:CompanyID>
+				<cbc:CompanyID schemeID="NO:VAT">123456789MVA</cbc:CompanyID>
 				<cac:TaxScheme>
 					<cbc:ID>VAT</cbc:ID>
 				</cac:TaxScheme>
 			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Leverendøren ASA</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="NO:ORGNR">123456789</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:ID>Vår ref.</cbc:ID>
+				<cbc:Name>Hans Hansen</cbc:Name>
+				<cbc:Telephone>81509990</cbc:Telephone>
+			</cac:Contact>
 		</cac:Party>
 	</cac:AccountingSupplierParty>
 	<cac:AccountingCustomerParty>
 		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="ZZZ">26987762</cbc:ID>
+			</cac:PartyIdentification>
 			<cac:PartyName>
-				<cbc:Name>Buyercompany ltd</cbc:Name>
+				<cbc:Name>Kunden AS</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
-				<cbc:StreetName>Anystreet</cbc:StreetName>
-				<cbc:CityName>Anytown</cbc:CityName>
-				<cbc:PostalZone>101</cbc:PostalZone>
+				<cbc:StreetName>Strandgt. 14</cbc:StreetName>
+				<cbc:CityName>Bergen</cbc:CityName>
+				<cbc:PostalZone>5000</cbc:PostalZone>
 				<cac:Country>
-					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6">BE</cbc:IdentificationCode>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID schemeID="NO:VAT">987654321MVA</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Kunden AS</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="NO:ORGNR">987654321</cbc:CompanyID>
+				<cac:RegistrationAddress>
+					<cbc:CityName>Mainplace</cbc:CityName>
+					<cac:Country>
+						<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:ID>3150Kun</cbc:ID>
+				<cbc:Name>Ola Nordmann</cbc:Name>
+				<cbc:Telephone>81509990</cbc:Telephone>
+				<cbc:ElectronicMail>support@kunden.no</cbc:ElectronicMail>
+			</cac:Contact>
 		</cac:Party>
 	</cac:AccountingCustomerParty>
 	<cac:TaxTotal>
@@ -61,9 +98,9 @@
 			<cbc:TaxableAmount currencyID="EUR">1249</cbc:TaxableAmount>
 			<cbc:TaxAmount currencyID="EUR">0</cbc:TaxAmount>
 			<cac:TaxCategory>
-				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">AE</cbc:ID>
+				<cbc:ID schemeID="UN/ECE 5305">AE</cbc:ID>
 				<cac:TaxScheme>
-					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+					<cbc:ID>VAT</cbc:ID>
 				</cac:TaxScheme>
 			</cac:TaxCategory>
 		</cac:TaxSubtotal>
@@ -71,10 +108,10 @@
 			<cbc:TaxableAmount currencyID="EUR">187.5</cbc:TaxableAmount>
 			<cbc:TaxAmount currencyID="EUR">0</cbc:TaxAmount>
 			<cac:TaxCategory>
-				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
+				<cbc:ID schemeID="UN/ECE 5305">E</cbc:ID>
 				<cbc:Percent>0</cbc:Percent>
 				<cac:TaxScheme>
-					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+					<cbc:ID>VAT</cbc:ID>
 				</cac:TaxScheme>
 			</cac:TaxCategory>
 		</cac:TaxSubtotal>
@@ -88,15 +125,15 @@
 	</cac:LegalMonetaryTotal>
 	<cac:InvoiceLine>
 		<cbc:ID>1</cbc:ID>
-		<cbc:InvoicedQuantity unitCode="C62">1</cbc:InvoicedQuantity>
+		<cbc:InvoicedQuantity unitCode="C62" unitCodeListID="UNECERec20">1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">1273</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>Labtop computer</cbc:Name>
 			<ClassifiedTaxCategory xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
-				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">AE</cbc:ID>
+				<cbc:ID schemeID="UN/ECE 5305">AE</cbc:ID>
 				<cbc:Percent>0</cbc:Percent>
 				<cac:TaxScheme>
-					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+					<cbc:ID>VAT</cbc:ID>
 				</cac:TaxScheme>
 			</ClassifiedTaxCategory>
 		</cac:Item>
@@ -106,15 +143,15 @@
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
 		<cbc:ID>2</cbc:ID>
-		<cbc:InvoicedQuantity unitCode="C62">-1</cbc:InvoicedQuantity>
+		<cbc:InvoicedQuantity unitCode="C62" unitCodeListID="UNECERec20">-1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">-3.96</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>Returned "Advanced computing" book</cbc:Name>
 			<ClassifiedTaxCategory xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
-				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">AE</cbc:ID>
+				<cbc:ID schemeID="UN/ECE 5305">AE</cbc:ID>
 				<cbc:Percent>0</cbc:Percent>
 				<cac:TaxScheme>
-					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+					<cbc:ID>VAT</cbc:ID>
 				</cac:TaxScheme>
 			</ClassifiedTaxCategory>
 		</cac:Item>
@@ -124,15 +161,15 @@
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
 		<cbc:ID>3</cbc:ID>
-		<cbc:InvoicedQuantity unitCode="C62">2</cbc:InvoicedQuantity>
+		<cbc:InvoicedQuantity unitCode="C62" unitCodeListID="UNECERec20">2</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">4.96</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>Two "Computing for dummies" book</cbc:Name>
 			<ClassifiedTaxCategory xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
-				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">AE</cbc:ID>
+				<cbc:ID schemeID="UN/ECE 5305">AE</cbc:ID>
 				<cbc:Percent>0</cbc:Percent>
 				<cac:TaxScheme>
-					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+					<cbc:ID>VAT</cbc:ID>
 				</cac:TaxScheme>
 			</ClassifiedTaxCategory>
 		</cac:Item>
@@ -142,7 +179,7 @@
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
 		<cbc:ID>4</cbc:ID>
-		<cbc:InvoicedQuantity unitCode="C62">-1</cbc:InvoicedQuantity>
+		<cbc:InvoicedQuantity unitCode="C62" unitCodeListID="UNECERec20">-1</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">-25</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>Returned IBM 5150 desktop</cbc:Name>
@@ -160,15 +197,15 @@
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
 		<cbc:ID>5</cbc:ID>
-		<cbc:InvoicedQuantity unitCode="MTR">250</cbc:InvoicedQuantity>
+		<cbc:InvoicedQuantity unitCode="MTR" unitCodeListID="UNECERec20">250</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="EUR">187.5</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>250 mtr Network cable</cbc:Name>
 			<ClassifiedTaxCategory xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
-				<cbc:ID schemeID="UN/ECE 5305" schemeAgencyID="6">E</cbc:ID>
+				<cbc:ID schemeID="UN/ECE 5305">E</cbc:ID>
 				<cbc:Percent>0</cbc:Percent>
 				<cac:TaxScheme>
-					<cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">VAT</cbc:ID>
+					<cbc:ID>VAT</cbc:ID>
 				</cac:TaxScheme>
 			</ClassifiedTaxCategory>
 		</cac:Item>
