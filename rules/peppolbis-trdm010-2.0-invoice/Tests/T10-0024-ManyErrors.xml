@@ -6,8 +6,8 @@
                 Errors:
                 BII2-T10-R030
 				BII2-T10-R045
-				BII2-T10-R018 x 5
-				BII2-T10-R019 x 5
+				BII2-T10-R018
+				BII2-T10-R019
 				EUGEN-T10-R008 x 3
 
 				Warnings:
@@ -106,7 +106,7 @@
 	</cac:LegalMonetaryTotal>
 	<cac:InvoiceLine>
 		<cbc:ID>1</cbc:ID>
-		<cbc:InvoicedQuantity unitCode="NAR" unitCodeListID="UNECERec20">1</cbc:InvoicedQuantity>
+		<!--<cbc:InvoicedQuantity unitCode="NAR" unitCodeListID="UNECERec20">1</cbc:InvoicedQuantity>-->
 		<cbc:LineExtensionAmount currencyID="EUR">1273</cbc:LineExtensionAmount>
 		<cac:Item>
 			<cbc:Name>Labtop computer</cbc:Name>
@@ -135,7 +135,7 @@
 			</ClassifiedTaxCategory>
 		</cac:Item>
 		<cac:Price>
-			<cbc:PriceAmount currencyID="EUR">-3.96</cbc:PriceAmount>
+			<cbc:PriceAmount currencyID="EUR">3.96</cbc:PriceAmount>
 		</cac:Price>
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
@@ -169,7 +169,7 @@
 			</ClassifiedTaxCategory>
 		</cac:Item>
 		<cac:Price>
-			<cbc:PriceAmount currencyID="EUR">-25</cbc:PriceAmount>
+			<cbc:PriceAmount currencyID="EUR">25</cbc:PriceAmount>
 		</cac:Price>
 	</cac:InvoiceLine>
 	<cac:InvoiceLine>
