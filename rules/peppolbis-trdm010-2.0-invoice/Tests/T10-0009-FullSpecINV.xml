@@ -931,7 +931,7 @@ SVMgZG9jdW1lbnQgKioq</cbc:EmbeddedDocumentBinaryObject>
 
 			<cbc:PriceAmount currencyID="SEK">175.00</cbc:PriceAmount>
 
-			<cbc:BaseQuantity unitCode="NAR" unitCodeListID="UNECERec20">1</cbc:BaseQuantity>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
 
 			<cac:AllowanceCharge>
 
@@ -1001,7 +1001,7 @@ SVMgZG9jdW1lbnQgKioq</cbc:EmbeddedDocumentBinaryObject>
 
 		<cbc:ID>30</cbc:ID>
 
-		<cbc:InvoicedQuantity unitCode="NAR" unitCodeListID="UNECERec20">24</cbc:InvoicedQuantity>
+		<cbc:InvoicedQuantity unitCode="NAR">24</cbc:InvoicedQuantity>
 
 		<cbc:LineExtensionAmount currencyID="SEK">9450</cbc:LineExtensionAmount>
 

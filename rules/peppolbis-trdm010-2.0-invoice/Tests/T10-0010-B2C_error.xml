@@ -53,7 +53,7 @@
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>Kraftleverandøren ASA</cbc:RegistrationName>
-				<cbc:CompanyID schemeID="NO:ORGNR" schemeName="Foretaksregisteret">123456789</cbc:CompanyID>
+				<cbc:CompanyID schemeID="NO:ORGNR">123456789</cbc:CompanyID>
 				<cac:RegistrationAddress>
 					<cbc:CityName>Oslo</cbc:CityName>
 					<cac:Country>

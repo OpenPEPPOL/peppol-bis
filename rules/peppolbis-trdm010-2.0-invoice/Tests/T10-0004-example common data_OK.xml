@@ -239,7 +239,6 @@
             <cbc:BaseQuantity>1</cbc:BaseQuantity>
             <cac:AllowanceCharge>
                 <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-                <cbc:AllowanceChargeReason>Freight</cbc:AllowanceChargeReason>
                 <cbc:Amount currencyID="EUR">225</cbc:Amount>
                 <cbc:BaseAmount currencyID="EUR">1500</cbc:BaseAmount>
             </cac:AllowanceCharge>
@@ -320,7 +319,6 @@
             <cbc:BaseQuantity>1</cbc:BaseQuantity>
             <cac:AllowanceCharge>
                 <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-                <cbc:AllowanceChargeReason>Freight</cbc:AllowanceChargeReason>
                 <cbc:Amount currencyID="EUR">0.275</cbc:Amount>
                 <cbc:BaseAmount currencyID="EUR">2.75</cbc:BaseAmount>
             </cac:AllowanceCharge>

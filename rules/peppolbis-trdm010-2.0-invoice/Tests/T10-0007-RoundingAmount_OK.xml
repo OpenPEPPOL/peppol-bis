@@ -50,7 +50,7 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyTaxScheme>
-				<cbc:CompanyID schemeID="DK:CVR">995432765</cbc:CompanyID>
+				<cbc:CompanyID schemeID="DK:CVR">NO995432765</cbc:CompanyID>
 				<cac:TaxScheme>
 					<cbc:ID>VAT</cbc:ID>
 				</cac:TaxScheme>
