@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
        			Description:
-                This file contains a Bii invoice, profile 4. The Intention is to control that a BII invoice with min VAT details does NOT produce errors or warnings.
+                This file contains a BII invoice, profile 4. The Intention is to control that a BII invoice with min VAT details does NOT produce errors or warnings.
 
                 Errors:
                 BII2-T10-R030
@@ -14,8 +14,7 @@
 
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
          xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 UBL-Invoice-2.0.xsd">
+         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
     <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
     <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biicoretrdm010:ver1.0</cbc:CustomizationID>
     <cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver1.0</cbc:ProfileID>
@@ -67,13 +66,13 @@
         <cac:TaxSubtotal>
             <cbc:TaxableAmount currencyID="EUR">1460.5</cbc:TaxableAmount>
             <cbc:TaxAmount currencyID="EUR">292.1</cbc:TaxAmount>
-		<cac:TaxCategory>
-			<cbc:ID schemeID="UNCL5305">S</cbc:ID>
-			<!--<cbc:Percent>25</cbc:Percent>-->
-			<cac:TaxScheme>
-				<cbc:ID>VAT</cbc:ID>
-			</cac:TaxScheme>
-		</cac:TaxCategory>
+            <cac:TaxCategory>
+                <cbc:ID schemeID="UNCL5305">S</cbc:ID>
+                <!--<cbc:Percent>25</cbc:Percent>-->
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
         </cac:TaxSubtotal>
         <cac:TaxSubtotal>
             <cbc:TaxableAmount currencyID="EUR">1</cbc:TaxableAmount>
@@ -89,13 +88,13 @@
         <cac:TaxSubtotal>
             <cbc:TaxableAmount currencyID="EUR">-25</cbc:TaxableAmount>
             <cbc:TaxAmount currencyID="EUR">0</cbc:TaxAmount>
-		<cac:TaxCategory>
-			<cbc:ID schemeID="UNCL5305">E</cbc:ID>
-			<cbc:Percent>0</cbc:Percent>
-			<cac:TaxScheme>
-				<cbc:ID>VAT</cbc:ID>
-			</cac:TaxScheme>
-		</cac:TaxCategory>
+            <cac:TaxCategory>
+                <cbc:ID schemeID="UNCL5305">E</cbc:ID>
+                <cbc:Percent>0</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
         </cac:TaxSubtotal>
     </cac:TaxTotal>
     <cac:LegalMonetaryTotal>
@@ -107,7 +106,7 @@
     </cac:LegalMonetaryTotal>
     <cac:InvoiceLine>
         <cbc:ID>1</cbc:ID>
-        <cbc:InvoicedQuantity unitCode="EA" unitCodeListID = "UNECERec20">1</cbc:InvoicedQuantity>
+        <cbc:InvoicedQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="EUR">1273</cbc:LineExtensionAmount>
         <cac:Item>
             <cbc:Name>Labtop computer</cbc:Name>
@@ -125,7 +124,7 @@
     </cac:InvoiceLine>
     <cac:InvoiceLine>
         <cbc:ID>2</cbc:ID>
-        <cbc:InvoicedQuantity unitCode="EA" unitCodeListID = "UNECERec20">1</cbc:InvoicedQuantity>
+        <cbc:InvoicedQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="EUR">-3.96</cbc:LineExtensionAmount>
         <cac:Item>
             <cbc:Name>Returned "Advanced computing" book</cbc:Name>
@@ -143,7 +142,7 @@
     </cac:InvoiceLine>
     <cac:InvoiceLine>
         <cbc:ID>3</cbc:ID>
-       <cbc:InvoicedQuantity unitCode="EA" unitCodeListID = "UNECERec20">1</cbc:InvoicedQuantity>
+        <cbc:InvoicedQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="EUR">4.96</cbc:LineExtensionAmount>
         <cac:Item>
             <cbc:Name>Two "Computing for dummies" book</cbc:Name>
@@ -161,7 +160,7 @@
     </cac:InvoiceLine>
     <cac:InvoiceLine>
         <cbc:ID>4</cbc:ID>
-        <cbc:InvoicedQuantity unitCode="EA" unitCodeListID = "UNECERec20">1</cbc:InvoicedQuantity>
+        <cbc:InvoicedQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="EUR">-25</cbc:LineExtensionAmount>
         <cac:Item>
             <cbc:Name>Returned IBM 5150 desktop</cbc:Name>
@@ -179,13 +178,13 @@
     </cac:InvoiceLine>
     <cac:InvoiceLine>
         <cbc:ID>5</cbc:ID>
-        <cbc:InvoicedQuantity unitCode="EA" unitCodeListID = "UNECERec20">1</cbc:InvoicedQuantity>
+        <cbc:InvoicedQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="EUR">187.5</cbc:LineExtensionAmount>
         <cac:Item>
             <cbc:Name>250 mtr Network cable</cbc:Name>
             <ClassifiedTaxCategory xmlns="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
                 <cbc:ID schemeID="UNCL5305">S</cbc:ID>
-                 <cbc:Percent>25</cbc:Percent>
+                <cbc:Percent>25</cbc:Percent>
                 <cac:TaxScheme>
                     <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
