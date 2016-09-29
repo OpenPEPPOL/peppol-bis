@@ -8,6 +8,7 @@
                 
                 Warnings:
                 EUGEN-T19-R054
+				PEPPOL_CORE_R002
 				
 -->
 <Catalogue xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-2"
