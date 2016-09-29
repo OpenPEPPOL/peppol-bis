@@ -91,10 +91,10 @@
                 <cbc:RegistrationName>The Sellercompany ASA</cbc:RegistrationName>
                 <cbc:CompanyID schemeID="GLN">1238764941386</cbc:CompanyID>
                 <!--<cac:RegistrationAddress>-->
-                    <!--<cbc:CityName>Big city</cbc:CityName>-->
-                    <!--<cac:Country>-->
-                        <!--<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NL</cbc:IdentificationCode>-->
-                    <!--</cac:Country>-->
+                <!--<cbc:CityName>Big city</cbc:CityName>-->
+                <!--<cac:Country>-->
+                <!--<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NL</cbc:IdentificationCode>-->
+                <!--</cac:Country>-->
                 <!--</cac:RegistrationAddress>-->
             </cac:PartyLegalEntity>
             <cac:Contact>
@@ -135,10 +135,10 @@
                 <cbc:RegistrationName>Buyercompany ASA</cbc:RegistrationName>
                 <cbc:CompanyID schemeID="NO:ORGNR">987654321</cbc:CompanyID>
                 <!--<cac:RegistrationAddress>-->
-                    <!--<cbc:CityName>Mainplace</cbc:CityName>-->
-                    <!--<cac:Country>-->
-                        <!--<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>-->
-                    <!--</cac:Country>-->
+                <!--<cbc:CityName>Mainplace</cbc:CityName>-->
+                <!--<cac:Country>-->
+                <!--<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>-->
+                <!--</cac:Country>-->
                 <!--</cac:RegistrationAddress>-->
             </cac:PartyLegalEntity>
             <cac:Contact>
@@ -179,7 +179,7 @@
         </cac:DeliveryLocation>
     </cac:Delivery>
     <cac:PaymentMeans>
-        <cbc:PaymentMeansCode listID="UNCL4461">98</cbc:PaymentMeansCode>
+        <cbc:PaymentMeansCode listID="UNCL4461">97</cbc:PaymentMeansCode>
         <cbc:PaymentDueDate>2013-07-20</cbc:PaymentDueDate>
         <cbc:PaymentID>0003434323213231</cbc:PaymentID>
         <cac:PayeeFinancialAccount>
@@ -204,7 +204,7 @@
         <cbc:AllowanceChargeReason>Freight</cbc:AllowanceChargeReason>
         <cbc:Amount currencyID="NOK">100</cbc:Amount>
         <cac:TaxCategory>
-            <cbc:ID schemeID="UNCL5305">S</cbc:ID>
+            <cbc:ID schemeID="UNCL5305">E</cbc:ID>
             <cbc:Percent>25</cbc:Percent>
             <cac:TaxScheme>
                 <cbc:ID>VAT</cbc:ID>
@@ -217,8 +217,8 @@
         <cbc:AllowanceChargeReason>Promotion discount</cbc:AllowanceChargeReason>
         <cbc:Amount currencyID="NOK">100</cbc:Amount>
         <cac:TaxCategory>
-            <cbc:ID schemeID="UNCL5305">P</cbc:ID>
-            <cbc:Percent>25</cbc:Percent>
+            <cbc:ID schemeID="UNCL5305">E</cbc:ID>
+            <cbc:Percent>0</cbc:Percent>
             <cac:TaxScheme>
                 <cbc:ID>VAT</cbc:ID>
             </cac:TaxScheme>
@@ -358,12 +358,12 @@
                 <cbc:Value>Black</cbc:Value>
             </cac:AdditionalItemProperty>
             <!--<cac:ManufacturerParty>-->
-                <!--<cac:PartyName>-->
-                    <!--<cbc:Name>Company name ASA</cbc:Name>-->
-                <!--</cac:PartyName>-->
-                <!--<cac:PartyLegalEntity>-->
-                    <!--<cbc:CompanyID schemeID="NO:ORGNR">904312347</cbc:CompanyID>-->
-                <!--</cac:PartyLegalEntity>-->
+            <!--<cac:PartyName>-->
+            <!--<cbc:Name>Company name ASA</cbc:Name>-->
+            <!--</cac:PartyName>-->
+            <!--<cac:PartyLegalEntity>-->
+            <!--<cbc:CompanyID schemeID="NO:ORGNR">904312347</cbc:CompanyID>-->
+            <!--</cac:PartyLegalEntity>-->
             <!--</cac:ManufacturerParty>-->
         </cac:Item>
         <cac:Price>
