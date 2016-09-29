@@ -82,10 +82,10 @@
     </cac:Party>
   </cac:AccountingCustomerParty>
   <cac:TaxTotal>
-    <cbc:TaxAmount currencyID="NOK">511752.180000</cbc:TaxAmount>
+    <cbc:TaxAmount currencyID="NOK">511752.18</cbc:TaxAmount>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="NOK">2047008.730000</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="NOK">511752.180000</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="NOK">2047008.73</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="NOK">511752.18</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UNCL5305">S</cbc:ID>
         <cbc:Percent>25.0000</cbc:Percent>
@@ -95,8 +95,8 @@
       </cac:TaxCategory>
     </cac:TaxSubtotal>
     <cac:TaxSubtotal>
-      <cbc:TaxableAmount currencyID="NOK">798392.650000</cbc:TaxableAmount>
-      <cbc:TaxAmount currencyID="NOK">0.000000</cbc:TaxAmount>
+      <cbc:TaxableAmount currencyID="NOK">798392.65</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
       <cac:TaxCategory>
         <cbc:ID schemeID="UNCL5305">S</cbc:ID>
         <cbc:Percent>0.0000</cbc:Percent>
@@ -107,10 +107,10 @@
     </cac:TaxSubtotal>
   </cac:TaxTotal>
   <cac:LegalMonetaryTotal>
-    <cbc:LineExtensionAmount currencyID="NOK">2845401.380000</cbc:LineExtensionAmount>
-    <cbc:TaxExclusiveAmount currencyID="NOK">2845401.380000</cbc:TaxExclusiveAmount>
-    <cbc:TaxInclusiveAmount currencyID="NOK">3357153.560000</cbc:TaxInclusiveAmount>
-    <cbc:PayableAmount currencyID="NOK">3357153.560000</cbc:PayableAmount>
+    <cbc:LineExtensionAmount currencyID="NOK">2845401.38</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="NOK">2845401.38</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="NOK">3357153.56</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="NOK">3357153.56</cbc:PayableAmount>
   </cac:LegalMonetaryTotal>
   <cac:CreditNoteLine>
     <cbc:ID>1</cbc:ID>

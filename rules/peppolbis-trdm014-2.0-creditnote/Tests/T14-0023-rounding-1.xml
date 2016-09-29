@@ -8,6 +8,7 @@
                 
                 Warnings:
                 EUGEN-T14-R041
+				PEPPOL_CORE_R002 x 2
 -->
 <CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
@@ -101,7 +102,7 @@
 	<cac:AllowanceCharge>
   	<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
  	<cbc:AllowanceChargeReason>2.35% Totalrabatt</cbc:AllowanceChargeReason>
-  	<cbc:Amount currencyID="NOK">89.774465</cbc:Amount>
+  	<cbc:Amount currencyID="NOK">89.77</cbc:Amount>
   	<cac:TaxCategory>
 		<cbc:ID schemeID="UNCL5305">S</cbc:ID>
 				<cbc:Percent>25</cbc:Percent>
@@ -113,7 +114,7 @@
 <cac:AllowanceCharge>
   	<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
  	<cbc:AllowanceChargeReason>Frakt</cbc:AllowanceChargeReason>
-  	<cbc:Amount currencyID="NOK">100.345</cbc:Amount>
+  	<cbc:Amount currencyID="NOK">100.35</cbc:Amount>
   	<cac:TaxCategory>
 		<cbc:ID schemeID="UNCL5305">S</cbc:ID>
 				<cbc:Percent>25</cbc:Percent>
