@@ -2,15 +2,18 @@
 <!--
        			Description:
                 This file contains a BII invoice, profile 4. The Intention is to control that a BII invoice with min VAT details does NOT produce errors or warnings.
+                TaxTotal/TaxSubtotal/TaxCategory/Percent elements is missing.
+
 
                 Errors:
                 BII2-T10-R030
 				BII2-T10-R045
-                EUGEN-T10-R042
+				EUGEN-T10-R008 x 3
 
                 Warnings:
                	EUGEN-T10-R039
 				EUGEN-T10-R040
+				PEPPOL_CORE_R001 x 3
 -->
 
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
@@ -67,20 +70,20 @@
         <cac:TaxSubtotal>
             <cbc:TaxableAmount currencyID="EUR">1460.5</cbc:TaxableAmount>
             <cbc:TaxAmount currencyID="EUR">292.1</cbc:TaxAmount>
-			<cac:TaxCategory>
-			<cbc:ID schemeID="UNCL5305">S</cbc:ID>
-			<!--<cbc:Percent>25</cbc:Percent>-->
-			<cac:TaxScheme>
-				<cbc:ID>VAT</cbc:ID>
-			</cac:TaxScheme>
-			</cac:TaxCategory>
+            <cac:TaxCategory>
+                <cbc:ID schemeID="UNCL5305">S</cbc:ID>
+                <!--<cbc:Percent>0</cbc:Percent>-->
+                <cac:TaxScheme>
+                    <cbc:ID>VAT</cbc:ID>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
         </cac:TaxSubtotal>
         <cac:TaxSubtotal>
             <cbc:TaxableAmount currencyID="EUR">1</cbc:TaxableAmount>
             <cbc:TaxAmount currencyID="EUR">0.1</cbc:TaxAmount>
             <cac:TaxCategory>
                 <cbc:ID schemeID="UNCL5305">AA</cbc:ID>
-                <cbc:Percent>0</cbc:Percent>
+                <!--<cbc:Percent>0</cbc:Percent>-->
                 <cac:TaxScheme>
                     <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
@@ -91,7 +94,7 @@
             <cbc:TaxAmount currencyID="EUR">0</cbc:TaxAmount>
             <cac:TaxCategory>
                 <cbc:ID schemeID="UNCL5305">E</cbc:ID>
-                <cbc:Percent>0</cbc:Percent>
+                <!--<cbc:Percent>0</cbc:Percent>-->
                 <cac:TaxScheme>
                     <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>

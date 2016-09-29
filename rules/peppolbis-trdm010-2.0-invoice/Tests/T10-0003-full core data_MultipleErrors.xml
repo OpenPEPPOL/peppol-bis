@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 				Description:
-                This file contains a BII Invoice profile 4. The intention of this test is to control that a full core Invoice is validated correctly
+                This file contains a BII Invoice profile 4. The intention of this test is to control that a full core Invoice is validated correctly.
+                Bad test... should test something more specific!
 
                 Errors:
-				EUGEN-T10-R025
-				EUGEN-T10-R026
-				EUGEN-T10-R027 x 2
+				EUGEN-T10-R027
 				EUGEN-T10-R028
 				EUGEN-T10-R031
 				EUGEN-T10-R032 x 5
@@ -15,13 +14,12 @@
 				
                 Warnings:
                 PEPPOL_CORE_R001 x 9
+                PEPPOL_CORE_R002 x 56
 -->
 
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
          xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 UBL-Invoice-2.0.xsd">
+         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
     <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
     <cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol4a:ver2.0</cbc:CustomizationID>
     <cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver2.0</cbc:ProfileID>
@@ -29,8 +27,8 @@
     <cbc:IssueDate>2009-12-15</cbc:IssueDate>
     <cbc:InvoiceTypeCode listID="UNCL1001">380</cbc:InvoiceTypeCode>
     <cbc:Note languageID="en">Ordered in our booth at the convention.</cbc:Note>
-        <cbc:TaxPointDate>2009-11-30</cbc:TaxPointDate>
-	<cbc:DocumentCurrencyCode listID="ISO4217">EUR</cbc:DocumentCurrencyCode>
+    <cbc:TaxPointDate>2009-11-30</cbc:TaxPointDate>
+    <cbc:DocumentCurrencyCode listID="ISO4217">EUR</cbc:DocumentCurrencyCode>
 
     <cbc:AccountingCost>Project cost code 123</cbc:AccountingCost>
     <cac:InvoicePeriod>
@@ -87,7 +85,7 @@
             <cac:PartyTaxScheme>
                 <cbc:CompanyID schemeID="CVR">DK5402697509</cbc:CompanyID>
                 <cac:TaxScheme>
-                    <cbc:ID schemeID="UN/ECE 5153">VAT</cbc:ID>
+                    <cbc:ID>VAT</cbc:ID>
                 </cac:TaxScheme>
             </cac:PartyTaxScheme>
             <cac:PartyLegalEntity>
@@ -138,13 +136,6 @@
             <cac:PartyLegalEntity>
                 <cbc:RegistrationName>The buyercompany inc.</cbc:RegistrationName>
                 <cbc:CompanyID schemeID="ZZZ">5645342123</cbc:CompanyID>
-                <cac:RegistrationAddress>
-                    <cbc:CityName>Mainplace</cbc:CityName>
-                    <cbc:CountrySubentity>RegionB</cbc:CountrySubentity>
-                    <cac:Country>
-                        <cbc:IdentificationCode>BE</cbc:IdentificationCode>
-                    </cac:Country>
-                </cac:RegistrationAddress>
             </cac:PartyLegalEntity>
             <cac:Contact>
                 <cbc:Telephone>5121230</cbc:Telephone>

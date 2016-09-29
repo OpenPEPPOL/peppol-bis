@@ -153,7 +153,7 @@
             <path>
                 <fileset dir="${sch.dir}" casesensitive="false">
                     <include name="**/Tests/T*-*.xml"/>
-                    <!--<include name="**/T10-0013*.xml"/>-->
+                    <!--<include name="**/T10-0025*.xml"/>-->
                     <exclude name="**/Tests/TB*.xml"/>
                 </fileset>
             </path>
@@ -366,7 +366,7 @@
                     //echo.setMessage(".............................................. Found elements=" + foundArr.length + " / type=" + issueType);
                     //echo.perform();
 
-                    var reason = foundArr.length + ' ' + issueType + '(S) found in schematron output (not defined in test-file): ';
+                    var reason = foundArr.length + ' ' + issueType + '(S) found in schematron output (not expected in test-file): ';
                     for (i=0; foundArr.length > i; i++) {
                         reason = reason + foundArr[i];
                         if ( i < (foundArr.length-1) ) {
