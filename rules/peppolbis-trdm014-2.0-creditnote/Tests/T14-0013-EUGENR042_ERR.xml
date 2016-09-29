@@ -57,13 +57,6 @@
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>IntegrasjonsPartner testkunde</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="NO:ORGNR">977187761</cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>Sarpsborg</cbc:CityName>
-					<cac:Country>
-						<cbc:IdentificationCode listID="ISO3166-1:Alpha2"
-							>NO</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>David</cbc:ID>
@@ -96,13 +89,6 @@
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>TestKunde</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="NO:ORGNR">810305282</cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>SARPSBORG</cbc:CityName>
-					<cac:Country>
-						<cbc:IdentificationCode listID="ISO3166-1:Alpha2"
-							>NO</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>DTJ1234</cbc:ID>

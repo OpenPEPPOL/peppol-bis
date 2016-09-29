@@ -7,7 +7,7 @@
                 None
                 
                 Warnings:
-				
+				None
 -->
 <CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2">
 	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
@@ -281,6 +281,7 @@
 		</cac:Delivery>
 		<cac:AllowanceCharge>
 			<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+			<cbc:AllowanceChargeReason>Promotion discount</cbc:AllowanceChargeReason>
 			<cbc:Amount currencyID="NOK">1</cbc:Amount>
 		</cac:AllowanceCharge>
 		<cac:Item>
@@ -317,7 +318,6 @@
 			<cbc:BaseQuantity>1</cbc:BaseQuantity>
 			<cac:AllowanceCharge>
 				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-				<cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
 				<cbc:MultiplierFactorNumeric>0.15</cbc:MultiplierFactorNumeric>
 				<cbc:Amount currencyID="NOK">225.0</cbc:Amount>
 				<cbc:BaseAmount currencyID="NOK">1500.0</cbc:BaseAmount>

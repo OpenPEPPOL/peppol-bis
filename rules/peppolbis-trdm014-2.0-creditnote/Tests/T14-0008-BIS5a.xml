@@ -1062,8 +1062,6 @@ SVMgZG9jdW1lbnQgKioq</cbc:EmbeddedDocumentBinaryObject>
 
 		</cac:AllowanceCharge>
 
-
-
 		<cac:Item>
 
 			<cbc:Name>Conference facilities &amp; services, per participant</cbc:Name>
@@ -1149,12 +1147,6 @@ SVMgZG9jdW1lbnQgKioq</cbc:EmbeddedDocumentBinaryObject>
 		<cac:Item>
 
 			<cbc:Name>Local newspaper</cbc:Name>
-
-			<cac:CommodityClassification>
-
-				<cbc:CommodityCode listID="UNSPSC">55101504</cbc:CommodityCode>
-
-			</cac:CommodityClassification>
 
 			<cac:ClassifiedTaxCategory>
 
