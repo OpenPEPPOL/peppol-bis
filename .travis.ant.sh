@@ -1,2 +1,2 @@
 cd script
-ant build-all
+ant build-all | grep "##teamcity"
