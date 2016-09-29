@@ -31,7 +31,6 @@
 				<cbc:Name>IntegrasjonsPartner testkunde</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
-				<cbc:ID schemeID="GLN" schemeAgencyID="9">7080003093035</cbc:ID>
 				<cbc:StreetName>Sarpsborg</cbc:StreetName>
 				<cbc:CityName>Sarpsborg</cbc:CityName>
 				<cbc:PostalZone>1710</cbc:PostalZone>
@@ -48,12 +47,6 @@
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>IntegrasjonsPartner testkunde</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="NO:ORGNR">977187761</cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>Sarpsborg</cbc:CityName>
-					<cac:Country>
-					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>David</cbc:ID>
@@ -101,7 +94,7 @@
 	<cac:AllowanceCharge>
   	<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
  	<cbc:AllowanceChargeReason>2.35% Totalrabatt</cbc:AllowanceChargeReason>
-  	<cbc:Amount currencyID="NOK">89.774465</cbc:Amount>
+  	<cbc:Amount currencyID="NOK">89.77</cbc:Amount>
   	<cac:TaxCategory>
 		<cbc:ID schemeID="UNCL5305">S</cbc:ID>
 				<cbc:Percent>25</cbc:Percent>

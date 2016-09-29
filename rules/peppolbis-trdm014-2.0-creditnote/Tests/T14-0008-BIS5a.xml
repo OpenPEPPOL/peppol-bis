@@ -924,12 +924,6 @@ SVMgZG9jdW1lbnQgKioq</cbc:EmbeddedDocumentBinaryObject>
 
 			<cac:CommodityClassification>
 
-				<cbc:CommodityCode listID="Buyer's">112233</cbc:CommodityCode>
-
-			</cac:CommodityClassification>
-
-			<cac:CommodityClassification>
-
 				<cbc:CommodityCode listID="UNSPSC">90111600</cbc:CommodityCode>
 
 				<cbc:ItemClassificationCode listID="CPV">55120000</cbc:ItemClassificationCode>
@@ -1155,12 +1149,6 @@ SVMgZG9jdW1lbnQgKioq</cbc:EmbeddedDocumentBinaryObject>
 		<cac:Item>
 
 			<cbc:Name>Local newspaper</cbc:Name>
-
-			<cac:CommodityClassification>
-
-				<cbc:CommodityCode listID="Buyer's">445566</cbc:CommodityCode>
-
-			</cac:CommodityClassification>
 
 			<cac:CommodityClassification>
 

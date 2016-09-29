@@ -7,8 +7,6 @@
                 None
                 
                 Warnings:
-                PEPPOL_CORE_R001
-				PEPPOL_CORE_R002
 				
 -->
 <CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2">
@@ -78,7 +76,7 @@
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>The Sellercompany ASA</cbc:RegistrationName>
-				<cbc:CompanyID schemeID="NO:ORGNR" schemeName="Foretaksregisteret">123456789</cbc:CompanyID>
+				<cbc:CompanyID schemeID="NO:ORGNR">123456789</cbc:CompanyID>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>Our ref.</cbc:ID>
@@ -117,7 +115,7 @@
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>Buyercompany ASA</cbc:RegistrationName>
 				<!-- @schemeID is expected in CompanyID. -->
-				<cbc:CompanyID schemeAgencyID="NO:ORGNR">987654321</cbc:CompanyID>
+				<cbc:CompanyID schemeID="NO:ORGNR">987654321</cbc:CompanyID>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>3150bdn</cbc:ID>
@@ -283,7 +281,6 @@
 		</cac:Delivery>
 		<cac:AllowanceCharge>
 			<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-			<cbc:AllowanceChargeReason>Damage</cbc:AllowanceChargeReason>
 			<cbc:Amount currencyID="NOK">1</cbc:Amount>
 		</cac:AllowanceCharge>
 		<cac:Item>
@@ -314,14 +311,6 @@
 				<cbc:Name>Color</cbc:Name>
 				<cbc:Value>Black</cbc:Value>
 			</cac:AdditionalItemProperty>
-			<cac:ManufacturerParty>
-			   <cac:PartyName>
-					<cbc:Name>Company name ASA</cbc:Name>
-			    </cac:PartyName>
-			   <cac:PartyLegalEntity>
-				   <cbc:CompanyID schemeID="NO:ORGNR">904312347</cbc:CompanyID>
-			    </cac:PartyLegalEntity>
-			</cac:ManufacturerParty>
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="NOK">1273</cbc:PriceAmount>
@@ -364,7 +353,6 @@
 			<cbc:PriceAmount currencyID="NOK">2.48</cbc:PriceAmount>
 			<cac:AllowanceCharge>
 				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-				<cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
 				<cbc:MultiplierFactorNumeric>0.1</cbc:MultiplierFactorNumeric>
 				<cbc:Amount currencyID="NOK">0.275</cbc:Amount>
 				<cbc:BaseAmount currencyID="NOK">2.75</cbc:BaseAmount>
