@@ -14,21 +14,36 @@ This release from openPEPPOL includes changes to the validation artifacts (VA's)
 .Overview of changes
 ****
 . Several validation rules have been optimized according to incoming RFCs
+. Added ID attribute to code list rules
 . Added chapter in Common BIS for validation principles.
-.Editorial updates BIS 1a (Catalogue)
+. Editorial updates BIS 1a (Catalogue)
 ****
 
+****
+[IMPORTANT]
+====
+*The support for PEPPOL BIS version 1.0 will be depricated as of the spring release 2017.*
+
+Planned date for the spring release is 15. May 2017
+====
+****
+
+//
+
+NOTE: As previously announced the ODS files are not provided,
+as the Schematron files are considered the authoritative source for the Validation artefacts.
 
 
 == Changes to Validation Artifacts (VA)
-
-NOTE: OpenPEPPOL is not committed to continue to provide the ODS files in the coming releases, as the Schematron files are considered the authoritative source for the Validation artefacts.
 
 
 .Changes pr. transaction
 [cols="3", options="header"]
 |====
 |Transaction|Rule|Description
+| All
+| Code list rules (CL- and OP- rules)
+| Added attribute @id to schematron assert element
 .10+s|Invoice
 |CL-T10-R003
 .3+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
@@ -106,7 +121,7 @@ s|Message Level Response
 
 === Common BIS
 
-Added chapter on the validation pyramide and principles.
+Added chapter on the validation pyramid and principles.
 
 === BIS 1A – Catalogue
 Added customizationID and namespace for catalogue response in chapters 11.4 and 11.5
