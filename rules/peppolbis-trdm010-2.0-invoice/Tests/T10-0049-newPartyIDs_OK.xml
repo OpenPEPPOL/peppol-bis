@@ -39,7 +39,7 @@
                 <cbc:CityName>Sarpsborg</cbc:CityName>
                 <cbc:PostalZone>1710</cbc:PostalZone>
                 <cac:Country>
-                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+                    <cbc:IdentificationCode listID="ISO3166-1:Alpha2">FR</cbc:IdentificationCode>
                 </cac:Country>
             </cac:PostalAddress>
             <cac:PartyTaxScheme>
