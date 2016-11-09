@@ -18,6 +18,7 @@
     <cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver2.0</cbc:ProfileID>
     <cbc:ID>12345</cbc:ID>
     <cbc:IssueDate>2012-11-21</cbc:IssueDate>
+    <cbc:InvoiceTypeCode listID="UNCL1001">380</cbc:InvoiceTypeCode>
     <cbc:DocumentCurrencyCode listID="ISO4217">NOK</cbc:DocumentCurrencyCode>
     <cac:OrderReference>
         <cbc:ID>5423</cbc:ID>
