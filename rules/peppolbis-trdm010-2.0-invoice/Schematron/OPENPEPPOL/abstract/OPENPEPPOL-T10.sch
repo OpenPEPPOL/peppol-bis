@@ -36,6 +36,7 @@
   <rule context="$Invoice">
     <assert test="$EUGEN-T10-R044" flag="fatal" id="EUGEN-T10-R044">[EUGEN-T10-R044]-If the tax currency code is different from the document currency code, the tax exchange rate MUST be provided</assert>
     <assert test="$EUGEN-T10-R047" flag="warning" id="EUGEN-T10-R047">[EUGEN-T10-R047]- An invoice should not contain empty elements</assert>
+    <assert test="$EUGEN-T10-R053" flag="warning" id="EUGEN-T10-R053">[EUGEN-T10-R053]- An invoice must have an Invoice type code</assert>
   </rule>
   <rule context="$Invoice_Type_Code">
     <assert test="$EUGEN-T10-R025" flag="fatal" id="EUGEN-T10-R025">[EUGEN-T10-R025]-An invoice type code MUST have a list identifier attribute 'UNCL1001'.</assert>
