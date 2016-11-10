@@ -202,37 +202,74 @@
         <loadfile property="validationOutput.PEPPOL" srcfile="${target.dir}/schematron-OPENPEPPOL-output.xml"/>
 
         <script language="javascript"><![CDATA[
-            // Parse test file for ERRORS and WARNINGS
-            content = project.getProperty('testFile.content');
-            commentStart = content.indexOf('<!--');
-            commentEnd = content.indexOf('-->');
-            commentLineArray = content.substring(commentStart, commentEnd).split('\n');
-            var headlineFound = false;
 
-            // Find all Description lines (started by keyword "Description" or "Content")
-            var description = "";
-            headlineFound = false;
-            for (i=0; commentLineArray.length > i; i++) {
-                if ( commentLineArray[i]!=null && (commentLineArray[i].trim().indexOf('Description')==0 || commentLineArray[i].trim().indexOf('Content')==0) ) {
-                    headlineFound = true;
-                    continue;
+            mainHandler();
+
+            function mainHandler() {
+                // Parse test file for ERRORS and WARNINGS
+                content = project.getProperty('testFile.content');
+                commentStart = content.indexOf('<!--');
+                if ( commentStart == -1 ) {
+                    project.setProperty('test.result', "ERROR");
+                    project.setProperty('test.errorCode', "Header comment section missing");
+                    project.setProperty('test.reason', "No header comment section found in file");
+                    return;
                 }
-                if ( headlineFound ) {
-                    if ( commentLineArray[i]!=null && commentLineArray[i].trim().length() > 0  && commentLineArray[i].trim()!='None') {
-            //echo = project.createTask("echo");
-            //echo.setMessage("TEST..................................................... " + commentLineArray[i].trim().split(' '));
-            //echo.perform( );
-                        description = description + commentLineArray[i] + "<br>"
-                    } else {
-                        break;
+
+                commentEnd = content.indexOf('-->');
+                commentLineArray = content.substring(commentStart, commentEnd).split('\n');
+                var headlineFound = false;
+
+                // Find all Description lines (started by keyword "Description" or "Content")
+                var description = "";
+                headlineFound = false;
+                for (i=0; commentLineArray.length > i; i++) {
+                    if ( commentLineArray[i]!=null && (commentLineArray[i].trim().indexOf('Description')==0 || commentLineArray[i].trim().indexOf('Content')==0) ) {
+                        headlineFound = true;
+                        continue;
                     }
+                    if ( headlineFound ) {
+                        if ( commentLineArray[i]!=null && commentLineArray[i].trim().length() > 0  && commentLineArray[i].trim()!='None') {
+                //echo = project.createTask("echo");
+                //echo.setMessage("TEST..................................................... " + commentLineArray[i].trim().split(' '));
+                //echo.perform( );
+                            description = description + commentLineArray[i] + "<br>"
+                        } else {
+                            break;
+                        }
+                    }
+                    project.setProperty('test.description', description);
                 }
-                project.setProperty('test.description', description);
-            }
 
-            // Find expected ERRORS/WARNINGS from the file header.
-            var errorArr = findErrorWarningLines(commentLineArray, "Error");
-            var warningArr = findErrorWarningLines(commentLineArray, "Warning");
+                // Find expected ERRORS/WARNINGS from the file header.
+                var errorArr = findErrorWarningLines(commentLineArray, "Error");
+                var warningArr = findErrorWarningLines(commentLineArray, "Warning");
+
+                // Find actual ERRORS/WARNINGS in the 3 output files.
+                validationOutput_BII = project.getProperty('validationOutput.BII');
+                validationOutput_PEPPOL_CORE = project.getProperty('validationOutput.PEPPOLCORE');
+                validationOutput_PEPPOL = project.getProperty('validationOutput.PEPPOL');
+                var foundErrors = [];
+                var foundWarnings = [];
+                findIssuesInOutputFile(validationOutput_BII, foundErrors, foundWarnings);
+                findIssuesInOutputFile(validationOutput_PEPPOL_CORE, foundErrors, foundWarnings);
+                findIssuesInOutputFile(validationOutput_PEPPOL, foundErrors, foundWarnings);
+
+                // Verify that expected Errors+Warnings exists in schematron output
+                // As a start, we assume that everything is OK:
+                project.setProperty('test.result', "OK");
+
+                var escapeChars = ["[", "]", "'"];
+
+                // Iterate through all found Errors and Warnings
+                foundErrors = loopThroughExpectedArray(errorArr, foundErrors, 'Error');
+                foundWarnings = loopThroughExpectedArray(warningArr, foundWarnings, 'Warning');
+
+                // Test for no errors expected
+                // Expected elements should match found elements, so foundArr should be empty now!
+                handleUnexpectedIssues(foundErrors, "ERROR");
+                handleUnexpectedIssues(foundWarnings, "WARNINGS");
+             } // mainHandler
 
             function findErrorWarningLines(commentLineArray, headlineWord) {
                 var outputArr = [];
@@ -265,17 +302,6 @@
                 return outputArr;
             }
 
-
-            // Find actual ERRORS/WARNINGS in the 3 output files.
-            validationOutput_BII = project.getProperty('validationOutput.BII');
-            validationOutput_PEPPOL_CORE = project.getProperty('validationOutput.PEPPOLCORE');
-            validationOutput_PEPPOL = project.getProperty('validationOutput.PEPPOL');
-            var foundErrors = [];
-            var foundWarnings = [];
-            findIssuesInOutputFile(validationOutput_BII, foundErrors, foundWarnings);
-            findIssuesInOutputFile(validationOutput_PEPPOL_CORE, foundErrors, foundWarnings);
-            findIssuesInOutputFile(validationOutput_PEPPOL, foundErrors, foundWarnings);
-
             function findIssuesInOutputFile(validationOutput, errorArr, warningArr) {
                 var regex = /failed-assert test.*\n.*id=\"([^\"]+)\".*\n.*flag=\"(\w+)\"/g
                 var issueNumbers = [];
@@ -295,17 +321,6 @@
                     }
                 }
             }
-
-
-            // Verify that expected Errors+Warnings exists in schematron output
-            // As a start, we assume that everything is OK:
-            project.setProperty('test.result', "OK");
-
-            var escapeChars = ["[", "]", "'"];
-
-            // Iterate through all found Errors and Warnings
-            foundErrors = loopThroughExpectedArray(errorArr, foundErrors, 'Error');
-            foundWarnings = loopThroughExpectedArray(warningArr, foundWarnings, 'Warning');
 
             function loopThroughExpectedArray(expectedArr, foundArr, testType) {
                 // if error state is set, then break.
@@ -345,11 +360,6 @@
                 return foundArr;
             }
 
-
-            // Test for no errors expected
-            // Expected elements should match found elements, so foundArr should be empty now!
-            handleUnexpectedIssues(foundErrors, "ERROR");
-            handleUnexpectedIssues(foundWarnings, "WARNINGS");
 
             function handleUnexpectedIssues(foundArr, issueType) {
                 // if error state is set, then break.
