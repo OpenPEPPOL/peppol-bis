@@ -15,7 +15,6 @@ This release from openPEPPOL includes changes to the validation artifacts (VA's)
 ****
 . Several validation rules have been optimized according to incoming RFCs
 . Added ID attribute to code list rules
-. Updated codelist for identifiers for all transactions
 . Added chapter in Common BIS for validation principles.
 . Editorial updates BIS 1a (Catalogue)
 ****
@@ -42,11 +41,10 @@ as the Schematron files are considered the authoritative source for the Validati
 [cols="3", options="header"]
 |====
 |Transaction|Rule|Description
-.2+| All
-.2+| Code list rules (CL- and OP- rules)
+| All
+| Code list rules (CL- and OP- rules)
 | Added attribute @id to schematron assert element
-| Updated and corrected valid codes for schemeID for PartyIdentification, EndpointID and CompanyID
-.11+s|Invoice
+.10+s|Invoice
 |CL-T10-R003
 .3+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
 | CL-T10-R008
@@ -61,8 +59,6 @@ as the Schematron files are considered the authoritative source for the Validati
 |EUGEN-T10-R050
 |EUGEN-T10-R051
 |EUGEN-T10-R052
-| EUGEN-T10-R053
-| Added rule to ensure InvoiceTypeCode is present
 
 .10+s|Credit note
 |OP-T14-R006
