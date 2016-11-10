@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+                Content:
+                This file contains a PEPPOL invoice, profile 4 check that decimal differences does NOT cause errors.
+                
+                Errors:
+				        None
+                
+                Warnings:
+                None
+				
+-->
 <OrderResponse xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2"
     xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
