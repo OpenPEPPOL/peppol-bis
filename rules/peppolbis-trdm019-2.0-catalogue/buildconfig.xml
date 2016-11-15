@@ -8,7 +8,7 @@
     <configuration>
         <identifier>peppolbis-t19-base-2.0</identifier>
         <title>PEPPOL BIS Catalogue 2.0 (Base)</title>
-        <inherit>ubl-despatchadvice-2.1</inherit>
+        <inherit>ubl-catalogue-2.1</inherit>
         <file source="Schematron/BII RULES/BIIRULES-UBL-T19.sch" path="xsl/BIIRULES-UBL-T19.xsl" />
         <file source="Schematron/OPENPEPPOL/OPENPEPPOL-UBL-T19.sch" path="xsl/OPENPEPPOL-UBL-T19.xsl" />
     </configuration>
