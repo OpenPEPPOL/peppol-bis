@@ -9,4 +9,4 @@ Files for PEPPOL BIS - http://www.peppol.eu
     * Test
       * Test files
       * Test specification
-    * build files
+  * build files
