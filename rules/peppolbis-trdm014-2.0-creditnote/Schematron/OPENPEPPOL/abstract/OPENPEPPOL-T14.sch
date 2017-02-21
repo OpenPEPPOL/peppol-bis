@@ -37,6 +37,9 @@
   <rule context="$Financial_Account_Identifier">
     <assert test="$EUGEN-T14-R031" flag="fatal" id="EUGEN-T14-R031">[EUGEN-T14-R031]-A financial account identifier MUST have a scheme identifier attribute.</assert>
   </rule>
+  <rule context="$Party_Legal_Entity">
+    <assert test="$EUGEN-T14-R054" flag="warning" id="EUGEN-T14-R054">[EUGEN-T14-R054]-A party legal entity company identifier SHOULD have a scheme identifier attribute.</assert>
+  </rule>
   <rule context="$Party_Identifier">
     <assert test="$EUGEN-T14-R024" flag="fatal" id="EUGEN-T14-R024">[EUGEN-T14-R024]-A party identifier MUST have a scheme identifier attribute.</assert>
   </rule>

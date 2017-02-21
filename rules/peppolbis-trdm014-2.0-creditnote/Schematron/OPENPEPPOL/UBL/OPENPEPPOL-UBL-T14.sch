@@ -37,12 +37,14 @@
   <param name="EUGEN-T14-R051" value="string-length(substring-after(cbc:TaxableAmount, '.')) &lt;= 2"/>
   <param name="EUGEN-T14-R052" value="string-length(substring-after(cbc:TaxAmount, '.')) &lt;= 2"/>
   <param name="EUGEN-T14-R053" value="string-length(substring-after(cbc:Amount, '.')) &lt;= 2"/>
+  <param name="EUGEN-T14-R054" value="@schemeID"/>
   <param name="Credit_Note" value="/ubl:CreditNote"/>
   <param name="Total_Credit_Note" value="//cac:LegalMonetaryTotal"/>
   <param name="Total_Amount" value="//cac:LegalMonetaryTotal/child::*"/>
   <param name="Unit_Code" value="//*[contains(name(),'Quantity')]"/>
   <param name="Tax_Category_Identifier" value="//cac:TaxCategory/cbc:ID"/>
   <param name="Tax_Category" value="//cac:TaxCategory"/>
+  <param name="Party_Legal_Entity" value="//cac:PartyLegalEntity/cbc:CompanyID"/>
   <param name="Party_Identifier" value="//cac:PartyIdentification/cbc:ID"/>
   <param name="Endpoint" value="//cbc:EndpointID"/>
   <param name="Document_Type_Code" value="//cbc:DocumentTypeCode"/>
