@@ -37,6 +37,7 @@
   <param name="EUGEN-T10-R051" value="string-length(substring-after(cbc:TaxAmount, '.')) &lt;= 2"/>
   <param name="EUGEN-T10-R052" value="string-length(substring-after(cbc:Amount, '.')) &lt;= 2"/>
   <param name="EUGEN-T10-R053" value="(cbc:InvoiceTypeCode)"/>
+  <param name="EUGEN-T10-R054" value="@schemeID"/>
   <param name="Unit_Code" value="//*[contains(name(),'Quantity')]"/>
   <param name="Total_Invoice" value="//cac:LegalMonetaryTotal"/>
   <param name="Total_Amount" value="//cac:LegalMonetaryTotal/child::*"/>
@@ -45,6 +46,7 @@
   <param name="Payment_Means_Code" value="//cbc:PaymentMeansCode"/>
   <param name="Payment_Means" value="//cac:PaymentMeans"/>
   <param name="Party_Identifier" value="//cac:PartyIdentification/cbc:ID"/>
+  <param name="Party_Legal_Entity" value="//cac:PartyLegalEntity/cbc:CompanyID"/>
   <param name="Invoice_Type_Code" value="//cbc:InvoiceTypeCode"/>
   <param name="Invoice_Period_Information" value="//cac:InvoicePeriod"/>
   <param name="Invoice_Line" value="//cac:InvoiceLine"/>

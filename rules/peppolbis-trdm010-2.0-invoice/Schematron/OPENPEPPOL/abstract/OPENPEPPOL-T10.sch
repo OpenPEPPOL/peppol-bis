@@ -41,6 +41,9 @@
   <rule context="$Invoice_Type_Code">
     <assert test="$EUGEN-T10-R025" flag="fatal" id="EUGEN-T10-R025">[EUGEN-T10-R025]-An invoice type code MUST have a list identifier attribute 'UNCL1001'.</assert>
   </rule>
+  <rule context="$Party_Legal_Entity">
+    <assert test="$EUGEN-T10-R054" flag="warning" id="EUGEN-T10-R054">[EUGEN-T10-R054]-A party legal entity company identifier SHOULD have a scheme identifier attribute.</assert>
+  </rule>
   <rule context="$Party_Identifier">
     <assert test="$EUGEN-T10-R024" flag="fatal" id="EUGEN-T10-R024">[EUGEN-T10-R024]-A party identifier MUST have a scheme identifier attribute.</assert>
   </rule>
