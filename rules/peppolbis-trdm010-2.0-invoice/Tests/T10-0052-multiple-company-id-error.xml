@@ -9,6 +9,7 @@
 				Warnings:
 				BIIC-CORE-R001 x 3
 				EUGEN-T10-R041
+				PEPPOL_CORE_001 x 3
 -->
 <ubl:Invoice xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
 	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
