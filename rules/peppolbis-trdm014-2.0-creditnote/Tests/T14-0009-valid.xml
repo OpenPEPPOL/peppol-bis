@@ -133,7 +133,7 @@
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>Buyercompany ASA</cbc:RegistrationName>
-				<cbc:CompanyID schemeAgencyID="NO:ORGNR">987654321</cbc:CompanyID>
+				<cbc:CompanyID schemeID="NO:ORGNR">987654321</cbc:CompanyID>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>3150bdn</cbc:ID>
