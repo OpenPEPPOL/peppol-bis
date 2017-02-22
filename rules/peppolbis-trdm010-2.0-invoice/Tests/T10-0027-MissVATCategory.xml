@@ -54,7 +54,7 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
-				<cbc:CompanyID scheme="NO:VAT">940101808</cbc:CompanyID>
+				<cbc:CompanyID schemeID="NO:VAT">940101808</cbc:CompanyID>
 			</cac:PartyLegalEntity>
 		</cac:Party>
 	</cac:AccountingCustomerParty>
