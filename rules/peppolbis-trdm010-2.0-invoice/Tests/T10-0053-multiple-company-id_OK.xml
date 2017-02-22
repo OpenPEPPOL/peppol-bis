@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+                Description:
+                This file contains a PEPPOL invoice BIS4a - Singe lnvoice. The intention of the test is to check that the file is ok with Rounding Amount.
+
+                Errors:
+				None
+		
+				Warnings:
+				None
+-->
+<ubl:Invoice xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol4a:ver2.0</cbc:CustomizationID>
+	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii04:ver2.0</cbc:ProfileID>
+	<cbc:ID>1402574</cbc:ID>
+	<cbc:IssueDate>2014-09-05</cbc:IssueDate>
+	<cbc:InvoiceTypeCode listID="UNCL1001">380</cbc:InvoiceTypeCode>
+	<cbc:Note>Reisekonto 361487XXXX4010</cbc:Note>
+	<cbc:DocumentCurrencyCode listID="ISO4217">NOK</cbc:DocumentCurrencyCode>
+	<cac:OrderReference>
+		<cbc:ID>000000</cbc:ID>
+	</cac:OrderReference>
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>1</cbc:ID>
+		<cbc:DocumentType>Commercial Invoice</cbc:DocumentType>
+	</cac:AdditionalDocumentReference>
+	<cac:AccountingSupplierParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="NO:ORGNR">995432765</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="GLN">995432765</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Diners Club Norge, filial av Diners Club Nordic AB</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Filipstad Brygge</cbc:StreetName>
+				<cbc:CityName>Oslo</cbc:CityName>
+				<cbc:PostalZone>0114</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID schemeID="DK:CVR">DK995432765</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID schemeID="DK:CVR">ES995432765</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Diners Club Norge, filial av Diners Club Nordic
+					AB</cbc:RegistrationName>
+				<cbc:CompanyID>995432765</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:ID>Diners Club Norge - Corporate Support</cbc:ID>
+				<cbc:Telephone>+47 21 01 53 10</cbc:Telephone>
+				<cbc:ElectronicMail>reisekonto@sebkort.no</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="NO:ORGNR">000000000</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="GLN">000000000</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>SKATTEETATEN 20100031</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>FAKTURAMOTTAK DFØ</cbc:StreetName>
+				<cbc:CityName>HAMAR</cbc:CityName>
+				<cbc:PostalZone>2308</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID schemeID="NO:VAT">NO000000000MVA</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>SKATTEETATEN 20100031</cbc:RegistrationName>
+				<cbc:CompanyID>NO000000000MVA</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:ID>1214VINY</cbc:ID>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:Delivery>
+		<cac:DeliveryLocation>
+			<cac:Address>
+				<cbc:StreetName>FAKTURAMOTTAK DFØ</cbc:StreetName>
+				<cbc:CityName>NA</cbc:CityName>
+				<cbc:PostalZone>0603 OSLO</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">NO</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:DeliveryLocation>
+	</cac:Delivery>
+	<cac:PaymentMeans>
+		<cbc:PaymentMeansCode listID="UNCL4461">31</cbc:PaymentMeansCode>
+		<cbc:PaymentDueDate>2014-10-25</cbc:PaymentDueDate>
+		<cbc:PaymentID>70014025740107</cbc:PaymentID>
+		<cac:PayeeFinancialAccount>
+			<cbc:ID schemeID="LOCAL">97500606340</cbc:ID>
+			<cac:FinancialInstitutionBranch>
+				<cac:FinancialInstitution>
+					<cbc:ID schemeID="BIC">ESSENOKX</cbc:ID>
+				</cac:FinancialInstitution>
+			</cac:FinancialInstitutionBranch>
+		</cac:PayeeFinancialAccount>
+	</cac:PaymentMeans>
+	<cac:PaymentMeans>
+		<cbc:PaymentMeansCode listID="UNCL4461">31</cbc:PaymentMeansCode>
+		<cbc:PaymentDueDate>2014-10-25</cbc:PaymentDueDate>
+		<cbc:PaymentID>70014025740107</cbc:PaymentID>
+		<cac:PayeeFinancialAccount>
+			<cbc:ID schemeID="IBAN">NO3497500606340</cbc:ID>
+			<cac:FinancialInstitutionBranch>
+				<cac:FinancialInstitution>
+					<cbc:ID schemeID="BIC">ESSENOKX</cbc:ID>
+				</cac:FinancialInstitution>
+			</cac:FinancialInstitutionBranch>
+		</cac:PayeeFinancialAccount>
+	</cac:PaymentMeans>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="NOK">949.34</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="NOK">11398.00</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="NOK">911.84</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UNCL5305">AA</cbc:ID>
+				<cbc:Percent>8</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="NOK">0.00</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UNCL5305">H</cbc:ID>
+				<cbc:Percent>15</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="NOK">150.00</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="NOK">37.50</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+				<cbc:Percent>25</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="NOK">0.00</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="NOK">0.00</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID schemeID="UNCL5305">E</cbc:ID>
+				<cbc:Percent>0</cbc:Percent>
+				<cbc:TaxExemptionReason>A VAT exemption reason MUST be provided if the VAT category
+					code is exempt or reverse charge.</cbc:TaxExemptionReason>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="NOK">11548.00</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="NOK">11548.00</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="NOK">12498.50</cbc:TaxInclusiveAmount>
+		<cbc:PrepaidAmount currencyID="NOK">200</cbc:PrepaidAmount>
+		<cbc:PayableRoundingAmount currencyID="NOK">1.16</cbc:PayableRoundingAmount>
+		<cbc:PayableAmount currencyID="NOK">12298.50</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:InvoiceLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:Note>Point of sale: BERG-HANSEN - OSLO, Purchase: WIDEROE, Ticket number:
+			7015275408877</cbc:Note>
+		<cbc:InvoicedQuantity unitCodeListID="UNECERec20" unitCode="EA">1</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="NOK">2620.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>/000000/1214VINY//000000</cbc:AccountingCost>
+		<cac:OrderLineReference>
+			<cbc:LineID>010923652</cbc:LineID>
+		</cac:OrderLineReference>
+		<cac:Delivery>
+			<cbc:ActualDeliveryDate>2014-08-29</cbc:ActualDeliveryDate>
+		</cac:Delivery>
+		<cac:Item>
+			<cbc:Description>CardNo=36148787614010; Name=HONSTAD/PEREINAR; Amount=2830.00;
+				CurrencyCode=NOK; ExchangeRate=1000000.0000; Transaction Reference=010923652;
+				EmployeeNumber=NA;Departure date=2014-09-02;Return date=2014-09-02;Routing in
+				Text=KSUTRDKSU;Routing Codes=KSU;TRD;KSU;;Ticket number=7015275408877;Project
+				number=000000;Customer Cost Center=000000;Ordered By=1214VINY;</cbc:Description>
+			<cbc:Name>BERG-HANSEN - OSLO-WIDEROE</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>20140829316948431</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">600</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>8</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Passenger name</cbc:Name>
+				<cbc:Value>HONSTAD/PEREINAR</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="NOK">2620.00</cbc:PriceAmount>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<cbc:ID>2</cbc:ID>
+		<cbc:Note>Point of sale: BERG-HANSEN - OSLO, Purchase: WIDEROE, Ticket number:
+			7015275420455</cbc:Note>
+		<cbc:InvoicedQuantity unitCodeListID="UNECERec20" unitCode="EA">1</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="NOK">1389.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>/000000/1214VINY//000000</cbc:AccountingCost>
+		<cac:OrderLineReference>
+			<cbc:LineID>010923836</cbc:LineID>
+		</cac:OrderLineReference>
+		<cac:Delivery>
+			<cbc:ActualDeliveryDate>2014-08-29</cbc:ActualDeliveryDate>
+		</cac:Delivery>
+		<cac:Item>
+			<cbc:Description>CardNo=36148787614010; Name=NYLAND/VIBEKELOEVAAS; Amount=1500.00;
+				CurrencyCode=NOK; ExchangeRate=1000000.0000; Transaction Reference=010923836;
+				EmployeeNumber=NA;Departure date=2014-09-29;Return date=2014-09-30;Routing in
+				Text=KSUTRDKSU;Routing Codes=KSU;TRD;KSU;;Ticket number=7015275420455;Project
+				number=000000;Customer Cost Center=000000;Ordered By=1214VINY;</cbc:Description>
+			<cbc:Name>BERG-HANSEN - OSLO-WIDEROE</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>20140829316949313</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">600</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>8</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Passenger name</cbc:Name>
+				<cbc:Value>NYLAND/VIBEKELOEVAAS</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="NOK">1389.00</cbc:PriceAmount>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<cbc:ID>3</cbc:ID>
+		<cbc:Note>Point of sale: BERG-HANSEN - OSLO, Purchase: WIDEROE, Ticket number:
+			7015275420498</cbc:Note>
+		<cbc:InvoicedQuantity unitCodeListID="UNECERec20" unitCode="EA">1</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="NOK">2863.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>/000000/1214VINY//000000</cbc:AccountingCost>
+		<cac:OrderLineReference>
+			<cbc:LineID>010923845</cbc:LineID>
+		</cac:OrderLineReference>
+		<cac:Delivery>
+			<cbc:ActualDeliveryDate>2014-08-29</cbc:ActualDeliveryDate>
+		</cac:Delivery>
+		<cac:Item>
+			<cbc:Description>CardNo=36148787614010; Name=NYLAND/VIBEKELOEVAAS; Amount=3092.00;
+				CurrencyCode=NOK; ExchangeRate=1000000.0000; Transaction Reference=010923845;
+				EmployeeNumber=NA;Departure date=2014-09-09;Return date=2014-09-10;Routing in
+				Text=KSUTRDKSU;Routing Codes=KSU;TRD;KSU;;Ticket number=7015275420498;Project
+				number=000000;Customer Cost Center=000000;Ordered By=1214VINY;</cbc:Description>
+			<cbc:Name>BERG-HANSEN - OSLO-WIDEROE</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>20140829316949329</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">600</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>8</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Passenger name</cbc:Name>
+				<cbc:Value>NYLAND/VIBEKELOEVAAS</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="NOK">2863.00</cbc:PriceAmount>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<cbc:ID>4</cbc:ID>
+		<cbc:Note>Point of sale: BERG-HANSEN - OSLO, Purchase: WIDEROE, Ticket number:
+			7015275421412</cbc:Note>
+		<cbc:InvoicedQuantity unitCodeListID="UNECERec20" unitCode="EA">1</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="NOK">1659.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>/000000/1214VINY//000000</cbc:AccountingCost>
+		<cac:OrderLineReference>
+			<cbc:LineID>010923847</cbc:LineID>
+		</cac:OrderLineReference>
+		<cac:Delivery>
+			<cbc:ActualDeliveryDate>2014-08-29</cbc:ActualDeliveryDate>
+		</cac:Delivery>
+		<cac:Item>
+			<cbc:Description>CardNo=36148787614010; Name=NYLAND/VIBEKELOEVAAS; Amount=1792.00;
+				CurrencyCode=NOK; ExchangeRate=1000000.0000; Transaction Reference=010923847;
+				EmployeeNumber=NA;Departure date=2014-09-16;Return date=2014-09-16;Routing in
+				Text=KSUTRDKSU;Routing Codes=KSU;TRD;KSU;;Ticket number=7015275421412;Project
+				number=000000;Customer Cost Center=000000;Ordered By=1214VINY;</cbc:Description>
+			<cbc:Name>BERG-HANSEN - OSLO-WIDEROE</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>20140829316949333</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">600</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>8</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Passenger name</cbc:Name>
+				<cbc:Value>NYLAND/VIBEKELOEVAAS</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="NOK">1659.00</cbc:PriceAmount>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<cbc:ID>5</cbc:ID>
+		<cbc:Note>Point of sale: BERG-HANSEN - OSLO, Purchase: WIDEROE, Ticket number:
+			7015275421413</cbc:Note>
+		<cbc:InvoicedQuantity unitCodeListID="UNECERec20" unitCode="EA">1</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="NOK">1389.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>/000000/1214VINY//000000</cbc:AccountingCost>
+		<cac:OrderLineReference>
+			<cbc:LineID>010923848</cbc:LineID>
+		</cac:OrderLineReference>
+		<cac:Delivery>
+			<cbc:ActualDeliveryDate>2014-08-29</cbc:ActualDeliveryDate>
+		</cac:Delivery>
+		<cac:Item>
+			<cbc:Description>CardNo=36148787614010; Name=NYLAND/VIBEKELOEVAAS; Amount=1500.00;
+				CurrencyCode=NOK; ExchangeRate=1000000.0000; Transaction Reference=010923848;
+				EmployeeNumber=NA;Departure date=2014-09-22;Return date=2014-09-22;Routing in
+				Text=KSUTRDKSU;Routing Codes=KSU;TRD;KSU;;Ticket number=7015275421413;Project
+				number=000000;Customer Cost Center=000000;Ordered By=1214VINY;</cbc:Description>
+			<cbc:Name>BERG-HANSEN - OSLO-WIDEROE</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>20140829316949335</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">600</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>8</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Passenger name</cbc:Name>
+				<cbc:Value>NYLAND/VIBEKELOEVAAS</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="NOK">1389.00</cbc:PriceAmount>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<cbc:ID>6</cbc:ID>
+		<cbc:Note>Point of sale: BERG-HANSEN - OSLO, Purchase: REFUSJONSSERVICE INNLAND, Ticket
+			number:</cbc:Note>
+		<cbc:InvoicedQuantity unitCodeListID="UNECERec20" unitCode="EA">1</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="NOK">150.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>/000000/1214VINY//000000</cbc:AccountingCost>
+		<cac:OrderLineReference>
+			<cbc:LineID>010932342</cbc:LineID>
+		</cac:OrderLineReference>
+		<cac:Delivery>
+			<cbc:ActualDeliveryDate>2014-09-02</cbc:ActualDeliveryDate>
+		</cac:Delivery>
+		<cac:Item>
+			<cbc:Description>CardNo=36148787614010; Name=HAGA/GEIRARNE; Amount=187.50;
+				CurrencyCode=NOK; ExchangeRate=1000000.0000; Transaction Reference=010932342;
+				EmployeeNumber=NA;Departure date=2014-09-02;Return date=2014-09-02;Routing in
+				Text=TRONDHEIM;Project number=000000;Customer Cost Center=000000;Ordered
+				By=1214VINY;</cbc:Description>
+			<cbc:Name>BERG-HANSEN - OSLO-REFUSJONSSERVICE INNL</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>20140902317690233</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">600</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>25</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Passenger name</cbc:Name>
+				<cbc:Value>HAGA/GEIRARNE</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="NOK">150.00</cbc:PriceAmount>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<cbc:ID>7</cbc:ID>
+		<cbc:Note>Point of sale: BERG-HANSEN - OSLO, Purchase: WIDEROE, Ticket number:
+			7015275334956</cbc:Note>
+		<cbc:InvoicedQuantity unitCodeListID="UNECERec20" unitCode="EA">-1</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="NOK">-216.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>/000000/1214VINY//000000</cbc:AccountingCost>
+		<cac:OrderLineReference>
+			<cbc:LineID>010932342</cbc:LineID>
+		</cac:OrderLineReference>
+		<cac:Delivery>
+			<cbc:ActualDeliveryDate>2014-09-02</cbc:ActualDeliveryDate>
+		</cac:Delivery>
+		<cac:Item>
+			<cbc:Description>CardNo=36148787614010; Name=HAGA/GEIRARNE; Amount=-233.00;
+				CurrencyCode=NOK; ExchangeRate=1000000.0000; Transaction Reference=010932342;
+				EmployeeNumber=NA;Departure date=2014-09-02;Return date=2014-09-02;Routing in
+				Text=KSUTRDKSU;Routing Codes=KSU;TRD;KSU;;Ticket number=7015275334956;Project
+				number=000000;Customer Cost Center=000000;Ordered By=1214VINY;</cbc:Description>
+			<cbc:Name>BERG-HANSEN - OSLO-WIDEROE</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>20140902317690233</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">600</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>8</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Passenger name</cbc:Name>
+				<cbc:Value>HAGA/GEIRARNE</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="NOK">216.00</cbc:PriceAmount>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<cbc:ID>8</cbc:ID>
+		<cbc:Note>Point of sale: BERG-HANSEN - OSLO, Purchase: SAS, Ticket number:
+			1175275518049</cbc:Note>
+		<cbc:InvoicedQuantity unitCodeListID="UNECERec20" unitCode="EA">1</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="NOK">1694.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCost>/000000/1214VINY//000000</cbc:AccountingCost>
+		<cac:OrderLineReference>
+			<cbc:LineID>010939274</cbc:LineID>
+		</cac:OrderLineReference>
+		<cac:Delivery>
+			<cbc:ActualDeliveryDate>2014-09-04</cbc:ActualDeliveryDate>
+		</cac:Delivery>
+		<cac:Item>
+			<cbc:Description>CardNo=36148787614010; Name=PETERSEN/HILDEBORG; Amount=1830.00;
+				CurrencyCode=NOK; ExchangeRate=1000000.0000; Transaction Reference=010939274;
+				EmployeeNumber=NA;Departure date=2014-09-23;Return date=2014-09-26;Routing in
+				Text=KSUOSLKSU;Routing Codes=KSU;OSL;KSU;;Ticket number=1175275518049;Project
+				number=000000;Customer Cost Center=000000;Ordered By=1214VINY;</cbc:Description>
+			<cbc:Name>BERG-HANSEN - OSLO-SAS</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>20140904318674827</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">600</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>8</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Passenger name</cbc:Name>
+				<cbc:Value>PETERSEN/HILDEBORG</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="NOK">1694.00</cbc:PriceAmount>
+			<cbc:BaseQuantity>1</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+</ubl:Invoice>

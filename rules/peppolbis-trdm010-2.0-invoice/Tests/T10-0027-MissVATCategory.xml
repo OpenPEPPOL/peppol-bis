@@ -36,7 +36,7 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
-				<cbc:CompanyID>840101834</cbc:CompanyID>
+				<cbc:CompanyID schemeID="NO:VAT">840101834</cbc:CompanyID>
 			</cac:PartyLegalEntity>
 		</cac:Party>
 	</cac:AccountingSupplierParty>
@@ -54,7 +54,7 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
-				<cbc:CompanyID>940101808</cbc:CompanyID>
+				<cbc:CompanyID scheme="NO:VAT">940101808</cbc:CompanyID>
 			</cac:PartyLegalEntity>
 		</cac:Party>
 	</cac:AccountingCustomerParty>
