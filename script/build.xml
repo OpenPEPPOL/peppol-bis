@@ -201,7 +201,7 @@
         <!--<echo message="FILE: ${testFile}"/>-->
         <loadfile property="testFile.content" srcfile="${testFile}"/>
         <loadfile property="validationOutput.BII" srcfile="${target.dir}/schematron-BIIRULES-output.xml"/>
-        <!--<loadfile property="validationOutput.PEPPOLCORE" srcfile="${target.dir}/schematron-OPENPEPPOLCORE-output.xml"/>-->
+        <loadfile property="validationOutput.PEPPOLCORE" srcfile="${target.dir}/schematron-OPENPEPPOLCORE-output.xml"/>
         <loadfile property="validationOutput.PEPPOL" srcfile="${target.dir}/schematron-OPENPEPPOL-output.xml"/>
 
         <script language="javascript"><![CDATA[
@@ -250,12 +250,12 @@
 
                 // Find actual ERRORS/WARNINGS in the 3 output files.
                 validationOutput_BII = project.getProperty('validationOutput.BII');
-                //validationOutput_PEPPOL_CORE = project.getProperty('validationOutput.PEPPOLCORE');
+                validationOutput_PEPPOL_CORE = project.getProperty('validationOutput.PEPPOLCORE');
                 validationOutput_PEPPOL = project.getProperty('validationOutput.PEPPOL');
                 var foundErrors = [];
                 var foundWarnings = [];
                 findIssuesInOutputFile(validationOutput_BII, foundErrors, foundWarnings);
-                //findIssuesInOutputFile(validationOutput_PEPPOL_CORE, foundErrors, foundWarnings);
+                findIssuesInOutputFile(validationOutput_PEPPOL_CORE, foundErrors, foundWarnings);
                 findIssuesInOutputFile(validationOutput_PEPPOL, foundErrors, foundWarnings);
 
                 // Verify that expected Errors+Warnings exists in schematron output
