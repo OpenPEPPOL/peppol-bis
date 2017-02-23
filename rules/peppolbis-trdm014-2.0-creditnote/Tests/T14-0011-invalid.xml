@@ -318,6 +318,7 @@
 		</cac:Delivery>
 		<cac:AllowanceCharge>
 			<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+			<cbc:AllowanceChargeReason>Promotion discount</cbc:AllowanceChargeReason>
 			<cbc:Amount currencyID="NOK">1</cbc:Amount>
 		</cac:AllowanceCharge>
 		<cac:Item>
