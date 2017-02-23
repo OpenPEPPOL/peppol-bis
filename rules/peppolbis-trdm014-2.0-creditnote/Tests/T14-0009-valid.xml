@@ -93,7 +93,7 @@
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>The Sellercompany ASA</cbc:RegistrationName>
-				<cbc:CompanyID schemeID="NO:ORGNR" schemeName="Foretaksregisteret">123456789</cbc:CompanyID>
+				<cbc:CompanyID schemeID="NO:ORGNR">123456789</cbc:CompanyID>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:ID>Our ref.</cbc:ID>
@@ -297,7 +297,6 @@
 		</cac:Delivery>
 		<cac:AllowanceCharge>
 			<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-			<cbc:AllowanceChargeReason>Damage</cbc:AllowanceChargeReason>
 			<cbc:Amount currencyID="NOK">1</cbc:Amount>
 		</cac:AllowanceCharge>
 		<cac:Item>
@@ -328,22 +327,12 @@
 				<cbc:Name>Color</cbc:Name>
 				<cbc:Value>Black</cbc:Value>
 			</cac:AdditionalItemProperty>
-			<cac:ManufacturerParty>
-			   <cac:PartyName>
-					<cbc:Name>Company name ASA</cbc:Name>
-			    </cac:PartyName>
-			   <cac:PartyLegalEntity>
-				   <cbc:CompanyID schemeID="NO:ORGNR">904312347</cbc:CompanyID>
-			    </cac:PartyLegalEntity>
-			</cac:ManufacturerParty>
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="NOK">1273</cbc:PriceAmount>
 			<cbc:BaseQuantity>1</cbc:BaseQuantity>
 			<cac:AllowanceCharge>
 				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-				<cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
-				<cbc:MultiplierFactorNumeric>0.15</cbc:MultiplierFactorNumeric>
 				<cbc:Amount currencyID="NOK">225.0</cbc:Amount>
 				<cbc:BaseAmount currencyID="NOK">1500.0</cbc:BaseAmount>
 			</cac:AllowanceCharge>
@@ -378,8 +367,6 @@
 			<cbc:PriceAmount currencyID="NOK">2.48</cbc:PriceAmount>
 			<cac:AllowanceCharge>
 				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-				<cbc:AllowanceChargeReason>Contract</cbc:AllowanceChargeReason>
-				<cbc:MultiplierFactorNumeric>0.1</cbc:MultiplierFactorNumeric>
 				<cbc:Amount currencyID="NOK">0.275</cbc:Amount>
 				<cbc:BaseAmount currencyID="NOK">2.75</cbc:BaseAmount>
 			</cac:AllowanceCharge>
