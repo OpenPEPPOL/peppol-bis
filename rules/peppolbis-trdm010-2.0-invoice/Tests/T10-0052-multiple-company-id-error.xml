@@ -7,7 +7,6 @@
 				None
 		
 				Warnings:
-				BIIC-CORE-R001 x 3
 				EUGEN-T10-R041
 -->
 <ubl:Invoice xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
