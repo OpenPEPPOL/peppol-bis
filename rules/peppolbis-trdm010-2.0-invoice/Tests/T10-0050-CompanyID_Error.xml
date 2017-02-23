@@ -8,6 +8,8 @@
 		
 				Warnings:
 				EUGEN-T10-R054 x 2
+				PEPPOL_CORE_R001 x 2
+		
 -->
 <ubl:Invoice xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
 	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
