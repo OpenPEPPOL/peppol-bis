@@ -1,0 +1,119 @@
+
+= Release notes for openPEPPOL Validation Artifact v3.4.0_RC1, Spring Release 2017
+openPEPPOL AISBL <http://www.peppol.eu/>
+2017-02-28
+:icons: font
+:source-highlighter: coderay
+:sourcedir: .
+:imagesdir: ./images
+:title-logo-image: peppol.png
+
+This release from openPEPPOL includes changes to the validation artifacts (VA's) and changes to the Common BIS document. This version will be *mandatory in use from xx. xxxxxxx 2017 xx:00 CEST.*
+
+
+.Overview of changes
+****
+. Several validation rules have been optimized according to incoming RFCs
+. Editorial updates BIS xx 
+****
+
+****
+[IMPORTANT]
+====
+Planned date for the spring release is 15. May 2017
+====
+****
+
+//
+
+== Changes to Validation Artifacts (VA)
+
+
+.Changes pr. transaction
+[cols="3", options="header"]
+|====
+|Transaction|Rule|Description
+| All
+| Code list rules (CL- and OP- rules)
+| Added attribute @id to schematron assert element
+.10+s|Invoice
+|CL-T10-R003
+.3+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
+| CL-T10-R008
+| OP-T10-R006
+| EUGEN-T10-R047
+| Added warning for empty elements
+|BII2-T10-R051
+|Corrected validation rule, to do casting before sum and rounding
+|EUGEN-T10-R048
+.5+|Added rule to ensure document level amounts does not have more than 2 decimals
+|EUGEN-T10-R049
+|EUGEN-T10-R050
+|EUGEN-T10-R051
+|EUGEN-T10-R052
+
+.10+s|Credit note
+|OP-T14-R006
+.3+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
+|CL-T14-R003
+|CL-T14-R008
+| EUGEN-T14-R048
+| Added warning for empty elements
+|BII2-T14-R051
+|Corrected validation rule, to do casting before sum and rounding
+|EUGEN-T14-R049
+.5+|Added rule to ensure document level amounts does not have more than 2 decimals
+|EUGEN-T14-R050
+|EUGEN-T14-R051
+|EUGEN-T14-R052
+|EUGEN-T14-R053
+
+.5+s|Order
+|OP-T01-R007
+.3+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
+|OP-T01-R009
+|OP-T01-R003
+|EUGEN-T01-R018
+|Added warning for empty elements
+|BII2-T01-R007
+|Changed rule context, so rule does not fire when AllowanceCharge is stated at price level
+
+.3+s|Order response
+|OP-T76-R006
+.2+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
+|OP-T76-R007
+|EUGEN-T76-R005
+|Added warning for empty elements
+
+.2+s|Despatch Advice
+|OP-T16-R002
+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
+|EUGEN-T16-R008
+|Added warning for empty elements
+
+.5+s|Catalogue
+|OP-T19-R002
+.4+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
+|CL-T19-R002
+|OP-T19-R011
+|OP-T19-R012
+|EUGEN-T19-R054
+|Added warning for empty elements
+
+s|Catalogue Response
+|EUGEN-T58-R004
+|Added warning for empty elements
+
+s|Message Level Response
+|EUGEN-T71-R006
+|Added warning for empty elements
+|====
+
+== Editorial changes
+
+=== Common BIS
+
+Added ... 
+
+=== BIS xx – yyy
+Added ... 
