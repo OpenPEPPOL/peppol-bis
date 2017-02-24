@@ -8,7 +8,7 @@
         <title>PEPPOL BIS Punch Out 1.0 (Base)</title>
         <inherit>ubl-catalogue-2.1</inherit>
         <file source="Schematron/BII RULES/BIIRULES-UBL-T77.sch" path="xsl/BIIRULES-UBL-T77.xsl" />
-        <!-- <file source="Schematron/OPENPEPPOL/OPENPEPPOLRULES-UBL-T77.sch" path="xsl/OPENPEPPOL-UBL-T77.xsl" /> -->
+        <file source="Schematron/OPENPEPPOL/OPENPEPPOL-UBL-T77.sch" path="xsl/OPENPEPPOL-UBL-T77.xsl" />
     </configuration>
 
     <configuration>

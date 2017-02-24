@@ -4,7 +4,7 @@
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron" is-a="T77" id="UBL-T77">
   <param name="EUGEN-T77-R001" value="(cbc:CustomizationID) = 'urn:www.cenbii.eu:transaction:biitrns077:ver2.0:extended:www.peppol.eu:bis:peppol18a:ver1.0'"/>
   <param name="EUGEN-T77-R002" value="(cbc:ProfileID)= 'urn:www.cenbii.eu:profile:bii18:ver1.0'"/>
-  <param name="EUGEN-T77-R003" value="(cac:ValidityPeriod/cbc:EndDate) and (number(translate(cac:ValidityPeriod/cbc:EndDate,'-','')) =&gt; number(translate(cbc:IssueDate,'-',''))) "/>
+  <param name="EUGEN-T77-R003" value="(cac:ValidityPeriod/cbc:EndDate) and (number(translate(cac:ValidityPeriod/cbc:EndDate,'-','')) &gt;= number(translate(cbc:IssueDate,'-','')))  "/>
   <param name="EUGEN-T77-R004" value="((cbc:ActionCode) = 'true') or ((cbc:ActionCode) = 'false') or (not(cbc:ActionCode))"/>
   <param name="EUGEN-T77-R006" value="(cac:ProviderParty/cbc:EndpointID)"/>
   <param name="EUGEN-T77-R007" value="(cac:ReceiverParty/cbc:EndpointID)"/>

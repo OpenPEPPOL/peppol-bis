@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--
 
-            UBL syntax binding to the T110  
+            UBL syntax binding to the T110
             Created by Validex Schematron Generator. (2015) Midran Ltd.
             Timestamp: 2016-12-23 13:34:37 +0100
      -->
@@ -24,5 +24,5 @@
   <include href="UBL/OPENPEPPOL-UBL-T110.sch"/>
   <!-- Code Lists Binding rules -->
   <!-- ======================== -->
-  <include href="codelist/OPENPEPPOLCodesT110-UBL.sch"/>
+  <include href="codelist/OPENPEPPOL-UBL-codes.sch"/>
 </schema>
