@@ -454,17 +454,22 @@
             <jvmarg line="-Xmx2048m"/>
         </java>
 
-        <java jar="Saxon-HE-9.5.1-8.jar"
-              fork="true"
-              failonerror="true"
-              maxmemory="2048m"
-              resultproperty="errorCode">
-            <arg value="-s:${testFile}"/>
-            <arg value="-xsl:${target.xslt}/OPENPEPPOLCORE-UBL-${docType}.xsl"/>
-            <arg value="-o:${target.dir}/schematron-OPENPEPPOLCORE-output.xml"/>
-            <arg value="-warnings:silent"/>
-            <jvmarg line="-Xmx2048m"/>
-        </java>
+		<if>
+			<available file="${target.xslt}/OPENPEPPOLCORE-UBL-${docType}.xsl"/>
+			<then>
+				<java jar="Saxon-HE-9.5.1-8.jar"
+					  fork="true"
+					  failonerror="true"
+					  maxmemory="2048m"
+					  resultproperty="errorCode">
+					<arg value="-s:${testFile}"/>
+					<arg value="-xsl:${target.xslt}/OPENPEPPOLCORE-UBL-${docType}.xsl"/>
+					<arg value="-o:${target.dir}/schematron-OPENPEPPOLCORE-output.xml"/>
+					<arg value="-warnings:silent"/>
+					<jvmarg line="-Xmx2048m"/>
+				</java>
+			</then>
+		</if>
 
         <java jar="Saxon-HE-9.5.1-8.jar"
               fork="true"
