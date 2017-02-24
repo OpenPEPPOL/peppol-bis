@@ -26,8 +26,6 @@
     <assert test="$BII2-T10-R044" flag="fatal" id="BII2-T10-R044">[BII2-T10-R044]-A seller VAT identifier MUST be provided if the invoice has a VAT total amount</assert>
     <assert test="$BII2-T10-R047" flag="fatal" id="BII2-T10-R047">[BII2-T10-R047]-A buyer VAT identifier MUST be present if the VAT category code is reverse VAT</assert>
     <assert test="$BII2-T10-R048" flag="fatal" id="BII2-T10-R048">[BII2-T10-R048]-An invoice with a VAT category code of reverse charge MUST NOT contain other VAT categories.</assert>
-    <assert test="$BII2-T10-R049" flag="fatal" id="BII2-T10-R049">[BII2-T10-R049]-The invoice total without VAT MUST be equal to the VAT category taxable amount if the VAT category code is reverse charge</assert>
-    <assert test="$BII2-T10-R050" flag="fatal" id="BII2-T10-R050">[BII2-T10-R050]-The VAT category tax amount MUST be zero  if the VAT category code is reverse charge (since there is only one VAT category allowed it follows that the invoice tax total for reverse charge invoices is zero)</assert>
     <assert test="$BII2-T10-R058" flag="fatal" id="BII2-T10-R058">[BII2-T10-R058]-Invoice total without VAT MUST be equal to the sum of VAT category taxable amounts</assert>
   </rule>
   <rule context="$Invoice_Line">
@@ -66,5 +64,9 @@
     <assert test="$BII2-T10-R029" flag="fatal" id="BII2-T10-R029">[BII2-T10-R029]-Every VAT category details MUST be defined through a VAT category code</assert>
     <assert test="$BII2-T10-R030" flag="fatal" id="BII2-T10-R030">[BII2-T10-R030]-The VAT category percentage MUST be provided if the VAT category code is standard.</assert>
     <assert test="$BII2-T10-R045" flag="fatal" id="BII2-T10-R045">[BII2-T10-R045]-A VAT exemption reason MUST be provided if the VAT category code is exempt or reverse charge.</assert>
+  </rule>
+  <rule context="$AE_VAT">
+    <assert test="$BII2-T10-R049" flag="fatal" id="BII2-T10-R049">[BII2-T10-R049]-The invoice total without VAT MUST be equal to the VAT category taxable amount if the VAT category code is reverse charge</assert>
+    <assert test="$BII2-T10-R050" flag="fatal" id="BII2-T10-R050">[BII2-T10-R050]-The VAT category tax amount MUST be zero  if the VAT category code is reverse charge (since there is only one VAT category allowed it follows that the invoice tax total for reverse charge invoices is zero)</assert>
   </rule>
 </pattern>
