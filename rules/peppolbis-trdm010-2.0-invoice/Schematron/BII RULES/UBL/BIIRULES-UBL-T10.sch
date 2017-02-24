@@ -31,7 +31,7 @@
   <param name="BII2-T10-R031" value="(cbc:StartDate and cbc:EndDate) and (number(translate(cbc:StartDate,'-','')) &lt;= number(translate(cbc:EndDate,'-','')))"/>
   <param name="BII2-T10-R032" value="(cac:Item/cac:StandardItemIdentification/cbc:ID/@schemeID) or not(cac:Item/cac:StandardItemIdentification)"/>
   <param name="BII2-T10-R033" value="(//cac:CommodityClassification/cbc:ItemClassificationCode/@listID) or not(//cac:CommodityClassification)"/>
-  <param name="BII2-T10-R034" value="(cac:Price/cbc:PriceAmount) &gt;= 0"/>
+  <param name="BII2-T10-R034" value="not(cac:Price/cbc:PriceAmount) or (cac:Price/cbc:PriceAmount) &gt;= 0"/>
   <param name="BII2-T10-R035" value="(cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount) &gt;= 0"/>
   <param name="BII2-T10-R037" value="(cac:LegalMonetaryTotal/cbc:PayableAmount) &gt;= 0"/>
   <param name="BII2-T10-R039" value="((normalize-space(cbc:PaymentMeansCode) = '31') and (cac:PayeeFinancialAccount/cbc:ID)) or (string(cbc:PaymentMeansCode) != '31')"/>
