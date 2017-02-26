@@ -31,7 +31,7 @@
   <param name="BII2-T14-R031" value="(cbc:StartDate and cbc:EndDate) and (number(translate(cbc:StartDate,'-','')) &lt;= number(translate(cbc:EndDate,'-','')))"/>
   <param name="BII2-T14-R032" value="(cac:Item/cac:StandardItemIdentification/cbc:ID/@schemeID) or not(cac:Item/cac:StandardItemIdentification)"/>
   <param name="BII2-T14-R033" value="(//cac:CommodityClassification/cbc:ItemClassificationCode/@listID) or not(//cac:CommodityClassification)"/>
-  <param name="BII2-T14-R034" value="(cac:Price/cbc:PriceAmount) &gt;= 0"/>
+  <param name="BII2-T14-R034" value="not(cac:Price/cbc:PriceAmount) or (cac:Price/cbc:PriceAmount) &gt;= 0"/>
   <param name="BII2-T14-R035" value="(cac:LegalMonetaryTotal/cbc:TaxInclusiveAmount) &gt;= 0"/>
   <param name="BII2-T14-R037" value="(cac:LegalMonetaryTotal/cbc:PayableAmount) &gt;= 0"/>
   <param name="BII2-T14-R043" value="((/ubl:CreditNote/cac:TaxTotal/*/*/*/cbc:ID = 'VAT') and (cac:TaxCategory/cbc:ID)) or not(/ubl:CreditNote/cac:TaxTotal)"/>
@@ -40,8 +40,8 @@
   <param name="BII2-T14-R046" value="(cac:Item/cac:ClassifiedTaxCategory/cbc:ID) or not(/ubl:CreditNote/cac:TaxTotal/*/*/*/cbc:ID='VAT')"/>
   <param name="BII2-T14-R047" value="(cac:AccountingCustomerParty/cac:Party/cac:PartyTaxScheme/cbc:CompanyID) or not(cac:TaxTotal/*/*/cbc:ID = 'AE')"/>
   <param name="BII2-T14-R048" value="count(child::cac:TaxTotal/*/*/cbc:ID) = count(child::cac:TaxTotal/*/*/cbc:ID[. = 'AE']) or count(child::cac:TaxTotal/*/*/cbc:ID[. = 'AE']) = 0"/>
-  <param name="BII2-T14-R049" value="(xs:decimal(cac:TaxTotal/cac:TaxSubtotal[cac:TaxCategory/cbc:ID = 'AE']/cbc:TaxableAmount) = xs:decimal(cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount)) or  not(cac:TaxTotal[cac:TaxSubtotal/cac:TaxCategory/cbc:ID = 'AE'])"/>
-  <param name="BII2-T14-R050" value="(xs:decimal(cac:TaxTotal/cac:TaxSubtotal[cac:TaxCategory/cbc:ID = 'AE']/cbc:TaxAmount) = 0) or  not(cac:TaxTotal[cac:TaxSubtotal/cac:TaxCategory/cbc:ID = 'AE'])"/>
+  <param name="BII2-T14-R049" value="(sum(cac:TaxSubtotal[cac:TaxCategory/cbc:ID = 'AE']/cbc:TaxableAmount) = (../cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount))"/>
+  <param name="BII2-T14-R050" value="every $taxamount in cac:TaxSubtotal/cbc:TaxAmount satisfies $taxamount = 0"/>
   <param name="BII2-T14-R051" value="(xs:decimal(cbc:LineExtensionAmount)) = (round(sum((//cac:CreditNoteLine/xs:decimal(cbc:LineExtensionAmount))) * 10 * 10) div 100)"/>
   <param name="BII2-T14-R052" value="((cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and ((xs:decimal(cbc:TaxExclusiveAmount)) = round((xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount) - xs:decimal(cbc:AllowanceTotalAmount)) * 10 * 10) div 100 ))  or (not(cbc:ChargeTotalAmount) and (cbc:AllowanceTotalAmount) and ((xs:decimal(cbc:TaxExclusiveAmount)) = round((xs:decimal(cbc:LineExtensionAmount) - xs:decimal(cbc:AllowanceTotalAmount)) * 10 * 10 ) div 100)) or ((cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and ((xs:decimal(cbc:TaxExclusiveAmount)) = round((xs:decimal(cbc:LineExtensionAmount) + xs:decimal(cbc:ChargeTotalAmount)) * 10 * 10 ) div 100)) or (not(cbc:ChargeTotalAmount) and not(cbc:AllowanceTotalAmount) and (xs:decimal(cbc:TaxExclusiveAmount) = xs:decimal(cbc:LineExtensionAmount)))"/>
   <param name="BII2-T14-R053" value="((cbc:PayableRoundingAmount) and ((xs:decimal(cbc:TaxInclusiveAmount)) = (round((xs:decimal(cbc:TaxExclusiveAmount) + (xs:decimal(sum(/ubl:CreditNote/cac:TaxTotal/cbc:TaxAmount))) + xs:decimal(cbc:PayableRoundingAmount)) *10 * 10) div 100))) or (not(cbc:PayableRoundingAmount) and ((xs:decimal(cbc:TaxInclusiveAmount)) = round((xs:decimal(cbc:TaxExclusiveAmount) + (xs:decimal(sum(/ubl:CreditNote/cac:TaxTotal/cbc:TaxAmount)))) * 10 * 10) div 100))"/>
@@ -49,6 +49,7 @@
   <param name="BII2-T14-R055" value="(xs:decimal(cbc:ChargeTotalAmount)) = (round(xs:decimal(sum(/ubl:CreditNote/cac:AllowanceCharge[cbc:ChargeIndicator=&quot;true&quot;]/cbc:Amount)) * 10 * 10) div 100) or not(cbc:ChargeTotalAmount)"/>
   <param name="BII2-T14-R056" value="((cbc:PrepaidAmount) and ((xs:decimal(cbc:PayableAmount)) = (round((xs:decimal(cbc:TaxInclusiveAmount) - xs:decimal(cbc:PrepaidAmount)) * 10 * 10) div 100))) or (not(cbc:PrepaidAmount) and (xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount)))"/>
   <param name="BII2-T14-R058" value="((cac:TaxTotal[cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID = 'VAT']/cbc:TaxAmount) and (round(xs:decimal(sum(cac:TaxTotal//cac:TaxSubtotal/cbc:TaxableAmount)) *10 * 10) div 100 = ((xs:decimal(cac:LegalMonetaryTotal/cbc:TaxExclusiveAmount))))) or  not((cac:TaxTotal[cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme/cbc:ID = 'VAT']))"/>
+  <param name="AE_VAT" value="//cac:TaxTotal[cac:TaxSubtotal/cac:TaxCategory/cbc:ID = 'AE']"/>
   <param name="Payment_Means" value="//cac:PaymentMeans"/>
   <param name="VAT_category" value="//cac:TaxSubtotal[cac:TaxCategory/cac:TaxScheme/cbc:ID = 'VAT']"/>
   <param name="Credit_Note_Line" value="//cac:CreditNoteLine"/>

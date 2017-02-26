@@ -34,79 +34,41 @@ Planned date for the spring release is 15. May 2017
 |====
 |Transaction|Rule|Description
 | All
-| Code list rules (CL- and OP- rules)
-| Added attribute @id to schematron assert element
-.10+s|Invoice
-|CL-T10-R003
-.3+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
-| CL-T10-R008
-| OP-T10-R006
-| EUGEN-T10-R047
-| Added warning for empty elements
-|BII2-T10-R051
-|Corrected validation rule, to do casting before sum and rounding
-|EUGEN-T10-R048
-.5+|Added rule to ensure document level amounts does not have more than 2 decimals
-|EUGEN-T10-R049
-|EUGEN-T10-R050
-|EUGEN-T10-R051
-|EUGEN-T10-R052
+| Schematron artefacts 
+| Added `<ns prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>` to the root schematron artefact
+.7+s|Invoice
+| BII2-T10-R034 
+| Fix to fire the negative prices only when the price is present.
+| BII2-T10-R049
+|Fix to allow for multiple occurrencies of the Reverse Charge tax ("AE") when specifying the breakdown of the taxes
+| BII2-T10-R050
+|Fix to allow for multiple occurrencies of the Reverse Charge tax ("AE") with tax amount equal zero
+| BII2-T10-R056
+| Corrected validation rule, apply prepaid amount to calculate payable amount
+| EUGEN-T10-R041
+| Allow for multiple Party Tax Schemes to allow for customizations extending this element without breakin 
+| EUGEN-T10-R053
+| Check the existance of the Invoice Type Code
+| EUGEN-T10-R054 
+| Added rule warning for company identifier without scheme identifier
 
-.10+s|Credit note
-|OP-T14-R006
-.3+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
-|CL-T14-R003
-|CL-T14-R008
-| EUGEN-T14-R048
-| Added warning for empty elements
-|BII2-T14-R051
-|Corrected validation rule, to do casting before sum and rounding
-|EUGEN-T14-R049
-.5+|Added rule to ensure document level amounts does not have more than 2 decimals
-|EUGEN-T14-R050
-|EUGEN-T14-R051
-|EUGEN-T14-R052
-|EUGEN-T14-R053
+.6+s|Credit note
+| BII2-T14-R034 
+| Fix to fire the negative prices only when the price is present.
+| BII2-T14-R049
+|Fix to allow for multiple occurrencies of the Reverse Charge tax ("AE") when specifying the breakdown of the taxes
+| BII2-T14-R050
+|Fix to allow for multiple occurrencies of the Reverse Charge tax ("AE") with tax amount equal zero
+| BII2-T14-R056
+| Corrected validation rule, apply prepaid amount to calculate payable amount
+| EUGEN-T14-R041
+| Allow for multiple Party Tax Schemes to allow for customizations extending this element without breakin 
+| EUGEN-T14-R054 
+| Added rule warning for company identifier without scheme identifier
 
-.5+s|Order
-|OP-T01-R007
-.3+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
-|OP-T01-R009
-|OP-T01-R003
-|EUGEN-T01-R018
-|Added warning for empty elements
-|BII2-T01-R007
-|Changed rule context, so rule does not fire when AllowanceCharge is stated at price level
-
-.3+s|Order response
-|OP-T76-R006
-.2+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
-|OP-T76-R007
-|EUGEN-T76-R005
-|Added warning for empty elements
-
-.2+s|Despatch Advice
-|OP-T16-R002
-|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
-|EUGEN-T16-R008
-|Added warning for empty elements
-
-.5+s|Catalogue
-|OP-T19-R002
-.4+|Fix to prevent the rules from firing if UBL extensions is used. Added namespace to rule context
-|CL-T19-R002
-|OP-T19-R011
-|OP-T19-R012
-|EUGEN-T19-R054
-|Added warning for empty elements
-
-s|Catalogue Response
-|EUGEN-T58-R004
-|Added warning for empty elements
-
-s|Message Level Response
-|EUGEN-T71-R006
-|Added warning for empty elements
+.1+s|Order
+| OP-T01-R009 
+| Add 'ZZ' code in UNEceRec20 code list.
 |====
 
 == Editorial changes
