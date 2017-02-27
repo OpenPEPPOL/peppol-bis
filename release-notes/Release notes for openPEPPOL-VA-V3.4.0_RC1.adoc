@@ -14,12 +14,16 @@ This release from openPEPPOL includes changes to the validation artifacts (VA's)
 .Overview of changes
 ****
 . Several validation rules have been optimized according to incoming RFCs
+. Core XSLT files have been placed in a new folder XSLTCore
 . Editorial updates BIS xx 
 ****
 
 ****
 [IMPORTANT]
 ====
+Core rules should only be considered a help to implementors creating a PEPPOL BIS, making sure that documents are PEPPOL Core conformant.
+The core rules should not be used in run time enviroments.
+
 Planned date for the spring release is 15. May 2017
 ====
 ****
