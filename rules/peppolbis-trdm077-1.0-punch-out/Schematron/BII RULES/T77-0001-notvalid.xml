@@ -2,10 +2,12 @@
 <!--
 		Description:
 		Release March 2017.
-		This file contains a PEPPOL Catalogue, profile 18
+		This file contains a non valid PEPPOL Catalogue, profile 18
 
 		Errors:
-		None
+		BII3-T77-R025
+		EUGEN-T77-R008
+		CL-T77-R005
 
 		Warning:
 		None
@@ -84,6 +86,13 @@
 				<cbc:DocumentType>Picture of the computer</cbc:DocumentType>
 				<cac:Attachment>
 					<cbc:EmbeddedDocumentBinaryObject mimeCode="image/jpeg">UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
+				</cac:Attachment>
+			</cac:ItemSpecificationDocumentReference>
+			<cac:ItemSpecificationDocumentReference>
+				<cbc:ID>PC01specs</cbc:ID>
+				<cbc:DocumentType>PC detailed specification</cbc:DocumentType>
+				<cac:Attachment>
+					<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf">UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
 				</cac:Attachment>
 			</cac:ItemSpecificationDocumentReference>
 			<cac:OriginCountry>

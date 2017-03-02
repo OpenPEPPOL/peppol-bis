@@ -8,7 +8,7 @@
   <param name="EUGEN-T77-R004" value="((cbc:ActionCode) = 'true') or ((cbc:ActionCode) = 'false') or (not(cbc:ActionCode))"/>
   <param name="EUGEN-T77-R006" value="(cac:ProviderParty/cbc:EndpointID)"/>
   <param name="EUGEN-T77-R007" value="(cac:ReceiverParty/cbc:EndpointID)"/>
-  <param name="EUGEN-T77-R008" value="(cac:Price/cbc:BaseQuantity/@unitCode) = (cac:DeliveryUnit/cbc:BatchQuantity/@unitCode)"/>
+  <param name="EUGEN-T77-R008" value="(cac:Price/cbc:BaseQuantity/@unitCode) = (cac:DeliveryUnit/cbc:BatchQuantity/@unitCode) or (not(cac:Price/cbc:BaseQuantity)) or (not(cac:DeliveryUnit/cbc:BatchQuantity))"/>
   <param name="EUGEN-T77-R009" value="(cac:Price/cbc:PriceAmount)"/>
   <param name="EUGEN-T77-R010" value="((cac:AdditionalItemProperty[cbc:Name = 'ServiceIndicator']) and (cac:AdditionalItemProperty[cbc:Value = 'true'] or (cac:AdditionalItemProperty[cbc:Value = 'false']))) or (not(cac:AdditionalItemProperty[cbc:Name = 'ServiceIndicator']))"/>
   <param name="EUGEN-T77-R011" value="((cbc:LeadTimeMeasure/@unitCode)= 'DAY') or (not(cbc:LeadTimeMeasure))"/>
