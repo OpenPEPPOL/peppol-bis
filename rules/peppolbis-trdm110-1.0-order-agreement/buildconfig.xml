@@ -12,8 +12,8 @@
     </configuration>
 
     <configuration>
-        <identifier>peppolbis-t110-18-1.0</identifier>
-        <title>PEPPOL BIS Order Agreement 2.0 (Profile 42)</title>
+        <identifier>peppolbis-t110-18a-1.0</identifier>
+        <title>PEPPOL BIS Order Agreement 1.0 (Profile 42)</title>
         <profileId>urn:www.cenbii.eu:profile:bii42:ver1.0</profileId>
         <customizationId>urn:www.cenbii.eu:transaction:biitrns110:ver1.0:extended:urn:www.peppol.eu:bis:peppol42a:ver1.0</customizationId>
         <inherit>peppolbis-t110-base-1.0</inherit>

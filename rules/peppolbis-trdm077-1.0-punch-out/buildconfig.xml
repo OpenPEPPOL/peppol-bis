@@ -12,7 +12,7 @@
     </configuration>
 
     <configuration>
-        <identifier>peppolbis-t77-18-1.0</identifier>
+        <identifier>peppolbis-t77-18a-1.0</identifier>
         <title>PEPPOL BIS Punch Out 1.0 (Profile 18)</title>
         <profileId>urn:www.cenbii.eu:profile:bii18:ver1.0</profileId>
         <customizationId>urn:www.cenbii.eu:transaction:biitrns077:ver2.0:extended:www.peppol.eu:bis:peppol18a:ver1.0</customizationId>
