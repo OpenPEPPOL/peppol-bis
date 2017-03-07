@@ -186,12 +186,13 @@
         <script language="javascript">
             // Find DocumentType
             filePath = project.getProperty('testFile').replace("\\", "/");
-            documentStartPos = filePath.indexOf('rules/');
-            // Extract T10 as: T + "10" from "rules\peppolbis-trdm001-2.0-order\Tests\T01-0001-valid.xml"
-            docType = "T" + filePath.substring(documentStartPos+21, documentStartPos+23);
-            //echo = project.createTask("echo");
-            //echo.setMessage("DEBUG: Current test file=" + filePath.substring(documentStartPos) + " - identified as type: " + docType);
-            //echo.perform( );
+            <!--filePath = "rules/peppolbis-trdm001-2.0-order/Tests/T01xxxxx12-0001-valid.xml";-->
+            documentStartPos = filePath.indexOf('/Tests/');
+            // Extract T10 as: T + "01" from "rules/peppolbis-trdm001-2.0-order/Tests/T01-0001-valid.xml"
+            docType = "T" + filePath.substring(documentStartPos+8, filePath.indexOf("-", documentStartPos));
+            <!--echo = project.createTask("echo");-->
+            <!--echo.setMessage("DEBUG: Current test file=" + filePath.substring(documentStartPos) + " - identified as type: " + docType);-->
+            <!--echo.perform( );-->
             project.setProperty('docType', docType);
         </script>
         <basename property="testFile.base" file="${testFile}"/>
