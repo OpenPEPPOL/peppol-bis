@@ -10,7 +10,7 @@
   <param name="EUGEN-T77-R007" value="(cac:ReceiverParty/cbc:EndpointID)"/>
   <param name="EUGEN-T77-R008" value="(cac:Price/cbc:BaseQuantity/@unitCode) = (cac:DeliveryUnit/cbc:BatchQuantity/@unitCode) or (not(cac:Price/cbc:BaseQuantity)) or (not(cac:DeliveryUnit/cbc:BatchQuantity))"/>
   <param name="EUGEN-T77-R009" value="(cac:Price/cbc:PriceAmount)"/>
-  <param name="EUGEN-T77-R010" value="((cac:AdditionalItemProperty[cbc:Name = 'ServiceIndicator']) and (cac:AdditionalItemProperty[cbc:Value = 'true'] or (cac:AdditionalItemProperty[cbc:Value = 'false']))) or (not(cac:AdditionalItemProperty[cbc:Name = 'ServiceIndicator']))"/>
+  <param name="EUGEN-T77-R010" value="(cbc:Value = 'true' or cbc:Value = 'false')"/>
   <param name="EUGEN-T77-R011" value="((cbc:LeadTimeMeasure/@unitCode)= 'DAY') or (not(cbc:LeadTimeMeasure))"/>
   <param name="EUGEN-T77-R012" value="(count(cac:ItemSpecificationDocumentReference[cbc:DocumentTypeCode = 'main_image']) &lt;= 1)"/>
   <param name="EUGEN-T77-R013" value="@schemeID"/>
@@ -22,4 +22,5 @@
   <param name="PriceAndQuantity" value="//cac:CatalogueLine/cac:RequiredItemLocationQuantity"/>
   <param name="ItemClassification" value="//cac:CatalogueLine/cac:Item/cbc:ItemClassificationCode"/>
   <param name="Item" value="//cac:CatalogueLine/cac:Item"/>
+  <param name="ServiceIndicator" value="//cac:Item/cac:AdditionalItemProperty[cbc:Name = 'ServiceIndicator']"/>
 </pattern>

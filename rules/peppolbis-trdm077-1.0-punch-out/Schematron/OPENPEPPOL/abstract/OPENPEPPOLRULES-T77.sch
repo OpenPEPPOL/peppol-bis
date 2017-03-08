@@ -7,8 +7,10 @@
     <assert test="$EUGEN-T77-R014" flag="fatal" id="EUGEN-T77-R014">[EUGEN-T77-R014]-A party identifier MUST have a scheme identifier attribute</assert>
   </rule>
   <rule context="$Item">
-    <assert test="$EUGEN-T77-R010" flag="fatal" id="EUGEN-T77-R010">[EUGEN-T77-R010]-For AdditionalItemProperties where name is ServiceIndicator the value may only be "true" or "false".</assert>
     <assert test="$EUGEN-T77-R012" flag="fatal" id="EUGEN-T77-R012">[EUGEN-T77-R012]-Only one attachment may be identified as main image.</assert>
+  </rule>
+  <rule context="$ServiceIndicator">
+    <assert test="$EUGEN-T77-R010" flag="fatal" id="EUGEN-T77-R010">[EUGEN-T77-R010]-For AdditionalItemProperties where name is ServiceIndicator the value may only be "true" or "false".</assert>
   </rule>
   <rule context="$ItemClassification">
     <assert test="$EUGEN-T77-R017" flag="fatal" id="EUGEN-T77-R017">[EUGEN-T77-R017]-Item classification codes MUST include code list value (listID)</assert>

@@ -101,7 +101,7 @@
 			</cac:ClassifiedTaxCategory>
 			<cac:AdditionalItemProperty>
 				<cbc:Name>ServiceIndicator</cbc:Name>
-				<cbc:Value>false</cbc:Value>
+				<cbc:Value>true</cbc:Value>
 			</cac:AdditionalItemProperty>
 			<cac:AdditionalItemProperty>
 				<cbc:Name>RAM memory</cbc:Name>
