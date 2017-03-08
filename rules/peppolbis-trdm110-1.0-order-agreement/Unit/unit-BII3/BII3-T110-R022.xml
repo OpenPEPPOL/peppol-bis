@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t110-base-1.0">
+	<assert>
+		<scope>BII3-T110-R022</scope>
+	</assert>
+	<test>
+		<assert>
+			<description>No errors when seller name is present.</description>
+			<success>BII3-T110-R022</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:SellerSupplierParty>
+				<cac:Party>
+					<cac:PartyName>
+						<cbc:Name/>
+					</cac:PartyName>
+				</cac:Party>
+			</cac:SellerSupplierParty>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>No errors when seller identifier is present.</description>
+			<success>BII3-T110-R022</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:SellerSupplierParty>
+				<cac:Party>
+					<cac:PartyIdentification>
+						<cbc:ID/>
+					</cac:PartyIdentification>
+				</cac:Party>
+			</cac:SellerSupplierParty>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Trigger error when seller name and identifier is not present.</description>
+			<error>BII3-T110-R022</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:SellerSupplierParty/>
+
+		</OrderResponse>
+	</test>
+</testSet>

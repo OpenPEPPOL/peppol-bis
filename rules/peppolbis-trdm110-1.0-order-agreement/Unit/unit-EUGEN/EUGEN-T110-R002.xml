@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t110-base-1.0">
+	<assert>
+		<scope>EUGEN-T110-R002</scope>
+	</assert>
+	<test>
+		<assert>
+			<description>No errors when qualifier is set.</description>
+			<success>EUGEN-T110-R002</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="Something"/>
+			</cac:PartyIdentification>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>No errors when qualifier is empty.</description>
+			<success>EUGEN-T110-R002</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:PartyIdentification>
+				<cbc:ID schemeID=""/>
+			</cac:PartyIdentification>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Trigger error when qualifier is not set.</description>
+			<error>EUGEN-T110-R002</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:PartyIdentification>
+				<cbc:ID/>
+			</cac:PartyIdentification>
+
+		</OrderResponse>
+	</test>
+</testSet>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t110-base-1.0">
+	<assert>
+		<scope>CL-T110-R006</scope>
+	</assert>
+	<test>
+		<assert>
+			<description>No errors when valid codes are used.</description>
+			<success number="6">CL-T110-R006</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cbc:ItemClassificationCode listID="CV"/>
+			<cbc:ItemClassificationCode listID="GN"/>
+			<cbc:ItemClassificationCode listID="HS"/>
+			<cbc:ItemClassificationCode listID="CPV"/>
+			<cbc:ItemClassificationCode listID="UNSPSC"/>
+			<cbc:ItemClassificationCode listID="eCLASS"/>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Trigger warning when non-existing codes are used.</description>
+			<warning number="2">CL-T110-R006</warning>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cbc:ItemClassificationCode listID="NA"/>
+			<cbc:ItemClassificationCode listID=""/>
+
+		</OrderResponse>
+	</test>
+</testSet>

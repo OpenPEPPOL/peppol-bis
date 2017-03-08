@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t110-base-1.0">
+	<assert>
+		<scope>OP-T110-R006</scope>
+	</assert>
+	<test>
+		<assert>
+			<description>No errors when valid codes are used.</description>
+			<success>OP-T110-R006</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cbc:BatchQuantity unitCode="STK" />
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Trigger warning when deleted codes are used.</description>
+			<error>OP-T110-R006</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cbc:BatchQuantity unitCode="32" />
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Trigger warning when non-existing codes are used.</description>
+			<error>OP-T110-R006</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cbc:BatchQuantity unitCode="ER" />
+
+		</OrderResponse>
+	</test>
+</testSet>

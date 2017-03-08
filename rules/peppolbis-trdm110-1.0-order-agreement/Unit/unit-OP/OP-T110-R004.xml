@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t110-base-1.0">
+	<assert>
+		<scope>OP-T110-R004</scope>
+	</assert>
+	<test>
+		<assert>
+			<description>No errors when valid codes are used.</description>
+			<success number="2">OP-T110-R004</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="NO:ORGNR"/>
+				<cbc:ID schemeID="GLN"/>
+			</cac:PartyIdentification>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>No errors when new codes are used.</description>
+			<success number="2">OP-T110-R004</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="DIGST"/>
+				<cbc:ID schemeID="BE:CBE"/>
+			</cac:PartyIdentification>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Trigger errors when invalid codes are used.</description>
+			<error number="2">OP-T110-R004</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="NO:ORG"/>
+				<cbc:ID schemeID="NL:ION"/>
+			</cac:PartyIdentification>
+
+		</OrderResponse>
+	</test>
+</testSet>

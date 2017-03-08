@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t110-base-1.0">
+	<!--
+
+	Rule as of 2017-02-26:
+
+	(xs:decimal(cbc:TaxExclusiveAmount)) = ((round(xs:decimal(cbc:LineExtensionAmount)) * 10 * 10) div 100) +((round(xs:decimal(cbc:ChargeTotalAmount)) * 10 * 10) div 100)-((round(xs:decimal(cbc:AllowanceTotalAmount)) * 10 * 10) div 100)
+	or	(xs:decimal(cbc:TaxExclusiveAmount)) = ((round(xs:decimal(cbc:LineExtensionAmount)) * 10 * 10) div 100)
+	or	(xs:decimal(cbc:TaxExclusiveAmount)) = ((round(xs:decimal(cbc:LineExtensionAmount)) * 10 * 10) div 100) +((round(xs:decimal(cbc:ChargeTotalAmount)) * 10 * 10) div 100)
+	or	(xs:decimal(cbc:TaxExclusiveAmount)) = ((round(xs:decimal(cbc:LineExtensionAmount)) * 10 * 10) div 100) -((round(xs:decimal(cbc:AllowanceTotalAmount)) * 10 * 10) div 100)
+	or	(not(cbc:TaxExclusiveAmount))
+
+	-->
+	<assert>
+		<scope>EUGEN-T110-R022</scope>
+	</assert>
+	<!-- (xs:decimal(cbc:TaxExclusiveAmount)) = ((round(xs:decimal(cbc:LineExtensionAmount)) * 10 * 10) div 100) +((round(xs:decimal(cbc:ChargeTotalAmount)) * 10 * 10) div 100)-((round(xs:decimal(cbc:AllowanceTotalAmount)) * 10 * 10) div 100) -->
+	<test>
+		<assert>
+			<description>Valid example with charge and allowance.</description>
+			<success>EUGEN-T110-R022</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:LineExtensionAmount>100</cbc:LineExtensionAmount>
+				<cbc:ChargeTotalAmount>50</cbc:ChargeTotalAmount>
+				<cbc:AllowanceTotalAmount>50</cbc:AllowanceTotalAmount>
+				<cbc:TaxExclusiveAmount>100</cbc:TaxExclusiveAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Valid example with charge and allowance.</description>
+			<success>EUGEN-T110-R022</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:LineExtensionAmount>100</cbc:LineExtensionAmount>
+				<cbc:ChargeTotalAmount>25</cbc:ChargeTotalAmount>
+				<cbc:AllowanceTotalAmount>75</cbc:AllowanceTotalAmount>
+				<cbc:TaxExclusiveAmount>50</cbc:TaxExclusiveAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Invalid example with charge and allowance with invalid charge.</description>
+			<error>EUGEN-T110-R022</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:LineExtensionAmount>100</cbc:LineExtensionAmount>
+				<cbc:ChargeTotalAmount>100</cbc:ChargeTotalAmount>
+				<cbc:AllowanceTotalAmount>50</cbc:AllowanceTotalAmount>
+				<cbc:TaxExclusiveAmount>100</cbc:TaxExclusiveAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Invalid example with charge and allowance with invalid allowance.</description>
+			<error>EUGEN-T110-R022</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:LineExtensionAmount>100</cbc:LineExtensionAmount>
+				<cbc:ChargeTotalAmount>50</cbc:ChargeTotalAmount>
+				<cbc:AllowanceTotalAmount>100</cbc:AllowanceTotalAmount>
+				<cbc:TaxExclusiveAmount>100</cbc:TaxExclusiveAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<!-- (xs:decimal(cbc:TaxExclusiveAmount)) = ((round(xs:decimal(cbc:LineExtensionAmount)) * 10 * 10) div 100) -->
+	<test>
+		<assert>
+			<description>Valid example without charge and allowance.</description>
+			<success>EUGEN-T110-R022</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:LineExtensionAmount>100</cbc:LineExtensionAmount>
+				<cbc:TaxExclusiveAmount>100</cbc:TaxExclusiveAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Invalid example without charge and allowance.</description>
+			<error>EUGEN-T110-R022</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:LineExtensionAmount>50</cbc:LineExtensionAmount>
+				<cbc:TaxExclusiveAmount>100</cbc:TaxExclusiveAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<!-- (xs:decimal(cbc:TaxExclusiveAmount)) = ((round(xs:decimal(cbc:LineExtensionAmount)) * 10 * 10) div 100) +((round(xs:decimal(cbc:ChargeTotalAmount)) * 10 * 10) div 100) -->
+	<test>
+		<assert>
+			<description>Valid example with charge.</description>
+			<success>EUGEN-T110-R022</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:LineExtensionAmount>100</cbc:LineExtensionAmount>
+				<cbc:ChargeTotalAmount>50</cbc:ChargeTotalAmount>
+				<cbc:TaxExclusiveAmount>150</cbc:TaxExclusiveAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Invalid example with charge.</description>
+			<error>EUGEN-T110-R022</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:LineExtensionAmount>100</cbc:LineExtensionAmount>
+				<cbc:ChargeTotalAmount>50</cbc:ChargeTotalAmount>
+				<cbc:TaxExclusiveAmount>100</cbc:TaxExclusiveAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<!-- (xs:decimal(cbc:TaxExclusiveAmount)) = ((round(xs:decimal(cbc:LineExtensionAmount)) * 10 * 10) div 100) -((round(xs:decimal(cbc:AllowanceTotalAmount)) * 10 * 10) div 100) -->
+	<test>
+		<assert>
+			<description>Valid example with allowance.</description>
+			<success>EUGEN-T110-R022</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:LineExtensionAmount>100</cbc:LineExtensionAmount>
+				<cbc:AllowanceTotalAmount>50</cbc:AllowanceTotalAmount>
+				<cbc:TaxExclusiveAmount>50</cbc:TaxExclusiveAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Invalid example with allowance.</description>
+			<error>EUGEN-T110-R022</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:LineExtensionAmount>100</cbc:LineExtensionAmount>
+				<cbc:AllowanceTotalAmount>50</cbc:AllowanceTotalAmount>
+				<cbc:TaxExclusiveAmount>100</cbc:TaxExclusiveAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<!-- (not(cbc:TaxExclusiveAmount)) -->
+	<test>
+		<assert>
+			<description>Valid example without tax exclusive amount.</description>
+			<success>EUGEN-T110-R022</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<!-- <cbc:TaxExclusiveAmount>100</cbc:TaxExclusiveAmount> -->
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+</testSet>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t110-base-1.0">
+	<assert>
+		<scope>EUGEN-T110-R011</scope>
+	</assert>
+	<test>
+		<assert>
+			<description>No error when currency codes match.</description>
+			<success number="2">EUGEN-T110-R011</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+
+			<cbc:SomeAmount currencyID="EUR"/>
+			<cbc:SomeAmount currencyID="EUR"/>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>No error when currency is not used.</description>
+			<success>EUGEN-T110-R011</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+
+			<!--
+			<cbc:SomeAmount currencyID="EUR"/>
+			<cbc:SomeAmount currencyID="EUR"/>
+			-->
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Trigger error when currency codes partially match.</description>
+			<error>EUGEN-T110-R011</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+
+			<cbc:SomeAmount currencyID="EUR"/>
+			<cbc:SomeAmount currencyID="NOK"/>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Trigger error when currency codes doesn't match.</description>
+			<error number="2">EUGEN-T110-R011</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+
+			<cbc:SomeAmount currencyID="NOK"/>
+			<cbc:SomeAmount currencyID="NOK"/>
+
+		</OrderResponse>
+	</test>
+</testSet>

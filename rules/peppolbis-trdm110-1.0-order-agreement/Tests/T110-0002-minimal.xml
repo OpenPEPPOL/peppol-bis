@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Content:
+    This file contains a minimal valid PEPPOL OrderResponse, profile 42a.
+
+    Errors:
+    None
+
+    Warnings:
+    None
+
+-->
+<OrderResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+	<cbc:CustomizationID>urn:www.cenbii.eu:transaction:biitrns110:ver1.0:extended:urn:www.peppol.eu:bis:peppol42a:ver1.0</cbc:CustomizationID>
+	<cbc:ProfileID>urn:www.cenbii.eu:profile:bii42:ver1.0</cbc:ProfileID>
+	<cbc:ID>1337</cbc:ID>
+	<cbc:IssueDate>2017-03-03</cbc:IssueDate>
+	<cbc:DocumentCurrencyCode listID="ISO4217">EUR</cbc:DocumentCurrencyCode>
+	<cac:OrderReference>
+		<cbc:ID>42</cbc:ID>
+	</cac:OrderReference>
+	<cac:SellerSupplierParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="BE:CBE">123456789</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="BE:CBE">123456789</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>News Tomorrow Inc</cbc:Name>
+			</cac:PartyName>
+		</cac:Party>
+	</cac:SellerSupplierParty>
+	<cac:BuyerCustomerParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="BE:CBE">987654321</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="BE:CBE">987654321</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Paper Inc</cbc:Name>
+			</cac:PartyName>
+		</cac:Party>
+	</cac:BuyerCustomerParty>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="EUR">250</cbc:TaxAmount>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="EUR">1000</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="EUR">1000</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">1250</cbc:TaxInclusiveAmount>
+		<cbc:PayableAmount currencyID="EUR">1250</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:OrderLine>
+		<cac:LineItem>
+			<cbc:ID>1</cbc:ID>
+			<cbc:LineExtensionAmount currencyID="EUR">1000</cbc:LineExtensionAmount>
+			<cac:Price>
+				<cbc:PriceAmount currencyID="EUR">50</cbc:PriceAmount>
+			</cac:Price>
+			<cac:Item>
+				<cbc:Name>Paper</cbc:Name>
+			</cac:Item>
+		</cac:LineItem>
+	</cac:OrderLine>
+</OrderResponse>

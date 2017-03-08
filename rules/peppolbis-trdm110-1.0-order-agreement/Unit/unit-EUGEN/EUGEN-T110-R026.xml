@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t110-base-1.0">
+	<assert>
+		<scope>EUGEN-T110-R026</scope>
+	</assert>
+	<test>
+		<assert>
+			<description>No error when certificate ID is available.</description>
+			<success>EUGEN-T110-R026</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:Certificate>
+				<cbc:ID/>
+			</cac:Certificate>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Trigger error when certificate ID is not available.</description>
+			<error>EUGEN-T110-R026</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:Certificate>
+				<!-- <cbc:ID/> -->
+			</cac:Certificate>
+
+		</OrderResponse>
+	</test>
+</testSet>

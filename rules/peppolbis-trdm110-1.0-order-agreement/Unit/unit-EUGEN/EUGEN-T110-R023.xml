@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t110-base-1.0">
+	<!--
+
+	Rule as of 2017-02-26:
+
+	(xs:decimal(cbc:TaxInclusiveAmount)) = ((round(xs:decimal(cbc:TaxExclusiveAmount)) * 10 * 10) div 100) +((round(xs:decimal(/ubl:OrderResponse/cac:TaxTotal/cbc:TaxAmount )) * 10 * 10) div 100)
+	or	(xs:decimal(cbc:TaxInclusiveAmount)) = ((round(xs:decimal(cbc:TaxExclusiveAmount)) * 10 * 10) div 100)
+
+	-->
+	<assert>
+		<scope>EUGEN-T110-R023</scope>
+	</assert>
+	<!-- (xs:decimal(cbc:TaxInclusiveAmount)) = ((round(xs:decimal(cbc:TaxExclusiveAmount)) * 10 * 10) div 100) +((round(xs:decimal(/ubl:OrderResponse/cac:TaxTotal/cbc:TaxAmount )) * 10 * 10) div 100) -->
+	<test>
+		<assert>
+			<description>Valid example with tax amount.</description>
+			<success>EUGEN-T110-R023</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:TaxExclusiveAmount>100</cbc:TaxExclusiveAmount>
+				<cbc:TaxInclusiveAmount>125</cbc:TaxInclusiveAmount>
+			</cac:LegalMonetaryTotal>
+
+			<cac:TaxTotal>
+				<cbc:TaxAmount>25</cbc:TaxAmount>
+			</cac:TaxTotal>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Invalid example with tax amount.</description>
+			<error>EUGEN-T110-R023</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:TaxExclusiveAmount>100</cbc:TaxExclusiveAmount>
+				<cbc:TaxInclusiveAmount>100</cbc:TaxInclusiveAmount>
+			</cac:LegalMonetaryTotal>
+
+			<cac:TaxTotal>
+				<cbc:TaxAmount>25</cbc:TaxAmount>
+			</cac:TaxTotal>
+
+		</OrderResponse>
+	</test>
+	<!-- (xs:decimal(cbc:TaxInclusiveAmount)) = ((round(xs:decimal(cbc:TaxExclusiveAmount)) * 10 * 10) div 100) -->
+	<test>
+		<assert>
+			<description>Valid example without tax amount.</description>
+			<success>EUGEN-T110-R023</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:TaxExclusiveAmount>100</cbc:TaxExclusiveAmount>
+				<cbc:TaxInclusiveAmount>100</cbc:TaxInclusiveAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Invalid example without tax amount.</description>
+			<error>EUGEN-T110-R023</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:TaxExclusiveAmount>100</cbc:TaxExclusiveAmount>
+				<cbc:TaxInclusiveAmount>150</cbc:TaxInclusiveAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+</testSet>

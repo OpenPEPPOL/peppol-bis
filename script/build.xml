@@ -57,6 +57,7 @@
         <foreach target="compileSchFile" param="schFile">
             <path>
                 <fileset dir="${documentType}/Schematron/">
+                    <include name="*.sch"/>
                     <include name="*/*.sch"/>
                     <exclude name="*/BIICORE*.sch"/>
                 </fileset>

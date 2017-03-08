@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t110-base-1.0">
+	<!--
+
+	Rule as of 2017-02-26:
+
+			(xs:decimal(cbc:PayableAmount) = (round((xs:decimal(cbc:TaxInclusiveAmount) + xs:decimal(cbc:PayableRoundingAmount)) * 10 * 10) div 100))
+	or 	(xs:decimal(cbc:PayableAmount) = xs:decimal(cbc:TaxInclusiveAmount))
+	or 	(not(cbc:PayableAmount))
+
+	-->
+	<assert>
+		<scope>EUGEN-T110-R024</scope>
+	</assert>
+	<!-- (xs:decimal(cbc:PayableAmount) = (round((xs:decimal(cbc:TaxInclusiveAmount) + xs:decimal(cbc:PayableRoundingAmount)) * 10 * 10) div 100)) -->
+	<test>
+		<assert>
+			<description>Valid example</description>
+			<success>EUGEN-T110-R024</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:TaxInclusiveAmount>100</cbc:TaxInclusiveAmount>
+				<cbc:PayableAmount>100</cbc:PayableAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+
+	<test>
+		<assert>
+			<description>Invalid example without rounding amount.</description>
+			<error>EUGEN-T110-R024</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:TaxInclusiveAmount>50</cbc:TaxInclusiveAmount>
+				<cbc:PayableAmount>100</cbc:PayableAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<!-- (not(cbc:PayableAmount)) -->
+	<test>
+		<assert>
+			<description>Valid example without payable amount.</description>
+			<success>EUGEN-T110-R024</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<!-- <cbc:PayableAmount>100</cbc:PayableAmount> -->
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+</testSet>

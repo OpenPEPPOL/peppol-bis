@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t110-base-1.0">
+	<assert>
+		<scope>EUGEN-T110-R029</scope>
+	</assert>
+	<test>
+		<assert>
+			<description>No errors when amounts contains 2 or less decimals.</description>
+			<success number="15">EUGEN-T110-R029</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:AllowanceCharge>
+				<cbc:Amount>100</cbc:Amount>
+			</cac:AllowanceCharge>
+
+			<cac:TaxTotal>
+				<cbc:TaxAmount>236</cbc:TaxAmount>
+				<cac:TaxSubtotal>
+					<cbc:TaxableAmount>1000.0</cbc:TaxableAmount>
+					<cbc:TaxAmount>236.00</cbc:TaxAmount>
+				</cac:TaxSubtotal>
+			</cac:TaxTotal>
+
+			<cac:LegalMonetaryTotal>
+				<cbc:LineExtensionAmount>1000</cbc:LineExtensionAmount>
+				<cbc:TaxExclusiveAmount>1100.0</cbc:TaxExclusiveAmount>
+				<cbc:TaxInclusiveAmount>1336.00</cbc:TaxInclusiveAmount>
+				<cbc:AllowanceTotalAmount>100</cbc:AllowanceTotalAmount>
+				<cbc:ChargeTotalAmount>200.0</cbc:ChargeTotalAmount>
+				<cbc:PrepaidAmount>0.00</cbc:PrepaidAmount>
+				<cbc:PayableRoundingAmount>0</cbc:PayableRoundingAmount>
+				<cbc:PayableAmount>1336.0</cbc:PayableAmount>
+			</cac:LegalMonetaryTotal>
+
+			<cac:OrderLine>
+				<cac:LineItem>
+					<cbc:LineExtensionAmount>1000.00</cbc:LineExtensionAmount>
+					<cbc:TotalTaxAmount>236</cbc:TotalTaxAmount>
+					<cac:Price>
+						<cbc:PriceAmount>50.0</cbc:PriceAmount>
+					</cac:Price>
+				</cac:LineItem>
+			</cac:OrderLine>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Trigger errors when amounts has more than 2 decimals.</description>
+			<error number="15">EUGEN-T110-R029</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:AllowanceCharge>
+				<cbc:Amount>100.000</cbc:Amount>
+			</cac:AllowanceCharge>
+
+			<cac:TaxTotal>
+				<cbc:TaxAmount>236.0000</cbc:TaxAmount>
+				<cac:TaxSubtotal>
+					<cbc:TaxableAmount>1000.000</cbc:TaxableAmount>
+					<cbc:TaxAmount>236.0000</cbc:TaxAmount>
+				</cac:TaxSubtotal>
+			</cac:TaxTotal>
+
+			<cac:LegalMonetaryTotal>
+				<cbc:LineExtensionAmount>1000.000</cbc:LineExtensionAmount>
+				<cbc:TaxExclusiveAmount>1100.0000</cbc:TaxExclusiveAmount>
+				<cbc:TaxInclusiveAmount>1336.000</cbc:TaxInclusiveAmount>
+				<cbc:AllowanceTotalAmount>100.0000</cbc:AllowanceTotalAmount>
+				<cbc:ChargeTotalAmount>200.000</cbc:ChargeTotalAmount>
+				<cbc:PrepaidAmount>0.0000</cbc:PrepaidAmount>
+				<cbc:PayableRoundingAmount>0.000</cbc:PayableRoundingAmount>
+				<cbc:PayableAmount>1336.0000</cbc:PayableAmount>
+			</cac:LegalMonetaryTotal>
+
+			<cac:OrderLine>
+				<cac:LineItem>
+					<cbc:LineExtensionAmount>1000.000</cbc:LineExtensionAmount>
+					<cbc:TotalTaxAmount>236.0000</cbc:TotalTaxAmount>
+					<cac:Price>
+						<cbc:PriceAmount>50.000</cbc:PriceAmount>
+					</cac:Price>
+				</cac:LineItem>
+			</cac:OrderLine>
+
+		</OrderResponse>
+	</test>
+</testSet>

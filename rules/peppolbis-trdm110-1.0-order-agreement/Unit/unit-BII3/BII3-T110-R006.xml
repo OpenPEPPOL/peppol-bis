@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t110-base-1.0">
+	<assert>
+		<scope>BII3-T110-R006</scope>
+	</assert>
+	<test>
+		<assert>
+			<description>No errors when document identifier is present.</description>
+			<success>BII3-T110-R006</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cbc:ID/>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Trigger error when document identifier is not present.</description>
+			<error>BII3-T110-R006</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<!-- <cbc:ID/> -->
+
+		</OrderResponse>
+	</test>
+</testSet>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t110-base-1.0">
+	<assert>
+		<scope>EUGEN-T110-R030</scope>
+	</assert>
+	<test>
+		<assert>
+			<description>Not triggered when rounding amount is left out.</description>
+			<success>EUGEN-T110-R030</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:PayableAmount>100</cbc:PayableAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Not triggered when rounding amount is less than 10% of amount.</description>
+			<success>EUGEN-T110-R030</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:PayableRoundingAmount>10</cbc:PayableRoundingAmount>
+				<cbc:PayableAmount>100</cbc:PayableAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Allow rounding amount up to 1.00 even in cases where this is more than 10% of amount.</description>
+			<success>EUGEN-T110-R030</success>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:PayableRoundingAmount>1</cbc:PayableRoundingAmount>
+				<cbc:PayableAmount>9</cbc:PayableAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+	<test>
+		<assert>
+			<description>Triggered when rounding amount is more than 10% of amount.</description>
+			<error>EUGEN-T110-R030</error>
+		</assert>
+		<OrderResponse xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2">
+
+			<cac:LegalMonetaryTotal>
+				<cbc:PayableRoundingAmount>11</cbc:PayableRoundingAmount>
+				<cbc:PayableAmount>100</cbc:PayableAmount>
+			</cac:LegalMonetaryTotal>
+
+		</OrderResponse>
+	</test>
+</testSet>
