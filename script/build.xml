@@ -209,7 +209,7 @@
 				<loadfile property="validationOutput.PEPPOLCORE" srcfile="${target.dir}/schematron-OPENPEPPOLCORE-output.xml"/>
 			</then>
 			<else>
-				<property property="validationOutput.PEPPOLCORE" value=""/>
+				<property name="validationOutput.PEPPOLCORE" value=""/>
 			</else>
 		</if>
         <loadfile property="validationOutput.PEPPOL" srcfile="${target.dir}/schematron-OPENPEPPOL-output.xml"/>
