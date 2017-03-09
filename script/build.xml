@@ -418,7 +418,7 @@
 
                 <echo message="ERROR: Output from schematron validation of file ${testFile.base} - problem: ${test.reason}:${line.separator}"
                       file="${test.output}" append="true"/>
-                <echo message="${validationOutput.BII}${line.separator}${line.separator}" file="${test.output}" append="true"/>
+                <echo message="BIICORE:${line.separator}${validationOutput.BII}${line.separator}${line.separator}" file="${test.output}" append="true"/>
                 <echo message="PEPPOLCORE:${line.separator}${validationOutput.PEPPOLCORE}${line.separator}" file="${test.output}" append="true"/>
                 <echo message="PEPPOL:${line.separator}${validationOutput.PEPPOL}${line.separator}" file="${test.output}" append="true"/>
                 <echo message="-------------------------------------------------------------------${line.separator}${line.separator}" file="${test.output}" append="true"/>
