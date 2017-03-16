@@ -6,7 +6,7 @@ openPEPPOL AISBL <http://www.peppol.eu/>
 :source-highlighter: coderay
 :sourcedir: .
 :imagesdir: ./images
-:title-logo-image: peppol.png
+:title-logo-image: ./images/peppol.png
 
 This release from openPEPPOL includes changes to the validation artifacts (VA's) and changes to the Common BIS document. This version will be *mandatory in use from xx. xxxxxxx 2017 xx:00 CEST.*
 
@@ -15,7 +15,7 @@ This release from openPEPPOL includes changes to the validation artifacts (VA's)
 ****
 . Several validation rules have been optimized according to incoming RFCs
 . Core XSLT files have been placed in a new folder XSLTCore
-. Editorial updates BIS xx 
+. Updates BIS 4a and BIS 5a
 ****
 
 ****
@@ -77,9 +77,51 @@ Planned date for the spring release is 15. May 2017
 
 == Editorial changes
 
-=== Common BIS
+=== BIS 4a – 401
 
-Added ... 
+New relase 4.01 adds references to the following business rules
 
-=== BIS xx – yyy
-Added ... 
+[cols="2", options="header"]
+|====
+|Rule ID|Description
+|EUGEN-T10-R047
+|An invoice should not contain empty elements
+|EUGEN-T10-R048
+|Document level amounts cannot have more than 2 decimals
+|EUGEN-T10-R049
+|Total tax amount cannot have more than 2 decimals.
+|EUGEN-T10-R050
+|Tax subtotal amounts cannot have more than 2 decimals.
+|EUGEN-T10-R051
+|Document level tax subtotal amounts cannot have more than 2 decimals
+|EUGEN-T10-R052
+|Document level allowance and charge amounts cannot have more than 2 decimals
+|EUGEN-T10-R053
+|An invoice must have an Invoice type code
+|EUGEN-T10-R054
+|A party legal entity company identifier SHOULD have a scheme identifier attribute.
+|====
+
+
+=== BIS 5a – 402
+
+New relase 4.02 adds references to the following business rules
+
+[cols="2", options="header"]
+|====
+|Rule ID|Description
+|EUGEN-T14-R048
+|An invoice should not contain empty elements
+|EUGEN-T14-R049
+|Document level amounts cannot have more than 2 decimals
+|EUGEN-T14-R050
+|Total tax amount cannot have more than 2 decimals.
+|EUGEN-T14-R051
+|Tax subtotal amounts cannot have more than 2 decimals.
+|EUGEN-T14-R052
+|Document level amounts cannot have more than 2 decimals
+|EUGEN-T14-R053
+|Document level allowance and charge amounts cannot have more than 2 decimals
+|EUGEN-T14-R054
+|A party legal entity company identifier SHOULD have a scheme identifier attribute.
+|====
