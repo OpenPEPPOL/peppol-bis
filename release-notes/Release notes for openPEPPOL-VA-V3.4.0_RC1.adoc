@@ -32,14 +32,17 @@ Planned date for the spring release is 15. May 2017
 
 == Changes to Validation Artifacts (VA)
 
-
 .Changes pr. transaction
 [cols="3", options="header"]
 |====
 |Transaction|Rule|Description
-| All
+.3+s| All
 | Schematron artefacts 
 | Added `<ns prefix="xs" uri="http://www.w3.org/2001/XMLSchema"/>` to the root schematron artefact
+| unitCode Code List
+| Fixed values to UN/ECE Rec 20 Rev 6e 
+| Participant identifier Code List
+| Removed value NO:VAT and fixed NL:OIN
 .7+s|Invoice
 | BII2-T10-R034 
 | Fix to fire the negative prices only when the price is present.
