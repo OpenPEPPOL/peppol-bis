@@ -191,9 +191,11 @@
             documentStartPos = filePath.indexOf('/Tests/');
             // Extract T10 as: T + "01" from "rules/peppolbis-trdm001-2.0-order/Tests/T01-0001-valid.xml"
             docType = "T" + filePath.substring(documentStartPos+8, filePath.indexOf("-", documentStartPos));
-            <!--echo = project.createTask("echo");-->
-            <!--echo.setMessage("DEBUG: Current test file=" + filePath.substring(documentStartPos) + " - identified as type: " + docType);-->
-            <!--echo.perform( );-->
+
+            echo = project.createTask("echo");
+            echo.setMessage("DEBUG: Current test file=" + filePath + " - identified as type: " + docType);
+            echo.perform( );
+
             project.setProperty('docType', docType);
         </script>
         <basename property="testFile.base" file="${testFile}"/>
