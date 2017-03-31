@@ -1,35 +1,41 @@
 
-= Release notes for openPEPPOL Validation Artifact v3.4.0_RC1, Spring Release 2017
+= Release notes for openPEPPOL Validation Artifact v3.4.0, Spring Release 2017
 openPEPPOL AISBL <http://www.peppol.eu/>
-2017-02-28
+2017-03-31
 :icons: font
 :source-highlighter: coderay
 :sourcedir: .
 :imagesdir: ./images
-:title-logo-image: peppol.png
+:title-logo-image: images/peppol.png
 
-This release from openPEPPOL includes changes to the validation artifacts (VA's) and changes to the Common BIS document. This version will be *mandatory in use from xx. xxxxxxx 2017 xx:00 CEST.*
+This release from openPEPPOL includes changes to the validation artifacts (VA's) and two BIS documents and includes two additional PEPPOL BIS specifications. This version will be *mandatory in use from 15 May 2017 12:00 CEST.*
 
 
 .Overview of changes
 ****
 . Several validation rules have been optimized according to incoming RFCs
 . Core XSLT files have been placed in a new folder XSLTCore
-. Editorial updates BIS xx 
+. Added BIS 18A Punchout including validation artifacts 
+. Added BIS 42A Order Agreement including validation artifacts 
+. Editorial updates BIS 
 ****
+
 
 ****
 [IMPORTANT]
 ====
 Core rules should only be considered a help to implementors creating a PEPPOL BIS, making sure that documents are PEPPOL Core conformant.
-The core rules should not be used in run time enviroments.
+*The core rules should not be used in run time enviroments.*
 
-Planned date for the spring release is 15. May 2017
+Planned date for the fall release is 15. October 2017
 ====
 ****
 
+
 //
 
+NOTE: Two new BIS Specifications have been published in this Release.
+ 
 == Changes to Validation Artifacts (VA)
 
 
@@ -77,9 +83,25 @@ Planned date for the spring release is 15. May 2017
 
 == Editorial changes
 
-=== Common BIS
+=== BIS 4A – Invoice
 
-Added ... 
+Changed description of the Payment Channel code.
+Updated list of business rules and code list business rules.
 
-=== BIS xx – yyy
-Added ... 
+=== BIS 5A – Billing
+
+Changed description of the Payment Channel code.
+Updated list of business rules and code list business rules.
+
+
+=== BIS 18A - PunchOut
+
+New BIS document
+Added transaction T77
+
+
+=== BIS 42A - Order Agreement
+
+New BIS document
+Added transaction T110
+
