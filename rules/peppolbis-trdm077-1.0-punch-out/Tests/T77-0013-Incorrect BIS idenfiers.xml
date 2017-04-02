@@ -5,11 +5,11 @@
 		This file contains a PEPPOL Catalogue, profile 18
 
 		Errors:
-			EUGEN-T77-R001	CustomizationID MUST be urn:www.cenbii.eu:transaction:biitrns077:ver2.0:extended:www.peppol.eu:bis:peppol18a:ver1.0
-			EUGEN-T77-R002	ProfileID MUST be urn:www.cenbii.eu:profile:bii18:ver1.0
+			EUGEN-T77-R001
+			EUGEN-T77-R002
 
 		Warning:
-		None
+		    None
 
 -->
 <Catalogue xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"

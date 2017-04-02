@@ -5,8 +5,8 @@
 		This file contains a PEPPOL Catalogue, profile 18
 
 		Errors:
-			EUGEN-T77-R006	The shopping cart message SHOULD contain the Sellers end point id.
-			EUGEN-T77-R007	The shopping cart message SHOULD contain the Buyers end point id.
+			EUGEN-T77-R006
+			EUGEN-T77-R007
 
 		Warning:
 		None

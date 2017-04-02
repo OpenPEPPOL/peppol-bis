@@ -5,7 +5,8 @@
 		This file contains a PEPPOL Catalogue, profile 18
 
 		Errors:
-			EUGEN-T77-R011	LeadTimeMeasure unitCode MUST only be DAY meaning calendar day.
+			EUGEN-T77-R011
+
 		Warning:
 		None
 
