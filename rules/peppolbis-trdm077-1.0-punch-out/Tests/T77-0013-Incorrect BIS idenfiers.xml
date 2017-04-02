@@ -5,11 +5,11 @@
 		This file contains a PEPPOL Catalogue, profile 18
 
 		Errors:
-			EUGEN-T77-R001
-			EUGEN-T77-R002
+		EUGEN-T77-R001
+		EUGEN-T77-R002
 
 		Warning:
-		    None
+		None
 
 -->
 <Catalogue xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
