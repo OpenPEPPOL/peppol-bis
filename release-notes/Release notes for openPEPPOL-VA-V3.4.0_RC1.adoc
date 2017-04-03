@@ -85,25 +85,25 @@ NOTE: Two new BIS Specifications have been published in this Release.
 
 === BIS 4A – Invoice
 
-Changed description of the Payment Channel code.
-Updated list of business rules and code list business rules.
+* Changed description of the Payment Channel code.
+* Updated list of business rules and code list business rules.
 
 === BIS 5A – Billing
 
-Changed description of the Payment Channel code.
-Updated list of business rules and code list business rules.
+* Changed description of the Payment Channel code.
+* Updated list of business rules and code list business rules.
 
 
 === BIS 18A - PunchOut
 
-New BIS document
-Punch Out login & Transmission Specification
-Added transaction T77
-Included validation artifacts
+* New BIS document
+* Punch Out login & Transmission Specification
+* Added transaction T77
+* Included validation artifacts
 
 === BIS 42A - Order Agreement
 
-New BIS document
-Added transaction T110
-Included validation artifacts
+* New BIS document
+* Added transaction T110
+* Included validation artifacts
 
