@@ -13,11 +13,14 @@ This release from openPEPPOL includes changes to the validation artifacts (VA's)
 
 .Overview of changes
 ****
+. Deprecation of PEPPOL BIS 4A and 5A version 1.0
 . Several validation rules have been optimized according to incoming RFCs
 . Core XSLT files have been placed in a new folder XSLTCore
 . Added BIS 18A Punchout including validation artifacts and transmission specification
 . Added BIS 42A Order Agreement including validation artifacts
+. Added BIS 36A version 2.0 for review
 . Editorial updates BIS
+
 ****
 
 
@@ -107,3 +110,45 @@ NOTE: Two new BIS Specifications have been published in this Release.
 * Added transaction T110
 * Included validation artifacts
 
+=== BIS 36A - MLR, version 2.0 - for review
+The MLR BIS in undergoing a major update to version 2. The BIS document and the example files are already included in this release for getting comfortable with the upcoming changes, even though this BIS is not yet fully usable because the validation artefacts are missing.
+
+==== Main differences v.1.0 vs v.2.0
+
+* New document type identifier (all together in one line):
+
+	`urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2::ApplicationResponse##urn:www.cenbii.eu:transaction:biitrns0071:ver2.0:extended:urn:www.peppol.eu:bis:peppol36a:ver2.0::2.1`
+
+* New process identifier to be used:
+
+  `urn:www.cenbii.eu:profile:bii36a:ver2.0`
+
+* Semantical changes:
+** Changed “Issue type code” to “Status reason code”
+
+*	BII Rules Changes:
+**	Removed BII2-T71-R010 (replaced by rule EUGEN-T71-R006)
+**	Removed BII2-T71-R012 (replaced by rule EUGEN-T71-R008)
+
+*	PEPPOL Specific Rules Changes:
+**	Removed EUGEN-T71-R001 (business document reference is irrelevant because reference must now be taken from the envelope)
+**	Added EUGEN-T71-R006 (replacing rule BII2-T71-R010)
+**	Added EUGEN-T71-R007 (extension)
+**	Added EUGEN-T71-R008 (replacing rule BII2-T71-R012)
+
+* Code List Business Rules changes:
+**	Removed CL-071-R001 (business document reference is irrelevant because reference must now be taken from the envelope)
+**	Changed text of OP-T71-R003 (clarification)
+*	Changes to the XML representation:
+**	Removed /Note
+**	Made /SenderParty/EndpointID mandatory
+**	Removed /SenderParty/PartyIdentification
+**	Removed /SenderParty/PartyName
+**	Made /ReceiverParty/EndpointID mandatory
+**	Removed /ReceiverParty/PartyIdentification
+**	Removed /ReceiverParty/PartyName
+**	Removed /DocumentResponse/DocumentReference/DocumentTypeCode
+**	Removed /DocumentResponse/DocumentReference/VersionID
+**	Added /DocumentResponse/LineResponse/LineReference/DocumentReference/ID
+**	Removed /DocumentResponse/LineResponse/Response/ResponseCode
+**	Added /DocumentResponse/LineResponse/Response/ReferenceID
