@@ -1,12 +1,12 @@
 
 = Release notes for openPEPPOL Validation Artifact v3.4.0, Spring Release 2017
 openPEPPOL AISBL <http://www.peppol.eu/>
-2017-05-12
+2017-03-31
 :icons: font
 :source-highlighter: coderay
 :sourcedir: .
 :imagesdir: ./images
-:title-logo-image: peppol.png
+:title-logo-image: images/peppol.png
 
 This release from openPEPPOL includes changes to the validation artifacts (VA's) and two BIS documents and includes two additional PEPPOL BIS specifications. This version will be *mandatory in use from 15 May 2017 12:00 CEST.*
 
