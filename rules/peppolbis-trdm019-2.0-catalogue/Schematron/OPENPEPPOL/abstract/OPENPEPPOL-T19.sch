@@ -34,5 +34,9 @@
   </rule>
   <rule context="$catalogue">
     <assert test="$EUGEN-T19-R054" flag="warning" id="EUGEN-T19-R054">[EUGEN-T19-R054]- A catalogue should not contain empty elements</assert>
+ 
+  </rule>
+  <rule context="$Item_Description">
+  <assert test="$EUGEN-T19-R055" flag="warning" id="EUGEN-T19-R055">[EUGEN-T19-R055]- Where two or more sibling text/description elements of the same name exist in a document, no two can have the same “languageID” attribute value</assert>
   </rule>
 </pattern>

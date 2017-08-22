@@ -85,4 +85,8 @@
   <rule context="$Total_Amount">
     <assert test="$EUGEN-T10-R048" flag="fatal" id="EUGEN-T10-R048">[EUGEN-T10-R048]-Document level amounts cannot have more than 2 decimals</assert>
   </rule>
+  
+  <rule context="$Invoice_Line">
+    <assert test="$EUGEN-T10-R055" flag="fatal" id="EUGEN-T10-R055">[EUGEN-T10-R055]-Each invoice line MUST have an invoice line item name</assert>
+  </rule>
 </pattern>

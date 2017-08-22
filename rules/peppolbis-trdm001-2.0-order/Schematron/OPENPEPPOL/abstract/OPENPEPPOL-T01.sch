@@ -35,4 +35,12 @@
     <assert test="$EUGEN-T01-R018" flag="warning" id="EUGEN-T01-R018">[EUGEN-T01-R018]- An order
       should not contain empty elements</assert>
   </rule>
+  <rule context="$Expected_totals">
+    <assert test="$EUGEN-T01-R019" flag="fatal" id="EUGEN-T01-R019">[EUGEN-T01-R019]- If <name/> is used, all order lines MUST have a Line total amount. Order line <value-of select="/ubl:Order/cac:OrderLine/cac:LineItem/cbc:ID[not(../cbc:LineExtensionAmount)]"/> has no line amount
+     </assert>
+    
+
+  </rule>
+  
+
 </pattern>

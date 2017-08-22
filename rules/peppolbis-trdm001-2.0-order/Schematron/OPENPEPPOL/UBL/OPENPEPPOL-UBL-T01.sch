@@ -2,6 +2,9 @@
 <!-- Data binding to UBL syntax for T01 -->
 <!-- (2009). Invinet Sistemes -->
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron" is-a="T01" id="UBL-T01">
+  
+
+  
   <param name="EUGEN-T01-R011" value="@schemeID"/>
   <param name="EUGEN-T01-R012" value="@schemeID"/>
   <param name="EUGEN-T01-R013" value="@listID='UNCL1001' or @listID='UNCLD1001' "/>
@@ -10,6 +13,7 @@
   <param name="EUGEN-T01-R016" value="not(attribute::unitCode) or (attribute::unitCode and attribute::unitCodeListID = 'UNECERec20')"/>
   <param name="EUGEN-T01-R017" value="@schemeID  = 'UNCL5305'"/>
   <param name="EUGEN-T01-R018" value="not(count(//*[not(node()[not(self::comment())])]) &gt; 0)"/>
+  <param name="EUGEN-T01-R019" value="count(../cac:OrderLine/cac:LineItem/cbc:ID[not(../cbc:LineExtensionAmount)]) = 0"/>
   <param name="Order_Line" value="//cac:OrderLine"/>
   <param name="Order_Type" value="//cbc:OrderTypeCode"/>
   <param name="Order" value="/ubl:Order"/>

@@ -82,4 +82,7 @@
   <rule context="$Total_Amount">
     <assert test="$EUGEN-T14-R049" flag="fatal" id="EUGEN-T14-R049">[EUGEN-T14-R049]-Document level amounts cannot have more than 2 decimals</assert>
   </rule>
+  <rule context="$CreditNote_Line">
+    <assert test="$EUGEN-T14-R055" flag="fatal" id="EUGEN-T14-R055">[EUGEN-T14-R055]-Each credit note line MUST have a credit note line item name</assert>
+  </rule>
 </pattern>

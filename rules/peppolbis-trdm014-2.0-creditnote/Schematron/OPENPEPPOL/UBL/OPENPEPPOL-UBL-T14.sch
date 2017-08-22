@@ -38,6 +38,7 @@
   <param name="EUGEN-T14-R052" value="string-length(substring-after(cbc:TaxAmount, '.')) &lt;= 2"/>
   <param name="EUGEN-T14-R053" value="string-length(substring-after(cbc:Amount, '.')) &lt;= 2"/>
   <param name="EUGEN-T14-R054" value="@schemeID"/>
+  <param name="EUGEN-T14-R055" value="cac:Item/cbc:Name"/>
   <param name="Credit_Note" value="/ubl:CreditNote"/>
   <param name="Total_Credit_Note" value="//cac:LegalMonetaryTotal"/>
   <param name="Total_Amount" value="//cac:LegalMonetaryTotal/child::*"/>
@@ -61,4 +62,5 @@
   <param name="Financial_Account_Identifier" value="//cac:PayeeFinancialAccount/cbc:ID"/>
   <param name="Payment_Means" value="//cac:PaymentMeans"/>
   <param name="Billing_Reference" value="//cac:BillingReference"/>
+  <param name="CreditNote_Line" value="//cac:CreditNoteLine"/>
 </pattern>
