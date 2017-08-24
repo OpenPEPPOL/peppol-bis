@@ -5,6 +5,7 @@
 
                 Errors:
 				EUGEN-T01-R019
+				BII2-T01-R014
 
 				Warnings:
 				None
@@ -136,7 +137,7 @@
 	</cac:OriginatorCustomerParty>
 	<cac:Delivery>
 		<cac:DeliveryLocation>
-			<cbc:ID schemeID="GTIN">12345</cbc:ID>
+			
 			<cac:Address>
 				<cbc:StreetName>Solheimsveien 10</cbc:StreetName>
 				<cbc:CityName>Lørenskog</cbc:CityName>

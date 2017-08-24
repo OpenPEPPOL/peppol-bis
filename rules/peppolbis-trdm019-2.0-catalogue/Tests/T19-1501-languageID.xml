@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
                 Content:
-                This file contains a norwegian invoice to consumer, profile invoice & creditnote
+                This file contains a norwegian catalogue, profile catalogue only
 
                 Errors:
-                EUGEN-T19-R055 twice
+                EUGEN-T19-R055 x 2
 
                 Warnings:
-               None
+               	None
 
 -->
 <Catalogue xmlns:sdt="urn:oasis:names:specification:ubl:schema:xsd:SpecializedDatatypes-2"
@@ -94,10 +94,10 @@
 			</cac:Price>
 		</cac:RequiredItemLocationQuantity>
 		<cac:Item>
-			<cbc:Name>Limsparkel 10cm (25)</cbc:Name>
 			<cbc:Description languageID='no'>test</cbc:Description>
 			<cbc:Description languageID='en'>test2</cbc:Description>
 			<cbc:Description languageID='sv'>test3</cbc:Description>
+			<cbc:Name>Limsparkel 10cm (25)</cbc:Name>
 			<cac:SellersItemIdentification>
 				<cbc:ID>8085250</cbc:ID>
 			</cac:SellersItemIdentification>
@@ -135,9 +135,9 @@
 			</cac:Price>
 		</cac:RequiredItemLocationQuantity>
 		<cac:Item>
-			<cbc:Name languageID="no">Skriver Brother HL4150CDN fargelaser</cbc:Name>
 			<cbc:Description languageID='no'>test2</cbc:Description>
 			<cbc:Description languageID='no'>test3</cbc:Description>
+			<cbc:Name languageID="no">Skriver Brother HL4150CDN fargelaser</cbc:Name>
 			<cac:SellersItemIdentification>
 				<cbc:ID>772583</cbc:ID>
 			</cac:SellersItemIdentification>
