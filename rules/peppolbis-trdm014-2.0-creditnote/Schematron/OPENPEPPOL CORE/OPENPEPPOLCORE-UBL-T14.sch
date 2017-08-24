@@ -4267,12 +4267,7 @@
 	Element 'cbc:TierRatePercent' is marked as not used in the given context.</assert>
         </rule>
     </pattern>
-    <pattern>
-        <rule context="/p1:CreditNote/cac:CreditNoteLine/cac:Item/cac:CommodityClassification">
-            <assert flag="warning" id="PEPPOL_CORE_R001" test="count(cbc:ItemClassificationCode)=1">
-	Element 'cbc:ItemClassificationCode' must occur exactly 1 times.</assert>
-        </rule>
-    </pattern>
+
     <pattern>
         <rule context="/p1:CreditNote/cac:CreditNoteLine/cac:Item/cac:CommodityClassification/cbc:CargoTypeCode">
             <assert flag="warning" id="PEPPOL_CORE_R002" test="false()">
