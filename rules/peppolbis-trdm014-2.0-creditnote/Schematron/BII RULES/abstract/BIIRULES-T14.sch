@@ -35,8 +35,7 @@
     <assert test="$BII2-T14-R020" flag="fatal" id="BII2-T14-R020">[BII2-T14-R020]-Each credit note line MUST have a credit note line net amount</assert>
     <assert test="$BII2-T14-R021" flag="fatal" id="BII2-T14-R021">[BII2-T14-R021]-Each credit note line MUST have a credit note line item name and/or the credit note line item identifier</assert>
     <assert test="$BII2-T14-R032" flag="fatal" id="BII2-T14-R032">[BII2-T14-R032]-A scheme identifier for the credit note line item registered identifier MUST be provided if credit note line item registered identifiers are used to identify a product.(e.g. GTIN)</assert>
-    <assert test="$BII2-T14-R033" flag="fatal" id="BII2-T14-R033">[BII2-T14-R033]-A scheme identifier for a credit note line item commodity classification MUST be provided if credit note line item commodity classification are used to classify a credit note line item (e.g. CPV or UNSPSC)</assert>
-    <assert test="$BII2-T14-R034" flag="fatal" id="BII2-T14-R034">[BII2-T14-R034]-Credit Note line item net price MUST NOT be negative</assert>
+     <assert test="$BII2-T14-R034" flag="fatal" id="BII2-T14-R034">[BII2-T14-R034]-Credit Note line item net price MUST NOT be negative</assert>
     <assert test="$BII2-T14-R046" flag="fatal" id="BII2-T14-R046">[BII2-T14-R046]-Each credit note line MUST be categorized with the credit note line VAT category if the credit note has a VAT total amount </assert>
   </rule>
   <rule context="$Credit_Note_Period_Information">
@@ -62,5 +61,8 @@
   <rule context="$AE_VAT">
     <assert test="$BII2-T14-R049" flag="fatal" id="BII2-T14-R049">[BII2-T14-R049]-The credit note total without VAT MUST be equal to the VAT category taxable amount if the VAT category code is reverse charge</assert>
     <assert test="$BII2-T14-R050" flag="fatal" id="BII2-T14-R050">[BII2-T14-R050]-The VAT category tax amount MUST be zero  if the VAT category code is reverse charge (since there is only one VAT category allowed it follows that the credit note tax total for reverse charge credit notes is zero)</assert>
-  </rule>  
+  </rule> 
+  <rule context="$Commodity">
+    <assert test="$BII2-T14-R033" flag="fatal" id="BII2-T14-R033">[BII2-T14-R033]-A list identifier for a credit note line item commodity classification MUST be provided if credit note line item commodity classification are used to classify a credit note line item (e.g. CPV or UNSPSC)</assert>
+  </rule>
 </pattern>

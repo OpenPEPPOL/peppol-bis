@@ -35,7 +35,6 @@
     <assert test="$BII2-T10-R020" flag="fatal" id="BII2-T10-R020">[BII2-T10-R020]-Each invoice line MUST have an invoice line net amount</assert>
     <assert test="$BII2-T10-R021" flag="fatal" id="BII2-T10-R021">[BII2-T10-R021]-Each invoice line MUST have an invoice line item name and/or the invoice line item identifier</assert>
     <assert test="$BII2-T10-R032" flag="fatal" id="BII2-T10-R032">[BII2-T10-R032]-A scheme identifier for the invoice line item registered identifier MUST be provided if invoice line item registered identifiers are used to identify a product.(e.g. GTIN)</assert>
-    <assert test="$BII2-T10-R033" flag="fatal" id="BII2-T10-R033">[BII2-T10-R033]-A scheme identifier for a invoice line item commodity classification MUST be provided if invoice line item commodity classification are used to classify an invoice line item (e.g. CPV or UNSPSC)</assert>
     <assert test="$BII2-T10-R034" flag="fatal" id="BII2-T10-R034">[BII2-T10-R034]-Invoice line item net price MUST NOT be negative</assert>
     <assert test="$BII2-T10-R046" flag="fatal" id="BII2-T10-R046">[BII2-T10-R046]-Each invoice line MUST be categorized with the invoice line VAT category if the invoice has a VAT total amount </assert>
   </rule>
@@ -69,4 +68,8 @@
     <assert test="$BII2-T10-R049" flag="fatal" id="BII2-T10-R049">[BII2-T10-R049]-The invoice total without VAT MUST be equal to the VAT category taxable amount if the VAT category code is reverse charge</assert>
     <assert test="$BII2-T10-R050" flag="fatal" id="BII2-T10-R050">[BII2-T10-R050]-The VAT category tax amount MUST be zero  if the VAT category code is reverse charge (since there is only one VAT category allowed it follows that the invoice tax total for reverse charge invoices is zero)</assert>
   </rule>
+  <rule context="$Commodity">
+    <assert test="$BII2-T10-R033" flag="fatal" id="BII2-T10-R033">[BII2-T10-R033]-A list identifier for a invoice line item commodity classification MUST be provided if invoice line item commodity classification are used to classify an invoice line item (e.g. CPV or UNSPSC)</assert>
+  </rule>
+  
 </pattern>

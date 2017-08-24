@@ -130,6 +130,7 @@
 			</cac:SellersItemIdentification>
 			<cac:CommodityClassification>
 				<cbc:CommodityCode listID="UNSPSC">12345</cbc:CommodityCode>
+				<cbc:ItemClassificationCode listID="CPV">test</cbc:ItemClassificationCode>
 			</cac:CommodityClassification>
 			<cac:ClassifiedTaxCategory>
 				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
