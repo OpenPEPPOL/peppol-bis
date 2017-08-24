@@ -1,0 +1,71 @@
+
+= Release notes for openPEPPOL Validation Artifact v3.5.0, Fall Release 2017
+openPEPPOL AISBL <http://www.peppol.eu/>
+2017-08-22
+:icons: font
+:source-highlighter: coderay
+:sourcedir: .
+:imagesdir: ./images
+:title-logo-image: images/peppol.png
+
+This release from openPEPPOL includes changes to the validation artifacts (VA's)
+and this version will be *mandatory in use from 15 November 2017 12:00 CEST.*
+
+
+.Overview of changes
+****
+. Added validation rules:
+.. Invoice/Credit note added rule to ensure presence of item name as specified in the BIS documents
+.. For Catalogue a rule is added to ensure only one item description pr language exists
+.. For Order, a new rule is added to ensure that if AnticipatedMonetaryTotal exists, each order line has a line extension amount
+
+. Changed validation rules:
+.. Changed rule to check for existence of @listID for ItemClassificationCode
+****
+
+
+****
+[NOTE]
+====
+Core rules should only be considered a help to implementors creating a PEPPOL BIS, making sure that documents are PEPPOL Core conformant.
+*The core rules should not be used in run time enviroments.*
+====
+****
+
+
+//
+
+
+
+== Changes to Validation Artifacts (VA)
+
+
+.Changes pr. transaction
+[cols="3", options="header"]
+|====
+|Transaction|Rule|Description
+
+.2+s|Invoice
+| EUGEN-T10-R055
+| Added rule to ensure presence of item name
+| BII2-T10-R033
+| Changed rule context so it only fires if ItemClassificationCode is present with no listID attribute
+
+
+.3+s|Credit note
+| EUGEN-T14-R055
+| Added rule to ensure presence of item name
+| BII2-T14-R033
+| Changed rule context so it only fires if ItemClassificationCode is present with no listID attribute
+| PEPPOL CORE RULE
+| Removed core rule that fired if ItemClassification was not present
+
+
+.1+s|Order
+| EUGEN-T01-R019
+| New rule is added to ensure that if AnticipatedMonetaryTotal exists, each order line has a line extension amount
+
+.1+s|Catalogue
+| EUGEN-T19-R055
+| New rule is added to ensure only one item description pr language exists
+|====
