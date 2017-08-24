@@ -13,7 +13,7 @@
   <param name="EUGEN-T19-R051" value="@listID = 'UNCL8273'"/>
   <param name="EUGEN-T19-R053" value="@schemeID  = 'UNCL6313'"/>
   <param name="EUGEN-T19-R054" value="not(count(//*[not(node()[not(self::comment())])]) &gt; 0)"/>
-  <param name="EUGEN-T19-R055" value="count(parent::cac:Item/cbc:Description[@languageID = current()/@languageID]/@languageID) = 1"/>
+  <param name="EUGEN-T19-R055" value="count(parent::cac:Item/cbc:Description[(@languageID = current()/@languageID) or not(@languageID)]) = 1"/>
   <param name="Endpoint" value="//cbc:EndpointID"/>
   <param name="Party_Identifier" value="//cac:PartyIdentification/cbc:ID"/>
   <param name="Line_level_action_code" value="//cac:CatalogueLine/cbc:ActionCode"/>
