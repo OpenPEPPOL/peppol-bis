@@ -50,6 +50,10 @@ Core rules should only be considered a help to implementors creating a PEPPOL BI
 | Added rule to ensure presence of item name
 | BII2-T10-R033
 | Changed rule context so it only fires if ItemClassificationCode is present with no listID attribute
+| OP-T10-R056
+| Added rule to warn of deprecated unit codes.
+| OP-T10-R057
+| Added rule that for deprecated units codes that will contiune to be available prefixed with an X.
 
 
 .3+s|Credit note
