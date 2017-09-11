@@ -7,8 +7,8 @@
                 None
                 
                 Warnings:
-                OP-T010-R056
-                OP-T010-R057
+                OP-T10-R056
+                OP-T10-R057
 				
 -->
 <Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
@@ -145,7 +145,7 @@
     </cac:LegalMonetaryTotal>
     <cac:InvoiceLine>
         <cbc:ID>1</cbc:ID>
-        <cbc:InvoicedQuantity unitCode="AE" unitCodeListID="UNECERec20">1.00</cbc:InvoicedQuantity>
+        <cbc:InvoicedQuantity unitCode="DR" unitCodeListID="UNECERec20">1.00</cbc:InvoicedQuantity>
         <cbc:LineExtensionAmount currencyID="NOK">100.00</cbc:LineExtensionAmount>
         <cbc:AccountingCost>123</cbc:AccountingCost>
         <cac:OrderLineReference>
