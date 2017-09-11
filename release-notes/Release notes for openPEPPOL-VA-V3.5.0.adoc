@@ -45,7 +45,7 @@ Core rules should only be considered a help to implementors creating a PEPPOL BI
 |====
 |Transaction|Rule|Description
 
-.2+s|Invoice
+.3+s|Invoice
 | EUGEN-T10-R055
 | Added rule to ensure presence of item name
 | BII2-T10-R033
