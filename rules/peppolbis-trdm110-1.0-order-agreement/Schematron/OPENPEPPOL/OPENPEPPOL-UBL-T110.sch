@@ -16,19 +16,19 @@
   <pattern id="business_rules">
     <rule context="ubl:OrderResponse">
       <assert id="EUGEN-T110-R025"
-              test="(cbc:UBLVersionID) = '2.1'"
+              test="cbc:UBLVersionID = '2.1'"
               flag="fatal">[EUGEN-T110-R025]-UBLVersionID must be 2.1</assert>
       <assert id="EUGEN-T110-R007"
               test="starts-with(cbc:CustomizationID, 'urn:www.cenbii.eu:transaction:biitrns110:ver1.0:extended:urn:www.peppol.eu:bis:peppol42a:ver1.0')"
               flag="fatal">[EUGEN-T110-R007]-Customization id must be: urn:www.cenbii.eu:transaction:biitrns110:ver1.0:extended:urn:www.peppol.eu:bis:peppol42a:ver1.0</assert>
       <assert id="EUGEN-T110-R008"
-              test="(cbc:ProfileID)= 'urn:www.cenbii.eu:profile:bii42:ver1.0'"
+              test="cbc:ProfileID = 'urn:www.cenbii.eu:profile:bii42:ver1.0'"
               flag="fatal">[EUGEN-T110-R008]-Profile id must be: urn:www.cenbii.eu:profile:bii42:ver1.0</assert>
       <assert id="EUGEN-T110-R009"
-              test="(cac:SellerSupplierParty/cac:Party/cbc:EndpointID)"
+              test="cac:SellerSupplierParty/cac:Party/cbc:EndpointID"
               flag="fatal">[EUGEN-T110-R009]-Sellers endpoint id must exist</assert>
       <assert id="EUGEN-T110-R010"
-              test="(cac:BuyerCustomerParty/cac:Party/cbc:EndpointID)"
+              test="cac:BuyerCustomerParty/cac:Party/cbc:EndpointID"
               flag="fatal">[EUGEN-T110-R010]-Buyers endpoint id must exist</assert>
       <assert id="EUGEN-T110-R028"
               test="not(count(//*[not(node()[not(self::comment())])]) &gt; 0)"
@@ -36,7 +36,7 @@
     </rule>
     <rule context="ubl:OrderResponse/cac:AllowanceCharge">
       <assert id="EUGEN-T110-R015"
-              test="(cbc:AllowanceChargeReason)"
+              test="cbc:AllowanceChargeReason"
               flag="fatal">[EUGEN-T110-R015]-Allowances and charges MUST have a reason</assert>
     </rule>
     <rule context="cbc:*[@currencyID]">
@@ -46,10 +46,10 @@
     </rule>
     <rule context="cac:Certificate">
       <assert id="EUGEN-T110-R026"
-              test="(cbc:ID)"
+              test="cbc:ID"
               flag="fatal">[EUGEN-T110-R026]-Each item label must have an item label name.</assert>
       <assert id="EUGEN-T110-R027"
-              test="(cbc:CertificateType)"
+              test="cbc:CertificateType"
               flag="fatal">[EUGEN-T110-R027]-Each item label must have an item label value.</assert>
     </rule>
     <rule context="cac:Country/cbc:IdentificationCode">
@@ -147,44 +147,44 @@
 
     <rule context="cbc:*[@currencyID]">
       <assert id="OP-T110-R001"
-              test="index-of($iso4217, normalize-space(@currencyID))"
+              test="some $code in $iso4217 satisfies $code = normalize-space(@currencyID)"
               flag="fatal">[OP-T110-R001]-currencyID for Amounts MUST be coded using ISO code list 4217</assert>
     </rule>
     <rule context="cbc:DocumentCurrencyCode">
       <assert id="OP-T110-R002"
-              test="index-of($iso4217, normalize-space(.))"
+              test="some $code in $iso4217 satisfies $code = normalize-space(.)"
               flag="fatal">[OP-T110-R002]-Order agreement currency MUST be coded using ISO code list 4217</assert>
     </rule>
     <rule context="cbc:EndpointID[@schemeID]">
       <assert id="OP-T110-R003"
-              test="index-of($icd, normalize-space(@schemeID))"
+              test="some $code in $icd satisfies $code = normalize-space(@schemeID)"
               flag="fatal">[OP-T110-R003]-An Endpoint Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
     </rule>
     <rule context="cac:PartyIdentification/cbc:ID[@schemeID]">
       <assert id="OP-T110-R004"
-              test="index-of($icd, normalize-space(@schemeID))"
+              test="some $code in $icd satisfies $code = normalize-space(@schemeID)"
               flag="fatal">[OP-T110-R004]-A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
     </rule>
     <rule context="cbc:*[@unitCode]">
       <assert id="OP-T110-R006"
-              test="index-of($unecerec20, normalize-space(@unitCode))"
+              test="some $code in $unecerec20 satisfies $code = normalize-space(@unitCode)"
               flag="fatal">[OP-T110-R006]-Unit code for quantities MUST be coded according to the UN/ECE Recommendation 20</assert>
+      <assert id="OP-T110-R011"
+              test="not(index-of(tokenize('5 6 8 16 17 18 19 26 29 30 31 32 36 43 44 45 46 47 48 53 54 62 63 69 71 72 73 90 92 93 94 95 96 97 98 1A 1B 1C 1D 1E 1F 1G 1H 1J 1K 1L 1M 1X 2V 2W 3E 3G 3H 3I 4A 4B 4E 5C 5F 5G 5H 5I 5K 5P 5Q AJ AM AP AR AV AW B0 B2 B5 B6 B9 BD BE BG BH BJ BK BL BO BR BT BW BX BZ C1 C2 C4 C5 C6 C77 C98 CA CH CJ CK CL CO CQ CR CS CT CU CV CY CZ D14 D28 D40 D64 D66 D67 D7 D79 D8 D90 D92 D96 D97 D98 D99 DC DE DI DQ DR DRM DS DY E2 E3 E5 EC EP EV F1 F9 FB FD FE FG FM G7 GC GD GH GK GN GW GY GZ H1 H2 HD HE HF HI HK HL HO HS HT HY IC IF II IL IM IP IT JB JG JO JR KD KF KG KS KTM L61 L62 LC LE LI LJ LX M0 MA MF MK MQ MT MV N2 NB NBB NC ND NE NG NH NI NJ NN NPL NRL NV NY OP P0 P3 P4 P6 P7 P8 P9 PA PB PE PF PG PK PL PM PN PU PV PW PY PZ QD QH QK R4 RA RD RG RK RL RN RO RS RU S5 S6 S7 S8 SA SD SE SK SL SN SO SP SS SST ST SV T1 T4 T5 T6 T7 T8 TA TC TD TE TF TJ TK TL TN TQ TR TS TSD TSH TT TU TV TW TY UD UE UF UH UM VI VQ VS W4 WH WI WR YL YT Z1 Z2 Z3 Z4 Z5 Z6 Z8', '\s'), normalize-space(@unitCode)))"
+              flag="warning">[OP-T110-R011]-The unit code used has been marked as deprecated and will be removed in a future release.</assert>
+      <assert id="OP-T110-R012"
+              test="not(index-of(tokenize('43 2W 4A AM AV BD BE BG BJ BK BL BO BR BT BX CA CH CJ CL CO CQ CR CS CT CU CV CY D97 DR EV JG JR KG MT NRL PA PF PG PK PL PU RD RG RL RO SA SL SO ST SV TK TN TU TY VI VQ Z2 Z3 Z4', '\s'), normalize-space(@unitCode)))"
+              flag="warning">[OP-T110-R012]-The unit code used has been marked for change in a future release so that will be prefixed with an X. As example code AE will become code XAE.</assert>
     </rule>
     <rule context="cac:Country/cbc:IdentificationCode">
       <assert id="OP-T110-R009"
-              test="index-of($iso3166, normalize-space(.))"
+              test="some $code in $iso3166 satisfies $code = normalize-space(.)"
               flag="fatal">[OP-T110-R009]-Country codes must be from ISO 3166-1 alpha2</assert>
     </rule>
     <rule context="cbc:ItemClassificationCode[@listID]">
       <assert id="OP-T110-R010"
-              test="index-of($commodity_scheme, normalize-space(@listID))"
+              test="some $code in $commodity_scheme satisfies $code = normalize-space(@listID)"
               flag="fatal">[OP-T110-R010]-Commodity code schemes MUST be according to CENBII3 COMMODITY_SCHEME_ID</assert>
-    </rule>
-    
-    <rule context="cbc:*/@unitCode">
-      <assert test="( ( not(contains(normalize-space(.),' ')) and not(contains( ' 5 6 8 16 17 18 19 26 29 30 31 32 36 43 44 45 46 47 48 53 54 62 63 69 71 72 73 90 92 93 94 95 96 97 98 1A 1B 1C 1D 1E 1F 1G 1H 1J 1K 1L 1M 1X 2V 2W 3E 3G 3H 3I 4A 4B 4E 5C 5F 5G 5H 5I 5K 5P 5Q AJ AM AP AR AV AW B0 B2 B5 B6 B9 BD BE BG BH BJ BK BL BO BR BT BW BX BZ C1 C2 C4 C5 C6 C77 C98 CA CH CJ CK CL CO CQ CR CS CT CU CV CY CZ D14 D28 D40 D64 D66 D67 D7 D79 D8 D90 D92 D96 D97 D98 D99 DC DE DI DQ DR DRM DS DY E2 E3 E5 EC EP EV F1 F9 FB FD FE FG FM G7 GC GD GH GK GN GW GY GZ H1 H2 HD HE HF HI HK HL HO HS HT HY IC IF II IL IM IP IT JB JG JO JR KD KF KG KS KTM L61 L62 LC LE LI LJ LX M0 MA MF MK MQ MT MV N2 NB NBB NC ND NE NG NH NI NJ NN NPL NRL NV NY OP P0 P3 P4 P6 P7 P8 P9 PA PB PE PF PG PK PL PM PN PU PV PW PY PZ QD QH QK R4 RA RD RG RK RL RN RO RS RU S5 S6 S7 S8 SA SD SE SK SL SN SO SP SS SST ST SV T1 T4 T5 T6 T7 T8 TA TC TD TE TF TJ TK TL TN TQ TR TS TSD TSH TT TU TV TW TY UD UE UF UH UM VI VQ VS W4 WH WI WR YL YT Z1 Z2 Z3 Z4 Z5 Z6 Z8 ',concat(' ',normalize-space(.),' ') ) )) )" flag="warning" id="OP-T110-R011">[OP-T110-R011]-The unit code used has been marked as deprecated and will be removed in a future release.</assert>
-
-      <assert test="( ( not(contains(normalize-space(.),' ')) and not(contains( ' 43 2W 4A AM AV BD BE BG BJ BK BL BO BR BT BX CA CH CJ CL CO CQ CR CS CT CU CV CY D97 DR EV JG JR KG MT NRL PA PF PG PK PL PU RD RG RL RO SA SL SO ST SV TK TN TU TY VI VQ Z2 Z3 Z4 ',concat(' ',normalize-space(.),' ') ) ) ) )" flag="warning" id="OP-T110-R012">[OP-T110-R012]-The unit code used has been marked for change in a future release so that will be prefixed with an X. As example code AE will become code XAE.</assert>
     </rule>
   </pattern>
 </schema>
