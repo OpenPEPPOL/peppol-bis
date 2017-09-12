@@ -35,6 +35,12 @@ Core rules should only be considered a help to implementors creating a PEPPOL BI
 *The core rules should not be used in run time enviroments.*
 ====
 ****
+****
+[NOTE]
+====
+Messages should not contain emptly UBL elements as these are likely to fail well-formed test and lead to messages being rejected by receiver.
+====
+****
 
 
 //
