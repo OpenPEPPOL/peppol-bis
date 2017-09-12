@@ -213,7 +213,7 @@
         <cbc:Note>Freetext note on line 1</cbc:Note>
         <cac:LineItem>
             <cbc:ID>1</cbc:ID>
-            <cbc:Quantity unitCode="EA" unitCodeListID="UNECERec20">120</cbc:Quantity>
+            <cbc:Quantity unitCode="DR" unitCodeListID="UNECERec20">120</cbc:Quantity>
             <cbc:LineExtensionAmount currencyID="NOK">6000</cbc:LineExtensionAmount>
             <cbc:TotalTaxAmount currencyID="NOK">1500</cbc:TotalTaxAmount>
             <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
@@ -255,7 +255,7 @@
         <cbc:Note>Freetext note on line 2</cbc:Note>
         <cac:LineItem>
             <cbc:ID>2</cbc:ID>
-            <cbc:Quantity unitCode="DR" unitCodeListID="UNECERec20">15</cbc:Quantity>
+            <cbc:Quantity unitCode="EA" unitCodeListID="UNECERec20">15</cbc:Quantity>
             <cbc:LineExtensionAmount currencyID="NOK">225</cbc:LineExtensionAmount>
             <cbc:TotalTaxAmount currencyID="NOK">56.25</cbc:TotalTaxAmount>
             <cbc:PartialDeliveryIndicator>false</cbc:PartialDeliveryIndicator>
