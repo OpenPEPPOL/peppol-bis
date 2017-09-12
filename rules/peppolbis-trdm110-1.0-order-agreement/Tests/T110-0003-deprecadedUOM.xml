@@ -5,12 +5,11 @@
     This file contains a valid PEPPOL OrderResponse, profile 42a.
 
     Errors:
-    None
+    OP-T110-R002
 
     Warnings:
-    OP-T110-R011
-	OP-T110-R012
 	OP-T110-R006 x 2
+	OP-T110-R007 x 2
 
 -->
 <OrderResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">

@@ -10,8 +10,8 @@
     
     Warning:
     BII2-T01-R005
-	OP-T01-R010
-	OP-T01-R011
+	OP-T01-R010 x 16
+	OP-T01-R011 x 16
     
 -->
 <Order xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
