@@ -11,36 +11,36 @@
   <pattern id="business_rules">
     <rule context="ubl:OrderResponse">
       <assert id="BII3-T110-R001"
-              test="(cbc:CustomizationID)"
+              test="cbc:CustomizationID"
               flag="fatal">[BII3-T110-R001]-An order agreement MUST have a customization identifier</assert>
       <assert id="BII3-T110-R002"
-              test="(cbc:ProfileID)"
+              test="cbc:ProfileID"
               flag="fatal">[BII3-T110-R002]-An order agreement MUST have a profile identifier</assert>
       <assert id="BII3-T110-R004"
-              test="(cbc:IssueDate)"
+              test="cbc:IssueDate"
               flag="fatal">[BII3-T110-R004]-An order agreement MUST have a document issue date</assert>
       <assert id="BII3-T110-R006"
-              test="(cbc:ID)"
+              test="cbc:ID"
               flag="fatal">[BII3-T110-R006]-An order agreement MUST have a document identifier</assert>
       <assert id="BII3-T110-R032"
-              test="(cac:OrderReference/cbc:ID)"
+              test="cac:OrderReference/cbc:ID"
               flag="fatal">[BII3-T110-R032]-An order agreement MUST have a reference to an order</assert>
     </rule>
     <rule context="cac:BuyerCustomerParty">
       <assert id="BII3-T110-R021"
-              test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)"
+              test="cac:Party/cac:PartyName/cbc:Name or cac:Party/cac:PartyIdentification/cbc:ID"
               flag="fatal">[BII3-T110-R021]-An order agreement MUST have the buyer party name or a buyer party identifier</assert>
     </rule>
     <rule context="cac:SellerSupplierParty">
       <assert id="BII3-T110-R022"
-              test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)"
+              test="cac:Party/cac:PartyName/cbc:Name or cac:Party/cac:PartyIdentification/cbc:ID"
               flag="fatal">[BII3-T110-R022]-An order agreement MUST have the seller party name or a seller party identifier</assert>
     </rule>
     <rule context="cac:OrderLine">
       <let name="lineId" value="normalize-space(cac:LineItem/cbc:ID)"/>
 
       <assert id="BII3-T110-R003"
-              test="(cac:LineItem/cbc:ID) and count(//cac:LineItem[normalize-space(cbc:ID) = $lineId]) = 1"
+              test="cac:LineItem/cbc:ID and count(//cac:LineItem[normalize-space(cbc:ID) = $lineId]) = 1"
               flag="fatal">[BII3-T110-R003]-Each order agreement line MUST have a document line identifier that is unique within the order agreement</assert>
     </rule>
   </pattern>
@@ -50,7 +50,7 @@
 
     <rule context="cbc:*[@mimeCode]">
       <assert id="CL-T110-R008"
-              test="index-of($mime, normalize-space(@mimeCode))"
+              test="some $code in $mime satisfies $code = normalize-space(@mimeCode)"
               flag="fatal">[CL-T110-R008]-For Mime code in attribute use MIMEMediaType.</assert>
     </rule>
     <rule context="@currencyID">
@@ -58,14 +58,14 @@
               test="( ( not(contains(normalize-space(.),' ')) and contains( ' AED AFN ALL AMD ANG AOA ARS AUD AWG AZN BAM BBD BDT BGN BHD BIF BMD BND BOB BOV BRL BSD BTN BWP BYR BZD CAD CDF CHE CHF CHW CLF CLP CNY COP COU CRC CUP CVE CZK DJF DKK DOP DZD EEK EGP ERN ETB EUR FJD FKP GBP GEL GHS GIP GMD GNF GTQ GWP GYD HKD HNL HRK HTG HUF IDR ILS INR IQD IRR ISK JMD JOD JPY KES KGS KHR KMF KPW KRW KWD KYD KZT LAK LBP LKR LRD LSL LTL LVL LYD MAD MDL MGA MKD MMK MNT MOP MRO MUR MVR MWK MXN MXV MYR MZN NAD NGN NIO NOK NPR NZD OMR PAB PEN PGK PHP PKR PLN PYG QAR RON RSD RUB RWF SAR SBD SCR SDG SEK SGD SHP SKK SLL SOS SRD STD SVC SYP SZL THB TJS TMM TND TOP TRL TTD TWD TZS UAH UGX USD USN USS UYI UYU UZS VEF VND VUV WST XAF XAG XAU XBA XBB XBC XBD XCD XDR XFU XOF XPD XPF XTS XXX YER ZAR ZMK ZWR ZWD ',concat(' ',normalize-space(.),' ') ) ) )"
               flag="fatal">[CL-T110-R003]-currencyID MUST be coded using ISO code list 4217</assert>
     </rule>
-    <rule context="cac:Country//cbc:IdentificationCode">
+    <rule context="cac:Country/cbc:IdentificationCode">
       <assert id="CL-T110-R004"
               test="( ( not(contains(normalize-space(.),' ')) and contains( ' AD AE AF AG AI AL AM AN AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BL BJ BM BN BO BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR ST SV SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW ',concat(' ',normalize-space(.),' ') ) ) )"
               flag="fatal">[CL-T110-R004]-Country codes MUST be coded using ISO code list 3166-1</assert>
     </rule>
-    <rule context="cbc:ItemClassificationCode/@listID">
+    <rule context="cbc:ItemClassificationCode[@listID]">
       <assert id="CL-T110-R006"
-              test="( ( not(contains(normalize-space(.),' ')) and contains( ' CV GN HS CPV UNSPSC eCLASS ',concat(' ',normalize-space(.),' ') ) ) )"
+              test="( ( not(contains(normalize-space(@listID),' ')) and contains( ' CV GN HS CPV UNSPSC eCLASS ',concat(' ',normalize-space(@listID),' ') ) ) )"
               flag="warning">[CL-T110-R006]-The value should one of 'CV GN HS CPV UNSPSC eCLASS'</assert>
     </rule>
     <rule context="cac:ClassifiedTaxCategory/cbc:ID">
