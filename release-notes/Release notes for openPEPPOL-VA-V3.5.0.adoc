@@ -116,16 +116,4 @@ Messages should not contain emptly UBL elements as these are likely to fail well
 | Added rule to warn of deprecated unit codes.
 | OP-T76-R010
 | Added rule that for deprecated units codes that will contiune to be available prefixed with an X.
-
-.2+s|Punch out
-| OP-T77-R006
-| Added rule to warn of deprecated unit codes.
-| OP-T77-R007
-| Added rule that for deprecated units codes that will contiune to be available prefixed with an X.
-
-.2+s|Order agreement
-| OP-T110-R011
-| Added rule to warn of deprecated unit codes.
-| OP-T110-R012
-| Added rule that for deprecated units codes that will contiune to be available prefixed with an X.
 |====
