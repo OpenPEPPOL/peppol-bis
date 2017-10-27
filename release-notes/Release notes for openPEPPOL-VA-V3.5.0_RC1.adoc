@@ -12,21 +12,7 @@ This release from openPEPPOL includes changes to the validation artifacts (VA's)
 and this version will be *mandatory in use from 15 November 2017 12:00 CEST.*
 
 
-.Overview of changes
 ****
-. Added validation rules:
-.. Invoice/Credit note added rule to ensure presence of item name as specified in the BIS documents
-.. For Catalogue a rule is added to ensure only one item description pr language exists
-.. For Order, a new rule is added to ensure that if AnticipatedMonetaryTotal exists, each order line has a line extension amount
-
-. Changed validation rules:
-.. Changed rule to check for existence of @listID for ItemClassificationCode
-
-. Added warnings for deprecated unit codes:
-.. Added rule to all documents except MLR to warn if the unit code used will be deprecated in later releases.
-.. Added rule to all documents except MLR to warn that the unit code used will be prefixed with X in later releases.
-****
-
 
 ****
 [NOTE]
