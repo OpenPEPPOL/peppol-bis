@@ -101,6 +101,8 @@
       <let name="taxInclusiveAmount" value="xs:decimal(if (cbc:TaxInclusiveAmount) then cbc:TaxInclusiveAmount else 0)"/>
       <let name="payableRoundingAmount" value="xs:decimal(if (cbc:PayableRoundingAmount) then cbc:PayableRoundingAmount else 0)"/>
       <let name="payableAmount" value="xs:decimal(if (cbc:PayableAmount) then cbc:PayableAmount else 0)"/>
+      <let name="prepaidAmount" value="xs:decimal(if (cbc:PrepaidAmount) then cbc:PrepaidAmount else 0)"/>
+            
 
       <let name="taxTotal" value="xs:decimal(if (/ubl:OrderResponse/cac:TaxTotal/cbc:TaxAmount) then (/ubl:OrderResponse/cac:TaxTotal/cbc:TaxAmount) else 0)"/>
       <let name="allowanceTotal" value="xs:decimal(sum(/ubl:OrderResponse/cac:AllowanceCharge[cbc:ChargeIndicator='false']/cbc:Amount))"/>
@@ -129,8 +131,8 @@
               test="$taxInclusiveAmount = u:twodec($taxExclusiveAmount) + u:twodec($taxTotal) + u:twodec($payableRoundingAmount)"
               flag="fatal">[EUGEN-T110-R023]-Tax inclusive amount must equal tax exclusive amount plus total tax amount plus rounding amount..</assert>
       <assert id="EUGEN-T110-R024"
-              test="not(cbc:PayableAmount) or $payableAmount = u:twodec($taxInclusiveAmount)"
-              flag="fatal">[EUGEN-T110-R024]-Total amount for payment MUST be equal to the tax inclusive amount.</assert>
+              test="not(cbc:PayableAmount) or $payableAmount = u:twodec($taxInclusiveAmount) - u:twodec($prepaidAmount)"
+              flag="fatal">[EUGEN-T110-R024]-Total amount for payment MUST be equal to the tax inclusive amount minus the prepaid amount.</assert>
       <assert id="EUGEN-T110-R030"
               test="$payableRoundingAmount = 0 or abs(xs:decimal(cbc:PayableRoundingAmount)) &lt;= max((xs:decimal(abs(cbc:PayableAmount) div 10), xs:decimal(1)))"
               flag="fatal">[EUGEN-T110-R030]-Payable rounding amount should be no more than 10% of payable amount.</assert>
