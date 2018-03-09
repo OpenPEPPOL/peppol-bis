@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t110-base-1.0">
+	<assert>
+		<scope>BII2-T16-R018</scope>
+	</assert>
+	<test>
+		<assert>
+			<description>No errors when schemeID for standard item identifier is present.</description>
+			<success>BII2-T16-R018</success>
+		</assert>
+		<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+
+			<cac:DespatchLine>
+				<cac:Item>
+					<cac:StandardItemIdentification>
+						<cbc:ID schemeID="test"/>
+					</cac:StandardItemIdentification>
+				</cac:Item>
+			</cac:DespatchLine>
+
+		</DespatchAdvice>
+	</test>
+	<test>
+		<assert>
+			<description>No errors when standard item identifier is not present.</description>
+			<success>BII2-T16-R018</success>
+		</assert>
+		<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			
+			<cac:DespatchLine>
+				<cac:Item>
+<!--					<cac:StandardItemIdentification>
+						<cbc:ID schemeID="test"/>
+					</cac:StandardItemIdentification>-->
+				</cac:Item>
+			</cac:DespatchLine>
+			
+		</DespatchAdvice>
+	</test>
+	<test>
+		<assert>
+			<description>One error when schemeID for standard item identifier is present on only one of two instances.</description>
+			<error>BII2-T16-R018</error>
+		</assert>
+		<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			
+			<cac:DespatchLine>
+				<cac:Item>
+					<cac:StandardItemIdentification>
+						<cbc:ID schemeID="test"/>
+					</cac:StandardItemIdentification>
+				</cac:Item>
+			</cac:DespatchLine>
+			
+			<cac:DespatchLine>
+				<cac:Item>
+					<cac:StandardItemIdentification>
+						<cbc:ID/>
+					</cac:StandardItemIdentification>
+				</cac:Item>
+			</cac:DespatchLine>
+			
+		</DespatchAdvice>
+	</test>
+	<test>
+		<assert>
+			<description>Errors when schemeID for standard item identifier is not present.</description>
+			<error>BII2-T16-R018</error>
+		</assert>
+		<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			
+			<cac:DespatchLine>
+				<cac:Item>
+					<cac:StandardItemIdentification>
+						<cbc:ID/>
+					</cac:StandardItemIdentification>
+				</cac:Item>
+			</cac:DespatchLine>
+			
+		</DespatchAdvice>
+	</test>
+</testSet>

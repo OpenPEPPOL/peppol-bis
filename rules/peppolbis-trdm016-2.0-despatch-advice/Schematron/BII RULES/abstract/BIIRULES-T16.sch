@@ -29,7 +29,7 @@
   <rule context="$despatching_Party">
     <assert test="$BII2-T16-R007" flag="warning" id="BII2-T16-R007">[BII2-T16-R007]-A despatching party SHOULD have the despatching party name</assert>
   </rule>
-  <rule context="$Item">
+  <rule context="$StandardItemID">
     <assert test="$BII2-T16-R018" flag="fatal" id="BII2-T16-R018">[BII2-T16-R018]-An item standard identifier MUST have an identification schema (e.g. GTIN)</assert>
   </rule>
 </pattern>

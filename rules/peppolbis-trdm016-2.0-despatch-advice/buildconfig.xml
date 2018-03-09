@@ -4,6 +4,7 @@
     <package>PEPPOL BIS 30A Despatch Advice 2.0</package>
 
     <testfolder>Tests</testfolder>
+    <testfolder>Unit</testfolder>
 
     <configuration>
         <identifier>peppolbis-t16-base-2.0</identifier>

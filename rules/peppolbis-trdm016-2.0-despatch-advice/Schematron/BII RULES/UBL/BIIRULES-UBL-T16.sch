@@ -16,7 +16,7 @@
   <param name="BII2-T16-R013" value="(cbc:ID)"/>
   <param name="BII2-T16-R016" value="(cac:Item/cbc:Name) or (cac:Item/cac:StandardItemIdentification/cbc:ID) or  (cac:Item/cac:SellersItemIdentification/cbc:ID)"/>
   <param name="BII2-T16-R017" value="(cbc:DeliveredQuantity)"/>
-  <param name="BII2-T16-R018" value="(//cac:StandardItemIdentification/cbc:ID/@schemeID) or not(//cac:StandardItemIdentification)"/>
+  <param name="BII2-T16-R018" value="exists(@schemeID)"/>
   <param name="BII2-T16-R019" value="(cbc:DeliveredQuantity) &gt;= 0"/>
   <param name="BII2-T16-R020" value="(cbc:DeliveredQuantity/@unitCode)"/>
   <param name="BII2-T16-R021" value="((cbc:OutstandingQuantity) and (cbc:OutstandingReason)) or not(cbc:OutstandingQuantity)"/>
@@ -25,6 +25,6 @@
   <param name="despatch_delivery_address" value="//cac:DeliveryCustomerParty/cac:Party/cac:PostalAddress"/>
   <param name="despatched_shipment" value="//cac:Shipment"/>
   <param name="despatch_advice_Line" value="//cac:DespatchLine"/>
-  <param name="Item" value="//cac:Item"/>
+  <param name="StandardItemID" value="cac:Item/cac:StandardItemIdentification/cbc:ID"/>
   <param name="despatch_advice" value="/ubl:DespatchAdvice"/>
 </pattern>
