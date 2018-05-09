@@ -36,9 +36,9 @@ Messages should not contain empty UBL elements as these are likely to fail well-
 
 
 .Changes pr. transaction
-[cols="3", options="header"]
+[cols="2", options="header"]
 |====
-|Transaction|Rule|Description
+|Transaction|Description
 
 .1+s|Order agreement
 | Text in BIS document changed to align with rule for tax category ID and tax scheme ID.
