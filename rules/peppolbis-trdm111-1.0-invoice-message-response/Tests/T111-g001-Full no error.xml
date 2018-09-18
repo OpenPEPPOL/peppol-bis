@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+                Content:
+                This file contains a PEPPOL Invoice Message Response, profile 63.
+
+                Errors:
+                None
+                
+                Warnings:
+                None
+	
+-->
+<ubl:ApplicationResponse xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+	<cbc:CustomizationID>urn:www.peppol.eu:transaction:biitrns111:ver1.0</cbc:CustomizationID>
+	<cbc:ProfileID>urn:www.peppol.eu:profile:bis63a:ver1.0</cbc:ProfileID>
+	<cbc:ID>imrid001</cbc:ID>
+	<cbc:IssueDate>2017-12-01</cbc:IssueDate>
+	<cbc:IssueTime>12:00:00</cbc:IssueTime>
+	<cbc:Note>Please refer to previous email exchange regarding this invoice.</cbc:Note>
+	<cac:SenderParty>
+		<cbc:EndpointID schemeID="IS:KT">6963495890</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<cbc:ID schemeID="ZZZ">senderif12345</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>Buyer organization</cbc:Name>
+		</cac:PartyName>
+		<cac:Contact>
+			<cbc:Name>Invoice processing department</cbc:Name>
+			<cbc:Telephone>012312312345</cbc:Telephone>
+			<cbc:ElectronicMail>invoiceprocessingdepartment@organization.org</cbc:ElectronicMail>
+		</cac:Contact>
+	</cac:SenderParty>
+	<cac:ReceiverParty>
+		<cbc:EndpointID schemeID="IS:KT">6841569459</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<cbc:ID schemeID="ZZZ">receiver12345</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>Seller company</cbc:Name>
+		</cac:PartyName>
+	</cac:ReceiverParty>
+	<cac:DocumentResponse>
+		<cac:Response>
+			<cbc:ResponseCode listID="UNCL4343OpSubset">RE</cbc:ResponseCode>
+			<cbc:EffectiveDate>2017-12-01</cbc:EffectiveDate>
+			<cac:Status>
+				<cbc:StatusReasonCode listID="OPStatusReason">LEG</cbc:StatusReasonCode>
+				<cbc:StatusReason>VAT Reference not found</cbc:StatusReason>
+				<cac:Condition>
+					<cbc:AttributeID>BT-48</cbc:AttributeID>
+					<cbc:Description>EU123456789</cbc:Description>
+				</cac:Condition>
+			</cac:Status>
+			<cac:Status>
+				<cbc:StatusReasonCode listID="OPStatusAction">CNF</cbc:StatusReasonCode>
+				<cbc:StatusReason>Credit fully</cbc:StatusReason>
+			</cac:Status>
+			<cac:Status>
+				<cbc:StatusReasonCode listID="OPStatusAction">NIN</cbc:StatusReasonCode>
+				<cbc:StatusReason>Issue new invoice</cbc:StatusReason>
+			</cac:Status>
+		</cac:Response>
+		<cac:DocumentReference>
+			<cbc:ID>inv021</cbc:ID>
+			<cbc:IssueDate>2017-11-30</cbc:IssueDate>
+			<cbc:DocumentTypeCode listID="UNECE1001">380</cbc:DocumentTypeCode>
+		</cac:DocumentReference>
+		<cac:IssuerParty>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="GLN">6543219876546</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Seller A</cbc:Name>
+			</cac:PartyName>
+		</cac:IssuerParty>
+		<cac:RecipientParty>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="GLN">9876549873211</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Buyer A</cbc:Name>
+			</cac:PartyName>
+		</cac:RecipientParty>
+	</cac:DocumentResponse>
+</ubl:ApplicationResponse>
