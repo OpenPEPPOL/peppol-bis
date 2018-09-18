@@ -33,7 +33,7 @@
 			<cbc:ResponseCode listID="UNCL4343OpSubset">AP</cbc:ResponseCode>
 		</cac:Response>
 		<cac:DocumentReference>
-			<cbc:DocumentTypeCode listID="UNECE1001">380</cbc:DocumentTypeCode>
+			<cbc:DocumentTypeCode listID="UNCL1001">380</cbc:DocumentTypeCode>
 		</cac:DocumentReference>
 	</cac:DocumentResponse>
 </ApplicationResponse>
