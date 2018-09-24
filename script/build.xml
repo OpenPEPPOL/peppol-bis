@@ -8,7 +8,7 @@
     <tstamp>
         <format property="build.time" pattern="yyyyMMdd_HHmmss" locale="en,GB"/>
     </tstamp>
-    <property name="version.number" value="3.6.0"/>
+    <property name="version.number" value="3.7.0"/>
     <!-- Format of version.releaseDate must be yyyy-mm-dd -->
     <!--<property name="version.releaseDate" value="2015-09-15"/>-->
 
@@ -41,7 +41,7 @@
                        <!--byline="true"/>-->
     <!--</target>-->
 
-    <target name="compile" depends="clean, init">
+    <target name="compile" depends="clean, init" description="Compile SCH files.">
         <foreach target="compileDocumentType" param="documentType">
             <path>
                 <dirset dir="../rules">
@@ -118,7 +118,7 @@
         </condition>
     </target>
 
-    <target name="makeZip" depends="compile" description="Make ZIP for release">
+    <target name="makeZip" depends="compile" description="Make ZIP for release.">
         <!-- Make version-info file -->
         <echo message="VERSION INFORMATION${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
         <echo message="-------------------${line.separator}" file="${target.dir}/version-info.txt" append="true"/>
@@ -145,7 +145,7 @@
         </zip>
     </target>
 
-    <target name="test" depends="init" description="Run all tests">
+    <target name="test" depends="init" description="Run all tests.">
         <delete>
             <fileset dir="${target.dir}" includes="*.log"/>
             <fileset dir="${target.dir}" includes="schematron-*-output.xml"/>
