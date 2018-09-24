@@ -21,12 +21,12 @@
 	<pattern id="business_rules">
 
 		<!-- Status: Test -->
-		<rule context="cbc:ProfileID">
+<!-- 		<rule context="cbc:ProfileID">
 			<assert id="OP-T111-R001" 
 					test="( normalize-space(.)='urn:www.peppol.eu:profile:bis63a:ver1.0' )" 
 					flag="fatal">[OP-T111-R001]- An Invoice Response SHALL have the profile identifier "urn:www.peppol.eu:profile:bis63a:ver1.0".</assert>
 		</rule>
-
+ -->
 		<!-- Status: Test -->
 		<rule context="cbc:CustomizationID">
 			<assert id="OP-T111-R002" 
