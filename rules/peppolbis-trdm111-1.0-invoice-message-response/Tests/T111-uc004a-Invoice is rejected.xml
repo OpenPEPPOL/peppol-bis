@@ -5,7 +5,7 @@
 				It demonstrates Use Case 4a — Invoice is rejected
 
                 Errors:
-                None
+                
                 
                 Warnings:
                 None
@@ -33,6 +33,7 @@
 		<cac:Response>
 			<cbc:ResponseCode listID="UNCL4343OpSubset">RE</cbc:ResponseCode>
 			<cac:Status>
+				<cbc:StatusReasonCode listID="OPStatusAction">CNF</cbc:StatusReasonCode>
 				<cbc:StatusReason>A textual explanation for why the invoice is being rejected.</cbc:StatusReason>
 			</cac:Status>
 		</cac:Response>

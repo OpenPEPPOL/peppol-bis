@@ -35,13 +35,14 @@
 		<cac:Response>
 			<cbc:ResponseCode listID="UNCL4343OpSubset">IP</cbc:ResponseCode>
 			<cbc:EffectiveDate>2017-12-15</cbc:EffectiveDate>
+			<cac:Status>		
+				<cbc:StatusReason>Shipment has not yet been received. Invoice processing will be attempted later.</cbc:StatusReason>
+			</cac:Status>
 		</cac:Response>
-		<cac:Status>
-			<cbc:StatusReason>Shipment has not yet been received. Invoice processing will be attempted later.</cbc:StatusReason>
-		</cac:Status>
 		<cac:DocumentReference>
 			<cbc:ID>inv021</cbc:ID>
 			<cbc:DocumentTypeCode listID="UNCL1001">380</cbc:DocumentTypeCode>
 		</cac:DocumentReference>
+		
 	</cac:DocumentResponse>
 </ApplicationResponse>
