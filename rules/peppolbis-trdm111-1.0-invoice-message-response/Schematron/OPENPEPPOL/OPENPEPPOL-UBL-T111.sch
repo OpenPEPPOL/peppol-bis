@@ -118,15 +118,12 @@
 			<assert id="CL-T111-R005" 
 					test="( ( not(contains(normalize-space(@listID),' ')) and contains(normalize-space(@listID),'UNCL4343OpSubset') ) )" 
 					flag="fatal" >[CL-T111-R005]-A Status Code SHALL have list ID as UNCL4343OpSubset.</assert>
-		</rule>
-
-		<!-- Status: Test -->
-		<rule context="cac:DocumentResponse/cac:Response/cbc:ResponseCode">
 			<assert id="CL-T111-R006" 
-					test="( ( not(contains(normalize-space(.),' ')) and contains( ' IP UQ CA RE AP PD AB ',concat(' ',normalize-space(.),' ') ) ) )" 
-					flag="fatal">[CL-T111-R006]-A Status code value SHALL be one of the values from the UNCL 4343 PEPPOL Subset code list described in chapter 8.3.1</assert>
+				test="( ( not(contains(normalize-space(.),' ')) and contains( ' IP UQ CA RE AP PD AB ',concat(' ',normalize-space(.),' ') ) ) )" 
+				flag="fatal">[CL-T111-R006]-A Status code value SHALL be one of the values from the UNCL 4343 PEPPOL Subset code list described in chapter 8.3.1</assert>
 		</rule>
 
+		
 		<!-- Status: Test -->
 		<rule context="cac:DocumentResponse/cac:Response/cac:Status/cbc:StatusReasonCode">
 			<assert id="CL-T111-R007" 
