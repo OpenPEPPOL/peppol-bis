@@ -1,7 +1,7 @@
 
 = Release notes for openPEPPOL Validation Artifact v3.7.0, Fall Release 2018
 openPEPPOL AISBL <http://www.peppol.eu/>
-2018-09-14
+2018-09-27
 :icons: font
 :source-highlighter: coderay
 :sourcedir: .
@@ -9,7 +9,7 @@ openPEPPOL AISBL <http://www.peppol.eu/>
 :title-logo-image: peppol.png
 
 This release from openPEPPOL includes changes to the validation artifacts (VA's)
-and it's planned that this version will become *mandatory in use from May 14th 2018 12:00 CEST.*
+and it's planned that this version will become *mandatory in use from November 15th 2019 12:00 CEST.*
 
 
 ****
@@ -40,14 +40,18 @@ Messages should not contain empty UBL elements as these are likely to fail well-
 |====
 |Transaction|Rule|Description
 
-.2+s|Order agreement
-| EUGEN-T110-R005
-| Rule text changed so that it refers to the correct code list.
-| EUGEN-T110-R024
-| Rule text changed so that it refers to the correct code list.
+.4+s|BIS3 Billing
+| Country rules
+| Country rules included for Italy, Norway, Denmark and Sweden. UBL and CII.
+| Other stuff
+| Siw, please add.
 
-.1+s|Dispatch advice
-| BII2-T16-R018
-| Implementation of rule fixed so it correctly takes PrePaidAmount into the calculation.
+.4+s|BIS63A Invoice Response
+| General
+| Specifications 1.0 approved in July added to regular release package.
+| Test files.
+| Corrections to test files.
+| Schematrons
+| Bug fixes to schematrons files, new version 1.1.
 
 |====
