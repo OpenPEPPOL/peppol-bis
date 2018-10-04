@@ -40,18 +40,20 @@ Messages should not contain empty UBL elements as these are likely to fail well-
 |====
 |Transaction|Rule|Description
 
-.4+s|BIS3 Billing
+.6+s|BIS3 Billing
 | Country rules
 | Country rules included for Italy, Norway, Denmark and Sweden. UBL and CII.
-| Other stuff
-| Siw, please add.
+| BIS
+| Corrections and edits
+| Schematron
+| Bug fixes and corrections
 
-.4+s|BIS63A Invoice Response
+.6+s|BIS63A Invoice Response
 | General
 | Specifications 1.0 approved in July added to regular release package.
 | Test files.
 | Corrections to test files.
-| Schematrons
-| Bug fixes to schematrons files, new version 1.1.
+| Schematron
+| Bug fixes to schematron files, new version 1.1.
 
 |====
