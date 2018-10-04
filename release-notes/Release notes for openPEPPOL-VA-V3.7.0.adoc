@@ -26,7 +26,7 @@ Core rules should only be considered a help to implementors creating a PEPPOL BI
 ====
 Messages should not contain empty UBL elements as these are likely to fail well-formed test and lead to messages being rejected by receiver.
 ====
-****
+
 
 
 //
