@@ -38,9 +38,9 @@ Messages should not contain empty UBL elements as these are likely to fail well-
 .Changes pr. transaction
 [cols="3", options="header"]
 |====
-|Transaction|Rule|Description
+|Transaction|Rule/Section|Description
 
-.6+s|BIS3 Billing
+.3+s|BIS3 Billing
 | Country rules
 | Country rules included for Italy, Norway, Denmark and Sweden. UBL and CII.
 | BIS
@@ -48,7 +48,7 @@ Messages should not contain empty UBL elements as these are likely to fail well-
 | Schematron
 | Bug fixes and corrections
 
-.6+s|BIS63A Invoice Response
+.3+s|BIS63A Invoice Response
 | General
 | Specifications 1.0 approved in July added to regular release package.
 | Test files.
