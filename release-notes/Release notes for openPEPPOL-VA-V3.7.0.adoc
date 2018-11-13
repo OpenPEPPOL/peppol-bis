@@ -1,15 +1,18 @@
 
 = Release notes for openPEPPOL Validation Artifact v3.7.0, Fall Release 2018
 openPEPPOL AISBL <http://www.peppol.eu/>
-2018-09-27
+2018-11-13
 :icons: font
 :source-highlighter: coderay
 :sourcedir: .
 :imagesdir: images
 :title-logo-image: peppol.png
 
-This release from openPEPPOL includes changes to the validation artifacts (VA's)
-and it's planned that this version will become *mandatory in use from November 15th 2019 12:00 CEST.*
+This release from openPEPPOL includes changes to the mandatory validation artifacts for the Invoice Response 63A (VA's). 
+
+The BIS2 specification in this release are *mandatory in use from November 15th 2018 12:00 CEST.*, including the Invoice specifications. It contains changes to the Invoice Response BIS63A as detaile below but no changes to other mandatory BIS2 specifications.
+
+In addition, this release contains an upgrade to the BIS3 Billing specification to a version 3.1.0. The BIS3 Billing is optional and is scheduled to become mandatory on April 18th. 2019. For details see below and the BIS3 Billing migration policy.
 
 
 ****
@@ -50,7 +53,7 @@ Messages should not contain empty UBL elements as these are likely to fail well-
 
 .3+s|BIS63A Invoice Response
 | General
-| Specifications 1.0 approved in July added to regular release package.
+| Specifications 1.0 approved in July added to regular release package. Correction to contributors list.
 | Test files.
 | Corrections to test files.
 | Schematron
