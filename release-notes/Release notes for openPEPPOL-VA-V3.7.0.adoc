@@ -10,9 +10,9 @@ openPEPPOL AISBL <http://www.peppol.eu/>
 
 This release from openPEPPOL includes changes to the mandatory validation artifacts for the Invoice Response 63A (VA's). 
 
-The BIS2 specification in this release are *mandatory in use from November 15th 2018 12:00 CEST.*, including the Invoice specifications. It contains changes to the Invoice Response BIS63A as detaile below but no changes to other mandatory BIS2 specifications.
+The BIS2 specifications in this release are *mandatory in use from November 15th 2018 12:00 CEST*. It contains changes to the Invoice Response BIS63A as detaile below but no changes to other mandatory BIS2 specifications.
 
-In addition, this release contains an upgrade to the BIS3 Billing specification to a version 3.1.0. The BIS3 Billing is optional and is scheduled to become mandatory on April 18th. 2019. For details see below and the BIS3 Billing migration policy.
+In addition, this release contains a revision to the BIS3 Billing specification to a version 3.0.2. The BIS3 Billing is optional and is scheduled to become mandatory on April 18th. 2019. For details see below and the BIS3 Billing migration plan.
 
 
 ****
@@ -31,11 +31,10 @@ Messages should not contain empty UBL elements as these are likely to fail well-
 ====
 
 
-
 //
 
 
-== Changes to Validation Artifacts (VA)
+== Changes to BIS documents and validation artifacts.
 
 
 .Changes pr. transaction
@@ -43,20 +42,32 @@ Messages should not contain empty UBL elements as these are likely to fail well-
 |====
 |Transaction|Rule/Section|Description
 
-.3+s|BIS3 Billing
-| Country rules
-| Country rules included for Italy, Norway, Denmark and Sweden. UBL and CII.
-| BIS
-| Corrections and edits
-| Schematron
-| Bug fixes and corrections
-
 .3+s|BIS63A Invoice Response
-| General
-| Specifications 1.0 approved in July added to regular release package. Correction to contributors list.
+| Documentation.
+| Corrected list of contributors, history and image caption.
 | Test files.
 | Corrections to test files.
-| Schematron
-| Bug fixes to schematron files, new version 1.1.
+| Rule CL-T111-R011/R012
+| Fixed, did not trigger.
+
+.15+s|BIS3 Billing
+.5+s| Documentation
+| Added instruction on X prefixed UoM codes. POACC-113
+| Added subchapter to explain use of UNSPSC.
+| Modifications to documentation for readability. POACC-118
+| Schematron rules provided as single package download POACC-126
+| Added examples files. POACC-118
+.10+s| Rules
+| Supplier Country rules added for IT, NO, DK and SE. UBL and CII.
+| Latest TC434 validation files adopted v1.1.0 2018-06-26 POACC-118
+| Adopted TC434 corrigendum for project referencing.
+| Rule PEPPOL-EN16931-R052 dropped as duplicate of TC434
+| Rule PEPPOL-EN16931-CL004 dropped as duplicate of TC434
+| Added rule PEPPOL-EN16931-R006, R100 and R101 to allow one invoice object.
+| Modified message for PEPPOL-EN16931-R120 for clarity.
+| Added rule to restrict BR-CO-25 to invoices and not Credit Notes.
+| SEPA added as valid Id schema for direct debit.
+| Added rule that invoice may only have one of Sellers or Tax Rep VAT.
+
 
 |====
