@@ -6,51 +6,60 @@ openPEPPOL AISBL <http://www.peppol.eu/>
 :source-highlighter: coderay
 :sourcedir: .
 :imagesdir: images
-:title-logo-image: peppol.png
-
-This release from openPEPPOL includes changes to the mandatory validation artifacts for the Invoice Response 63A (VA's). 
-
-The BIS2 specifications in this release are *mandatory in use from November 15th 2018 12:00 CEST*. It contains changes to the Invoice Response BIS63A as detaile below but no changes to other mandatory BIS2 specifications.
-
-In addition, this release contains a revision to the BIS3 Billing specification to a version 3.0.2. The BIS3 Billing is optional and is scheduled to become mandatory on April 18th. 2019. For details see below and the BIS3 Billing migration plan.
+:title-logo-image: images/peppol.png
 
 
-****
+This release from openPEPPOL includes changes to the mandatory validation artifacts for the Invoice Response 63A (VA's).
+In addition, this release contains a revision to the BIS3 Billing specification to a version 3.0.2.
+*The BIS3 Billing is optional and is scheduled to become mandatory on April 18th. 2019*. For details see below and the BIS3 Billing migration plan. +
+ +
+The BIS2 specifications in this release are *mandatory in use from November 15th 2018 12:00 CEST*. It contains changes to the Invoice Response BIS63A as detailed below but no changes to other mandatory BIS2 specifications.
+
 
 ****
 [NOTE]
 ====
 Core rules should only be considered a help to implementors creating a PEPPOL BIS, making sure that documents are PEPPOL Core conformant.
-*The core rules should not be used in run time enviroments.*
+*The core rules should not be used in run time environments.*
 ====
 ****
+
+
 ****
 [NOTE]
 ====
 Messages should not contain empty UBL elements as these are likely to fail well-formed test and lead to messages being rejected by receiver.
 ====
-
+****
 
 //
 
 
 == Changes to BIS documents and validation artifacts.
 
+=== BIS63A Invoice Response
 
-.Changes pr. transaction
-[cols="3", options="header"]
+[cols="2s,4", options="header"]
 |====
-|Transaction|Rule/Section|Description
+|Rule/Section
+|Description
 
-.3+s|BIS63A Invoice Response
 | Documentation.
 | Corrected list of contributors, history and image caption.
+
 | Test files.
 | Corrections to test files.
+
 | Rule CL-T111-R011/R012
 | Fixed, did not trigger.
+|====
 
-.15+s|BIS3 Billing
+=== BIS3 Billing
+
+[cols="2,4", options="header"]
+|====
+|Rule/Section
+|Description
 .5+s| Documentation
 | Added instruction on X prefixed UoM codes. POACC-113
 | Added subchapter to explain use of UNSPSC.
@@ -60,14 +69,12 @@ Messages should not contain empty UBL elements as these are likely to fail well-
 .10+s| Rules
 | Supplier Country rules added for IT, NO, DK and SE. UBL and CII.
 | Latest TC434 validation files adopted v1.1.0 2018-06-26 POACC-118
-| Adopted TC434 corrigendum for project referencing.
+| Adopted TC434 corrigendum for project referencing, adding rule PEPPOL-EN16931-R080
 | Rule PEPPOL-EN16931-R052 dropped as duplicate of TC434
 | Rule PEPPOL-EN16931-CL004 dropped as duplicate of TC434
 | Added rule PEPPOL-EN16931-R006, R100 and R101 to allow one invoice object.
 | Modified message for PEPPOL-EN16931-R120 for clarity.
-| Added rule to restrict BR-CO-25 to invoices and not Credit Notes.
-| SEPA added as valid Id schema for direct debit.
-| Added rule that invoice may only have one of Sellers or Tax Rep VAT.
-
-
+| Changed rule BR-CO-25 to check only invoices and not Credit Notes.
+| SEPA added as code list for direct debit.
+| Added rule PEPPOL-EN16931-R007 to ensure that an invoice may only have one of Sellers or Tax Rep VAT.
 |====
