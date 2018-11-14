@@ -66,7 +66,7 @@ Messages should not contain empty UBL elements as these are likely to fail well-
 | Modifications to documentation for readability. POACC-118
 | Schematron rules provided as single package download POACC-126
 | Added examples files. POACC-118
-.10+s| Rules
+.9+s| Rules
 | Supplier Country rules added for IT, NO, DK and SE. UBL and CII.
 | Latest TC434 validation files adopted v1.1.0 2018-06-26 POACC-118
 | Adopted TC434 corrigendum for project referencing, adding rule PEPPOL-EN16931-R080
@@ -76,5 +76,4 @@ Messages should not contain empty UBL elements as these are likely to fail well-
 | Modified message for PEPPOL-EN16931-R120 for clarity.
 | Changed rule BR-CO-25 to check only invoices and not Credit Notes.
 | SEPA added as code list for direct debit.
-| Added rule PEPPOL-EN16931-R007 to ensure that an invoice may only have one of Sellers or Tax Rep VAT.
 |====
